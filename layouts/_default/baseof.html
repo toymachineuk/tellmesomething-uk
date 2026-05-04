@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+
+  {{ partial "header.html" . }}
+
+<section class="hero-v2">
+
+  <div class="hero-v2-top">
+
+       <div class="hero-v2-text">
+      <span class="hero-v2-tag caps">Atmosphere by Design</span>
+      <h1 class="hero-v2-title">BASE.</h1>
+      <p class="hero-v2-sub"> The Sound of the Brand</p>
+    </div>
+
+<div class="hero-v2-circles">
+ <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMaxYMin slice">
+
+  <!-- outer -->
+  <circle cx="1150" cy="-120" r="880" fill="#c7dedd" />
+
+  <!-- big -->
+  <circle cx="1150" cy="60" r="700" fill="#9fbfbe" />
+
+  <!-- mid -->
+  <circle cx="1150" cy="240" r="520" fill="#6fa7a4" />
+
+  <!-- inner -->
+  <circle cx="1150" cy="420" r="360" fill="#0e4d4a" />
+
+</svg>
+</div>
+
+
+
+  </div>
+
+  <div class="hero-v2-inner container">
+
+ 
+
+   
+
+  </div>
+
+  <amp-img
+src="/img/houses.png"
+width="1348"
+height="649"
+layout="responsive"
+class="hero-v2-building"
+alt="Buildings">
+</amp-img>
+
+
+<aside class="hero-v2-side">
+  <h2 class="heading-md caps-tight hero-v2-question">
+    Whats the antidote<br>to boring?
+  </h2>
+
+  <p class="text-small hero-v2-description">
+    We’re a creative agency brining Fresh Ideas, Bold Concepts
+    and high-end web design
+    <strong>ready to enhance your projects</strong>
+  </p>
+</aside>
+
+
+
+    
+
+    <amp-img
+src="/img/barcode.png"
+width="210"
+height="113"
+layout="responsive"
+class="hero-base-barcode"
+alt="barcode">
+</amp-img>
+
+</section>
+
+    
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "footer.html" . }}
+
+</body>
+</html>

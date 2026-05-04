@@ -1,0 +1,30 @@
+baseURL = 'https://site-tms--draft.pages.dev/'
+languageCode = 'en-us'
+title = 'TMS'
+
+  [[menu.main]]
+  name = "pulse frames"
+  url = "/articles/pulseframes/"
+
+      [[menu.main]]
+  name = "audio"
+  url = "/articles/Audio/"
+
+      [[menu.main]]
+  name = "video"
+  url = "/articles/video/"
+
+  [[menu.main]]
+  name = "case studies"
+  url = "/articles/casestudies/"
+
+
+
+
+
+
+
+
+
+
+

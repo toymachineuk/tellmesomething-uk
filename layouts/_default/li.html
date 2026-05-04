@@ -1,0 +1,29 @@
+<a class="" 
+style="
+text-decoration:
+none;"
+
+
+href="{{ .Permalink }}">
+                        
+                        
+                        
+                        <div class="ampstart-card abe-sample-card flex flex-column flex-auto  mb1">
+                            <h3  >{{ .Title }}<i class=""></i></h3>
+                            {{if gt (len .Summary) 200}}
+                                <p class="mb1" >{{slicestr .Summary 3 200 }}</p>
+                            {{else}}
+                                <p class="mb1" style="margin: 0;">{{ .Summary }}</p>
+                            {{end}}
+                            <div class="abe-sample-card-actions">
+                                <div class="article-meta__published glue-label " >
+    
+                                    <span> 
+                                    {{ .Date.Format "Mon, Jan 2, 2006" }}
+                                </span>
+                                </div>
+                            
+                            
+                            </div>
+                        </div>
+                    </a>

@@ -1,0 +1,974 @@
+<!doctype html>
+<html ⚡>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="{{ .Permalink }}" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <!-- <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script> -->
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}{{ end }}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+   
+    <link href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css" rel="stylesheet">
+
+    <style amp-custom>{{ partial "css.css" . | safeCSS }}</style>
+
+    <style amp-custom>
+
+      body {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #111;
+  
+}
+
+/* ===================================================== */
+/* HEADER                                                */
+/* ===================================================== */
+
+.ampstart-headerbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  z-index: 1000;
+ 
+    box-shadow: none;
+  border-bottom: 1px solid #eee;
+}
+
+/* All header links */
+.ampstart-headerbar a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ================= LOGO ================= */
+
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+   display: flex;
+  align-items: center;
+}
+
+/* ================= NAVIGATION ================= */
+
+.ampstart-headerbar-nav {
+  margin-left: 80px;
+}
+
+.ampstart-headerbar-nav ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ampstart-headerbar-nav li {
+  position: relative;
+}
+
+.ampstart-headerbar-nav a {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 5px 0;
+  position: relative;
+}
+
+/* Active underline */
+.www-current-page > a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #c084fc;
+}
+
+/* ================= DROPDOWN ================= */
+
+.abe-list-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background: #111;
+  padding: 20px 30px;
+
+  display: none;
+  min-width: 180px;
+}
+
+.abe-nav-list:hover .abe-list-container {
+  display: block;
+}
+
+.abe-list-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.abe-list-container li {
+  margin-bottom: 10px;
+}
+
+.abe-list-container a {
+  color: #bbb;
+  font-size: 15px;
+}
+
+.abe-list-container a:hover {
+  color: #fff;
+}
+
+/* ===================================================== */
+/* PURPLE CTA (BLOG BUTTON)                             */
+/* ===================================================== */
+
+.header-cta {
+  margin-left: auto;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 60px;
+
+  background: linear-gradient(135deg, #a855f7, #9333ea);
+}
+
+.header-cta a {
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+}
+
+/* ===================================================== */
+/* MOBILE MENU TRIGGER                                  */
+/* ===================================================== */
+
+.ampstart-navbar-trigger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* ===================================================== */
+/* SIDEBAR                                               */
+/* ===================================================== */
+
+.ampstart-sidebar {
+  background: #0e0f11;
+  padding: 60px 40px;
+  width: 100%;
+}
+
+/* Close button */
+.ampstart-sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40_togglepx;
+}
+
+.ampstart-sidebar-header a {
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Sidebar main links */
+.ampstart-sidebar-nav > a,
+.ampstart-sidebar .ampstart-dropdown header {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+
+  padding: 18px 0;
+  display: block;
+
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Dropdown */
+.ampstart-dropdown-item a {
+  color: #aaa;
+  font-size: 18px;
+  padding: 12px 0 12px 20px;
+}
+
+.ampstart-dropdown-item a:hover {
+  color: #fff;
+}
+
+/* Sidebar CTA */
+.sidebar-cta {
+  margin-top: 50px;
+}
+
+.sidebar-cta a {
+  background: linear-gradient(135deg, #a855f7, #9333ea);
+  padding: 18px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+/* ===================================================== */
+/* RESPONSIVE                                            */
+/* ===================================================== */
+
+@media (max-width: 980px) {
+
+  .ampstart-headerbar {
+    padding: 0 25px;
+    
+  }
+
+  .ampstart-headerbar-nav,
+  .header-cta {
+    display: none;
+  }
+
+  .ampstart-navbar-trigger {
+    display: block;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+}
+
+
+/* MOBILE TOGGLE BUTTON */
+.ampstart-navbar-trigger {
+  display: none;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Show only on mobile */
+@media (max-width: 980px) {
+  .ampstart-navbar-trigger {
+    display: block;
+  }
+}
+
+
+
+.ampstart-navbar-trigger svg {
+  fill: #fff;
+  width: 28px;
+  height: 28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HERO SECTION */
+.hero {
+  justify-content: flex-end;
+    align-items: flex-end;   
+  position: relative;
+  height: 90vh;
+
+  display: flex;
+ 
+  background-size: cover;
+
+ 
+
+ 
+  padding: 120px 80px 100px;
+
+  background: url('/img/hero1.jpg') center 30% / cover no-repeat;
+  overflow: hidden;
+
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 520px;
+    padding: 120px 20px 80px;
+  }
+}
+
+.hero.casestudies {
+   background: url('/img/hero3.png') center 30% / cover no-repeat;
+}
+
+  .hero-content {
+    width: 100%;
+  }
+
+
+
+/* Light overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.6) 0%,
+    rgba(0,0,0,0.3) 40%,
+    rgba(0,0,0,0.1) 70%,
+    transparent 100%
+  );
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  color: white;
+
+    max-width: 650px;
+  margin-right: 40px; /* optional fine tuning */
+}
+
+/* Small top label */
+.hero-eyebrow {
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #c084fc;
+}
+
+/* Big headline */
+.hero h1 {
+ color:black;
+  font-weight: 800;
+  letter-spacing: -2px;
+
+    font-size: clamp(48px, 6vw, 90px);
+  line-height: 1.05;
+}
+@media (max-width: 768px) {
+ .hero h1 {
+    letter-spacing: -1px;
+  }
+}
+
+.hero h1 span {
+  font-size: 0.85em;
+}
+
+@media (min-width: 769px) {
+  .hero h1 br {
+    display: block;
+  }
+}
+
+
+/* Subtext */
+.hero-sub {
+  font-size: clamp(16px, 2.5vw, 22px);
+  line-height: 1.6;
+  margin-top: 24px;
+  max-width: 520px;
+  color: #ddd;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.section {
+  background: #f5f3f1; /* warm gray */
+
+  color: #111;
+}
+.section > .container > *:first-child {
+  margin-top: 0;
+}
+
+.section > .container > *:last-child {
+  margin-bottom: 0;
+}
+
+.section-sm { padding: 32px 20px 64px 20px; }
+.section-md { padding: 96px 20px; }
+.section-lg { padding: 120px 20px 48px 20px; }
+
+
+@media (max-width: 768px) {
+  .section-lg {
+    padding: 80px 20px;
+  }
+
+  .section-sm {
+    padding: 48px 20px;
+  }
+}
+
+.section-bg {
+  position: relative;
+  overflow: hidden; /* hides extra overflow */
+  background: #f5f3f1;
+}
+
+.bg-shape {
+  position: absolute;
+  top: -120px;
+  right: -250px;
+
+  width: 900px;
+  height: 900px;
+
+  background-image: url("/img/bg/bg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .bg-shape {
+    width: 500px;
+    height: 500px;
+    right: -200px;
+    top: -80px;
+    opacity: 0.7; /* optional */
+  }
+}
+
+/* Keep content above */
+.section-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+.section-light {
+  background: #f5f3f1;
+}
+
+.section-dark {
+  background: #0b0b0b;
+  color: white;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Small label above headline */
+.label-sm  {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #666;
+}
+
+
+.headline {
+   font-family: Georgia, serif;
+  font-size: 88px;
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -1px;
+  margin-bottom: 32px;
+}
+
+   .headline em {
+      font-style: italic;
+    }
+
+ .section-title-condensed {
+   font-family: "Inter Tight", sans-serif;
+  font-size: 64px;
+  font-weight: 700; /* was too heavy */
+  letter-spacing: 2px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 0 0 24px 0;
+
+
+
+}
+
+.section-title {
+  font-size: 56px;
+  font-weight: 700; /* not 800+ */
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+
+/* Intro paragraph */
+/* BODY PARAGRAPH */
+.section-text {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+
+  .headline {
+    font-size: 48px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  .section-title-condensed {
+    font-size: 40px;
+  }
+
+  .section-text {
+    font-size: 16px;
+  }
+
+}
+
+.block-separator {
+  width: 80px;
+  height: 1px;
+  background: #000;
+  opacity: 0.2;
+  border: none;
+  margin: 40px 0 40px 0;
+}
+
+/* GRID SPACING */
+.services-grid {
+  margin-top: 40px;
+  gap: 48px;
+}
+
+/* 3 column grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+   margin-top: 60px;
+}
+
+
+
+/* Each column */
+.service-col {
+  padding-left: 30px;
+  border-left: 1px solid #ccc;
+}
+
+.service-col h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.service-col p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .service-col {
+    border-left: none;
+    padding-left: 0;
+  }
+
+
+
+
+
+/* LEFT COLUMN */
+
+.founder-image {
+  width: 100%;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.founder-company {
+  font-size: 28px;
+  font-weight: 700;
+  color: #e4572e;
+  margin-bottom: 10px;
+}
+
+.founder-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.founder-role {
+  font-size: 16px;
+  color: #666;
+}
+
+/* RIGHT COLUMN */
+
+.eyebrow {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.founder-quote {
+  font-family: Georgia, serif;
+  font-size: 34px;
+  line-height: 1.3;
+  font-weight: 500;
+  margin-bottom: 60px;
+  color: #111;
+}
+
+/* META GRID */
+
+.founder-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 80px;
+  margin-bottom: 50px;
+}
+
+.meta-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.meta-value {
+  font-size: 16px;
+  color: #333;
+}
+
+
+
+
+
+/* ===== CTA SECTION ===== */
+
+.cta-section {
+  background: #e7e2db;
+  padding: 120px 80px 120px;
+  position: relative;
+}
+
+/* Torn edge attached to bottom */
+.cta-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: url('/img/bg/edget.svg') repeat-x bottom;
+  background-size: 100% auto;
+  pointer-events: none;
+  z-index: 5;
+  
+}
+
+/* Inner content container */
+.cta-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Headline */
+.cta-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 6vw, 88px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 0 0 24px;
+  color: #0f172a;
+}
+
+/* Subtext */
+.cta-section p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #334155;
+  margin-bottom: 48px;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  padding: 18px 42px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #9333ea, #c026d3);
+  border-radius: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(147, 51, 234, 0.35);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Footer ===== */
+
+
+.site-footer {
+  position: relative;
+  color: #fff;
+  padding: 100px 20px 60px;
+  background: #0b0b0b;
+  overflow: hidden;
+    z-index: 1;
+
+    margin: 0;
+  padding-top: 0;
+}
+
+.footer-wave {
+  display: block;
+  line-height: 0;
+}
+
+.footer-wave svg {
+  display: block;
+  width: 100%;
+  height: 20px;
+  transform: translateY(1px); /* removes hairline gap */
+}
+
+/* Optional subtle texture effect */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.02) 0px,
+      rgba(255,255,255,0.02) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+   padding-top: 60px;
+}
+
+/* BRAND AREA */
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.smiley {
+  font-size: 36px;
+}
+
+.logo-text {
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.footer-description {
+  color: #ddd;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  max-width: 420px;
+}
+
+/* BUTTON */
+
+.footer-btn {
+  display: inline-block;
+  padding: 16px 28px;
+  background: linear-gradient(135deg, #a33ccf, #d13bd1);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  margin-bottom: 40px;
+  transition: transform 0.2s ease;
+}
+
+.footer-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* NAV COLUMNS */
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: opacity 0.2s ease;
+}
+
+.footer-nav a:hover {
+  opacity: 0.6;
+}
+
+/* SOCIAL + LEGAL */
+
+.footer-social {
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  margin-right
+
+
+
+    </style>
+</head>
+
+<body>
+
+  
+    

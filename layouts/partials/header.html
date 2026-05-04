@@ -1,0 +1,150 @@
+  <!-- Start Navbar -->
+<header class="ampstart-headerbar">
+  <!-- Logo left -->
+
+  <a href="/" class="logo">
+  
+    <amp-img
+src="/img/logo-tms.png"
+width="120"
+height="40"
+layout="intrinsic"
+class=""
+alt="logo">
+</amp-img>
+  </a>
+
+  <!-- Nav + CTA wrapper -->
+  <div class="header-right xs-hide sm-hide">
+    <nav class="ampstart-headerbar-nav">
+      <ul>
+        {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}<span>.</span></a></li>
+         
+        {{ end }}
+
+         <li>
+  <a href="/post">the lab<span>.</span></a>
+</li>
+      </ul>
+    </nav>
+
+
+  </div>
+
+  <!-- Mobile hamburger -->
+  <div role="button"
+       on="tap:header-sidebar.toggle"
+       tabindex="0"
+       class="ampstart-navbar-trigger md-hide lg-hide">
+    ☰
+  </div>
+</header>
+
+
+    <!-- Start Sidebar -->
+<amp-sidebar 
+  id="header-sidebar" 
+  class="ampstart-sidebar px3 flex flex-column md-hide lg-hide" 
+  layout="nodisplay">
+  <div class="sidebar-top">  
+  <span class="sidebar-logo caps-tight">TELL ME SOMETHING </span>
+  <div class="ampstart-sidebar-header">
+    <a href="#"
+       on="tap:header-sidebar.toggle"
+       class="ampstart-navbar-trigger">
+       ✕
+    </a>
+  </div>
+</div>
+ <div class="sidebar-top">
+
+<div class="sidebar-art">
+    <a href="/">
+
+      <div class="sidebar-circles">
+ <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMaxYMin slice">
+
+ <circle cx="1150" cy="-120" r="880" fill="#f3eee6" />
+<circle cx="1150" cy="60" r="700" fill="#e8e1d4" />
+<circle cx="1150" cy="240" r="520" fill="#ddd3c3" />
+<circle cx="1150" cy="420" r="360" fill="#cfc3af" />
+
+</svg>
+</div>
+ 
+  </a>
+  
+  
+  
+</div>
+
+
+</div>
+
+  <!-- NAVIGATION -->
+  <nav class="ampstart-sidebar-nav ampstart-nav">
+
+    {{ $currentPage := . }}
+
+    {{ range .Site.Menus.main }}
+
+      {{ if .HasChildren }}
+
+        <ul class="list-reset m0 p0">
+          <li class="ampstart-nav-item ampstart-nav-dropdown">
+
+            <amp-accordion 
+              layout="container" 
+              disable-session-states 
+              class="ampstart-dropdown">
+
+              <section>
+                <header>{{ .Name }}</header>
+
+                <ul class="ampstart-dropdown-items list-reset m0 p0">
+                  {{ range .Children }}
+                    <li class="ampstart-dropdown-item">
+                      <a href="{{ .URL }}">
+                        {{ .Name }}<span>.</span>
+                      </a>
+                    </li>
+
+
+
+                  {{ end }}
+
+                  <li>
+  <a href="/post">the lab<span>.</span></a>
+</li>
+                </ul>
+
+              </section>
+
+            </amp-accordion>
+
+          </li>
+        </ul>
+
+      {{ else }}
+
+        <!-- SINGLE LINK -->
+        <a href="{{ .URL }}" 
+           class="block h5  ">
+          {{ .Name }}
+        </a>
+
+      {{ end }}
+
+    {{ end }}
+
+    <!-- OPTIONAL CTA (SAFE ADDITION) -->
+
+
+
+
+  </nav>
+
+</amp-sidebar>
+    <!-- End Sidebar -->
+    <!-- End Navbar -->

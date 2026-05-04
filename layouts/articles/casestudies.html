@@ -1,0 +1,611 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+<section class="hero-v2">
+
+  <div class="hero-v2-top">
+
+       <div class="hero-v2-text">
+      <span class="hero-v2-tag">Atmosphere by Design</span>
+      <h1 class="hero-v2-title">BASE.</h1>
+      <p class="hero-v2-sub"> The Sound of the Brand</p>
+    </div>
+
+<div class="hero-v2-circles">
+ <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMaxYMin slice">
+
+  <!-- outer -->
+  <circle cx="1150" cy="-120" r="880" fill="#c7dedd" />
+
+  <!-- big -->
+  <circle cx="1150" cy="60" r="700" fill="#9fbfbe" />
+
+  <!-- mid -->
+  <circle cx="1150" cy="240" r="520" fill="#6fa7a4" />
+
+  <!-- inner -->
+  <circle cx="1150" cy="420" r="360" fill="#0e4d4a" />
+
+</svg>
+</div>
+
+
+
+  </div>
+
+  <div class="hero-v2-inner container">
+
+ 
+
+   
+
+  </div>
+
+  <amp-img
+src="/img/houses.png"
+width="1348"
+height="649"
+layout="responsive"
+class="hero-v2-building"
+alt="Buildings">
+</amp-img>
+
+ <div class="hero-v2-side">
+    Artistry Meets<br>Architecture
+    </div>
+
+    <amp-img
+src="/img/barcode.png"
+width="210"
+height="113"
+layout="responsive"
+class="hero-base-barcode"
+alt="barcode">
+</amp-img>
+
+</section>
+
+<section class="base-intro section-lg">
+  <div class="container">
+
+    <div class="base-intro__layout">
+
+      <!-- LEFT: CONCEPT -->
+      <div class="base-intro__main">
+        <span class="base-intro__label text-label">
+          Case Study
+        </span>
+
+        <h2 class="base-intro__headline">
+              Pori Jazz Festival: <br>
+The Heartbeat of Finnish Summer Music
+        </h2>
+
+      
+<div class="base-intro__block">
+    <p class="base-intro__lead">
+One of Europe’s most respected jazz festivals, Pori Jazz blends world-class performances with a uniquely very Finnish atmosphere — our task is to highlight it and make attractive global audience. 
+    
+        </p>
+
+</div>
+
+            <div class="base-intro__block base-intro__block--origin">
+
+              
+          <span class="base-intro__kicker">The Challenge</span>
+      
+
+
+          <p>
+           Potential attendees need more than schedules and ticket links — they need to feel the atmosphere and understand the experience, especially when it’s a new country and culture. Instead of just listing information, we turn key insights into simple, story-driven formats.
+          </p>
+
+              
+
+        
+
+          <p class="text-body">
+              This helps visitors visually explore the festival, discover the destination, and quickly find what they need to plan their visit.
+              </p>
+
+          </p>
+
+    
+   
+
+
+        </div>
+      </div>
+
+      <!-- RIGHT: EXPLANATION + ORIGIN -->
+      <div class="base-intro__side">
+
+        <div class="base-intro__block">
+               <div class="story-container">
+
+        <div class="video-wrapper">
+
+          <amp-video
+            id="storyVideo"
+            width="270"
+            height="480"
+            layout="responsive"
+            autoplay
+            muted
+            playsinline
+            loop
+            noaudio
+            poster="/video/poster17.png">
+
+            <source src="/video/phone-story.mp4" type="video/mp4">
+
+          </amp-video>
+
+          <!-- PAUSE -->
+          <button
+            class="video-btn pause"
+            on="tap:storyVideo.pause, AMP.setState({paused: true})"
+            [hidden]="paused">
+            ⏸
+          </button>
+
+          <span class="play-icon"></span>
+
+          <!-- PLAY -->
+          <button
+            class="video-btn play"
+            on="tap:storyVideo.play, AMP.setState({paused: false})"
+            [hidden]="!paused">
+            ▶
+          </button>
+
+        </div>
+
+
+
+        <div class="story-meta">
+
+          <a class="cta-text strong" on="tap:storyLightbox.open">
+            Watch the Story
+          </a>
+
+          <p class="text-small">
+            Swipe through the story or open it in a larger view
+          </p>
+
+        </div>
+
+      </div>
+        </div>
+
+    
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- ================= CASE ================= -->
+
+
+<section class="base-contrast section-alt base-contrast--right section-block orbit-stage section-with-circles">
+  <div class="container ">
+
+    <span class="base-contrast__label text-label">
+      Three key differences
+    </span>
+
+<div class="base-contrast__layout">
+
+  <div class="base-contrast__main ">
+
+
+
+    <span class="base-contrast__label">Story System </span>
+
+    <h2 class="base-contrast__headline">
+    How the <br>PulseFrame<br> Story Works.
+    </h2>
+
+    <p class="base-contrast__lead">
+   Designing the Story Experience
+   
+  </p>
+  </div>
+
+  <div class="base-contrast__side">
+
+    <div class="base-contrast__point">
+      <span class="base-contrast__index">02</span>
+      <h3>Your Story — Your Rules</h3>
+      <p>You own your content, your audience, and your distribution.</p>
+    </div>
+
+    <div class="base-contrast__point">
+      <span class="base-contrast__index">03</span>
+      <h3>Built for Discovery</h3>
+      <p>Accessible through search, not locked inside platforms.</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+   <div class="section-decor">
+    <span class="circle circle--bottom-right"></span>
+  </div>
+
+    <!-- Orbit Button -->
+<div class="orbit orbit--casestudy">
+  <a  on="tap:storyLightbox.open" class="orbit-link">
+
+    <div class="orbit-story-preview">
+       <div class="story-ring">
+    <amp-img
+      src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
+      width="200"
+      height="200"
+      layout="responsive"
+      alt="Story preview">
+    </amp-img>
+  </div>
+    </div>
+
+<div class="orbit-info">
+  
+  <amp-img
+    src="/img/barcode.png"
+    width="120"
+    height="40"
+    layout="intrinsic"
+    class="story-barcode"
+    alt="barcode">
+  </amp-img>
+
+  <span class="orbit-label">
+    Open The Story <br>
+    <small>ghdkdj hfdgjkd gdfgh</small><br>
+    <small>gfhdsfjhsd fsdgfshd</small>
+  </span>
+
+</div>
+
+  </a>
+</div>
+</section>
+
+
+
+
+
+<!-- ================= PULSEFRAME ================= -->
+
+<section class="section  pulseframe-section">
+
+  <div class="container">
+ <header class="pulseframe-intro">
+
+  <h2 class="heading-xl mb-4 heading-xl mb-4 tracking-tight">
+    Inside PulseFrame
+  </h2>
+
+  <p class="text-body text-muted">
+    A structured storytelling system translating atmosphere,
+    legacy, and experience into a digital journey.
+  </p>
+
+</header>
+    <div class="pulseframe-section-grid">  
+    <!-- INTRO -->
+  
+
+<div> 
+    <!-- 01 — ATMOSPHERE -->
+    <div class="pulseframe-block">
+
+      <div class="pulseframe-text">
+
+        <span class="text-label mb-3">01 — Atmosphere</span>
+
+        <h3 class="heading-md mb-3">
+          Feel the Festival Before You Arrive
+        </h3>
+
+        <p class="text-body">
+          The campaign opens with high-impact vertical video designed
+          to immerse viewers instantly.
+        </p>
+
+        <p class="text-body">
+          Sound, motion, and rhythm work together to recreate the
+          emotional intensity of a live performance.
+        </p>
+
+      </div>
+
+      <div class="pulseframe-media">
+
+        <amp-video
+          width="270"
+          height="480"
+          layout="responsive"
+          controls
+          poster="/video/poster1.png">
+
+          <source src="/video/vid1--story.mp4" type="video/mp4">
+
+        </amp-video>
+
+      </div>
+
+    </div>
+
+
+    <!-- 02 — LEGACY -->
+    <div class="pulseframe-block reverse">
+
+      <div class="pulseframe-text">
+
+        <span class="text-label mb-3">02 — Legacy</span>
+
+        <h3 class="heading-md mb-3">
+          Positioning Through History
+        </h3>
+
+        <p class="text-body">
+          Archival material and iconic references reinforce the
+          festival’s credibility and cultural significance.
+        </p>
+
+        <p class="text-body">
+          Tradition meets modern performance — bridging timeless
+          influence with contemporary energy.
+        </p>
+
+      </div>
+
+      <div class="pulseframe-media">
+
+        <amp-video
+          width="270"
+          height="480"
+          layout="responsive"
+          controls
+          poster="/video/poster2.png">
+
+          <source src="/video/vid4--story.mp4" type="video/mp4">
+
+        </amp-video>
+
+      </div>
+
+    </div>
+
+
+    <!-- 03 — EXPERIENCE -->
+    <div class="pulseframe-block">
+
+      <div class="pulseframe-text">
+
+        <span class="text-label mb-3">03 — Experience</span>
+
+        <h3 class="heading-md mb-3">
+          From Discovery to Action
+        </h3>
+
+        <p class="text-body">
+          The final stage connects inspiration with practical planning,
+          guiding users from exploration to ticket purchase.
+        </p>
+
+        <p class="text-body">
+          Travel details, local highlights, and clear calls-to-action
+          transform interest into real-world attendance.
+        </p>
+
+      </div>
+
+      <div class="pulseframe-media">
+
+        <amp-video
+          width="270"
+          height="480"
+          layout="responsive"
+          controls
+          poster="/video/poster3.png">
+
+          <source src="/video/vid2--story.mp4" type="video/mp4">
+
+        </amp-video>
+
+      </div>
+
+    </div>
+</div>
+
+<div>
+
+
+
+  <div class="case-steps">
+
+          <div class="case-step">
+
+            <span class="text-label">Slides 1–3</span>
+
+            <div>
+
+              <h3 class="heading-sm">
+              Follow your nose to Pori
+              </h3>
+
+              <p class="text-small">
+              Although the festival features world-famous artists, international audiences are often unfamiliar with Pori — a small coastal town in Finland. We clearly explained how to get there from Helsinki, making the journey simple and accessible.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="case-step">
+
+            <span class="text-label">Slides 4–7</span>
+
+            <div>
+
+              <h3 class="heading-sm">
+                Build Context
+              </h3>
+
+              <p class="text-small">
+                We also included accommodation options for all budgets, making planning easier for every type of visitor. And in true Finnish spirit, we couldn’t skip the hammocks in the forest — a simple but striking experience that locals may take for granted, but international audiences often discover for the first time.
+            
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="case-step">
+
+            <span class="text-label">Slides 8–14</span>
+
+            <div>
+
+              <h3 class="heading-sm">
+                Guide to Action
+              </h3>
+
+              <p class="text-small">
+         Pori is also a great spa destination, thanks to the Gulf Stream influence that keeps the coastal waters relatively mild. Beyond the festival, visitors can enjoy the beach or explore the Viking Path — a scenic forest trail perfect for hiking and nature walks. 
+          
+          </p>
+
+            </div>
+
+          </div>
+
+
+               <div class="case-step">
+
+            <span class="text-label">Slides 8–14</span>
+
+            <div>
+
+              <h3 class="heading-sm">
+                Guide to Action
+              </h3>
+
+              <p class="text-small">
+          And one final point: even if you know nothing about Finland and only speak English, you will still be fine. For the closing slide, we highlighted a powerful insight we found in our research — that nearly 100% of Finns speak English, and are especially welcoming to tourists.
+          
+          </p>
+
+            </div>
+
+          </div>
+
+        </div>
+</div>
+  </div>
+</div>
+</section>
+
+<section class=" section-dark section-block ">
+  <div class="container">
+
+  
+
+ <div class="base-contrast__layout">
+
+  <div class="base-contrast__main">
+    <span class="base-contrast__label"> Pori Jazz Festival </span>
+
+    <h2 class="base-contrast__headline">
+      Feedback We<br> Received.
+  
+    </h2>
+
+    <p class="base-contrast__lead">
+   What started as exploration of different storytelling formats became a startup idea and our main focus in web development. 
+   
+  </p>
+  </div>
+
+  <div class="base-contrast__side">
+
+    <div class="base-contrast__point">
+   
+     
+  
+        
+      <p >
+  <strong>PulseFrame</strong> was presented to the committee at 
+  <a href="https://www.prizz.fi/en" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; text-decoration: none; font-weight: 600;">
+    Prizztech
+  </a> 
+  and received highly positive feedback.
+ 
+</p>
+    </div>
+
+    <div class="base-contrast__point">
+      
+      <p> Prizztech is a non-profit business development company owned by municipalities on the west coast of Finland, specializing in the advancement of technological innovations.
+</p>
+    </div>
+
+  </div>
+
+</div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- STORY POPUP -->
+<!-- LIGHTBOX -->
+<amp-lightbox id="storyLightbox" layout="nodisplay">
+  <div class="story-modal">
+
+    <!-- CLOSE BUTTON -->
+    <button class="story-close" on="tap:storyLightbox.close">
+      ✕
+    </button>
+
+    <!-- CENTERED IFRAME -->
+    <div class="story-frame">
+      <amp-iframe
+        layout="responsive"
+        width="360"
+        height="640"
+        sandbox="allow-scripts allow-same-origin"
+        src="https://bassscene.co.uk/porijazz/">
+      </amp-iframe>
+    </div>
+
+  </div>
+</amp-lightbox>
+
+
+
+
+
+
+
+
+{{ partial "footer-cta.html" . }}
+{{ partial "footer.html" . }}
