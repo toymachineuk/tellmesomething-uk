@@ -3636,10 +3636,38 @@ min-width: clamp(480px, 55vw, 620px);
 
 }
 
+.orbit--center {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+   text-align: center;
+}
+
+.orbit--center .orbit-story-preview {
+  max-width: 140px; /* slightly bigger */
+}
+
+.orbit--br {
+   bottom: 40px;
+  right: 10px;
+}
+
+.orbit--tr {
+  top: 60px;
+  right: 60px;
+}
+
+.orbit--bl {
+  bottom: 60px;
+  left: 60px;
+}
+
+
+
 /* ===== Mobile Tweaks ===== */
 @media (max-width: 480px) {
   .orbit-story-preview {
-    max-width: 120px;
+      max-width: 90px;
   }
 
   .orbit-info {
@@ -3682,10 +3710,11 @@ min-width: clamp(480px, 55vw, 620px);
 /* Outer circle */
 .orbit-story-preview {
   width: 100%;
-  max-width: 160px;
+   max-width: 120px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   position: relative;
+   box-shadow: 0 0 30px rgba(253,206,42,0.2);
 }
 
 /* Animated gradient ring */
