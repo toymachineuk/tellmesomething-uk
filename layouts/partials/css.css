@@ -2246,160 +2246,119 @@ margin: -10px auto 0;
 /* =========================================
    PORTFOLIO SHOWCASE
 ========================================= */
+.portfolio-stage {
+  padding-top: 80px; /* 👈 creates space that transform visually removes */
+}
 .portfolio-showcase {
   margin: 0 auto;
- 
   background: #111;
   color: #f5f5f5;
+
   margin-left: -1.5rem;
   margin-right: -1.5rem;
-  position:relative;
- 
-    margin-top: calc(var(--space-section) + 60px); /* 👈 key fix */
-  padding: var(--space-section) 0;
+
+  position: relative;
+
 }
 
 /* =========================================
-   INTRO
+   TITLE
 ========================================= */
-.portfolio-intro-grid {
-  max-width: 1100px;
-  margin: 0 auto 16px;
-}
-
-.portfolio-heading {
-  max-width: 640px;
-  width: 100%;
-  margin-bottom: 24px;
-}
-
-.portfolio-eyebrow {
-  font-size: clamp(11px, 1.2vw, 12px);
-  letter-spacing: 0.08em;
-  opacity: 0.6;
-}
-
 .portfolio-title {
-
-  letter-spacing: -0.025em; /* more refined */
-
-
   font-size: clamp(72px, 12vw, 160px);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.05;
 
-
   display: inline-block;
-
   color: black;
 
-  max-width: 12ch; /* gives breathing room */
- top: -140px;
-
-
-
-position:absolute;
-
-
+   transform: translateY(-80%);
+  position: relative;
+  z-index: 2;
 }
 
-
-
-.portfolio-intro {
-  font-size: clamp(14px, 2vw, 16px);
-  line-height: 1.6;
-  opacity: 0.8;
-  margin-left: 1.5rem;
-  max-width: 380px;
-}
 
 /* =========================================
-   STAGE / TICKER (DESKTOP MARQUEE)
+   STAGE / TICKER (STATIC)
 ========================================= */
 .portfolio-stage {
-  width: min(92vw, 1400px);
-  margin: 16px auto 0;
-  overflow: hidden;
-    overflow-x: auto;
-  padding-bottom: 2rem;
-
+   width: min(92vw, 1400px);
+  margin: 64px auto 0;
+  padding: 0 24px 3rem;
+ overflow: visible;
+ 
+  background: #111;
+   
 }
 
 .ticker {
   position: relative;
   width: 100%;
-  overflow: hidden;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
   cursor: grab;
+
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
+
+  scroll-snap-type: x mandatory;
 }
 
 .ticker:active {
   cursor: grabbing;
 }
 
+/* 🔥 Animated blur edge ONLY */
 .ticker::after {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
-  width: 40px;
+
+  width: 60px;
   height: 100%;
+
   pointer-events: none;
-  background: linear-gradient(to right, transparent, #111);
   z-index: 5;
+
+  background: linear-gradient(to right, transparent, #111);
+
+  animation: blurMove 4s ease-in-out infinite alternate;
 }
 
+@keyframes blurMove {
+  0% {
+    transform: translateX(0);
+    opacity: 0.4;
+    filter: blur(6px);
+  }
+  100% {
+    transform: translateX(12px);
+    opacity: 1;
+    filter: blur(10px);
+  }
+}
+
+/* TRACK */
 .ticker-track {
   display: flex;
   width: max-content;
-  will-change: transform;
- 
-    animation: scroll 60s linear infinite;
-  align-items: flex-start;
-
   gap: var(--space-grid-lg);
-
+  align-items: stretch;
 }
 
-.ticker:hover .ticker-track {
-  animation-play-state: paused;
-}
-
-@keyframes scroll {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translateX(-50%); }
-}
-
-.ticker-group {
-  outline: 3px solid red;
-}
-
-.ticker-group {
-  display: flex;
-  flex-shrink: 0;
-  width: max-content;
-}
-
+/* GROUP */
 .ticker-group {
   display: flex;
   gap: 8px;
   width: max-content;
-  min-width: max-content;
   flex-shrink: 0;
   align-items: flex-start;
 }
 
-.ticker {
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-
-.ticker-track {
-  animation: none;
-  transform: none;
-}
 /* =========================================
    CARD LAYOUTS
 ========================================= */
@@ -2407,84 +2366,44 @@ position:absolute;
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 10px;
- aspect-ratio: 4 / 3;
-min-width: clamp(480px, 55vw, 620px);
 
- align-items: stretch;
-}
-
-.portfolio-tall,
-.portfolio-wide,
-.portfolio-right,
-.portfolio-left {
-  height: 100%;
-}
-
-
-
-.portfolio-pattern.layout-b .portfolio-left {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-
-.portfolio-pattern.layout-c .portfolio-left {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-
-
-.portfolio-right,
-.portfolio-left {
-  height: 100%;
+  aspect-ratio: 4 / 3;
+  min-width: clamp(480px, 55vw, 620px);
 }
 
 .portfolio-pattern.layout-a { grid-template-columns: 0.8fr 1.2fr; }
 .portfolio-pattern.layout-b { grid-template-columns: 1.1fr 0.9fr; }
 .portfolio-pattern.layout-c { grid-template-columns: 0.7fr 1.3fr; }
 
-.portfolio-right,
-.portfolio-left {
+.portfolio-left,
+.portfolio-right {
   display: grid;
   gap: 10px;
 }
 
-.portfolio-right {
-  display: grid;
+.portfolio-pattern.layout-b .portfolio-left {
   grid-template-rows: 1fr 1fr;
-  gap: 10px;
+}
+
+.portfolio-right {
+  grid-template-rows: 1fr 1fr;
 }
 
 .portfolio-small-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
-  height: 100%; 
+  height: 100%;
 }
 
-.portfolio-pattern {
-  aspect-ratio: 4 / 3;
+.portfolio-small {
+  height: 100%;
+  aspect-ratio: 1 / 1;
 }
-
-.ticker-track {
-  align-items: stretch;
-}
-
-.portfolio-left,
-.portfolio-right {
-  min-height: 0;
-}
-
-  .portfolio-small {   height: 100%;   aspect-ratio: 1 / 1;   min-height: 0;}
 
 /* =========================================
    IMAGE SYSTEM
 ========================================= */
-
-.portfolio-item {
-  background: #0d0d0d; /* matches your dark theme */
-}
-
-
 .portfolio-tall,
 .portfolio-wide,
 .portfolio-small {
@@ -2494,14 +2413,13 @@ min-width: clamp(480px, 55vw, 620px);
   width: 100%;
 }
 
-
-
 .portfolio-item {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
   border-radius: inherit;
+  background: #0d0d0d;
 }
 
 .portfolio-item amp-img {
@@ -2516,13 +2434,6 @@ min-width: clamp(480px, 55vw, 620px);
   object-fit: cover;
 }
 
-
-
-
-
-
-
-
 /* =========================================
    CAPTIONS
 ========================================= */
@@ -2531,21 +2442,20 @@ min-width: clamp(480px, 55vw, 620px);
   bottom: 14px;
   left: 1rem;
   z-index: 3;
-  width: fit-content;
+
   max-width: 80%;
   padding: 8px 12px;
+
   font-size: 11px;
   line-height: 1.4;
+
   color: #fff;
   background: rgba(15, 15, 15, 0.38);
   backdrop-filter: blur(14px);
-  white-space: normal;
-  word-break: break-word;
 }
 
 .caption-left {
   left: 0;
-  right: auto;
   border-radius: 0 8px 8px 0;
 }
 
@@ -2560,41 +2470,25 @@ min-width: clamp(480px, 55vw, 620px);
 }
 
 /* =========================================
-   MOBILE (SWIPE ONLY)
+   MOBILE
 ========================================= */
 @media (max-width: 768px) {
-  .portfolio-heading {
-    max-width: 100%;
-    padding: 0 16px;
-  }
-
   .portfolio-title {
-     font-size: var(--display-sm); /* 28–48px (mobile adjusted) */
+    font-size: var(--display-sm);
     line-height: var(--leading-tight);
-    letter-spacing: -0.02em;
-
     margin: var(--space-2) 0 var(--space-3);
-
     font-weight: 700;
     max-width: 10ch;
-  }
-
-  .portfolio-intro {
-    font-size: 14px;
-    line-height: 1.5;
+    position: static;
   }
 
   .portfolio-stage {
     width: 100%;
     margin: 0;
-    overflow: hidden;
   }
 
   .ticker {
     margin: 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -2602,81 +2496,158 @@ min-width: clamp(480px, 55vw, 620px);
     display: none;
   }
 
-  /* disable marquee on mobile */
   .ticker-track {
-    animation: none;
     gap: 12px;
     padding: 0 16px;
   }
 
-  /* hide duplicate group on mobile for better swipe UX */
-  .ticker-group[aria-hidden="true"] {
-    display: none;
-  }
 
-  .ticker-group {
-    display: flex;
-    gap: 12px;
-    width: max-content;
-    min-width: max-content;
-    flex-shrink: 0;
-    align-items: flex-start;
-  }
 
   .portfolio-pattern {
-     width: 92vw;
-  min-width: 92vw;
-  flex: 0 0 92vw;
+    width: 92vw;
+    min-width: 92vw;
+    flex: 0 0 92vw;
     scroll-snap-align: start;
     gap: 8px;
   }
 
   .portfolio-small-row {
     gap: 6px;
-      height: 100%;
-  }
-
-  .portfolio-tall,
-  .portfolio-wide,
-  .portfolio-small {
-    height: auto;
   }
 
   .portfolio-tall { aspect-ratio: 9 / 16; }
   .portfolio-wide { aspect-ratio: 16 / 9; }
 
-
-  .caption,
-  .caption-right,
-  .caption-wide {
+  .caption {
     left: 6px;
-    right: auto;
     bottom: 6px;
     max-width: 70%;
     padding: 4px 6px;
     font-size: 10px;
-    line-height: 1.15;
     border-radius: 8px;
+
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 }
+
+
+
+
+@media (max-width: 768px) {
+
+  /* 🔥 CORE FIX: lock structure */
+  .portfolio-pattern {
+    width: 92vw;
+    min-width: 92vw;
+    flex: 0 0 92vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px;
+    scroll-snap-align: start;
+  }
+
+  /* 🔥 TALL = spans full height on left */
+  .portfolio-tall {
+    grid-row: span 2;
+    aspect-ratio: 9 / 16;
+  }
+
+  /* 🔥 TWO SMALL SQUARES */
+  .portfolio-small {
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+
+  .portfolio-small-row {
+    display: contents; /* lets grid control layout cleanly */
+  }
+
+  /* 🔥 WIDE image goes full width bottom */
+  .portfolio-wide {
+    grid-column: span 2;
+    aspect-ratio: 16 / 9;
+  }
+
+}
 @media (max-width: 500px) {
   .portfolio-title {
     font-size: clamp(40px, 8vw, 64px);
     line-height: 0.95;
-    letter-spacing: -0.025em;
-
     font-weight: 800;
-
-    margin: var(--space-3) 0 var(--space-4);
     max-width: 8ch;
-
     color: #e8e1d4;
   }
 }
+```
+/* 🔧 CRITICAL: prevent vertical stretching */
+.ticker-track {
+  align-items: flex-start;
+}
 
+/* 🔧 allow grids to shrink correctly */
+.portfolio-left,
+.portfolio-right {
+  min-height: 0;
+}
+
+/* 🔧 keep internal rows from stretching weirdly */
+.portfolio-pattern {
+  align-items: stretch;
+}
+
+/* 🔧 FIX image containers */
+.portfolio-tall,
+.portfolio-wide,
+.portfolio-small {
+  height: 100%;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  /* 🔧 restore stable sizing */
+  .portfolio-tall,
+  .portfolio-wide,
+  .portfolio-small {
+    height: 100%;
+    min-height: 180px; /* prevents collapse */
+  }
+
+  /* 🔧 ensure grid children can size correctly */
+  .portfolio-left,
+  .portfolio-right {
+    min-height: auto;
+  }
+
+  /* 🔧 critical for AMP responsiveness */
+  .portfolio-item {
+    min-height: 100%;
+  }
+
+}
+
+
+
+
+/* 🔧 IMPORTANT for nested grids */
+.portfolio-small-row {
+  height: 100%;
+}
+
+/* 🔧 AMP image safety */
+.portfolio-item amp-img {
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-showcase .container {
+  position: relative;
+}
 /* =========================================
    FORMATS SECTION
 ========================================= */
