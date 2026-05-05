@@ -3517,7 +3517,6 @@ margin: -10px auto 0;
 =============================== */
 
 
-
 .orbit--casestudy {
 
   animation-duration: 14s;
@@ -3719,6 +3718,39 @@ margin: -10px auto 0;
   100% { background-position: 300% 50%; }
 }
 
+
+
+.story-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35px;   /* was 70px */
+  height: 35px;  /* was 70px */
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  backdrop-filter: blur(3px);
+}
+
+/* smaller play triangle */
+.play-icon {
+  width: 0;
+  height: 0;
+  border-left: 8px solid #fff;   /* was 16px */
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  margin-left: 2px;
+}
+
+/* hover stays proportional */
+.orbit-link:hover .story-play-button {
+  background: rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%) scale(1.1);
+}
 
 
 
