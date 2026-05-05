@@ -3549,6 +3549,12 @@ margin: -10px auto 0;
   transition: filter 0.4s ease, transform 0.4s ease;
 }
 
+.orbit--cta .orbit-story-preview {
+
+  max-width: 180px;
+  
+}
+
 .orbit-link:hover .orbit-story-preview {
   filter: brightness(1.1);
   transform: translateY(-2px); /* very subtle */
