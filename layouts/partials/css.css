@@ -3865,3 +3865,116 @@ color: #f3f4f6;
 /* ===============================
    ORBIT-STORY--END
 =============================== */
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+
+.scroll-inner {
+  display: flex;
+  gap: 16px;
+  animation: scroll 40s linear infinite;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 250px; /* controls column width */
+}
+.scroll {
+  overflow: hidden;
+}
+
+.scroll-inner {
+  display: flex;
+  animation: scroll 40s linear infinite;
+}
+
+
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 260px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+.track {
+  display: flex;
+  flex-wrap: nowrap;
+
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.scroll {
+  overflow: hidden;
+}
+
+.scroll-inner {
+  display: flex;
+  animation: scroll 40s linear infinite;
+}
+
+.group {
+  display: flex;
+  gap: 16px;
+
+}
+
+.item {
+  min-width: 260px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  position: relative;
+
+}
+
+  .scroll-inner {
+  gap: 16px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  font-size: 12px;
+  color: rgba(0,0,0,0.7);
+  background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+}
+
+@media (max-width: 768px) {
+  .scroll {
+    display: none;
+  }
+
+  amp-carousel {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  amp-carousel {
+    display: none;
+  }
+}
