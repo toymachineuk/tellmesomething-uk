@@ -96,10 +96,9 @@ Works great if your brand has a visual style
 
     </div>
 
-      {{ if $page.Params.heroImage }}
-  <a href="{{ $page.RelPermalink }}">
-   <img class="blog-card__image"
-     src="{{ index $page.Params.heroImage 0 | relURL }}">
+{{ with .Resources.GetMatch "images/hero.png" }}
+  <a href="{{ $.RelPermalink }}">
+    <img class="blog-card__image" src="{{ .RelPermalink }}">
   </a>
 {{ end }}
 
@@ -116,4 +115,4 @@ Works great if your brand has a visual style
 
 </div> </section>
 
-{{ partial "footer.html" . }}
+{{ partial "footer-cta.html" . }}

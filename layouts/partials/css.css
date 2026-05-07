@@ -3172,189 +3172,77 @@ margin: -10px auto 0;
 /* ===============================
    ORBIT-STORY
 =============================== */
-
-
-.orbit--casestudy {
-
-  animation-duration: 14s;
-}
+/* =========================
+   ORBIT BASE
+========================= */
 
 .orbit {
   width: auto;
-
   margin: auto;
+  position: relative;
 }
 
-.orbit--casestudy {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  z-index: 2; /* above circle */
-}
-
-/* ===== Link Wrapper (no hover effects here) ===== */
+/* Link wrapper */
 .orbit-link {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
   gap: 0.6rem;
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.orbit-story-preview {
-  transition: filter 0.4s ease, transform 0.4s ease;
-}
 
-.orbit--cta .orbit-story-preview {
-
-  max-width: 180px;
-  
-}
-
-.orbit-link:hover .orbit-story-preview {
-  filter: brightness(1.1);
-  transform: translateY(-2px); /* very subtle */
-}
-
-/* ===== Story Circle ===== */
 .orbit-story-preview {
   width: 100%;
-  max-width: 160px;
+  max-width: 120px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
+  position: relative;
+
   border: 2px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
-}
 
-/* Image fill */
-.orbit-story-preview amp-img {
-  width: 100%;
-  height: 100%;
-}
 
-/* ✅ ONLY circle reacts on hover */
-.orbit-story-preview:hover {
-  transform: scale(1.08);
-  border-color: #fff;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-}
-
-/* ===== Info Row (Barcode + Text) ===== */
-.orbit-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-/* Barcode */
-.story-barcode {
-  width: 60px;
-  flex-shrink: 0;
-  opacity: 0.8;
-}
-
-/* ===== Text ===== */
-.orbit-label {
-  font-size: clamp(0.7rem, 2vw, 0.85rem);
-  line-height: 1.3;
-  text-align: left;
- 
-}
-
-.orbit-label small {
-  font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
 
 }
 
-.orbit--center {
-  display: flex;
-  justify-content: center;
-  margin-top: 80px;
-   text-align: center;
-}
-
-.orbit--center .orbit-story-preview {
-  max-width: 140px; /* slightly bigger */
-}
-
-.orbit--br {
-   bottom: 40px;
-  right: 10px;
-}
-
-.orbit--tr {
-  top: 60px;
-  right: 60px;
-}
-
-.orbit--bl {
-  bottom: 60px;
-  left: 60px;
-}
-
-
-
-/* ===== Mobile Tweaks ===== */
-@media (max-width: 480px) {
-  .orbit-story-preview {
-      max-width: 90px;
-  }
-
-  .orbit-info {
-    gap: 8px;
-  }
-
-  .story-barcode {
-    width: 50px;
-  }
-}
-
-.orbit-story-preview {
-  transition: 
-    transform 0.8s ease,
-    border 0.6s ease,
-    box-shadow 0.8s ease;
-}
-
-.orbit-story-preview:hover {
-  transform: scale(1.06); /* slightly less aggressive */
+/* Pause animation on hover */
+.orbit-link:hover .orbit-story-preview {
+  animation-play-state: paused;
+  transform: scale(1.06);
   border-color: #fff;
   box-shadow: 0 0 20px rgba(255,255,255,0.35);
 }
 
-@keyframes orbitFloat {
-  0%   { transform: translateY(0px) scale(1); }
-  50%  { transform: translateY(-6px) scale(1.01); }
-  100% { transform: translateY(0px) scale(1); }
+
+/* =========================
+   CTA OVERRIDE (your focal point)
+========================= */
+
+.base-contrast__point--cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
-.orbit-story-preview {
-  animation: orbitFloat 6s ease-in-out infinite;
+
+
+/* CTA hover stronger */
+.base-contrast__point--cta .orbit-link:hover .orbit-story-preview {
+  transform: scale(1.08);
 }
 
-.orbit-story-preview:hover {
-  animation-play-state: paused;
-  transform: scale(1.06);
-}
+/* =========================
+   RING
+========================= */
 
-/* Outer circle */
-.orbit-story-preview {
-  width: 100%;
-   max-width: 120px;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  position: relative;
-   box-shadow: 0 0 30px rgba(253,206,42,0.2);
-}
-
-/* Animated gradient ring */
 .story-ring {
   width: 100%;
   height: 100%;
-  padding: 3px; /* ring thickness */
+  padding: 3px;
   border-radius: 50%;
   background: linear-gradient(
     45deg,
@@ -3369,81 +3257,286 @@ margin: -10px auto 0;
   animation: instaRing 8s linear infinite;
 }
 
-/* Inner image */
-.story-ring amp-img {
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-/* Smooth slow animation */
 @keyframes instaRing {
   0%   { background-position: 0% 50%; }
   100% { background-position: 300% 50%; }
 }
 
-
+/* =========================
+   PLAY BUTTON
+========================= */
 
 .story-play-button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 35px;   /* was 70px */
-  height: 35px;  /* was 70px */
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0,0,0,0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 5;
   backdrop-filter: blur(3px);
 }
 
-
 .orbit--cta .story-play-button {
-
-    width: 54px;
+  width: 54px;
   height: 54px;
 }
 
-
-
-/* smaller play triangle */
 .play-icon {
   width: 0;
   height: 0;
-  border-left: 8px solid #fff;   /* was 16px */
+  border-left: 8px solid #fff;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  margin-left: 2px;
 }
 
+/* =========================
+   INFO
+========================= */
 
-.orbit--cta .play-icon {
-
-    border-left: 12px solid #fff;
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
+.orbit-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
 }
 
-/* hover stays proportional */
-.orbit-link:hover .story-play-button {
-  background: rgba(0, 0, 0, 0.5);
-  transform: translate(-50%, -50%) scale(1.1);
-}
+/* =========================
+   CTA LAYOUT
+========================= */
 
+.base-contrast__side {
+  min-width: 340px;
+}
 
 
 /* ===============================
    ORBIT-STORY--END
 =============================== */
+/* =========================
+   ORBIT BASE WRAPPER
+========================= */
 
+.orbit {
+  width: auto;
+  margin: auto;
+  position: relative;
+}
+
+.orbit-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+/* =========================
+   STORY CIRCLE (BASE)
+========================= */
+
+.orbit-story-preview {
+  width: 100%;
+  max-width: 120px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+}
+
+/* hover effect only (no animation conflicts) */
+.orbit-link:hover .orbit-story-preview {
+  transform: scale(1.06);
+  border-color: #fff;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+}
+
+/* image inside */
+.orbit-story-preview amp-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================
+   CTA VARIANT (BIG BUTTON)
+========================= */
+
+.base-contrast__point--cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* BIG CTA CIRCLE */
+.base-contrast__point--cta .orbit-story-preview {
+  max-width: 240px;
+  width: min(240px, 80vw);
+  border: 3px solid rgba(255, 255, 255, 0.35);
+}
+
+/* stronger hover for CTA */
+.base-contrast__point--cta .orbit-link:hover .orbit-story-preview {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.35);
+}
+
+/* =========================
+   PLAY BUTTON (BIG CTA FEEL)
+========================= */
+
+.story-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BIG CTA play button */
+.base-contrast__point--cta .story-play-button {
+  width: 84px;
+  height: 84px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+}
+
+/* play icon */
+.play-icon {
+  width: 0;
+  height: 0;
+  border-left: 8px solid #fff;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.base-contrast__point--cta .play-icon {
+  border-left: 14px solid #fff;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+/* =========================
+   RING (STATIC, NO ANIMATION)
+========================= */
+
+.story-ring {
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5,
+    #feda75
+  );
+}
+
+/* inner image */
+.story-ring amp-img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* =========================
+   INFO BLOCK
+========================= */
+
+.orbit-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.story-barcode {
+  width: 60px;
+  opacity: 0.8;
+}
+
+.orbit-label {
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  line-height: 1.3;
+  text-align: left;
+}
+
+/* =========================
+   LAYOUT HELPERS
+========================= */
+
+.base-contrast__side {
+  min-width: 340px;
+}
+
+.orbit--center {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  text-align: center;
+}
+
+/* positions */
+.orbit--br {
+  bottom: 40px;
+  right: 10px;
+}
+
+.orbit--tr {
+  top: 60px;
+  right: 60px;
+}
+
+.orbit--bl {
+  bottom: 60px;
+  left: 60px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .orbit-story-preview {
+    max-width: 90px;
+  }
+
+  .base-contrast__point--cta .orbit-story-preview {
+    max-width: 200px;
+  }
+
+  .story-barcode {
+    width: 50px;
+  }
+}
 /* ===============================
   GALLERY-PORTFOLIO-SECTION
 =============================== */
-/* =========================
-   PORTFOLIO HEADER
-========================= */
+
 
 
 .gallery-section {
@@ -3587,3 +3680,196 @@ amp-img {
 /* ===============================
   GALLERY-PORTFOLIO-SECTION--END
 =============================== */
+
+
+
+
+
+
+
+
+
+/* ===============================
+  FOOTER-SECTION
+=============================== */
+
+.cta-chat {
+  background: #f0ece7;
+  border-top: 1px solid rgba(0,0,0,0.08);
+
+  padding: clamp(64px, 8vw, 110px) 24px 32px;
+
+  position: relative;
+}
+
+/* CONTAINER */
+.cta-chat .container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* GRID */
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: clamp(40px, 6vw, 100px);
+
+  align-items: start;
+}
+
+/* TITLE */
+.cta-title {
+ font-family: 'Inter', sans-serif;
+
+  font-size: clamp(68px, 10vw, 140px);
+
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+
+  margin: 0;
+
+  font-weight: 600;
+
+  color: #111;
+}
+
+/* RIGHT */
+.cta-intro {
+  max-width: 440px;
+
+  margin-bottom: 40px;
+
+  font-size: clamp(16px, 1.1vw, 18px);
+  line-height: 1.65;
+
+  color: rgba(0,0,0,0.65);
+}
+
+/* LINKS */
+.cta-links {
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.cta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 22px 0;
+
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+
+  text-decoration: none;
+  color: inherit;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.cta-item:hover {
+  transform: translateX(4px);
+  opacity: 0.72;
+}
+
+/* LINK TEXT */
+.cta-link {
+ font-size: clamp(18px, 1.4vw, 22px);
+
+  font-weight: 500;
+
+  letter-spacing: -0.02em;
+}
+
+/* NOTE */
+.cta-note {
+  margin-top: 6px;
+
+  font-size: 13px;
+  color: rgba(0,0,0,0.48);
+}
+
+/* ARROW */
+.arrow {
+  font-size: 22px;
+
+  transition: transform 0.25s ease;
+}
+
+.cta-item:hover .arrow {
+  transform: translate(4px, -4px);
+}
+
+/* COPYRIGHT */
+.cta-copyright {
+  margin-top: clamp(40px, 6vw, 80px);
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(0,0,0,0.08);
+
+  text-align: right;
+
+  font-size: 11px;
+  line-height: 1.4;
+
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: rgba(0,0,0,0.38);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+  .cta-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .cta-title {
+    font-size: clamp(54px, 14vw, 88px);
+  }
+
+  .cta-intro {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .cta-chat {
+    padding: 56px 20px 24px;
+  }
+
+  .cta-item {
+    padding: 20px 0;
+  }
+
+  .cta-link {
+    font-size: 24px;
+  }
+
+  .cta-copyright {
+    margin-top: 56px;
+
+    text-align: left;
+  }
+}
+
+/* ===============================
+  FOOTER-SECTION--END
+=============================== */
+
+
+
+
+
+
+
+
+
