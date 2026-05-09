@@ -3594,149 +3594,139 @@ margin: -10px auto 0;
     width: 50px;
   }
 }
+
+
 /* ===============================
-  GALLERY-PORTFOLIO-SECTION
+   GALLERY — PORTFOLIO SECTION
 =============================== */
+
 .gallery-section {
   padding: clamp(60px, 6vw, 100px) 0;
 }
 
+/* ===============================
+   HEADER
+=============================== */
+
 .portfolio-header {
   width: min(1200px, 92vw);
+
   margin: 0 auto;
+
   padding: 0 24px;
 }
 
 .portfolio-title {
   font-size: clamp(64px, 8vw, 120px);
+
   font-weight: 800;
+
   letter-spacing: -0.03em;
+
   line-height: 0.95;
+
   margin-bottom: clamp(24px, 4vw, 48px);
+
   color: #f3f4f6;
 }
 
 .portfolio-title::after {
   content: "";
+
   display: block;
+
   width: 40px;
   height: 3px;
+
   margin-top: 12px;
+
   background: #f3f4f6;
+
   opacity: 0.6;
 }
 
+/* ===============================
+   SCROLL AREA
+=============================== */
+
 .scroll {
   overflow: hidden;
+
   width: min(1200px, 92vw);
+
   margin: 0 auto;
+
   padding: 32px 0;
 }
 
+/* ===============================
+   TRACK
+=============================== */
+
 .track {
   display: flex;
+
   width: max-content;
+
   gap: 56px;
+
   animation: scroll 40s linear infinite;
+
   will-change: transform;
+
+  transform: translate3d(0,0,0);
+
+  backface-visibility: hidden;
 }
 
 .group {
   display: flex;
+
   gap: 56px;
+
   flex: 0 0 auto;
+
   width: max-content;
 }
 
+/* ===============================
+   ITEM
+=============================== */
+
 .item {
+  width: 280px;
+
   min-width: 260px;
+
   flex: 0 0 auto;
-   width: 280px;
 }
+
+/* ===============================
+   STACK
+=============================== */
 
 .image-stack {
   position: relative;
+
   height: 380px;
+
   border-radius: 18px;
 
   overflow: visible;
 
   z-index: 3;
+
+  transform: translate3d(0,0,0);
+
+  backface-visibility: hidden;
+
+  will-change: transform;
 }
 
-.image-stack amp-img {
-  display: block;
+/* ===============================
+   STACKED FRAME LAYERS
+=============================== */
 
-  width: 100%;
-  height: 100%;
-
-  border-radius: 18px;
-
-  position: relative;
-
- 
-}
-
-.image-stack img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.image-stack amp-img img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-}
-
-.image-stack amp-img {
-  width: 100%;
-  height: 100%;
-
-  border-radius: 18px;
-
-  overflow: hidden;
-
-  position: relative;
-
-  z-index: 3;
-}
-
-.image-frame {
-  position: relative;
-
-  height: 360px;
-
-  border-radius: 18px 18px 0 0;
- padding: 20px 0; 
-  overflow: hidden;
-
-  background: #e5e7eb;
-
-  z-index: 3;
-}
-
-/* FORCE AMP TO FILL */
-.image-frame amp-img {
-  position: absolute !important;
- inset: 20px 0;
-
-
-  width: 100%;
-  height: 100%;
-}
-
-/* ACTUAL IMAGE */
-.image-frame amp-img img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-  object-position: center;
-
-  display: block;
-}
 .image-stack::before,
 .image-stack::after {
   content: "";
@@ -3754,93 +3744,168 @@ margin: -10px auto 0;
   pointer-events: none;
 }
 
+/* Layer 1 */
 
-/* LAYER 1 */
 .image-stack::before {
   transform: translate(6px, -6px);
 
   z-index: -1;
 }
 
-/* LAYER 2 */
+/* Layer 2 */
+
 .image-stack::after {
   transform: translate(12px, -12px);
 
-  z-index: -2;
-
   opacity: 0.7;
+
+  z-index: -2;
 }
+
+/* ===============================
+   GREY BOARD
+=============================== */
+
+.image-frame {
+  position: relative;
+
+  height: 360px;
+
+  border-radius: 18px 18px 0 0;
+
+  padding: 20px 0;
+
+  overflow: hidden;
+
+  background: #e5e7eb;
+  isolation: isolate;
+  z-index: 3;
+}
+
+/* ===============================
+   AMP IMAGE
+=============================== */
+
+.image-frame amp-img {
+  position: absolute !important;
+
+  inset: 20px 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  z-index: 3;
+}
+
+/* ===============================
+   ACTUAL IMAGE
+=============================== */
+
+.image-frame amp-img img,
+.image-stack img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ===============================
+   GENERIC AMP RESET
+=============================== */
 
 .item amp-img {
   display: block;
+
   width: 100%;
   height: auto;
-  border-radius: 18px 18px 0 0;
+
   position: relative;
+
+  border-radius: 18px 18px 0 0;
+
   z-index: 3;
 }
+
+amp-img {
+  background: transparent;
+
+  transition: none !important;
+}
+
+/* ===============================
+   CAPTION
+=============================== */
 
 .caption {
   position: relative;
-  z-index: 3;
-  padding: 14px;
-  background: #f5f5f5;
-  border-radius: 0 0 18px 18px;
-  font-size: 14px;
-  color: rgba(0,0,0,0.65);
 
-  
+  z-index: 3;
+
+  padding: 14px;
+
+  background: #f5f5f5;
+
+  border-radius: 0 0 18px 18px;
+
+  font-size: 14px;
+
+  color: rgba(0,0,0,0.65);
 }
 
-
-
-
+/* ===============================
+   DESKTOP SCROLL ANIMATION
+=============================== */
 
 @keyframes scroll {
   from {
-    transform: translateX(0);
+    transform: translate3d(0,0,0);
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%,0,0);
   }
 }
 
-@media (max-width: 768px) {
-
-  .track {
-    animation: none;
-    transform: none;
-  }
-
-  .scroll {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .item {
-    scroll-snap-align: start;
-  }
-}
-
-
-
+/* ===============================
+   MOBILE
+=============================== */
 @media (max-width: 768px) {
 
   .scroll {
     overflow-x: auto;
+
     padding: 12px 20px;
+
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+  .scroll::-webkit-scrollbar {
+    display: none;
   }
 
   .track {
-    gap: 24px;
-    animation: none;
-    transform: none;
+    gap: 16px;
+
+    animation: none !important;
+
+    transform: none !important;
   }
 
   .group {
-    gap: 24px;
+    gap: 16px;
   }
 
   .item {
@@ -3850,13 +3915,23 @@ margin: -10px auto 0;
     scroll-snap-align: start;
   }
 
+  .image-stack {
+    height: 260px;
+  }
+
   .image-frame {
     height: 240px;
+
     padding: 14px 0;
+  }
+
+  .image-frame amp-img {
+    inset: 14px;
   }
 
   .caption {
     padding-top: 10px;
+
     font-size: 12px;
   }
 
@@ -3868,32 +3943,29 @@ margin: -10px auto 0;
     transform: translate(8px, -8px);
   }
 }
+/* ===============================
+   MOBILE FLOAT
+=============================== */
+.image-motion {
+  transform: translate3d(0,0,0);
 
-@media (max-width: 768px) {
+  backface-visibility: hidden;
 
-  .track {
-    animation: mobileDrift 12s ease-in-out infinite;
-  }
+  will-change: transform;
+}
+.group .item:nth-child(1) .image-motion,
+.group .item:nth-child(3) .image-motion {
+  animation: mobileFloat 5s ease-in-out infinite;
 }
 
-@keyframes mobileDrift {
-
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(-20px);
-  }
-}
-amp-img {
-  background: transparent;
-  transition: none !important;
+.group .item:nth-child(2) .image-motion,
+.group .item:nth-child(4) .image-motion {
+  animation: mobileFloat 5s ease-in-out infinite;
+  animation-delay: 1s;
 }
 
 /* ===============================
-  GALLERY-PORTFOLIO-SECTION--END
+   END
 =============================== */
 
 
