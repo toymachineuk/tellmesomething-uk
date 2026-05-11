@@ -3835,15 +3835,7 @@ height:220px;
    ACTUAL IMAGE
 =============================== */
 
-.image-frame amp-img > img {
-  width: 100% !important;
-  height: 100% !important;
 
-  object-fit: cover;
-  object-position: center;
-
-  display: block;
-}
 
 /* ===============================
    GENERIC AMP RESET
@@ -4156,7 +4148,13 @@ amp-img {
 
 
 
+amp-img {
+  outline: 3px solid red !important;
+}
 
+amp-img img {
+  outline: 3px solid blue !important;
+}
 
 
 
