@@ -778,6 +778,13 @@ line-height:1.5;
   transform: rotate(90deg);
 }
 
+
+
+
+
+
+
+
 /* ===============================
    PULSEFRAME
 =============================== */
@@ -3823,14 +3830,6 @@ height:220px;
   z-index: 3;
 }
 
-/* ===============================
-   AMP IMAGE
-=============================== */
-
-.image-frame amp-img {
-  width: 100%;
-  height: 100%;
-}
 
 /* ===============================
    ACTUAL IMAGE
@@ -3974,17 +3973,6 @@ amp-img {
 =============================== */
 
 
-
-.work-gallery amp-img,
-.work-gallery amp-img img,
-.work-gallery .i-amphtml-fill-content {
-  position: relative !important;
-  inset: auto !important;
-  width: 100% !important;
-  height: auto !important;
-  min-height: 1px !important;
-  transform: none !important;
-}
 
 
 
