@@ -3618,7 +3618,373 @@ margin: -10px auto 0;
 }
 
 
+/* ===============================
+   GALLERY — PORTFOLIO SECTION
+=============================== */
 
+
+.gallery-section {
+  padding: clamp(60px, 6vw, 100px) 0;
+}
+
+/* ===============================
+   HEADER
+=============================== */
+
+.portfolio-header {
+  width: min(1200px, 92vw);
+
+  margin: 0 auto;
+
+  padding: 0 24px;
+}
+
+.portfolio-title {
+  font-size: clamp(64px, 8vw, 120px);
+
+  font-weight: 800;
+
+  letter-spacing: -0.03em;
+
+  line-height: 0.95;
+
+  margin-bottom: clamp(24px, 4vw, 48px);
+
+  color: #f3f4f6;
+}
+
+.portfolio-title::after {
+  content: "";
+
+  display: block;
+
+  width: 40px;
+  height: 3px;
+
+  margin-top: 12px;
+
+  background: #f3f4f6;
+
+  opacity: 0.6;
+}
+
+/* ===============================
+   SCROLL AREA
+=============================== */
+
+.scroll {
+  width: min(1200px, 92vw);
+
+  margin: 0 auto;
+
+  padding: 32px 0;
+
+  overflow: hidden;
+}
+
+/* ===============================
+   TRACK
+=============================== */
+
+.track {
+  display:flex;
+  width:max-content;
+  gap:56px;
+  animation:scroll 40s linear infinite;
+
+}
+
+.group {
+  display: flex;
+
+  gap: 56px;
+
+  flex: 0 0 auto;
+
+  width: max-content;
+}
+
+/* ===============================
+   ITEM
+=============================== */
+
+.item {
+
+  width: 320px;
+  min-width: 260px;
+
+  flex: 0 0 auto;
+}
+
+/* ===============================
+   STACK
+=============================== */
+
+.image-stack {
+  position: relative;
+
+height:220px;
+
+  border-radius: 18px;
+
+  overflow: visible;
+
+  z-index: 3;
+
+
+}
+
+/* ===============================
+   STACKED FRAME LAYERS
+=============================== */
+
+.image-stack::before,
+.image-stack::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 18px;
+
+  border: 1.5px solid rgba(255,255,255,0.22);
+
+  pointer-events: none;
+}
+
+/* Layer 1 */
+
+.image-stack::before {
+  transform: translate(6px, -6px);
+
+  border: 1px solid rgba(255,255,255,0.18);
+
+  background: rgba(255,255,255,0.03);
+
+  z-index: -1;
+}
+
+/* Layer 2 */
+
+.image-stack::after {
+  transform: translate(12px, -12px);
+
+  border: 1px solid rgba(255,105,180,0.22);
+
+  background: rgba(255,105,180,0.06);
+
+  z-index: -2;
+}
+
+.item:nth-child(1) .image-stack::after {
+  background: rgba(255,105,180,0.06);
+}
+
+.item:nth-child(2) .image-stack::after {
+  background: rgba(120,119,255,0.06);
+}
+
+.item:nth-child(3) .image-stack::after {
+  background: rgba(0,209,255,0.06);
+}
+
+/* ===============================
+   IMAGE MOTION WRAPPER
+=============================== */
+
+.image-motion {
+  transform: translate3d(0,0,0);
+ height: 100%;
+  backface-visibility: hidden;
+
+  will-change: transform;
+}
+
+/* ===============================
+   GREY BOARD
+=============================== */
+
+.image-frame {
+  position: relative;
+
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: 18px ;
+
+  background: #d9dde3;
+
+ 
+
+  z-index: 3;
+}
+
+/* ===============================
+   AMP IMAGE
+=============================== */
+
+.image-frame amp-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===============================
+   ACTUAL IMAGE
+=============================== */
+
+.image-frame amp-img > img {
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+}
+
+/* ===============================
+   GENERIC AMP RESET
+=============================== */
+
+amp-img {
+  background: transparent;
+
+  transition: none !important;
+}
+
+/* ===============================
+   CAPTION
+=============================== */
+
+.caption {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: 14px;
+
+  padding: 0;
+
+  background: transparent;
+
+  border-radius: 0;
+
+  font-size: 15px;
+ line-height: 1.3;
+  font-weight: 500;
+
+  color: red;
+}
+
+/* ===============================
+   DESKTOP SCROLL ANIMATION
+=============================== */
+
+@keyframes scroll {
+
+  from {
+    transform: translate3d(0,0,0);
+  }
+
+  to {
+    transform: translate3d(-50%,0,0);
+  }
+}
+
+/* ===============================
+   MOBILE
+=============================== */
+
+@media (max-width: 768px) {
+
+  .scroll {
+    overflow-x: auto;
+
+     padding-top: 24px;
+  overflow-y: visible;
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+  .scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .track {
+    gap: 16px;
+
+    animation: none !important;
+
+    transform: none !important;
+  }
+
+  .group {
+    gap: 16px;
+  }
+
+  .item {
+  width: 220px;
+  min-width: 220px;
+
+    scroll-snap-align: start;
+  }
+
+  .image-stack {
+    height: 170px;
+      margin-top: 12px;
+  }
+
+  .image-frame {
+   height: 170px;
+  }
+
+
+
+  .caption {
+    padding: 12px;
+
+    font-size: 12px;
+  }
+
+  .image-stack::before {
+    transform: translate(4px, -4px);
+  }
+
+  .image-stack::after {
+    transform: translate(8px, -8px);
+  }
+  .image-stack::before,
+.image-stack::after {
+  top: 12px;
+}
+}
+
+/* ===============================
+   END
+=============================== */
+/* ===============================
+   END
+=============================== */
+
+
+
+.work-gallery amp-img,
+.work-gallery amp-img img,
+.work-gallery .i-amphtml-fill-content {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 1px !important;
+  transform: none !important;
+}
 
 
 
