@@ -3977,6 +3977,10 @@ amp-img {
   .image-stack::after {
     transform: translate(8px, -8px);
   }
+  .image-stack::before,
+.image-stack::after {
+  top: 12px;
+}
 }
 
 /* ===============================
