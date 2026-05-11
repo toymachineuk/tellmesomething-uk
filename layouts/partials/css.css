@@ -3837,7 +3837,8 @@ height:220px;
 
 .image-frame amp-img {
   position: absolute !important;
-
+  width: auto;
+  height: auto;
   inset: 10px;
 
   overflow: hidden;
