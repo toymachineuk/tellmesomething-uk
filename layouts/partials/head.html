@@ -1876,6 +1876,38 @@ transform:scale(.95);
     font-size:13px;
   }
 }
+
+.work-card {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.work-card__media {
+  position: relative;
+  background: #d9dde3;
+  border-radius: 18px;
+
+  /* CRITICAL FIX */
+  overflow: hidden;
+
+  /* FIX: no padding */
+  padding: 0;
+}
+
+/* FORCE AMP IMAGE TO FILL EXACT BOX */
+.work-card__media amp-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* IMPORTANT: image itself */
+.work-card__media amp-img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
     </style>
 </head>
 
