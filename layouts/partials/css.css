@@ -3687,19 +3687,11 @@ margin: -10px auto 0;
 =============================== */
 
 .track {
-  display: flex;
+  display:flex;
+  width:max-content;
+  gap:56px;
+  animation:scroll 40s linear infinite;
 
-  width: max-content;
-
-  gap: 56px;
-
-  animation: scroll 40s linear infinite;
-
-  will-change: transform;
-
-  transform: translate3d(0,0,0);
-
-  backface-visibility: hidden;
 }
 
 .group {
