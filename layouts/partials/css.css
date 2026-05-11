@@ -4146,9 +4146,6 @@ amp-img {
 
 
 
-amp-img {
-  outline: 3px solid red !important;
-}
 
 amp-img img {
   outline: 3px solid blue !important;
