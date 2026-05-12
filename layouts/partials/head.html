@@ -1843,6 +1843,42 @@ transform:scale(.95);
    CARD
 ================================================== */
 
+
+.work-card {
+  --stack-back-bg: rgba(124,92,255,0.10);
+  --stack-back-border: rgba(124,92,255,0.18);
+
+  --stack-mid-bg: rgba(255,255,255,0.05);
+  --stack-mid-border: rgba(255,255,255,0.10);
+}
+
+
+.work-card--violet {
+  --stack-back-bg: rgba(124,92,255,0.10);
+  --stack-back-border: rgba(124,92,255,0.18);
+}
+
+.work-card--cyan {
+  --stack-back-bg: rgba(0,209,255,0.10);
+  --stack-back-border: rgba(0,209,255,0.20);
+}
+
+.work-card--lime {
+  --stack-back-bg: rgba(190,255,120,0.10);
+  --stack-back-border: rgba(190,255,120,0.18);
+}
+
+.work-card--rose {
+  --stack-back-bg: rgba(255,120,180,0.10);
+  --stack-back-border: rgba(255,120,180,0.18);
+}
+
+.work-card--gold {
+  --stack-back-bg: rgba(255,210,120,0.10);
+  --stack-back-border: rgba(255,210,120,0.18);
+}
+
+
 .work-card {
   width: 320px;
 
@@ -1853,70 +1889,144 @@ transform:scale(.95);
    STACK SYSTEM
 ================================================== */
 /* ==================================================
-   STACK WRAPPER
+   WORK GALLERY
+================================================== */
+
+.work-gallery {
+  padding: 80px 0;
+  background: #0f172a;
+  overflow: hidden;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.work-gallery__header {
+  width: min(1200px, 92vw);
+  margin: 0 auto 48px;
+}
+
+.work-gallery__eyebrow {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.55);
+}
+
+.work-gallery__title {
+  font-size: clamp(64px, 8vw, 120px);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+
+  color: #fff;
+}
+
+/* ==================================================
+   VIEWPORT
+================================================== */
+
+.work-gallery__viewport {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+/* ==================================================
+   RAIL
+================================================== */
+
+.work-gallery__rail {
+  display: flex;
+  gap: 48px;
+
+  width: max-content;
+
+  animation: work-scroll 35s linear infinite;
+}
+
+.work-gallery__group {
+  display: flex;
+  gap: 48px;
+}
+
+/* ==================================================
+   CARD
+================================================== */
+
+.work-card {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+/* ==================================================
+   STACK SYSTEM
 ================================================== */
 
 .work-card__stack {
   position: relative;
 
   width: 100%;
-  height: 240px;
+  height: 236px;
 
   overflow: visible;
 }
 
 /* ==================================================
-   BACK LAYER
+   STACK LAYERS
 ================================================== */
 
-.work-card__layer--back {
+.work-card__layer--back,
+.work-card__layer--mid {
   position: absolute;
 
-  top: 0;
-  left: 24px;
-
-  width: 100%;
-  height: 220px;
+  inset: 0;
 
   border-radius: 22px;
 
-  background: rgba(165,140,255,0.10);
+  pointer-events: none;
+}
 
-  border: 1px solid rgba(165,140,255,0.18);
+/* far back */
+
+.work-card__layer--back {
+  top: 0;
+  left: 14px;
+
+   background: var(--stack-back-bg);
+  border: 1px solid var(--stack-back-border);
 
   z-index: 1;
 }
 
-/* ==================================================
-   MIDDLE LAYER
-================================================== */
+/* middle */
 
 .work-card__layer--mid {
-  position: absolute;
+  top: 8px;
+  left: 7px;
 
-  top: 10px;
-  left: 12px;
-
-  width: 100%;
-  height: 220px;
-
-  border-radius: 22px;
-
-  background: rgba(255,255,255,0.05);
-
-  border: 1px solid rgba(255,255,255,0.10);
+   background: var(--stack-mid-bg);
+  border: 1px solid var(--stack-mid-border);
 
   z-index: 2;
 }
 
 /* ==================================================
-   FRONT CARD
+   FRONT SURFACE
 ================================================== */
 
 .work-card__surface {
   position: absolute;
 
-  top: 20px;
+  top: 16px;
   left: 0;
 
   width: 100%;
@@ -1926,23 +2036,25 @@ transform:scale(.95);
 
   border-radius: 22px;
 
-  background: #f1f1f1;
+  background: #e7e7e7;
 
   overflow: hidden;
 
   z-index: 3;
 
   box-shadow:
-    0 12px 30px rgba(0,0,0,0.16);
+    0 14px 40px rgba(0,0,0,0.18);
 }
 
 /* ==================================================
-   IMAGE
+   AMP IMAGE
 ================================================== */
 
 .work-card__surface amp-img {
   width: 100%;
   height: 100%;
+
+  display: block;
 
   border-radius: 14px;
 
@@ -1950,54 +2062,8 @@ transform:scale(.95);
 }
 
 .work-card__surface amp-img img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-}
-
-/* ==================================================
-   MAIN SURFACE
-================================================== */
-
-.work-card__surface {
-  position: relative;
-
-  z-index: 3;
-
-  height: 220px;
-
-  padding: 10px;
-
-  border-radius: 18px;
-
-  background: #d9dde3;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 14px 40px rgba(0,0,0,0.18);
-}
-
-/* ==================================================
-   IMAGE
-================================================== */
-
-.work-card__surface amp-img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.work-card__surface amp-img img {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
 
   object-fit: cover;
   object-position: center;
@@ -2014,12 +2080,22 @@ transform:scale(.95);
 
   font-size: 15px;
   line-height: 1.35;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.01em;
 
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.94);
 }
+.work-card__description {
+  margin-top: 6px;
 
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+
+  color: rgba(255,255,255,0.55);
+
+  max-width: 28ch;
+}
 /* ==================================================
    DESKTOP ANIMATION
 ================================================== */
@@ -2035,6 +2111,19 @@ transform:scale(.95);
   }
 }
 
+.work-gallery__viewport:hover .work-gallery__rail {
+  animation-play-state: paused;
+}
+
+.work-card {
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+}
 /* ==================================================
    MOBILE
 ================================================== */
@@ -2047,11 +2136,12 @@ transform:scale(.95);
     overflow-x: auto;
 
     -webkit-overflow-scrolling: touch;
+
     scrollbar-width: none;
 
     scroll-snap-type: x mandatory;
 
-    padding: 12px 60px 12px 16px;
+    padding: 14px 90px 14px 16px;
   }
 
   .work-gallery__viewport::-webkit-scrollbar {
@@ -2091,31 +2181,39 @@ transform:scale(.95);
   /* stack */
 
   .work-card__stack {
-    height: 190px;
-
-    padding-top: 14px;
-    padding-right: 10px;
+    height: 196px;
   }
 
   /* layers */
 
+  .work-card__layer--back,
   .work-card__layer--mid {
-    transform: translate(5px, -6px);
+    border-radius: 18px;
   }
 
   .work-card__layer--back {
-    transform: translate(10px, -12px);
+    top: 0;
+    left: 8px;
   }
 
-  /* front surface */
+  .work-card__layer--mid {
+    top: 4px;
+    left: 4px;
+  }
+
+  /* surface */
 
   .work-card__surface {
-    height: 170px;
+    top: 8px;
+
+    height: 180px;
 
     padding: 8px;
 
-    border-radius: 16px;
+    border-radius: 18px;
   }
+
+  /* image */
 
   .work-card__surface amp-img {
     border-radius: 10px;
@@ -2124,11 +2222,30 @@ transform:scale(.95);
   /* caption */
 
   .work-card__caption {
-    margin-top: 10px;
+    
 
     font-size: 12px;
+    line-height: 1.3;
+  }
+
+ 
+
+  .work-card__description {
+    margin-top: 4px;
+
+    font-size: 11px;
+    line-height: 1.45;
   }
 }
+@media (hover: none) {
+
+  .work-card:hover {
+    transform: none;
+  }
+}
+
+
+
     </style>
 </head>
 
