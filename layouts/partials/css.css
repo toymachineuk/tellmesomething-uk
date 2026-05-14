@@ -1400,16 +1400,17 @@ margin-bottom: var(--space-4);
 
 
 /* BASE: all hero visual assets */
-.hero-v2-asset{
-  position: absolute;
+
+
+.hero-wrap {
+
+ position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
   pointer-events: none;
 }
-
-
 
 
 .hero-v2-index{
@@ -1441,7 +1442,7 @@ margin-bottom: var(--space-4);
 
 @media (max-width: 768px){
 
-  .hero-v2-asset{
+ .hero-wrap{
     position: relative;
     left: auto;
     transform: none;
