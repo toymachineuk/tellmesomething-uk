@@ -4096,3 +4096,94 @@ article {
     transform: scale(1);
   }
 }
+
+/* =========================================
+   MOBILE OPTIMIZATION
+========================================= */
+
+@media (max-width: 768px) {
+
+  .ambient-orbs {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .orb {
+    opacity: 0.55;
+
+    /* smoother on mobile GPUs */
+    will-change: transform;
+
+    /* reduce excessive glow spread */
+    mix-blend-mode: normal;
+  }
+
+  /* =========================================
+     MOBILE SIZES + POSITIONS
+  ========================================= */
+
+  .orb--1 {
+    width: 180px;
+    height: 180px;
+
+    top: -40px;
+    left: -60px;
+  }
+
+  .orb--2 {
+    width: 120px;
+    height: 120px;
+
+    top: 42%;
+    left: -30px;
+  }
+
+  .orb--3 {
+    width: 220px;
+    height: 220px;
+
+    top: 8%;
+    right: -90px;
+  }
+
+  .orb--4 {
+    width: 160px;
+    height: 160px;
+
+    bottom: -40px;
+    right: -20px;
+  }
+
+  .orb--5 {
+    width: 100px;
+    height: 100px;
+
+    bottom: 24%;
+    left: 50%;
+  }
+
+  /* =========================================
+     MOBILE ANIMATION SPEED
+  ========================================= */
+
+  .orb--1 {
+    animation-duration: 10s;
+  }
+
+  .orb--2 {
+    animation-duration: 14s;
+  }
+
+  .orb--3 {
+    animation-duration: 16s;
+  }
+
+  .orb--4 {
+    animation-duration: 12s;
+  }
+
+  .orb--5 {
+    animation-duration: 9s;
+  }
+}
