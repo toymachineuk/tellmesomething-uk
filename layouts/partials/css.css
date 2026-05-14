@@ -3858,4 +3858,241 @@ amp-img img {
 
 
 
+/* =========================================
+   AMBIENT FLOATING CIRCLES
+========================================= */
 
+.ambient-orbs {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* keep content above circles */
+
+section,
+.container,
+header,
+article {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================
+   BASE ORB
+========================================= */
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+
+  opacity: 0.85;
+
+  mix-blend-mode: screen;
+
+  will-change: transform;
+
+  animation-duration: 14s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* =========================================
+   ORB 1
+========================================= */
+
+.orb--1 {
+  width: 320px;
+  height: 320px;
+
+  top: -80px;
+  left: -60px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 190, 120, 1) 0%,
+      rgba(255, 190, 120, 0.8) 40%,
+      rgba(255, 190, 120, 0.15) 70%,
+      transparent 100%
+    );
+
+  animation-name: floatOne;
+}
+
+/* =========================================
+   ORB 2
+========================================= */
+
+.orb--2 {
+  width: 220px;
+  height: 220px;
+
+  top: 55%;
+  left: 8%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 120, 120, 1) 0%,
+      rgba(255, 120, 120, 0.75) 45%,
+      rgba(255, 120, 120, 0.12) 72%,
+      transparent 100%
+    );
+
+  animation-name: floatTwo;
+  animation-duration: 18s;
+}
+
+/* =========================================
+   ORB 3
+========================================= */
+
+.orb--3 {
+  width: 420px;
+  height: 420px;
+
+  top: 8%;
+  right: -120px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(120, 170, 255, 1) 0%,
+      rgba(120, 170, 255, 0.75) 42%,
+      rgba(120, 170, 255, 0.12) 74%,
+      transparent 100%
+    );
+
+  animation-name: floatThree;
+  animation-duration: 22s;
+}
+
+/* =========================================
+   ORB 4
+========================================= */
+
+.orb--4 {
+  width: 260px;
+  height: 260px;
+
+  bottom: -60px;
+  right: 10%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(210, 170, 255, 1) 0%,
+      rgba(210, 170, 255, 0.7) 45%,
+      rgba(210, 170, 255, 0.1) 72%,
+      transparent 100%
+    );
+
+  animation-name: floatFour;
+  animation-duration: 16s;
+}
+
+/* =========================================
+   ORB 5
+========================================= */
+
+.orb--5 {
+  width: 180px;
+  height: 180px;
+
+  bottom: 30%;
+  left: 42%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 245, 220, 1) 0%,
+      rgba(255, 245, 220, 0.75) 45%,
+      rgba(255, 245, 220, 0.1) 74%,
+      transparent 100%
+    );
+
+  animation-name: floatFive;
+  animation-duration: 12s;
+}
+
+/* =========================================
+   FLOATING ANIMATIONS
+========================================= */
+
+@keyframes floatOne {
+
+  0% {
+    transform: translate3d(0,0,0);
+  }
+
+  50% {
+    transform: translate3d(90px,40px,0);
+  }
+
+  100% {
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes floatTwo {
+
+  0% {
+    transform: translate3d(0,0,0);
+  }
+
+  50% {
+    transform: translate3d(-70px,-60px,0);
+  }
+
+  100% {
+    transform: translate3d(20px,20px,0);
+  }
+}
+
+@keyframes floatThree {
+
+  0% {
+    transform: translate3d(0,0,0);
+  }
+
+  50% {
+    transform: translate3d(-120px,40px,0);
+  }
+
+  100% {
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes floatFour {
+
+  0% {
+    transform: translate3d(0,0,0);
+  }
+
+  50% {
+    transform: translate3d(60px,-80px,0);
+  }
+
+  100% {
+    transform: translate3d(-10px,20px,0);
+  }
+}
+
+@keyframes floatFive {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12) translateY(-30px);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

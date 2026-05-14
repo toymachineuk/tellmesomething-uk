@@ -1,118 +1,100 @@
 {{ partial "head.html" . }}
 {{ partial "header.html" . }}
 
-<section class="base-table section-dark section-block ">
-  <div class="container">
-
-  
-
- <div class="base-contrast__layout">
-
-  <div class="base-contrast__main">
-    <span class="base-contrast__label"> ghj </span>
-
-    <h2 class="base-contrast__headline">
-      narrow hero 
-    </h2>
-
-    <p class="base-contrast__lead">
-Ideal size: 1400 × 400 px
-Safe range:
-Minimum: 1200 × 300 px
-Max useful: 1600 × 500 px
-  </p>
-  </div>
-
-  <div class="base-contrast__side">
-
-    <div class="base-contrast__point">
-   
-     
-  
-    </div>
-
-    <div class="base-contrast__point">
-      
-     
-    </div>
-
-  </div>
-
+<!-- Ambient background -->
+<div class="ambient-orbs">
+  <span class="orb orb--1"></span>
+  <span class="orb orb--2"></span>
+  <span class="orb orb--3"></span>
+  <span class="orb orb--4"></span>
+  <span class="orb orb--5"></span>
 </div>
 
-  </div>
-</section>
-
-<section class="section-lg section-block--soft zigzag-section">
+<section class="base-table section-dark section-block">
   <div class="container">
 
+    <div class="base-contrast__layout">
 
-<header class="section-header">
-  <h1 class="blog-title">The Lab</h1>
-  <p class="blog-subtitle">
-    Center image + blurred/extended edges (most popular)
+      <div class="base-contrast__main">
+        <span class="base-contrast__label">ghj</span>
 
-Put your main image in the center
-Extend it left/right using:
-a blurred version of the same image, or
-a stretched/cropped continuation
-Keeps focus while filling wide screens nicely
+        <h2 class="base-contrast__headline">
+          narrow hero
+        </h2>
 
-2. Center image + subtle repeating pattern
+        <p class="base-contrast__lead">
+          Ideal size: 1400 × 400 px
+          Safe range:
+          Minimum: 1200 × 300 px
+          Max useful: 1600 × 500 px
+        </p>
+      </div>
 
-Background = texture, gradient, or pattern
-Center = sharp featured image
-Works great if your brand has a visual style
-  </p>
-</header>
-
-<div class="flex">
-  <aside class="col-1 xs-hide"></aside>
-
-
-{{ range .RegularPages }}
-
-  <article class="blog-card">
-
-    {{ $page := . }}
-
-
-
-    <div class="blog-card__content">
-
-      <h2 class="blog-card__title">
-        <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
-      </h2>
-
-   <p>{{ .Summary | plainify | truncate 180 }}</p>
-
-      <div class="blog-card__meta">
-        {{ with $page.Params.categories }}
-          <span>{{ delimit . ", " }}</span>
-          <span>•</span>
-        {{ end }}
-        <span>{{ $page.Date.Format "Jan 2, 2006" }}</span>
+      <div class="base-contrast__side">
+        <div class="base-contrast__point"></div>
+        <div class="base-contrast__point"></div>
       </div>
 
     </div>
 
-{{ with .Resources.GetMatch "images/hero.png" }}
-  <a href="{{ $.RelPermalink }}">
-    <img class="blog-card__image" src="{{ .RelPermalink }}">
-  </a>
-{{ end }}
+  </div>
+</section>
 
-  </article>
+<section class="section-lg zigzag-section">
+  <div class="container">
 
-{{ end }}
+    <header class="section-header">
+      <h1 class="blog-title">The Lab</h1>
 
+      <p class="blog-subtitle">
+        Center image + blurred/extended edges (most popular)
+      </p>
+    </header>
 
+    <div class="flex">
 
+      <aside class="col-1 xs-hide"></aside>
 
-  <aside class="col-1 xs-hide"></aside>
-</div>
- 
+      {{ range .RegularPages }}
 
-</div> </section>
+      <article class="blog-card">
+
+        {{ $page := . }}
+
+        <div class="blog-card__content">
+
+          <h2 class="blog-card__title">
+            <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+          </h2>
+
+          <p>{{ .Summary | plainify | truncate 180 }}</p>
+
+          <div class="blog-card__meta">
+            {{ with $page.Params.categories }}
+            <span>{{ delimit . ", " }}</span>
+            <span>•</span>
+            {{ end }}
+
+            <span>{{ $page.Date.Format "Jan 2, 2006" }}</span>
+          </div>
+
+        </div>
+
+        {{ with .Resources.GetMatch "images/hero.png" }}
+        <a href="{{ $.RelPermalink }}">
+          <img class="blog-card__image" src="{{ .RelPermalink }}">
+        </a>
+        {{ end }}
+
+      </article>
+
+      {{ end }}
+
+      <aside class="col-1 xs-hide"></aside>
+
+    </div>
+
+  </div>
+</section>
 
 {{ partial "footer-cta.html" . }}
