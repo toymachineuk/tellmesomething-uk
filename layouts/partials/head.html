@@ -1787,127 +1787,6 @@ transform:scale(.95);
 
 
 
-
-
-/* ==================================================
-   WORK GALLERY
-================================================== */
-
-
-.work-gallery {
-  padding: 80px 0;
-  background: #0f172a;
-  overflow: hidden;
-}
-
-/* ==================================================
-   HEADER
-================================================== */
-
-.work-gallery__header {
-  width: min(1200px, 92vw);
-  margin: 0 auto 48px;
-}
-
-.work-gallery__eyebrow {
-  display: inline-block;
-
-  margin-bottom: 14px;
-
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-
-  color: rgba(255,255,255,0.55);
-}
-
-.work-gallery__title {
-  font-size: clamp(64px, 8vw, 120px);
-  line-height: 0.95;
-  letter-spacing: -0.05em;
-  font-weight: 700;
-
-  color: #fff;
-}
-
-/* ==================================================
-   VIEWPORT
-================================================== */
-
-.work-gallery__viewport {
-  width: min(1200px, 92vw);
-  margin: 0 auto;
-
-  overflow: hidden;
-}
-
-/* ==================================================
-   RAIL
-================================================== */
-
-.work-gallery__rail {
-  display: flex;
-  gap: 48px;
-
-  width: max-content;
-
-  animation: work-scroll 35s linear infinite;
-}
-
-.work-gallery__group {
-  display: flex;
-  gap: 48px;
-}
-
-/* ==================================================
-   CARD
-================================================== */
-
-
-.work-card {
-  --stack-back-bg: rgba(124,92,255,0.10);
-  --stack-back-border: rgba(124,92,255,0.18);
-
-  --stack-mid-bg: rgba(255,255,255,0.05);
-  --stack-mid-border: rgba(255,255,255,0.10);
-}
-
-
-.work-card--violet {
-  --stack-back-bg: rgba(124,92,255,0.10);
-  --stack-back-border: rgba(124,92,255,0.18);
-}
-
-.work-card--cyan {
-  --stack-back-bg: rgba(0,209,255,0.10);
-  --stack-back-border: rgba(0,209,255,0.20);
-}
-
-.work-card--lime {
-  --stack-back-bg: rgba(190,255,120,0.10);
-  --stack-back-border: rgba(190,255,120,0.18);
-}
-
-.work-card--rose {
-  --stack-back-bg: rgba(255,120,180,0.10);
-  --stack-back-border: rgba(255,120,180,0.18);
-}
-
-.work-card--gold {
-  --stack-back-bg: rgba(255,210,120,0.10);
-  --stack-back-border: rgba(255,210,120,0.18);
-}
-
-
-.work-card {
-  width: 320px;
-
-  flex-shrink: 0;
-}
-
-/* ==================================================
-   STACK SYSTEM
-================================================== */
 /* ==================================================
    WORK GALLERY
 ================================================== */
@@ -1929,7 +1808,6 @@ transform:scale(.95);
 
 .work-gallery__eyebrow {
   display: inline-block;
-
   margin-bottom: 14px;
 
   font-size: 12px;
@@ -1979,13 +1857,56 @@ transform:scale(.95);
 }
 
 /* ==================================================
-   CARD
+   CARD THEMES
 ================================================== */
 
 .work-card {
+  --stack-back-bg: rgba(124,92,255,0.20);
+  --stack-back-border: rgba(124,92,255,0.40);
+
+  --stack-mid-bg: rgba(255,255,255,0.08);
+  --stack-mid-border: rgba(255,255,255,0.14);
+
   width: 320px;
   flex-shrink: 0;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
 }
+
+.work-card:hover {
+  transform: translateY(-4px);
+}
+
+.work-card--violet {
+  --stack-back-bg: rgba(139, 92, 246, 0.22);
+--stack-back-border: rgba(167, 139, 250, 0.48);
+}
+
+.work-card--cyan {
+--stack-back-bg: rgba(34, 211, 238, 0.18);
+--stack-back-border: rgba(103, 232, 249, 0.42);
+}
+
+.work-card--lime {
+--stack-back-bg: rgba(163, 230, 53, 0.16);
+--stack-back-border: rgba(190, 242, 100, 0.38);
+}
+
+.work-card--rose {
+--stack-back-bg: rgba(244, 114, 182, 0.18);
+--stack-back-border: rgba(251, 182, 206, 0.40);
+}
+
+.work-card--gold {
+--stack-back-bg: rgba(251, 191, 36, 0.16);
+--stack-back-border: rgba(253, 224, 71, 0.38);
+}
+
+/* ==================================================
+   STACK SYSTEM
+================================================== */
 
 /* ==================================================
    STACK SYSTEM
@@ -1993,48 +1914,48 @@ transform:scale(.95);
 
 .work-card__stack {
   position: relative;
-
   width: 100%;
   height: 236px;
-
-  overflow: visible;
 }
 
 /* ==================================================
-   STACK LAYERS
+   BACK LAYER
 ================================================== */
 
-.work-card__layer--back,
-.work-card__layer--mid {
+.work-card__layer--back {
   position: absolute;
 
-  inset: 0;
+  top: 0;
+  left: 8px;
+
+  width: 100%;
+  height: 220px;
 
   border-radius: 22px;
 
-  pointer-events: none;
-}
-
-/* far back */
-
-.work-card__layer--back {
-  top: 0;
-  left: 14px;
-
-   background: var(--stack-back-bg);
+  background: var(--stack-back-bg);
   border: 1px solid var(--stack-back-border);
 
   z-index: 1;
 }
 
-/* middle */
+/* ==================================================
+   MIDDLE LAYER
+================================================== */
 
 .work-card__layer--mid {
-  top: 8px;
-  left: 7px;
+  position: absolute;
 
-   background: var(--stack-mid-bg);
-  border: 1px solid var(--stack-mid-border);
+  top: 4px;
+  left: 4px;
+
+  width: calc(100% - 4px);
+  height: 220px;
+
+  border-radius: 22px;
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
 
   z-index: 2;
 }
@@ -2046,28 +1967,30 @@ transform:scale(.95);
 .work-card__surface {
   position: absolute;
 
-  top: 16px;
+  top: 8px;
   left: 0;
 
-  width: 100%;
+  width: calc(100% - 8px);
   height: 220px;
 
   padding: 10px;
 
   border-radius: 22px;
 
-  background: #e7e7e7;
+  background: #f4f4f5;
 
   overflow: hidden;
 
   z-index: 3;
 
   box-shadow:
-    0 14px 40px rgba(0,0,0,0.18);
+    0 14px 30px rgba(0,0,0,0.16);
 }
 
+
+
 /* ==================================================
-   AMP IMAGE
+   IMAGE
 ================================================== */
 
 .work-card__surface amp-img {
@@ -2092,11 +2015,11 @@ transform:scale(.95);
 }
 
 /* ==================================================
-   CAPTION
+   TEXT
 ================================================== */
 
 .work-card__caption {
-  margin-top: 14px;
+  margin-top: 18px;
 
   font-size: 15px;
   line-height: 1.35;
@@ -2105,6 +2028,7 @@ transform:scale(.95);
 
   color: rgba(255,255,255,0.94);
 }
+
 .work-card__description {
   margin-top: 6px;
 
@@ -2112,10 +2036,11 @@ transform:scale(.95);
   line-height: 1.5;
   letter-spacing: -0.01em;
 
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.58);
 
   max-width: 28ch;
 }
+
 /* ==================================================
    DESKTOP ANIMATION
 ================================================== */
@@ -2135,22 +2060,11 @@ transform:scale(.95);
   animation-play-state: paused;
 }
 
-.work-card {
-  transition:
-    transform 0.35s ease,
-    opacity 0.35s ease;
-}
-
-.work-card:hover {
-  transform: translateY(-4px);
-}
 /* ==================================================
    MOBILE
 ================================================== */
 
 @media (max-width: 768px) {
-
-  /* viewport */
 
   .work-gallery__viewport {
     overflow-x: auto;
@@ -2167,8 +2081,6 @@ transform:scale(.95);
   .work-gallery__viewport::-webkit-scrollbar {
     display: none;
   }
-
-  /* rail */
 
   .work-gallery__rail {
     width: max-content;
@@ -2188,7 +2100,31 @@ transform:scale(.95);
     display: none;
   }
 
-  /* card */
+  /* image */
+
+  .work-card__surface amp-img {
+    border-radius: 10px;
+  }
+
+  /* text */
+
+  .work-card__caption {
+    margin-top: 14px;
+
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .work-card__description {
+    margin-top: 4px;
+
+    font-size: 11px;
+    line-height: 1.45;
+  }
+}
+
+
+@media (max-width: 768px) {
 
   .work-card {
     width: 220px;
@@ -2198,34 +2134,62 @@ transform:scale(.95);
     scroll-snap-align: start;
   }
 
-  /* stack */
+  /* ==================================================
+     STACK
+  ================================================== */
 
   .work-card__stack {
+    position: relative;
+
     height: 196px;
   }
 
-  /* layers */
+  /* ==================================================
+     BACK LAYER
+  ================================================== */
 
-  .work-card__layer--back,
-  .work-card__layer--mid {
+  .work-card__layer--back {
+    position: absolute;
+
+    top: 0;
+    left: 6px;
+
+    width: 100%;
+    height: 180px;
+
     border-radius: 18px;
   }
 
-  .work-card__layer--back {
-    top: 0;
-    left: 8px;
-  }
+  /* ==================================================
+     MIDDLE LAYER
+  ================================================== */
 
   .work-card__layer--mid {
-    top: 4px;
-    left: 4px;
+    position: absolute;
+
+    top: 3px;
+    left: 3px;
+
+    width: calc(100% - 3px);
+    height: 180px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
   }
 
-  /* surface */
+  /* ==================================================
+     FRONT SURFACE
+  ================================================== */
 
   .work-card__surface {
-    top: 8px;
+    position: absolute;
 
+    top: 6px;
+    left: 0;
+
+    width: calc(100% - 6px);
     height: 180px;
 
     padding: 8px;
@@ -2233,22 +2197,24 @@ transform:scale(.95);
     border-radius: 18px;
   }
 
-  /* image */
+  /* ==================================================
+     IMAGE
+  ================================================== */
 
   .work-card__surface amp-img {
     border-radius: 10px;
   }
 
-  /* caption */
+  /* ==================================================
+     TEXT
+  ================================================== */
 
   .work-card__caption {
-    
+    margin-top: 14px;
 
     font-size: 12px;
     line-height: 1.3;
   }
-
- 
 
   .work-card__description {
     margin-top: 4px;
@@ -2257,13 +2223,16 @@ transform:scale(.95);
     line-height: 1.45;
   }
 }
+/* ==================================================
+   TOUCH DEVICES
+================================================== */
+
 @media (hover: none) {
 
   .work-card:hover {
     transform: none;
   }
 }
-
 
 
 
