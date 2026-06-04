@@ -2302,7 +2302,7 @@ margin: -10px auto 0;
 }
 
 .services-flow__media amp-img > img {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 
@@ -3256,163 +3256,11 @@ margin: -10px auto 0;
 
 
 
-
-
-
-
 /* ===============================
-   ORBIT-STORY
+   ORBIT STORY
 =============================== */
-/* =========================
-   ORBIT BASE
-========================= */
 
-.orbit {
-  width: auto;
-  margin: auto;
-  position: relative;
-}
-
-/* Link wrapper */
-.orbit-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  gap: 0.6rem;
-  cursor: pointer;
-}
-
-
-.orbit-story-preview {
-  width: 100%;
-  max-width: 120px;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
-
-  border: 2px solid rgba(255, 255, 255, 0.2);
-
-
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
-
-}
-
-/* Pause animation on hover */
-.orbit-link:hover .orbit-story-preview {
-  animation-play-state: paused;
-  transform: scale(1.06);
-  border-color: #fff;
-  box-shadow: 0 0 20px rgba(255,255,255,0.35);
-}
-
-
-/* =========================
-   CTA OVERRIDE (your focal point)
-========================= */
-
-.base-contrast__point--cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-
-
-/* CTA hover stronger */
-.base-contrast__point--cta .orbit-link:hover .orbit-story-preview {
-  transform: scale(1.08);
-}
-
-/* =========================
-   RING
-========================= */
-
-.story-ring {
-  width: 100%;
-  height: 100%;
-  padding: 3px;
-  border-radius: 50%;
-  background: linear-gradient(
-    45deg,
-    #ff6b6b,
-    #fa7e1e,
-    #d62976,
-    #962fbf,
-    #4f5bd5,
-    #feda75
-  );
-  background-size: 300% 300%;
-  animation: instaRing 8s linear infinite;
-}
-
-@keyframes instaRing {
-  0%   { background-position: 0% 50%; }
-  100% { background-position: 300% 50%; }
-}
-
-/* =========================
-   PLAY BUTTON
-========================= */
-
-.story-play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(3px);
-}
-
-.orbit--cta .story-play-button {
-  width: 54px;
-  height: 54px;
-}
-
-.play-icon {
-  width: 0;
-  height: 0;
-  border-left: 8px solid #fff;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-}
-
-/* =========================
-   INFO
-========================= */
-
-.orbit-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-/* =========================
-   CTA LAYOUT
-========================= */
-
-.base-contrast__side {
-  min-width: 340px;
-}
-
-
-/* ===============================
-   ORBIT-STORY--END
-=============================== */
-/* =========================
-   ORBIT BASE WRAPPER
-========================= */
-
+/* Base Wrapper */
 .orbit {
   width: auto;
   margin: auto;
@@ -3423,43 +3271,103 @@ margin: -10px auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-decoration: none;
   gap: 0.6rem;
+  text-decoration: none;
   cursor: pointer;
 }
 
-/* =========================
-   STORY CIRCLE (BASE)
-========================= */
+/* ===============================
+   STORY PREVIEW
+=============================== */
 
 .orbit-story-preview {
   width: 100%;
   max-width: 120px;
   aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  overflow: hidden;
+
   position: relative;
+  overflow: hidden;
+  border-radius: 50%;
 
   border: 2px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
-/* hover effect only (no animation conflicts) */
-.orbit-link:hover .orbit-story-preview {
-  transform: scale(1.06);
-  border-color: #fff;
-  box-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
-}
-
-/* image inside */
 .orbit-story-preview amp-img {
   width: 100%;
   height: 100%;
 }
 
-/* =========================
-   CTA VARIANT (BIG BUTTON)
-========================= */
+/* Hover */
+.orbit-link:hover .orbit-story-preview {
+  transform: scale(1.03);
+}
+
+/* ===============================
+   STORY RING
+=============================== */
+
+.story-ring {
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.story-gap {
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.story-ring amp-img,
+.story-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   PLAY BUTTON
+=============================== */
+
+.story-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+.play-icon {
+  width: 0;
+  height: 0;
+
+  border-left: 8px solid #fff;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+/* ===============================
+   CTA VARIANT
+=============================== */
 
 .base-contrast__point--cta {
   display: flex;
@@ -3468,100 +3376,44 @@ margin: -10px auto 0;
   gap: 2rem;
 }
 
-/* BIG CTA CIRCLE */
 .base-contrast__point--cta .orbit-story-preview {
-  max-width: 240px;
   width: min(240px, 80vw);
-  border: 3px solid rgba(255, 255, 255, 0.35);
+  max-width: 240px;
+
+  border: 8px solid rgba(255, 255, 255, 0.55);
 }
 
-/* stronger hover for CTA */
 .base-contrast__point--cta .orbit-link:hover .orbit-story-preview {
   transform: scale(1.08);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
 }
 
-/* =========================
-   PLAY BUTTON (BIG CTA FEEL)
-========================= */
-
-.story-play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(6px);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* BIG CTA play button */
 .base-contrast__point--cta .story-play-button {
-  width: 84px;
-  height: 84px;
-  background: rgba(0, 0, 0, 0.35);
+  width: 60px;
+  height: 60px;
+
+  background: rgba(255,255,255,.18);
+
+
   backdrop-filter: blur(12px);
 }
 
-/* play icon */
-.play-icon {
-  width: 0;
-  height: 0;
-  border-left: 8px solid #fff;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-}
-
 .base-contrast__point--cta .play-icon {
-  border-left: 14px solid #fff;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
+  border-left: 11px solid #fff;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
 }
 
-/* =========================
-   RING (STATIC, NO ANIMATION)
-========================= */
-
-.story-ring {
-  width: 100%;
-  height: 100%;
-  padding: 3px;
-  border-radius: 50%;
-
-  background: linear-gradient(
-    45deg,
-    #feda75,
-    #fa7e1e,
-    #d62976,
-    #962fbf,
-    #4f5bd5,
-    #feda75
-  );
-}
-
-/* inner image */
-.story-ring amp-img {
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-/* =========================
-   INFO BLOCK
-========================= */
+/* ===============================
+   INFO
+=============================== */
 
 .orbit-info {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+
   margin-top: 12px;
 }
 
@@ -3576,9 +3428,9 @@ margin: -10px auto 0;
   text-align: left;
 }
 
-/* =========================
+/* ===============================
    LAYOUT HELPERS
-========================= */
+=============================== */
 
 .base-contrast__side {
   min-width: 340px;
@@ -3591,25 +3443,24 @@ margin: -10px auto 0;
   text-align: center;
 }
 
-/* positions */
-.orbit--br {
-  bottom: 40px;
-  right: 10px;
-}
-
 .orbit--tr {
   top: 60px;
   right: 60px;
 }
 
-.orbit--bl {
-  bottom: 60px;
-  left: 60px;
+.orbit--br {
+  right: 10px;
+  bottom: 40px;
 }
 
-/* =========================
+.orbit--bl {
+  left: 60px;
+  bottom: 60px;
+}
+
+/* ===============================
    MOBILE
-========================= */
+=============================== */
 
 @media (max-width: 480px) {
   .orbit-story-preview {
@@ -3624,9 +3475,6 @@ margin: -10px auto 0;
     width: 50px;
   }
 }
-
-
-
 
 /* ===============================
    HEADER
@@ -4188,3 +4036,6 @@ article {
     animation-duration: 9s;
   }
 }
+
+
+
