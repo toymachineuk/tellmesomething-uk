@@ -3440,8 +3440,8 @@ margin: -10px auto 0;
 .base-contrast__point--cta .orbit-story-preview {
   width: min(240px, 80vw);
   max-width: 240px;
-
-  border: 8px solid rgba(255, 255, 255, 0.55);
+box-shadow: 0 0 25px rgba(255,255,255,.12);
+  border: 2px solid rgba(255, 255, 255, 0.55);
 }
 
 .base-contrast__point--cta .orbit-link:hover .orbit-story-preview {
