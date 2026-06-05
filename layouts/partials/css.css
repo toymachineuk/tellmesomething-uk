@@ -1394,7 +1394,19 @@ font-weight: 600;
   left: clamp(24px, 4vw, 60px);  /* 🔥 closer to edge */
   bottom: 16px;                  /* 🔥 lift it up */
   max-width: 260px;
- 
+   animation: fadeIn 5s ease 2s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* QUESTION */
@@ -1407,7 +1419,11 @@ max-width: 100%;
 text-align: right;
   text-transform: uppercase;
 margin-bottom: var(--space-4);
+
 }
+
+
+
 @media (max-width: 768px){
   .hero-v2-question {
     text-align: center;
