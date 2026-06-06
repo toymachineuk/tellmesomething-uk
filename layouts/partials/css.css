@@ -1236,6 +1236,13 @@ margin-top:80px;
 
 }
 
+
+.hero-inner {
+
+    width: min(1200px, 92vw);
+  margin: 0 auto;
+}
+
 /* TOP GREEN AREA */
 .hero-v2-top{
 
@@ -1408,8 +1415,8 @@ margin-top: -26px;
 
 .hero-v2-side{
 
-  position: absolute;
-  left: clamp(24px, 4vw, 60px);  /* 🔥 closer to edge */
+  position: relative;
+
   bottom: 16px;                  /* 🔥 lift it up */
   max-width: 260px;
    animation: fadeIn 5s ease 2s forwards;
