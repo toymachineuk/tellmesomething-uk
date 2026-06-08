@@ -1587,13 +1587,13 @@ margin-bottom: var(--space-4);
 
 .hero-base-barcode{
 
-  width: 210px;
+
   flex-shrink: 0;
   width: 100%;
 width:130px;
 z-index:4;
  position: relative;
-  right: 40px;
+  right: 180px;
 }
 
 
@@ -1629,14 +1629,17 @@ z-index:4;
 
   width:35vw;
   height:35vw;
-
+  transform: translateZ(0);
+  will-change: transform;
   z-index:1;
   pointer-events:none;
+    backface-visibility: hidden;
 }
 .hero-v2-circles svg{
   width:100%;
   height:100%;
   display:block;
+   overflow: hidden;
 }
 
 
@@ -2259,7 +2262,8 @@ margin: -10px auto 0;
   flex-direction: column;
   gap: var(--space-block);
   position: relative;
-  overflow: hidden;
+    overflow: visible;
+
 }
 
 /* HEADER */
@@ -3620,7 +3624,10 @@ box-shadow: 0 0 25px rgba(255,255,255,.12);
   background: #f0ece7;
   border-top: 1px solid rgba(0,0,0,0.08);
 
-  padding: clamp(64px, 8vw, 110px) 24px 32px;
+    padding:
+    clamp(64px, 8vw, 110px)
+    clamp(24px, 4vw, 64px)
+    64px;
 
   position: relative;
 }
