@@ -41,6 +41,20 @@ color:inherit;
 }
 
 
+/* Text Alignment Utilities */
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
 /* ===============================
    DESIGN TOKENS
 =============================== */
@@ -1041,6 +1055,18 @@ border:1px solid rgba(0,0,0,0.08);
   opacity: 0.08;
   border-radius: 50%;
 }
+
+.circle-blue {
+  --offset: -100px;
+
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #60dcf6;
+  opacity: 0.08;
+  border-radius: 50%;
+}
+
 
 .circle--top-right {
   top: -100px;
@@ -2928,9 +2954,6 @@ padding-top: var(--space-section);
    BASE CONTRAST
 =============================== */
 
-/* ===============================
-   BASE CONTRAST (CLEAN)
-=============================== */
 
 .base-contrast {
   padding: var(--space-section) 0;
@@ -2943,6 +2966,10 @@ padding-top: var(--space-section);
   gap: 2rem;
   align-items: start;
 }
+
+
+
+
 
 /* label */
 .base-contrast__label {
@@ -2959,15 +2986,49 @@ padding-top: var(--space-section);
 /* main */
 .base-contrast__main {
   max-width: 640px;
+  
 }
 
 /* headline */
+
 .base-contrast__headline {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
-  font-size: clamp(48px, 7vw, 110px);
-  line-height: 0.9;
+
   letter-spacing: -0.03em;
+
+}
+h2.base-contrast__headline {
+
+
+  letter-spacing: -0.03em;
+
+  font-size: clamp(56px, 8vw, 110px);
+  line-height: .9;
+}
+
+
+.section-story-preview h2.base-contrast__headline {
+
+  text-align: right;
+  
+}
+
+@media (max-width: 900px) {
+  .section-story-preview h2.base-contrast__headline {
+
+  text-align: center;
+  
+}
+}
+
+
+
+h3.base-contrast__headline  {
+font-size: clamp(36px, 6vw, 72px);
+  line-height: 0.95;
+ 
+
 }
 
 /* lead */
@@ -2976,6 +3037,17 @@ padding-top: var(--space-section);
   max-width: 420px;
   opacity: var(--text-body);
 }
+
+.section-story-preview .base-contrast__lead {
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+ .section-story-preview .base-contrast__lead {
+  text-align: center;
+}
+}
+
 
 /* side */
 .base-contrast__side {
@@ -3001,7 +3073,10 @@ padding-top: var(--space-section);
 .base-contrast__point p {
   font-size: 0.9rem;
   opacity: var(--text-body);
-  max-width: 280px;
+
+   max-width: 26ch;
+  text-align: left;
+  margin: 0 auto;
 }
 
 /* ===============================
@@ -3034,18 +3109,30 @@ padding-top: var(--space-section);
    MOBILE FIX (THIS WAS YOUR ISSUE)
 =============================== */
 
-@media (max-width: 900px) {
 
+
+
+
+  @media (max-width: 900px) {
   .base-contrast__layout {
     display: flex;
     flex-direction: column;
     gap: var(--space-grid-md);
   }
 
+  .base-contrast__main {
+    order: -1;
+  }
+
+  .base-contrast__side {
+    order: 2;
+  }
+}
+
   /* reset everything */
   .base-contrast__main,
   .base-contrast__side {
-    order: unset;
+  
     width: 100%;
     max-width: 100%;
     margin: 0;
@@ -3063,9 +3150,7 @@ padding-top: var(--space-section);
     padding: 2rem 0 0;
   }
 
-  .base-contrast__point p {
-    max-width: 100%;
-  }
+
 
   /* IMPORTANT: kill reverse behavior completely on mobile */
   .base-contrast--right .base-contrast__main,
@@ -3354,7 +3439,6 @@ padding-top: var(--space-section);
 
 
 .base-intro__headline,
-.base-contrast__headline,
 .base-table__headline,
 .closing-cta__headline h2 {
   font-size: clamp(36px, 6vw, 72px);
@@ -3499,6 +3583,16 @@ padding-top: var(--space-section);
   width: 80px;
 }
 
+
+@media (max-width: 480px) {
+  .story-barcode {
+    width: 45px;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+
 .orbit-link:hover .story-barcode {
   transform: translateY(-4px);
 }
@@ -3515,6 +3609,17 @@ padding-top: var(--space-section);
 }
 
 
+
+@media (max-width: 768px) { 
+
+.base-contrast__point--cta {
+ 
+  align-items: center;
+
+}
+
+
+ }
 
 .base-contrast__point--cta .orbit-story-preview {
   box-shadow: 0 0 25px rgba(255,255,255,.12);
@@ -3541,9 +3646,7 @@ padding-top: var(--space-section);
    LAYOUT HELPERS
 =============================== */
 
-.base-contrast__side {
-  min-width: 340px;
-}
+
 
 .orbit--center {
   display: flex;
