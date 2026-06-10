@@ -3806,6 +3806,34 @@ font-weight: 900;
   opacity: .7;
 }
 
+.portfolio-note {
+ margin-top: 32px;
+  margin-left: auto;
+  max-width: 32ch;
+  padding: 16px 20px;
+
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(47, 42, 37, 0.7);
+
+  border: 1px solid rgba(47, 42, 37, 0.12);
+  border-radius: 12px;
+
+}
+
+@media (max-width: 768px) {
+  .portfolio-note {
+    max-width: 100%;
+    margin-top: 20px;
+    padding: 12px 14px;
+  display: block;
+    font-size: 13px;
+    line-height: 1.45;
+        margin-left: 0;
+          min-width: calc(100vw - 32px);
+  }
+}
+
 @media (max-width: 768px) {
   .portfolio-title {
     font-size: 32px;
@@ -4350,4 +4378,20 @@ article {
 }
 
 
+
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
 
