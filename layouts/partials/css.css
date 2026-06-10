@@ -1184,6 +1184,7 @@ margin-top:80px;
      display: grid;
     grid-template-columns: 1fr;
     gap: 8px;
+    margin-top:0;
     align-items: start;
     padding-bottom: 30px;
     border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -2674,12 +2675,12 @@ margin: -10px auto 0;
 
 
 .formats-title--xl {
-    font-size: clamp(2.4rem, 3.8vw, 3.4rem);
-  line-height: 1.1;
-  max-width: 14ch;
-
+  display: block;
+  font-size: 1.35em;
+  font-weight: 900;
+  letter-spacing: -0.03em;
   font-weight: 600;
-  letter-spacing: -0.02em;
+
   margin-top: 0.5rem;
   margin-bottom: 1.2rem;
 
@@ -2789,10 +2790,7 @@ margin: -10px auto 0;
    TYPOGRAPHY POLISH
 ========================= */
 
-.formats-section h2,
-.formats-section h3 {
-  letter-spacing: -0.02em;
-}
+
 
 /* subtle interaction */
 .format-item:hover h3 {
@@ -2964,7 +2962,7 @@ padding-top: var(--space-section);
     display: grid;
  grid-template-columns: 1.1fr 0.9fr;
   gap: 2rem;
-  align-items: start;
+  align-items: center;
 }
 
 
@@ -2974,7 +2972,7 @@ padding-top: var(--space-section);
 /* label */
 .base-contrast__label {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -2982,6 +2980,22 @@ padding-top: var(--space-section);
 
   color: rgba(255,255,255,.6);
 }
+
+
+.section-story-preview .base-contrast__label {
+
+  text-align: right;
+}
+
+
+@media (max-width: 900px) {
+
+.section-story-preview .base-contrast__label {
+
+  text-align: center;
+}
+}
+
 
 /* main */
 .base-contrast__main {
@@ -2998,6 +3012,12 @@ padding-top: var(--space-section);
   letter-spacing: -0.03em;
 
 }
+
+
+
+
+
+
 h2.base-contrast__headline {
 
 
@@ -3005,6 +3025,14 @@ h2.base-contrast__headline {
 
   font-size: clamp(56px, 8vw, 110px);
   line-height: .9;
+}
+
+
+
+@media (max-width: 768px) {
+  h2.base-contrast__headline {
+    font-size: 42px;
+  }
 }
 
 
@@ -3087,6 +3115,11 @@ font-size: clamp(36px, 6vw, 72px);
   grid-template-columns: 0.7fr 1.3fr;
 }
 
+
+
+
+
+
 .base-contrast--right .base-contrast__main {
   order: 2;
   text-align: right;
@@ -3104,6 +3137,7 @@ font-size: clamp(36px, 6vw, 72px);
   padding-left: 0;
   padding-right: 2rem;
 }
+
 
 /* ===============================
    MOBILE FIX (THIS WAS YOUR ISSUE)
@@ -3159,7 +3193,7 @@ font-size: clamp(36px, 6vw, 72px);
     text-align: left;
     margin: 0;
   }
-}
+
 
 
 
@@ -3256,6 +3290,43 @@ font-size: clamp(36px, 6vw, 72px);
     margin-bottom: 0.25rem;
   }
 
+}
+
+
+
+
+
+
+.base-contrast__point {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.base-contrast__index {
+  flex: 0 0 32px;
+}
+
+.base-contrast__point-content {
+  max-width: 28ch;
+}
+
+.base-contrast__point-content h3,
+.base-contrast__point-content p {
+  margin: 0;
+}
+
+.base-contrast.two-columns .base-contrast__point {
+  text-align: left;
+}
+
+.base-contrast.two-columns .base-contrast__index {
+  margin-bottom: .5rem;
+}
+
+.base-contrast.two-columns .base-contrast__point p {
+  margin: 0;
+  max-width: 26ch;
 }
 
 /* ===============================
@@ -3447,6 +3518,15 @@ font-size: clamp(36px, 6vw, 72px);
 }
 
 
+@media (max-width: 900px) { 
+.base-intro__headline,
+.base-table__headline,
+.closing-cta__headline h2 {
+  font-size: clamp(30px, 5vw, 64px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+}
 /* ===============================
    ORBIT STORY
 =============================== */
@@ -3707,11 +3787,24 @@ font-size: clamp(36px, 6vw, 72px);
  font-size: clamp(52px, 5vw, 96px);
   line-height: 0.92;
   letter-spacing: -0.04em;
-
+font-weight: 900;
   margin-bottom: clamp(24px, 4vw, 48px);
   color: #2f2a25;
 }
+.portfolio-project-title {
+  font-size: clamp(24px, 2.5vw, 36px);
+  line-height: 1;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
 
+.portfolio-project-description {
+  margin-top: 0;
+  max-width: 32ch;
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: .7;
+}
 
 
 
