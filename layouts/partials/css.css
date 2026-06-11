@@ -3845,7 +3845,8 @@ font-weight: 900;
   margin-left: auto;
   max-width: 32ch;
   padding: 16px 20px;
-
+  margin-left: auto;
+  margin-right: 80px;
   font-size: 14px;
   line-height: 1.5;
   color: rgba(47, 42, 37, 0.7);
@@ -3857,15 +3858,16 @@ font-weight: 900;
 
 @media (max-width: 768px) {
   .portfolio-note {
-    max-width: 100%;
-    margin-top: 20px;
+        width: 90%;
+    max-width: 500px;
+    margin: 20px auto 0 auto;
     padding: 12px 14px;
-  display: block;
+    display: block;
     font-size: 13px;
     line-height: 1.45;
-        margin-left: 0;
-          min-width: calc(100vw - 32px);
+    box-sizing: border-box;
   }
+
 }
 
 @media (max-width: 768px) {
