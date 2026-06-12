@@ -3113,36 +3113,14 @@ font-size: clamp(36px, 6vw, 72px);
   margin: 0 auto;
 }
 
-/* ===============================
-   REVERSE (RIGHT VARIANT)
-=============================== */
-
-.base-contrast--right .base-contrast__layout {
-  grid-template-columns: 0.7fr 1.3fr;
-}
 
 
 
 
 
 
-.base-contrast--right .base-contrast__main {
-  order: 2;
-  text-align: right;
-  margin-left: auto;
-}
 
-.base-contrast--right .base-contrast__lead {
-  margin-left: auto;
-}
 
-.base-contrast--right .base-contrast__side {
-  order: 1;
-  border-left: none;
-  border-right: var(--border-soft);
-  padding-left: 0;
-  padding-right: 2rem;
-}
 
 
 /* ===============================
@@ -3236,8 +3214,6 @@ font-size: clamp(36px, 6vw, 72px);
 
 }
 
-
-
 /* ===============================
    BASE TABLE
 =============================== */
@@ -3248,22 +3224,64 @@ font-size: clamp(36px, 6vw, 72px);
 
 .base-table__grid {
   display: grid;
-  grid-template-columns: 220px 1fr 1fr;
-  margin-top: 3rem;
+
+  margin-top: 4rem;
   border-top: var(--border-medium);
+
+    max-width: 1000px;
+  margin: 4rem auto 0;
+  grid-template-columns: 220px 1fr 1fr;
 }
 
-/* cells */
+.base-table__head {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.base-table__headline {
+  margin: 0;
+}
+
+
+/* ===============================
+   CELLS
+=============================== */
+
 .base-table__cell {
-  padding: 1.5rem 1rem;
+  padding: 1.75rem 1.25rem;
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.7;
   border-bottom: var(--border-soft);
+
+    text-align: center;
 }
 
-/* columns */
+/* ===============================
+   HEADERS
+=============================== */
+
+.base-table__grid > .base-table__cell:nth-child(-n + 3) {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: var(--border-strong);
+}
+
+/* Highlight PulseFrames header */
+.base-table__grid > .base-table__cell:nth-child(3) {
+  font-weight: 700;
+}
+
+/* ===============================
+   COLUMN STYLES
+=============================== */
+
 .base-table__cell--label {
   font-weight: 500;
+    text-align: left;
 }
 
 .base-table__cell--weak {
@@ -3274,66 +3292,129 @@ font-size: clamp(36px, 6vw, 72px);
   font-weight: 500;
 }
 
-/* vertical separators */
+/* Highlight PulseFrames column */
+.base-table__cell:nth-child(3n) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ===============================
+   ROW STRIPING
+=============================== */
+
+/* Every second comparison row */
+.base-table__grid > :nth-child(12n + 4),
+.base-table__grid > :nth-child(12n + 5),
+.base-table__grid > :nth-child(12n + 6),
+.base-table__grid > :nth-child(12n + 10),
+.base-table__grid > :nth-child(12n + 11),
+.base-table__grid > :nth-child(12n + 12) {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+/* Keep PulseFrames highlight stronger */
+.base-table__grid > :nth-child(3n):not(:nth-child(-n + 3)) {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* ===============================
+   VERTICAL DIVIDERS
+=============================== */
+
 .base-table__cell:not(:nth-child(3n)) {
   border-right: var(--border-soft);
 }
 
-/* header row */
-.base-table__grid > .base-table__cell:nth-child(-n+3) {
-  border-bottom: var(--border-strong);
-  padding-bottom: 1.5rem;
+/* ===============================
+   HOVER
+=============================== */
+
+.base-table__cell {
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
+
+.base-table__cell:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ===============================
+   MOBILE
+=============================== */
 
 @media (max-width: 900px) {
 
   .base-table__grid {
     display: block;
     border-top: none;
+    margin-top: 3rem;
+  }
+
+  /* Hide desktop header row */
+  .base-table__grid > .base-table__cell:nth-child(-n + 3) {
+    display: none;
   }
 
   .base-table__cell {
     display: block;
     width: 100%;
     border-right: none;
-    padding: 1rem 0;
+    padding: 1rem;
+    line-height: 1.6;
   }
 
-  /* hide desktop header row */
-  .base-table__grid > .base-table__cell:nth-child(-n+3) {
-    display: none;
-  }
-
-  /* group rows into cards */
+  /* Feature heading */
   .base-table__cell--label {
+    margin-top: 2.5rem;
+    padding: 1rem;
     font-weight: 600;
-    margin-top: 2rem;
-    padding-top: 2rem;
     border-top: var(--border-medium);
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 0.875rem 0.875rem 0 0;
+  }
+
+  /* Platform row */
+  .base-table__cell--weak {
+    background: rgba(255, 255, 255, 0.015);
   }
 
   .base-table__cell--weak::before {
     content: "Platforms";
     display: block;
+    margin-bottom: 0.5rem;
     font-size: 0.75rem;
-    opacity: var(--text-muted);
-    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+  }
+
+  /* PulseFrames row */
+  .base-table__cell--strong {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 0 0 0.875rem 0.875rem;
+    border-bottom: var(--border-medium);
   }
 
   .base-table__cell--strong::before {
     content: "PulseFrames";
     display: block;
+    margin-bottom: 0.5rem;
     font-size: 0.75rem;
-    opacity: var(--text-muted);
-    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
   }
 
+  /* Remove desktop striping */
+  .base-table__grid > :nth-child(12n + 4),
+  .base-table__grid > :nth-child(12n + 5),
+  .base-table__grid > :nth-child(12n + 6),
+  .base-table__grid > :nth-child(12n + 10),
+  .base-table__grid > :nth-child(12n + 11),
+  .base-table__grid > :nth-child(12n + 12) {
+    background-color: unset;
+  }
 }
-
-
-
-
-
 
 
 
