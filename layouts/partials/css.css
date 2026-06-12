@@ -149,7 +149,7 @@ color:inherit;
 
   --space-section-sm: 4rem;
   --space-section: clamp(6rem, 8vw, 8rem);
-  --space-section-lg: clamp(8rem, 12vw, 12rem);
+  --space-section-lg: clamp(96px, 8vw, 120px);
 
 
   --space-flow: clamp(16px, 2vw, 28px);
@@ -159,13 +159,7 @@ color:inherit;
 }
 
 
-  :root {
-    --space-section: 64px;
-    --space-section-lg: 80px;
-    --space-grid-lg: 32px;
-    --space-grid-md: 24px;
-    --space-grid-sm: 16px;
-  }
+
 @media (max-width: 768px) {
 
   :root {
@@ -2932,17 +2926,33 @@ padding-top: var(--space-section);
   line-height: 1.6;
 }
 
+.video-intro .base-intro__block p {
+
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.base-intro__block--origin p {
+  margin-bottom: 1rem;
+}
+
+.base-intro__block--origin p:last-child {
+  opacity: 0.85;
+}
+
 .base-intro__block--origin {
   border-top: var(--border-soft);
   padding-top: 1.5rem;
 }
 
 .base-intro__kicker {
+    display: inline-block;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  font-weight: 600;
+  color: #111;
   margin-bottom: 0.75rem;
-  opacity: var(--text-muted);
 }
 
 /* responsive */
@@ -3218,9 +3228,7 @@ font-size: clamp(36px, 6vw, 72px);
    BASE TABLE
 =============================== */
 
-.base-table {
-  padding: var(--space-section) 0;
-}
+
 
 .base-table__grid {
   display: grid;
@@ -3503,7 +3511,7 @@ font-size: clamp(36px, 6vw, 72px);
 =============================== */
 
 .closing-cta {
-  padding: var(--hero-space) 0;
+  
   position: relative;
 }
 
@@ -3524,16 +3532,7 @@ font-size: clamp(36px, 6vw, 72px);
   max-width: 28ch;
 }
 
-/* subtle structure line (like hero language) */
-.closing-cta::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 8%;
-  width: 1px;
-  height: 100%;
-  background: rgba(0,0,0,0.08);
-}
+
 
 .closing-cta__frame {
   padding: 0;
@@ -3622,6 +3621,14 @@ font-size: clamp(36px, 6vw, 72px);
     max-width: 100%;
   }
 }
+
+.base-intro__headline {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+    font-size: 2.6rem;
+  line-height: 1.15;
+}
+
 
 
 .base-intro__headline,
