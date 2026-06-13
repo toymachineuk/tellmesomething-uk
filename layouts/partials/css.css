@@ -2355,12 +2355,58 @@ padding-top: var(--space-flow);
 /* LAYOUT */
 
 .services-flow__list {
-     gap: var(--space-8); /* 56px */
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
   margin-top: var(--space-6);
   position: relative;
   z-index: 1;
 
 }
+
+.services-flow__main{
+    position:relative;
+}
+
+.bg-number{
+    position:absolute;
+
+    top:-80px;
+    left:-50px;
+
+    font-size:260px;
+    font-weight:900;
+
+    color:rgba(114,0,0,.12);
+
+    z-index:-1;
+
+    pointer-events:none;
+}
+
+.services-flow__main {
+  position: relative;
+}
+
+.bg-number {
+  position: absolute;
+  top: -80px;
+  left: -40px;
+
+  font-size: clamp(180px, 20vw, 350px);
+  font-weight: 900;
+  line-height: 1;
+
+  color: rgba(114,0,0,.12);
+
+  z-index: -1;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+
+
 
 
 .services-flow__layout {
@@ -2385,6 +2431,8 @@ padding-top: var(--space-flow);
   padding-bottom: var(--space-8); /* 40px */
 
 }
+
+
 
 .services-flow__item:last-child {
   border-bottom: none;
@@ -2442,10 +2490,39 @@ padding-top: var(--space-flow);
   align-items: stretch; /* 🔥 important */
 }
 
-.services-flow__list > .services-flow__layout:nth-of-type(2) {
-  grid-template-columns: 1fr 1.2fr;
-  padding-bottom: var(--space-8);
+
+
+.services-flow__item:nth-child(2) .services-flow__layout {
+    grid-template-columns: 1fr 1.2fr;
 }
+
+.services-flow__main {
+    position: relative;
+}
+
+.services-flow__main::before {
+    content: attr(data-number);
+
+    position: absolute;
+
+    top: -80px;
+    left: -40px;
+
+    font-size: clamp(180px, 20vw, 350px);
+    font-weight: 900;
+    line-height: 1;
+
+    color: rgba(114,0,0,.12);
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+
+
+
+
 .services-flow__main,
 .services-flow__side {
   display: flex;
@@ -2461,6 +2538,48 @@ padding-top: var(--space-flow);
 
 .services-flow__media amp-img > img {
   object-fit: contain;
+}
+
+
+.services-flow__item {
+  position: relative;
+  overflow: hidden;
+}
+
+.services-flow__item {
+    position: relative;
+    overflow: visible;
+}
+
+.services-flow__item::before {
+    content: attr(data-number);
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 220px;
+    font-weight: 900;
+    line-height: 1;
+
+    color: rgba(114,0,0,.12);
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+.services-flow__layout {
+    position: relative;
+    z-index: 1;
+}
+
+.services-flow__layout {
+  position: relative;
+  z-index: 1;
 }
 
 
