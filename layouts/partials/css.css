@@ -4647,237 +4647,393 @@ article {
 
 
 
+/* ==========================================
+   ABOUT EDITORIAL
+========================================== */
+
 .about-editorial {
-
     background: #f5f3f1;
-
-    padding:
-    var(--space-section-lg)
-    0;
-
+    padding: var(--space-section-lg) 0;
 }
-
 
 .about-editorial__grid {
-
     display: grid;
-
-    grid-template-columns:
-    260px
-    minmax(0,1fr);
-
-    gap: clamp(48px,7vw,96px);
-
+    grid-template-columns: 420px minmax(0, 1fr);
+    gap: clamp(48px, 7vw, 96px);
     align-items: center;
-
 }
 
+
+/* ==========================================
+   PROFILE IMAGE
+========================================== */
 
 .about-editorial__image {
-
+    position: relative;
     width: 260px;
     height: 260px;
-
-    border-radius: 50%;
-
-    overflow: hidden;
-
     flex-shrink: 0;
-
+    overflow: visible;
 }
 
+/* Decorative ring */
 
+.about-editorial__image::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+
+    background: conic-gradient(
+        #c78a35 0deg 72deg,
+        #2f6d5f 72deg 144deg,
+        #bf4f35 144deg 216deg,
+        #6d4ba8 216deg 288deg,
+        #234d91 288deg 360deg
+    );
+
+    -webkit-mask:
+        radial-gradient(
+            circle,
+            transparent 90%,
+            #000 91%
+        );
+
+    mask:
+        radial-gradient(
+            circle,
+            transparent 90%,
+            #000 91%
+        );
+
+    z-index: 0;
+}
+
+/* Portrait */
+
+.about-editorial__image amp-img,
 .about-editorial__image img {
+    position: relative;
+    z-index: 1;
 
     width: 100%;
     height: 100%;
 
+    display: block;
     object-fit: cover;
 
-    display: block;
-
+    border-radius: 50%;
 }
 
+
+/* ==========================================
+   PROFILE POINTS
+========================================== */
+
+.profile-point {
+    position: absolute;
+    z-index: 3;
+}
+
+.profile-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+
+.profile-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.profile-caption {
+    position: absolute;
+    white-space: nowrap;
+    color: #222;
+}
+
+.profile-caption strong {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    line-height: 1.2;
+}
+
+.profile-caption span {
+    display: block;
+    margin-top: 2px;
+
+    font-size: 11px;
+    line-height: 1.2;
+
+    color: rgba(0,0,0,.55);
+}
+
+
+/* ==========================================
+   TOP
+========================================== */
+
+.profile-point--top {
+    top: -62px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.profile-point--top .profile-icon {
+    background: #c78a35;
+}
+
+.profile-point--top .profile-caption {
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+
+/* ==========================================
+   RIGHT
+========================================== */
+
+.profile-point--right {
+    top: 50%;
+    right: -62px;
+    transform: translateY(-50%);
+}
+
+.profile-point--right .profile-icon {
+    background: #2f6d5f;
+}
+
+.profile-point--right .profile-caption {
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* ==========================================
+   BOTTOM
+========================================== */
+
+.profile-point--bottom {
+    bottom: -62px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.profile-point--bottom .profile-icon {
+    background: #bf4f35;
+}
+
+.profile-point--bottom .profile-caption {
+    top: 52px;
+    left: 48%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+
+/* ==========================================
+   LEFT
+========================================== */
+
+.profile-point--left {
+    top: 50%;
+    left: -62px;
+    transform: translateY(-50%);
+}
+
+.profile-point--left .profile-icon {
+    background: #6d4ba8;
+}
+
+.profile-point--left .profile-caption {
+    right: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
 
 .about-editorial__content {
-
     max-width: 720px;
-
 }
-
 
 .about-editorial__title {
-
     font-family: var(--font-serif);
-
-    font-size: clamp(42px,5vw,64px);
-
+    font-size: clamp(42px, 5vw, 64px);
     line-height: 1.05;
-
     letter-spacing: -0.03em;
-
     font-weight: 500;
-
     margin-bottom: 2rem;
-
     max-width: 18ch;
-
 }
-
 
 .about-editorial__title span {
-
     font-style: italic;
-
 }
-
 
 .about-editorial__text {
-
     max-width: 44ch;
-
 }
-
 
 .about-editorial__text p {
-
     font-size: var(--text-md);
-
     line-height: 1.75;
-
     color: rgba(0,0,0,.72);
-
     margin-bottom: 1.75rem;
-
 }
-
 
 .about-editorial__text a {
-
     color: #0e4d4a;
-
-    border-bottom:
-
-    1px solid
-    rgba(14,77,74,.25);
-
+    border-bottom: 1px solid rgba(14,77,74,.25);
     transition: all .25s ease;
-
 }
-
 
 .about-editorial__text a:hover {
-
     border-color: #0e4d4a;
-
 }
 
+@media (max-width: 768px) {
 
-@media (max-width:768px){
+    .about-editorial__grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
 
-.about-editorial__grid{
+    .about-editorial__image {
+        width: 180px;
+        height: 180px;
+        margin: 2rem auto;
+    }
 
-    grid-template-columns: 1fr;
+    /* Smaller icons */
 
-    gap: 2rem;
+    .profile-icon {
+        width: 34px;
+        height: 34px;
+    }
 
+    .profile-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Show title only */
+
+    .profile-caption span {
+        display: none;
+    }
+
+    .profile-caption {
+        top: 40px;
+        left: 50%;
+        right: auto;
+
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .profile-caption strong {
+        font-size: 9px;
+        letter-spacing: .08em;
+        white-space: nowrap;
+    }
+
+    /* Icon positions */
+
+    .profile-point--top {
+        top: -48px;
+    }
+
+    .profile-point--right {
+        right: -48px;
+    }
+
+    .profile-point--bottom {
+        bottom: -48px;
+    }
+
+    .profile-point--left {
+        left: -48px;
+    }
+
+    /* All captions sit below icons */
+
+    .profile-point--top .profile-caption,
+    .profile-point--right .profile-caption,
+    .profile-point--bottom .profile-caption,
+    .profile-point--left .profile-caption {
+        top: 40px;
+        bottom: auto;
+        left: 50%;
+        right: auto;
+
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .about-editorial__content {
+        text-align: center;
+        margin: auto;
+    }
+
+    .about-editorial__title {
+        max-width: none;
+        font-size: clamp(32px, 9vw, 48px);
+    }
+
+    .about-editorial__text {
+        max-width: none;
+    }
 }
-
-.about-editorial__image{
-
-    width: 180px;
-
-    height: 180px;
-
-    margin: 0 auto;
-
-}
-
-.about-editorial__content{
-
-    text-align: center;
-
-    margin: auto;
-
-}
-
-.about-editorial__title{
-
-    max-width: none;
-
-    font-size: clamp(32px,9vw,48px);
-
-}
-
-.about-editorial__text{
-
-    max-width: none;
-
-}
-
-}
-
+/* ==========================================
+   FOOTER
+========================================== */
 
 .footer-minimal {
-
-    padding: var(--space-section) 0;
-
+    padding: 48px 0;
     border-top: 1px solid rgba(0,0,0,.08);
-
 }
 
 .footer-minimal .container {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
 }
 
 .footer-word {
-
     font-family: var(--font-serif);
-
     font-size: clamp(28px, 4vw, 44px);
-
     line-height: 1;
-
     letter-spacing: -0.03em;
-
     opacity: .85;
-
     transition: opacity .25s ease;
-
 }
 
 .footer-word:hover {
-
     opacity: 1;
-
-}
-
-.footer-minimal {
-
-    padding: 48px 0;
-
-}
-
-.footer-minimal .container {
-
-    display: flex;
-
-    justify-content: space-between;
-
 }
 
 .footer-minimal a {
-
     font-family: var(--font-serif);
-
     font-size: 32px;
-
     letter-spacing: -0.03em;
-
 }
