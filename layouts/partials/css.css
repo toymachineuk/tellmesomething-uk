@@ -4086,14 +4086,14 @@ font-size: clamp(36px, 6vw, 72px);
 }
 
 .portfolio-note__highlight {
-  color: #000;
+  color: white;
   font-weight: 700;
 }
 
 .portfolio-note__link svg {
   width: 16px;
   height: 16px;
-  color: #000;
+  color: white;
   transition: transform .2s ease;
 }
 
