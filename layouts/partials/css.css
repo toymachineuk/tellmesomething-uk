@@ -2200,6 +2200,21 @@ margin: -10px auto 0;
   width: 100%;
   height: 100%;
   display: block;
+   display: block;
+  animation: floatDecor 6s ease-in-out infinite !important;
+  will-change: transform;
+}
+
+@keyframes floatDecor {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-25px); /* increased from 12px */
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* Parent container needs positioning */
@@ -5037,3 +5052,235 @@ article {
     font-size: 32px;
     letter-spacing: -0.03em;
 }
+
+
+
+
+
+
+
+
+
+
+/* ==================================================
+   PORTFOLIO
+================================================== */
+
+.portfolio{
+  padding-top:var(--space-section-lg);
+  padding-bottom:var(--space-section);
+  background:#0f172a;
+  color:#fff;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.portfolio__header{
+  width:min(1200px,92vw);
+  margin:0 auto 56px;
+}
+
+.portfolio__eyebrow{
+  display:inline-block;
+  margin-bottom:14px;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+}
+
+.portfolio__title{
+  font-size:clamp(52px,8vw,120px);
+  line-height:.92;
+  letter-spacing:-.05em;
+  font-weight:900;
+  color:#fff;
+}
+
+/* ==================================================
+   AMP CAROUSEL
+================================================== */
+
+.portfolio-carousel{
+  width:min(1200px,92vw);
+  margin:0 auto;
+}
+
+/* ==================================================
+   CARD
+================================================== */
+
+.portfolio-card{
+  width:320px;
+  display:flex;
+  flex-direction:column;
+}
+
+.portfolio-card:hover{
+  transform:translateY(-6px);
+}
+
+/* ==================================================
+   MEDIA
+================================================== */
+
+.portfolio-card__media{
+  overflow:hidden;
+  border-radius:18px;
+  background:#182233;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 20px 50px rgba(0,0,0,.28);
+
+  /* helps prevent flicker during carousel repaint */
+  transform:translateZ(0);
+  backface-visibility:hidden;
+}
+
+.portfolio-card__media amp-img{
+  display:block;
+}
+
+.portfolio-card__media img{
+  display:block;
+  transform:translateZ(0);
+  backface-visibility:hidden;
+}
+
+/* ==================================================
+   TYPOGRAPHY
+================================================== */
+
+.portfolio-card__title{
+  margin-top:18px;
+  font-size:15px;
+  line-height:1.35;
+  font-weight:600;
+  letter-spacing:-.01em;
+  color:#fff;
+}
+
+.portfolio-card__description{
+  margin-top:6px;
+  max-width:28ch;
+  font-size:13px;
+  line-height:1.5;
+  letter-spacing:-.01em;
+  color:rgba(255,255,255,.75);
+}
+
+/* ==================================================
+   NOTE
+================================================== */
+
+.portfolio__note{
+  width:min(1200px,92vw);
+  margin:48px auto 0;
+  padding:18px 22px;
+  border-radius:14px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  font-size:14px;
+  line-height:1.6;
+  color:rgba(255,255,255,.8);
+}
+
+.portfolio__note a{
+  color:#fff;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.portfolio__note a:hover{
+  opacity:.8;
+}
+
+/* ==================================================
+   CAROUSEL BUTTONS
+================================================== */
+
+.amp-carousel-button{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background-color:#ffffff !important;
+  opacity:1 !important;
+  box-shadow:0 6px 20px rgba(0,0,0,.25);
+}
+
+.amp-carousel-button-prev,
+.amp-carousel-button-next{
+  top:40%;
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width:768px){
+
+  .portfolio{
+    padding-top:72px;
+    padding-bottom:72px;
+  }
+
+  .portfolio__header{
+    margin-bottom:36px;
+  }
+
+  .portfolio__title{
+    font-size:clamp(40px,12vw,64px);
+  }
+
+  .portfolio-card{
+    width:220px;
+  }
+
+  .portfolio-card__media{
+    border-radius:14px;
+  }
+
+  .portfolio-card__title{
+    margin-top:14px;
+    font-size:13px;
+  }
+
+.portfolio-card__description{
+  margin-top:6px;
+  font-size:13px;
+  line-height:1.5;
+  color:rgba(255,255,255,.75);
+
+  min-height:3.9em
+
+}
+
+  .portfolio__note{
+    margin-top:32px;
+    padding:14px 16px;
+    font-size:13px;
+  }
+
+}
+
+
+
+.portfolio-card{
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+.portfolio-card__title,
+.portfolio-card__description{
+  position:static;
+   width:100%;
+  white-space:normal;
+  overflow-wrap:break-word;
+
+}
+
+
+

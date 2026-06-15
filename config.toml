@@ -7,8 +7,8 @@ title = 'TMS'
   url = "/articles/pulseframes/"
 
       [[menu.main]]
-  name = "audio"
-  url = "/articles/Audio/"
+  name = "studio"
+  url = "/articles/studio/"
 
       [[menu.main]]
   name = "video"
