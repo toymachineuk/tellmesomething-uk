@@ -3266,6 +3266,8 @@ font-size: clamp(36px, 6vw, 72px);
     gap: var(--space-grid-md);
   }
 
+  
+
   .base-contrast__main {
     order: -1;
   }
@@ -3273,6 +3275,14 @@ font-size: clamp(36px, 6vw, 72px);
   .base-contrast__side {
     order: 2;
   }
+
+
+  .base-contrast__point h3 {
+  margin-bottom: 0.25rem;
+  flex: 0;
+}
+
+
 }
 
   /* reset everything */
@@ -3569,6 +3579,16 @@ font-size: clamp(36px, 6vw, 72px);
   margin: 0;
   max-width: 26ch;
 }
+
+
+@media (max-width: 900px) {
+
+.base-contrast.two-columns .base-contrast__point p {
+
+  max-width: none;
+}
+}
+
 
 /* ===============================
    SERVICES MOSAIC
@@ -5120,7 +5140,7 @@ article {
 
 .amp-scrollable-carousel-slide:first-child {
 
-  margin-left: 24px;
+  margin-right: 28px;
 
 }
 
@@ -5131,7 +5151,8 @@ article {
 
 .portfolio-card {
 
-  width: 420px;
+  min-width: 420px;
+  max-width: 420px;
 
   display: flex;
 
@@ -5140,7 +5161,10 @@ article {
   margin-right: 28px;
 
   transition: transform .3s ease;
+  overflow: hidden;
 
+    height: auto;
+  flex: 0 0 auto;
 }
 
 .portfolio-card:hover {
@@ -5223,6 +5247,7 @@ article {
   letter-spacing: -.01em;
 
   color: #fff;
+    min-height: 2.7em;
 
 }
 
@@ -5231,18 +5256,24 @@ article {
 
   margin-top: 6px;
 
-  max-width: 28ch;
+  max-width: none;
 
   font-size: 13px;
 
   line-height: 1.5;
 
   letter-spacing: -.01em;
-
+  min-height: 4.5em;
   color: rgba(255,255,255,.75);
+    overflow-wrap: break-word;
 
 }
 
+
+.portfolio-card__description,
+.portfolio-card__title {
+  white-space: normal !important;
+}
 
 /* ==================================================
    MOBILE
@@ -5288,8 +5319,3 @@ article {
 
 }
 
-.amp-scrollable-carousel-slide {
-
-  overflow: visible !important;
-
-}
