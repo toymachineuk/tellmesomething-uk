@@ -1029,11 +1029,44 @@ border:1px solid rgba(0,0,0,0.08);
   background: #016a87;
   color: white;
 }
-.base-intro__layout {
-  grid-template-columns: 1.4fr 0.6fr;
+
+.base-intro__layout.left-title {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 6rem;
+  align-items: center;
 }
 
 
+@media (max-width:768px){
+
+.base-intro__layout.left-title{
+
+display:flex;
+
+flex-direction:column;
+
+gap:2rem;
+
+}
+
+.base-intro__side{
+
+order:2;
+
+width:100%;
+
+}
+
+.base-intro__main{
+
+order:1;
+
+}
+
+
+
+}
 
 /* ===============================
   SECTION WITH CIRCLES
@@ -3007,6 +3040,9 @@ padding-bottom: var(--space-grid-sm);
 
 
 }
+
+
+
 .base-intro__layout {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -3037,6 +3073,123 @@ padding-bottom: var(--space-grid-sm);
   font-size: 0.95rem;
   line-height: 1.6;
   opacity: var(--text-body);
+}
+
+
+.left-title .base-intro__block {
+
+padding:3rem;
+
+border-radius:28px;
+
+background:
+
+linear-gradient(
+180deg,
+
+rgba(255,255,255,.04),
+
+rgba(255,255,255,.015)
+
+);
+
+border:
+
+1px solid rgba(255,255,255,.08);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+.left-title .base-intro__block:before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:4px;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#c13801,
+
+#720000
+
+);
+
+}
+
+
+.bg-word{
+
+position:absolute;
+
+top:50%;
+
+left:50%;
+
+transform:
+
+translate(-50%,-50%);
+
+font-size:
+
+clamp(
+8rem,
+20vw,
+18rem
+);
+
+font-weight:800;
+
+letter-spacing:-0.05em;
+
+color:transparent;
+
+-webkit-text-stroke:
+
+1px rgba(193,56,1,.15);
+
+pointer-events:none;
+
+user-select:none;
+
+z-index:0;
+
+}
+
+
+@media (max-width:768px){
+
+.bg-word{
+
+position:absolute;
+
+top:0;
+
+right:-10px;
+
+left:auto;
+
+transform:none;
+
+font-size:4rem;
+
+
+}
+
 }
 
 .base-intro__block p {
@@ -3085,6 +3238,18 @@ padding-bottom: var(--space-grid-sm);
     border-top: none;
     padding-top: 0;
   }
+
+  .ethics-video{
+
+width:calc(100% + 2rem);
+
+margin-left:-1rem;
+
+margin-right:-1rem;
+
+border-radius:0;
+
+}
 }
 
 /* ===============================
