@@ -2807,6 +2807,22 @@ margin: -10px auto 0;
  
 }
 
+
+
+
+
+.formats-section .formats-layout-v2{
+
+grid-template-columns:
+
+0.8fr 1.2fr;
+
+gap:7rem;
+
+align-items:start;
+
+}
+
 /* =========================
    LEFT COLUMN (STICKY INTRO)
 ========================= */
@@ -3036,8 +3052,8 @@ padding-top: var(--space-section);
 }
 
 .base-contrast.video-section {
-padding-bottom: var(--space-grid-sm);
 
+background: #f3f4f6;
 
 }
 
@@ -3104,6 +3120,57 @@ overflow:hidden;
 }
 
 
+
+.ethics-video{
+
+max-width:620px;
+
+margin:
+
+5rem auto 0;
+
+border-radius:24px;
+
+overflow:hidden;
+
+position:relative;
+
+background:#111;
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.25);
+
+transition:.3s;
+
+}
+
+
+
+
+.video-caption{
+
+text-align:center;
+
+max-width:500px;
+
+margin:
+
+2rem auto 0;
+
+}
+
+.video-caption p{
+
+font-size:1.25rem;
+
+line-height:1.4;
+
+opacity:.85;
+
+}
+
+
 .left-title .base-intro__block:before{
 
 content:"";
@@ -3134,6 +3201,11 @@ linear-gradient(
 
 .bg-word{
 
+  font-size: clamp(180px, 20vw, 350px);
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(114, 0, 0, 0.12);
+
 position:absolute;
 
 top:50%;
@@ -3156,7 +3228,7 @@ font-weight:800;
 
 letter-spacing:-0.05em;
 
-color:transparent;
+
 
 -webkit-text-stroke:
 
@@ -4236,9 +4308,9 @@ font-size: clamp(36px, 6vw, 72px);
 .portfolio-note {
  margin-top: 32px;
   margin-left: auto;
-  max-width: 32ch;
+
   padding: 16px 20px;
-  margin-left: auto;
+
   margin-right: 80px;
   font-size: 14px;
   line-height: 1.5;
@@ -4246,6 +4318,16 @@ font-size: clamp(36px, 6vw, 72px);
 
   border: 1px solid white;
   border-radius: 12px;
+
+
+  
+max-width:520px;
+
+margin:
+
+2rem auto 0;
+
+text-align:center;
 
 }
 
