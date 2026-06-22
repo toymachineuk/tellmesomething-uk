@@ -11,8 +11,8 @@ title = 'TMS'
   url = "/articles/studio/"
 
       [[menu.main]]
-  name = "video"
-  url = "/articles/video/"
+  name = "development"
+  url = "/articles/development/"
 
   [[menu.main]]
   name = "case studies"
