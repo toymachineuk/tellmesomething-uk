@@ -2028,10 +2028,7 @@ margin: -10px auto 0;
   margin-top: var(--space-flow);
 }
 
-.base-intro__lead,
-.base-contrast__lead {
-  margin-top: var(--space-block);
-}
+
 /* container rhythm */
 .section-head {
   max-width: 640px;
@@ -3005,7 +3002,11 @@ padding-top: var(--space-section);
   padding-bottom: var(--space-section-lg);
 }
 
+.base-contrast.video-section {
+padding-bottom: var(--space-grid-sm);
 
+
+}
 .base-intro__layout {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -3025,6 +3026,7 @@ padding-top: var(--space-section);
 .base-intro__lead {
   max-width: 420px;
   opacity: var(--text-body);
+  margin: 1.5rem 0 0 0;
 }
 
 /* right */
