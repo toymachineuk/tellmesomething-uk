@@ -4595,6 +4595,15 @@ amp-img img {
   z-index: 1;
 }
 
+
+.ambient-orbs.inside-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* keep content above circles */
 
 section,
