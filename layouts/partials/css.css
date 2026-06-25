@@ -5025,6 +5025,12 @@ article {
     border-radius: 50%;
 }
 
+.about-editorial__image.square amp-img, .about-editorial__image.square img {
+  
+
+    border-radius: 0;
+}
+
 
 /* ==========================================
    PROFILE POINTS
