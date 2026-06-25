@@ -3219,8 +3219,7 @@ linear-gradient(
 
 .bg-word{
 
-  font-size: clamp(180px, 20vw, 350px);
-  font-weight: 900;
+
   line-height: 1;
   color: rgba(114, 0, 0, 0.12);
 
@@ -3237,22 +3236,13 @@ translate(-50%,-50%);
 font-size:
 
 clamp(
-8rem,
-20vw,
-18rem
+6rem, 14vw, 14rem
 );
 
 font-weight:800;
 
 letter-spacing:-0.05em;
 
-
-
--webkit-text-stroke:
-
-1px rgba(193,56,1,.15);
-
-pointer-events:none;
 
 user-select:none;
 
@@ -3272,14 +3262,14 @@ z-index:0;
     white-space: nowrap;
 
        position: absolute;
-    top: 480px;
+    top: 420px;
 
     left: 50%;
     right: auto;
 
     transform: translateX(-50%);
 
-    font-size: 5rem;
+    font-size: 4rem;
     white-space: nowrap;
 
 }
@@ -5588,3 +5578,88 @@ article {
 
 }
 
+
+
+
+
+
+
+
+.honest-angle {
+  background: #fff;
+  padding: 8rem 0;
+}
+
+.honest-angle .container {
+  max-width: 900px;
+}
+
+.honest-angle__label {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+}
+
+.honest-angle__quote {
+  margin: 0;
+}
+
+.honest-angle__quote p {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: #111;
+  margin: 0;
+}
+
+.honest-angle__quote em {
+  font-style: normal;
+  color: #016a87;
+}
+
+.honest-angle__author {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.honest-angle__line {
+  width: 60px;
+  height: 1px;
+  background: #111;
+  opacity: 0.3;
+}
+
+.honest-angle__author strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.honest-angle__author span {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.honest-angle {
+  position: relative;
+  overflow: hidden;
+}
+
+.honest-angle::before {
+  content: "“";
+  position: absolute;
+  top: -80px;
+  left: -20px;
+  font-size: 22rem;
+  line-height: 1;
+  color: #60dcf6;
+  opacity: 0.12;
+  font-family: Georgia, serif;
+  pointer-events: none;
+}
