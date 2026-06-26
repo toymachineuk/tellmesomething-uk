@@ -3363,7 +3363,6 @@ margin-top: 0;
   text-transform: uppercase;
   letter-spacing: 0.15em;
 
-  color:black;
 }
 
 
@@ -5596,85 +5595,82 @@ article {
 
 
 
+.case-reflection__quote{
+    margin:0;
+    max-width:820px;
 
-
-
-
-.honest-angle {
-  background: #fff;
-  padding: 8rem 0;
+        font-size:1.45rem;
+    line-height:1.7;
+    font-weight:400;
+    
+    letter-spacing:-0.02em;
+    color:#fff;
 }
 
-.honest-angle .container {
-  max-width: 900px;
+.case-reflection{
+     max-width:760px;
+    margin:5rem auto 0;
+    padding-top:3rem;
+    border-top:1px solid rgba(255,255,255,.12);
 }
 
-.honest-angle__label {
-  display: inline-block;
-  margin-bottom: 2rem;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  opacity: 0.6;
+.case-reflection__label{
+    display:block;
+    margin-bottom:1rem;
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#60dcf6
 }
 
-.honest-angle__quote {
-  margin: 0;
+
+
+.case-reflection__quote em{
+    font-style:normal;
+    color:#60dcf6;
 }
 
-.honest-angle__quote p {
-  font-size: clamp(2rem, 4vw, 4rem);
-  line-height: 1.05;
-  font-weight: 500;
-  letter-spacing: -0.04em;
-  color: #111;
-  margin: 0;
+.case-reflection__author{
+    margin-top:2rem;
+    font-size:1rem;
+    color:rgba(255,255,255,.65);
 }
 
-.honest-angle__quote em {
-  font-style: normal;
-  color: #016a87;
+.case-reflection__author strong{
+    color:#fff;
 }
 
-.honest-angle__author {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-top: 3rem;
+
+@media (max-width:1024px){
+    .case-reflection__quote{
+        font-size:1.75rem;
+    }
 }
 
-.honest-angle__line {
-  width: 60px;
-  height: 1px;
-  background: #111;
-  opacity: 0.3;
+@media (max-width:768px){
+    .case-reflection{
+        margin-top:4rem;
+        padding-top:2.5rem;
+    }
+
+    .case-reflection__quote{
+        font-size:1.35rem;
+        line-height:1.6;
+    }
+
+    .case-reflection__author{
+        font-size:.9rem;
+    }
 }
 
-.honest-angle__author strong {
-  display: block;
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
-}
+@media (max-width:480px){
+    .case-reflection__quote{
+        font-size:1.15rem;
+        line-height:1.7;
+    }
 
-.honest-angle__author span {
-  font-size: 0.9rem;
-  opacity: 0.6;
-}
-
-.honest-angle {
-  position: relative;
-  overflow: hidden;
-}
-
-.honest-angle::before {
-  content: "“";
-  position: absolute;
-  top: -80px;
-  left: -20px;
-  font-size: 22rem;
-  line-height: 1;
-  color: #60dcf6;
-  opacity: 0.12;
-  font-family: Georgia, serif;
-  pointer-events: none;
+    .case-reflection__label{
+        margin-bottom:.75rem;
+    }
 }
