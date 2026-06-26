@@ -5569,9 +5569,17 @@ article {
 
   .portfolio-card__media {
 
-    border-radius: 14px;
-        max-height: 240px;
+      border-radius: 14px;
+    max-height: none;
+    overflow: hidden;
 
+  }
+
+    .portfolio-card__media img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
   }
 
   .portfolio-card__title {
