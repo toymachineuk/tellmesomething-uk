@@ -4628,7 +4628,7 @@ article {
   border-radius: 50%;
 
   opacity: 0.85;
-
+  filter: blur(80px);
   mix-blend-mode: screen;
 
   will-change: transform;
@@ -4660,6 +4660,12 @@ article {
 
   animation-name: floatOne;
 }
+
+
+
+
+
+
 
 /* =========================================
    ORB 2
@@ -4696,14 +4702,7 @@ article {
   top: 8%;
   right: -120px;
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(120, 170, 255, 1) 0%,
-      rgba(120, 170, 255, 0.75) 42%,
-      rgba(120, 170, 255, 0.12) 74%,
-      transparent 100%
-    );
+
 
   animation-name: floatThree;
   animation-duration: 22s;
@@ -4720,14 +4719,6 @@ article {
   bottom: -60px;
   right: 10%;
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(210, 170, 255, 1) 0%,
-      rgba(210, 170, 255, 0.7) 45%,
-      rgba(210, 170, 255, 0.1) 72%,
-      transparent 100%
-    );
 
   animation-name: floatFour;
   animation-duration: 16s;
@@ -4744,6 +4735,127 @@ article {
   bottom: 30%;
   left: 42%;
 
+
+
+  animation-name: floatFive;
+  animation-duration: 12s;
+}
+
+
+
+/* =========================================
+   ORB YELLOW
+========================================= */
+
+.orb--yellow {
+background: radial-gradient(
+  circle,
+  #fff3a6 0%,
+  #ffe36d 20%,
+  #fdce2a 45%,
+  rgba(253, 206, 42, 0.35) 72%,
+  transparent 100%
+);
+}
+
+
+/* =========================================
+   ORB ORANGE
+========================================= */
+
+.orb--orange {
+background: radial-gradient(
+  circle,
+  #ffd58a 0%,
+  #ffc05a 20%,
+  #fdab2b 45%,
+  rgba(253, 171, 43, 0.35) 72%,
+  transparent 100%
+);
+
+}
+
+/* =========================================
+   ORB DEEP-ORANGE
+========================================= */
+
+.orb--deep-orange {
+background: radial-gradient(
+  circle,
+  #ffb47d 0%,
+  #f89553 20%,
+  #e97626 45%,
+  rgba(233, 118, 38, 0.35) 72%,
+  transparent 100%
+);
+}
+
+/* =========================================
+   ORB DARK-BROWN
+========================================= */
+
+.orb--dark-brown {
+  background: radial-gradient(circle,
+    #b86b52 0%,
+    #8b3118 22%,
+    #651204 48%,
+    rgba(101,18,4,.4) 72%,
+    transparent 100%);
+}
+
+
+/* =========================================
+   ORB SOFT-CHAMPAGNE
+========================================= */
+
+.orb--champagne {
+  background: radial-gradient(circle,
+    #fff8dd 0%,
+    #ffe9a6 20%,
+    #ffd76d 45%,
+    rgba(255,215,109,.28) 72%,
+    transparent 100%);
+}
+
+
+
+
+/* =========================================
+   ORB BLUE
+========================================= */
+
+.orb--blue {
+  background:
+    radial-gradient(
+      circle,
+      rgba(120, 170, 255, 1) 0%,
+      rgba(120, 170, 255, 0.75) 42%,
+      rgba(120, 170, 255, 0.12) 74%,
+      transparent 100%
+    );
+
+}
+
+/* =========================================
+   ORB VIOLET
+========================================= */
+
+.orb--violet {
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(210, 170, 255, 1) 0%,
+      rgba(210, 170, 255, 0.7) 45%,
+      rgba(210, 170, 255, 0.1) 72%,
+      transparent 100%
+    );
+
+
+}
+
+.orb--light-yellow {
+
   background:
     radial-gradient(
       circle,
@@ -4753,8 +4865,7 @@ article {
       transparent 100%
     );
 
-  animation-name: floatFive;
-  animation-duration: 12s;
+
 }
 
 /* =========================================

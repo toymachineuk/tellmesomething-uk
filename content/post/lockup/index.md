@@ -1,91 +1,67 @@
 ---
-title: Lockup Design
-subtitle:  Converting textual images into selectable text is a great  way to improve SEO.
+title: Understanding Lockup Design in Modern Story Creation
+subtitle:  Converting text embedded in images into selectable HTML text is an effective way to improve both SEO and accessibility. It also makes content responsive, easier to maintain, and readable by search engines and assistive technologies.
 date: "2016-09-01"
 tags: ["design"]
 categories: ["web stories","design" ]
-lead: The challenge we’re addressing here is known as "Lockup Design." We believe that combining the art of lockup design with code can elevate web stories to the next level.
+lead: One of the most challenging layouts to recreate with HTML and CSS is the typographic lockup—a carefully arranged title where words vary in size, weight, and position to create maximum visual impact within a limited space. Bringing this style from graphic design to the web is known as lockup design.
 image: "images/hero.png"
 references: ["design", "lockup", "youtube"]
 layout: single
 ---
 
-Here’s a refined and more professional version of your text with improved clarity, structure, and flow while preserving your ideas:
-
----
-
-## Understanding “Lockup Design” in Modern Web Story Creation
-
-For a long time, Adobe Photoshop has been the go-to tool for creating visually striking cover images. These designs are often bold, trendy, and highly engaging. However, they come with a significant limitation: search engines cannot read text that is embedded within images. As a result, any important keywords or information included in the design are not indexed or discoverable through search.
-
-One alternative is to generate text and captions directly using HTML and CSS. While this approach improves accessibility and SEO, it introduces a new challenge—designing visually compelling layouts with code. Creating expressive visuals using HTML and CSS is not just technical work; it is a form of digital craftsmanship.
-
-One of the most interesting challenges in this space is known as **“Lockup Design.”** This technique is especially effective when long titles need to be placed within a limited visual space. It is widely used by YouTube cover designers, who must work within strict title character limits while still maintaining strong visual impact.
-
-However, YouTube designers typically focus only on graphics and do not need to consider indexing, responsiveness, or semantic structure. In contrast, web stories require a different approach. Here, lockup captions are not just a design choice—they also play an important role in SEO and should ideally be translated into structured code.
-
-So the question becomes: are we there yet?
-
-The honest answer is—not yet.
-
-While lockup design is already complex in graphic tools like Photoshop, translating it into responsive, semantic code takes it to an entirely different level. The good news is that some web designers are already working at this advanced stage and actively sharing their techniques and insights. Below is an example of a lockup caption created directly with code.
-
-*Lockup Caption Created with Code*
-
-So, what are we doing right now?
-
-We are learning. With every story we build, we move one step closer to mastering the translation of complex lockup designs into fully functional, SEO-friendly code.
-
----
-
-If you want, I can also make this more technical (developer-focused) or more marketing-oriented depending on where you’ll publish it.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Photoshop has long been the go-to software for creating visually stunning cover images. While these images are often trendy and eye-catching, one major limitation is that search engines can't read text embedded within them. As a result, any important information or keywords in the text aren't indexed or searchable.
+Photoshop has long been the go-to tool for creating visually striking cover images. While these graphics are eye-catching, the text they contain is less useful than semantic HTML. Search engines cannot index embedded text as effectively, users can't easily select or copy it, and screen readers cannot interpret it as naturally as real HTML content.
 <!--more-->
+An alternative approach is to build captions directly with HTML and CSS. This preserves the visual design while keeping the text semantic, searchable, and responsive. The challenge, however, is that designing expressive typography with code requires both technical skill and artistic judgment.
 
-An alternative approach is generating captions for images using CSS and HTML. However, drawing with code can be challenging. Designing visually compelling content using HTML and CSS is truly an art form.
+Lockup design is particularly popular in YouTube thumbnails, where creators must fit long titles into a small space while maintaining a bold, attention-grabbing composition.
 
 
-The challenge we've encountered is known as "Lockup Design." This design is highly effective when you need to fit a long title within a confined space. It's particularly popular among YouTube cover designers. Given the character limit for titles on the platform, they often face the challenge of fitting lengthy text into that restricted space while maintaining a visually appealing layout.
+
+
 
 
 
 {{< img class="fixed-height-container width-80 center" caption="  Example of a Lockup Caption on a YouTube Video Cover   " src="images/youtube.PNG" width="676" height="449"   >}}
 
 
-However, YouTube designers don’t need to worry about indexing or responsiveness since they only work with graphics. In contrast, for web stories, lockup captions play a significant role in SEO, meaning they should ideally be translated into code.
+
+However, thumbnail designers don't need to worry about responsiveness or semantic markup because their work exists entirely as graphics. On the web, the situation is different. Headlines need to adapt to different screen sizes, remain accessible, and contribute to SEO. That makes recreating lockup designs with HTML and CSS a far more demanding task.
+
+So, are we there yet?
+
+Not quite.
+
+Recreating graphic-quality lockups with responsive code is still a difficult problem. Fortunately, talented frontend developers have already begun exploring this space and are generously sharing their techniques and ideas[^1].  [developer](https://css-tricks.com/author/geoffgraham/).
 
 
-So, the question is: are we doing that yet? The answer is: not yet.  While lockup captions in graphic design are already challenging, translating them into code takes it to a whole new level. But the good news is, some web designers are already working at this level. Even better, they’re generously sharing their techniques and insights[^1]. Below is a screenshot of a lockup caption created by a [developer](https://css-tricks.com/author/geoffgraham/).
 
 
 {{< img class="fixed-height-container center width-40" caption="Lockup Caption Created with Code" src="images/lockup.png" width="676" height="449"   >}}
 
 
 So, to answer the question, "What are we doing?"—we’re learning. With every story, we’re getting closer to mastering the replication of lockup design through code.
+
+
+
+*Lockup Caption Created with Code*
+
+This series is our journey into that world. With every experiment and every story, we're getting closer to recreating the expressive typography of graphic design using nothing more than HTML and CSS.
+
+
+Recreating lockup captions with HTML and CSS is still a difficult problem, but it's becoming increasingly achievable. As modern CSS continues to evolve—with Grid, container queries, variable fonts, and newer layout techniques—we're getting closer to designs that are both visually expressive and semantically correct. That's exactly what we'll be exploring in this series.
+
+
+
+
+
+
+
+
+*Example of a Lockup Caption on a YouTube Video Cover*
 
 
 
