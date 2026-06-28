@@ -5957,3 +5957,101 @@ background: radial-gradient(
 }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.origin-card{
+    background:#0c2340;
+    color:#f6f3ee;
+    border-top:5px solid #fdce2a;
+    padding:2.75rem;
+    position:relative;
+    height:fit-content;
+}
+
+.origin-card::after{
+    content:"";
+    position:absolute;
+    inset:16px;
+    border:1px solid rgba(255,255,255,.08);
+    pointer-events:none;
+}
+
+.origin-label{
+    display:inline-block;
+    margin-bottom:1rem;
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:#fdce2a;
+}
+
+.origin-card h2{
+    margin:0 0 1.5rem;
+    font-size:2.4rem;
+    line-height:1.05;
+    letter-spacing:-.03em;
+    color:#fff;
+}
+
+.origin-card p{
+    margin:0 0 1.25rem;
+    font-size:1.05rem;
+    line-height:1.8;
+    color:rgba(255,255,255,.85);
+}
+
+.origin-card .lead{
+    font-size:1.35rem;
+    line-height:1.45;
+    color:#fff;
+    font-weight:500;
+}
+
+.origin-divider{
+    width:60px;
+    height:2px;
+    background:#fdce2a;
+    margin:2rem 0 1.5rem;
+}
+
+.origin-card small{
+    display:block;
+    font-size:.82rem;
+    line-height:1.7;
+    color:rgba(255,255,255,.6);
+    letter-spacing:.04em;
+}
+
+@media (max-width:768px){
+
+    .origin-card{
+        padding:2rem;
+    }
+
+    .origin-card::after{
+        inset:10px;
+    }
+
+    .origin-card h2{
+        font-size:2rem;
+    }
+
+    .origin-card .lead{
+        font-size:1.2rem;
+    }
+
+    .origin-card p{
+        font-size:1rem;
+    }
+}
