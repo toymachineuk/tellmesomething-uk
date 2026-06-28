@@ -5873,6 +5873,12 @@ background: radial-gradient(
     gap:1.5rem;
 }
 
+.pulse-step.only-dots {
+
+
+    grid-template-columns:70px  1fr;
+}
+
 .pulse-step__number{
 
     font-size:.75rem;
