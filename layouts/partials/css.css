@@ -2648,7 +2648,7 @@ margin: -10px auto 0;
 @media (max-width: 500px) {
 
   .services-flow__list {
-    gap: var(--space-6);
+    gap: 0;
   }
 
   .services-flow__item {
@@ -3760,6 +3760,7 @@ font-size: clamp(36px, 6vw, 72px);
     border-top: var(--border-medium);
     background: rgba(255, 255, 255, 0.04);
     border-radius: 0.875rem 0.875rem 0 0;
+    text-align: center;
   }
 
   /* Platform row */
