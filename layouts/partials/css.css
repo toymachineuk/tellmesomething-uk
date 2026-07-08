@@ -1346,6 +1346,14 @@ margin-top:80px;
     margin-top: 40px;
 }
 
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .hero-inner {
+    display: none;
+  }
+}
+
 /* TOP GREEN AREA */
 .hero-v2-top{
 
@@ -1597,7 +1605,7 @@ margin-bottom: var(--space-4);
 
  position: absolute;
   bottom: 0;
-  left: 50%;
+  left: 52%;
   transform: translateX(-50%);
   z-index: 3;
   pointer-events: none;
@@ -3942,31 +3950,50 @@ font-size: clamp(36px, 6vw, 72px);
 
 /* button = minimal, not pill */
 .closing-cta__button {
-  display: inline-block;
-  padding: 0;
-  background: none;
-  border: none;
-
-  font-size: 0.85rem;
+display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  text-decoration: none;
+  color: black;
+  font-size: .95rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: .08em;
   text-transform: uppercase;
-
   position: relative;
+  padding-bottom: .8rem;
+  white-space: nowrap;
+  transition: transform .3s ease;
 }
 
 /* underline interaction */
 .closing-cta__button::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: #111;
-  margin-top: 6px;
 
-  transform: scaleX(0.3);
-  transform-origin: left;
-  transition: transform 0.25s ease;
+  background: #111;
+
+
+     content:"↗";
+transform: none;
+    font-size:1.3rem;
+    line-height:1;
+    margin-top:0;
+
+    margin-left:.35rem;
+
+    transition:transform .3s ease;
+    background:none;
+
+}
+
+
+.closing-cta__button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 140px;
+  height: 1px;
+  background: black;
+  transition: .35s;
 }
 
 .closing-cta__button:hover::after {
@@ -4008,6 +4035,7 @@ font-size: clamp(36px, 6vw, 72px);
     font-weight: 600;
        margin: 0 auto;
     text-align: center;
+    max-width: 26ch;
 }
 
 
@@ -5243,27 +5271,6 @@ background: radial-gradient(
     animation-duration: 9s;
   }
 }
-
-
-
-.ticker {
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.ticker-content {
-  display: inline-block;
-  padding-left: 100%;
-  animation: scroll-left 15s linear infinite;
-}
-
-@keyframes scroll-left {
-  from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
-}
-
-
-
 
 
 

@@ -1,6 +1,6 @@
 ---
 title: Why Did These Three Companies Choose Hugo? 🎉
-subtitle:  Converting text embedded in images into selectable HTML text is an effective way to improve both SEO and accessibility. It also makes content responsive, easier to maintain, and readable by search engines and assistive technologies.
+subtitle: When people talk about Hugo, they usually mention its incredible speed. But performance is far from the only reason companies migrate to this static site generator.  
 date: "2016-09-01"
 showthedate: true
 hero:
@@ -9,16 +9,24 @@ categories:
   - Технология
 draft: false
 tags: ["design"]
-lead: Адаптированныйа перевод перевод статьи 'Почему вы должны использовать Hugo для создания  веб-сайта'.
+lead: A Brief History
 layout: single
 image: "images/hero.png"
 references: ["design", "lockup", "youtube"]
 ---
 
 
+Hugo was created in 2013 by Norwegian developer Bjørn Erik Pedersen, who wanted a fast, lightweight static site generator without unnecessary complexity.
+
+Later, Steve Francia became the project's lead maintainer. Under his leadership, Hugo gained themes, multilingual support, a powerful templating system, and many of the features that made it one of the world's most popular static site generators.
+
+Today, Hugo powers thousands of companies and projects—from personal blogs to large technology organizations where speed, security, and maintainability are critical.
+
+Although Hugo remains a niche static site generator and is especially popular among experienced developers, DevOps engineers, and infrastructure specialists, it powers tens of thousands of websites. These include Kubernetes, Bootstrap, Git, Redis, DigitalOcean, Grafana, and many others.
+
+Unlike more mainstream platforms, Hugo is rarely the first choice for beginners—but for teams that value performance, security, simplicity, and long-term maintainability, it is often one of the best.
 
 
-When people talk about Hugo, they usually mention its incredible speed. But performance is far from the only reason companies migrate to this static site generator 😍.  
 
 
 
@@ -27,12 +35,12 @@ When people talk about Hugo, they usually mention its incredible speed. But perf
 
 ## 1Password: Security First 
 
-> The team at 1Password evaluated a wide range of platforms, including blogging engines, CMSs, and static site generators. In the end, they chose Hugo.
+> "We're very happy we switched to Hugo. As a security company, it's much safer for us to serve static HTML files than to maintain a server that requires constant attention."  
+    — Сайт: [1Password](https://1password.com/) ↩︎  
 
 Their primary reason was security. Instead of maintaining a server with a database, regular updates, and continuous monitoring, they simply publish static HTML files. This significantly reduces the attack surface while making the website much easier to maintain.
 
-    "We're very happy we switched to Hugo. As a security company, it's much safer for us to serve static HTML files than to maintain a server that requires constant attention."  
-    — Сайт: [1Password](https://1password.com/) ↩︎   
+     
 
 ##  Kubernetes: Less Technical Debt
  
@@ -71,17 +79,9 @@ The biggest advantage was its modular architecture: the CMS, hosting, templates,
 According to the team, the website became far more portable and flexible than a traditional CMS-based solution such as WordPress.
 
 By the way, the website you're reading right now is also powered by Hugo. 🚀
-A Brief History
 
-Hugo was created in 2013 by Norwegian developer Bjørn Erik Pedersen, who wanted a fast, lightweight static site generator without unnecessary complexity.
 
-Later, Steve Francia became the project's lead maintainer. Under his leadership, Hugo gained themes, multilingual support, a powerful templating system, and many of the features that made it one of the world's most popular static site generators.
 
-Today, Hugo powers thousands of companies and projects—from personal blogs to large technology organizations where speed, security, and maintainability are critical.
-
-Although Hugo remains a niche static site generator and is especially popular among experienced developers, DevOps engineers, and infrastructure specialists, it powers tens of thousands of websites. These include Kubernetes, Bootstrap, Git, Redis, DigitalOcean, Grafana, and many others.
-
-Unlike more mainstream platforms, Hugo is rarely the first choice for beginners—but for teams that value performance, security, simplicity, and long-term maintainability, it is often one of the best.
 
 If you plan to publish this internationally (e.g. on Dev.to, Hashnode, Medium, or Reddit), I can also rewrite it to sound more like a native English technical blog post rather than a direct translation.
  — Сайт: [Smallmultiples](href="https://smallmultiples.com.au/articles/introducing-the-new-small-multiples-website/) ↩︎   
