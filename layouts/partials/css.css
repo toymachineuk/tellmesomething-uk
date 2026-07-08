@@ -2523,7 +2523,7 @@ margin: -10px auto 0;
   position: absolute;
 
   top: -80px;
-  left: -40px;
+
 
   font-size: clamp(180px, 20vw, 350px);
 
@@ -3634,241 +3634,191 @@ font-size: clamp(36px, 6vw, 72px);
 
 }
 
-/* ===============================
+
+/* ==========================================
    BASE TABLE
-=============================== */
-
-
-
-.base-table__grid {
-  display: grid;
-
-  margin-top: 4rem;
-  border-top: var(--border-medium);
-
-    max-width: 1000px;
-  margin: 4rem auto 0;
-  grid-template-columns: 220px 1fr 1fr;
-}
+========================================== */
 
 .base-table__head {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
+    max-width: 760px;
+    margin: 0 auto 3rem;
+    text-align: center;
 }
 
 .base-table__headline {
-  margin: 0;
+    margin: 0;
+}
+
+.base-table__grid {
+    display: grid;
+    grid-template-columns: 220px 1fr 1fr;
+    max-width: 1100px;
+    margin: 0 auto;
+    border: var(--border-medium);
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255,255,255,.015);
 }
 
 
-/* ===============================
+/* ==========================================
    CELLS
-=============================== */
+========================================== */
 
 .base-table__cell {
-  padding: 1.75rem 1.25rem;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  border-bottom: var(--border-soft);
+    padding: 1.35rem 1.5rem;
+    line-height: 1.55;
+    font-size: .96rem;
+    border-bottom: var(--border-soft);
+    border-right: var(--border-soft);
+    transition: background .25s ease;
+}
 
+.base-table__cell:nth-child(3n) {
+    border-right: none;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.base-table__grid > .base-table__cell:nth-child(-n+3) {
+    font-size: .82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
     text-align: center;
+    border-bottom: var(--border-medium);
 }
 
-/* ===============================
-   HEADERS
-=============================== */
-
-.base-table__grid > .base-table__cell:nth-child(-n + 3) {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border-bottom: var(--border-strong);
-}
-
-/* Highlight PulseFrames header */
 .base-table__grid > .base-table__cell:nth-child(3) {
-  font-weight: 700;
+    background: rgba(255,255,255,.06);
 }
 
-/* ===============================
-   COLUMN STYLES
-=============================== */
+
+/* ==========================================
+   FEATURE COLUMN
+========================================== */
 
 .base-table__cell--label {
-  font-weight: 500;
+    font-weight: 600;
     text-align: left;
 }
 
+
+/* ==========================================
+   INSTAGRAM COLUMN
+========================================== */
+
 .base-table__cell--weak {
-  opacity: var(--text-muted);
+    color: var(--text-muted);
+    text-align: center;
 }
+
+
+/* ==========================================
+   PULSEFRAME COLUMN
+========================================== */
 
 .base-table__cell--strong {
-  font-weight: 500;
-}
-
-/* Highlight PulseFrames column */
-.base-table__cell:nth-child(3n) {
-  background: rgba(255, 255, 255, 0.03);
-}
-
-/* ===============================
-   ROW STRIPING
-=============================== */
-
-/* Every second comparison row */
-.base-table__grid > :nth-child(12n + 4),
-.base-table__grid > :nth-child(12n + 5),
-.base-table__grid > :nth-child(12n + 6),
-.base-table__grid > :nth-child(12n + 10),
-.base-table__grid > :nth-child(12n + 11),
-.base-table__grid > :nth-child(12n + 12) {
-  background-color: rgba(255, 255, 255, 0.015);
-}
-
-/* Keep PulseFrames highlight stronger */
-.base-table__grid > :nth-child(3n):not(:nth-child(-n + 3)) {
-  background-color: rgba(255, 255, 255, 0.04);
-}
-
-/* ===============================
-   VERTICAL DIVIDERS
-=============================== */
-
-.base-table__cell:not(:nth-child(3n)) {
-  border-right: var(--border-soft);
-}
-
-/* ===============================
-   HOVER
-=============================== */
-
-.base-table__cell {
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.base-table__cell:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-/* ===============================
-   MOBILE
-=============================== */
-
-@media (max-width: 900px) {
-
-  .base-table__grid {
-    display: block;
-    border-top: none;
-    margin-top: 3rem;
-  }
-
-  /* Hide desktop header row */
-  .base-table__grid > .base-table__cell:nth-child(-n + 3) {
-    display: none;
-  }
-
-  .base-table__cell {
-    display: block;
-    width: 100%;
-    border-right: none;
-    padding: 1rem;
-    line-height: 1.6;
-  }
-
-  /* Feature heading */
-  .base-table__cell--label {
-    margin-top: 2.5rem;
-    padding: 1rem;
-    font-weight: 600;
-    border-top: var(--border-medium);
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 0.875rem 0.875rem 0 0;
     text-align: center;
-  }
+    background: rgba(255,255,255,.045);
+    font-weight: 500;
+}
 
-  /* Platform row */
-  .base-table__cell--weak {
-    background: rgba(255, 255, 255, 0.015);
-  }
 
-  .base-table__cell--weak::before {
-    content: "Platforms";
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    opacity: 0.7;
-  }
+/* ==========================================
+   LAST ROW
+========================================== */
 
-  /* PulseFrames row */
-  .base-table__cell--strong {
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 0 0 0.875rem 0.875rem;
-    border-bottom: var(--border-medium);
-  }
-
-  .base-table__cell--strong::before {
-    content: "PulseFrames";
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    opacity: 0.7;
-  }
-
-  /* Remove desktop striping */
-  .base-table__grid > :nth-child(12n + 4),
-  .base-table__grid > :nth-child(12n + 5),
-  .base-table__grid > :nth-child(12n + 6),
-  .base-table__grid > :nth-child(12n + 10),
-  .base-table__grid > :nth-child(12n + 11),
-  .base-table__grid > :nth-child(12n + 12) {
-    background-color: unset;
-  }
+.base-table__grid > .base-table__cell:nth-last-child(-n+3) {
+    border-bottom: none;
 }
 
 
 
 
 
-.base-contrast__point-content {
-  max-width: 28ch;
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:900px){
+
+    .base-table__grid{
+        display:block;
+        border:none;
+        background:none;
+        max-width:640px;
+    }
+
+    /* hide desktop header */
+
+    .base-table__grid > .base-table__cell:nth-child(-n+3){
+        display:none;
+    }
+
+    .base-table__cell{
+        display:block;
+        width:100%;
+        padding:1rem 1.25rem;
+        border-right:none;
+        border-bottom:none;
+    }
+
+    .base-table__cell--label{
+        margin-top:2rem;
+        background:rgba(255,255,255,.05);
+        border:var(--border-medium);
+        border-bottom:none;
+        border-radius:16px 16px 0 0;
+        text-align:center;
+        font-size:1rem;
+    }
+
+    .base-table__cell--weak{
+
+        border-left:var(--border-medium);
+        border-right:var(--border-medium);
+
+        background:rgba(255,255,255,.02);
+    }
+
+    .base-table__cell--weak::before{
+
+        content:"Instagram / Facebook";
+        display:block;
+        margin-bottom:.45rem;
+        font-size:.72rem;
+        text-transform:uppercase;
+        letter-spacing:.08em;
+        opacity:.65;
+    }
+
+    .base-table__cell--strong{
+
+        border:var(--border-medium);
+        border-top:none;
+
+        background:rgba(255,255,255,.05);
+
+        border-radius:0 0 16px 16px;
+    }
+
+    .base-table__cell--strong::before{
+
+        content:"PulseFrame";
+        display:block;
+        margin-bottom:.45rem;
+        font-size:.72rem;
+        text-transform:uppercase;
+        letter-spacing:.08em;
+        opacity:.65;
+    }
+
 }
 
-.base-contrast__point-content h3,
-.base-contrast__point-content p {
-  margin: 0;
-}
-
-.base-contrast.two-columns .base-contrast__point {
-  text-align: left;
-}
-
-.base-contrast.two-columns .base-contrast__index {
-  margin-bottom: .5rem;
-}
-
-.base-contrast.two-columns .base-contrast__point p {
-  margin: 0;
-  max-width: 26ch;
-}
-
-
-@media (max-width: 900px) {
-
-.base-contrast.two-columns .base-contrast__point p {
-
-  max-width: none;
-}
-}
 
 
 /* ===============================
@@ -4050,12 +4000,14 @@ font-size: clamp(36px, 6vw, 72px);
 
 
 
-.base-intro__headline,
-.base-table__headline,
-.closing-cta__headline h2 {
-  font-size: clamp(36px, 6vw, 72px);
-  line-height: 0.95;
-  letter-spacing: -0.03em;
+
+.base-table__headline {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 600;
+       margin: 0 auto;
+    text-align: center;
 }
 
 
@@ -6093,10 +6045,18 @@ background: radial-gradient(
    ================================================== */
 
 .process-timeline .base-intro__layout{
-    display:grid;
-    grid-template-columns:minmax(320px,420px) 1fr;
+   display:grid;
+    grid-template-columns:1fr minmax(320px,420px);
     gap:6rem;
     align-items:start;
+}
+
+.process-timeline .base-intro__main{
+    order:2;
+}
+
+.process-timeline .process-timeline__list{
+    order:1;
 }
 
 .process-timeline__list{
@@ -6107,20 +6067,12 @@ background: radial-gradient(
     padding-left:3rem;
 }
 
-.process-timeline__list::before{
-    content:"";
-    position:absolute;
-    left:84px;
-    top:10px;
-    bottom:10px;
-    width:1px;
-    background:rgba(0,0,0,.12);
-}
+
 
 .process-timeline__step{
-    display:grid;
-    grid-template-columns:70px 30px 1fr;
-    gap:1.5rem;
+      display:grid;
+    grid-template-columns:36px 20px 1fr;
+    gap:1.25rem;
     align-items:flex-start;
 }
 
@@ -6132,24 +6084,25 @@ background: radial-gradient(
 }
 
 .process-timeline__dot{
-    width:30px;
-    height:30px;
+     width:20px;
+    height:20px;
     border-radius:50%;
-    background:#fdab2b;
-    border:2px solid #651204;
-    position:relative;
-    z-index:2;
-    transition:.35s ease;
+    background:#0c2340;
+    border:none;
+    margin-top:.2rem;
+    transition:.3s ease;
 }
 
 .process-timeline__step:hover .process-timeline__dot{
-    transform:scale(1.08);
+    background:#fdce2a;
+    transform:scale(1.15);
 }
 
 .process-timeline__content h3{
-    margin:0 0 .6rem;
+    margin:-0.15rem 0 .6rem;
     font-size:1.6rem;
     font-weight:500;
+    line-height:1.2;
 }
 
 .process-timeline__content p{
@@ -6158,6 +6111,7 @@ background: radial-gradient(
     line-height:1.7;
     opacity:.75;
 }
+
 
 /* ==================================================
    Process Timeline - Mobile
@@ -6171,42 +6125,62 @@ background: radial-gradient(
         gap:1.5rem;
     }
 
+    /* Show intro before timeline */
     .process-timeline .base-intro__main{
-        padding-bottom:2rem;
+        order:1;
+        padding-bottom:1rem;
     }
 
+    .process-timeline .process-timeline__list{
+        order:2;
+    }
+
+    /* Timeline */
     .process-timeline__list{
         margin-top:0;
-        padding-left:1rem;
-        gap:2.5rem;
+        padding-left:0;
+        gap:2rem;
     }
 
+    /* Hide desktop line */
     .process-timeline__list::before{
-        left:62px;
+        display:none;
     }
 
+    /* Hide numbers on mobile */
+    .process-timeline__number{
+        display:none;
+    }
+
+    /* Compact layout */
     .process-timeline__step{
-        grid-template-columns:50px 24px 1fr;
-        gap:1rem;
+        grid-template-columns:16px 1fr;
+        gap:.85rem;
+        align-items:flex-start;
     }
 
+    /* Smaller editorial dot */
     .process-timeline__dot{
-        width:24px;
-        height:24px;
+        width:16px;
+        height:16px;
+        margin-top:.35rem;
+        background:#0c2340;
+        border:3px solid rgba(12,35,64,.15);
+        box-sizing:content-box;
     }
 
     .process-timeline__content h3{
+        margin:0 0 .5rem;
         font-size:1.2rem;
+        line-height:1.25;
     }
 
     .process-timeline__content p{
         max-width:none;
+        line-height:1.6;
     }
 
 }
-
-
-
 
 /* ==================================================
    Benefits Timeline
@@ -6441,7 +6415,7 @@ background: radial-gradient(
 
     .why-tms__grid{
         grid-template-columns:1fr;
-        gap:3rem;
+        gap:0;
         margin-top:4rem;
     }
 
@@ -6459,7 +6433,7 @@ background: radial-gradient(
     }
 
     .why-tms__card p{
-        max-width:30ch;
+        max-width:34ch;
         margin:0 auto;
     }
 
