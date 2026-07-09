@@ -4719,7 +4719,7 @@ text-align:center;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-
+padding-top:0;
   font-size: 12px;
   color: rgba(0,0,0,.55);
 }
@@ -5331,8 +5331,8 @@ background: radial-gradient(
 
 .about-editorial__image {
     position: relative;
-    width: 260px;
-    height: 260px;
+    width: auto;
+    height: auto;
     flex-shrink: 0;
     overflow: visible;
 }

@@ -4,15 +4,15 @@ subtitle: When people talk about Hugo, they usually mention its incredible speed
 date: "2016-09-01"
 showthedate: true
 hero:
-  - /hugo/images/hero.jpg
+  - /hugo/images/hero.webp
 categories:
   - Технология
 draft: false
 tags: ["design"]
 lead: A Brief History
 layout: single
-image: "images/hero.png"
 references: ["design", "lockup", "youtube"]
+image: "images/hero.webp"
 ---
 
 
