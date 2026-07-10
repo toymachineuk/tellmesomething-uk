@@ -433,16 +433,23 @@ line-height:1.5;
   top: 0;
   left: 0;
   width: 100%;
-  height: 64px;
+  height: 84px;              /* increased from 64px */
   background: #fff;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between; /* logo left, header-right right */
+  justify-content: space-between;
   padding: 0 2rem;
   box-sizing: border-box;
   z-index: 1000;
   border-bottom: 1px solid #eee;
-  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.current-location {
+     flex: 0 0 100%;
+    order: 99;
+    
+    font-size: 15px;
 }
 
 /* Logo */

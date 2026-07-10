@@ -35,6 +35,21 @@ alt="logo">
 
 
   </div>
+<div class="current-location">
+
+  <a href="/">Home</a>
+
+  {{ with .CurrentSection }}
+    <span class="crumb-sep">•••</span>
+  {{ end }}
+
+  {{ if not .IsSection }}
+    <span>{{ .Title }}</span>
+  {{ end }}
+
+</div>
+
+
 
   <!-- Mobile hamburger -->
   <div role="button"
@@ -43,7 +58,11 @@ alt="logo">
        class="ampstart-navbar-trigger md-hide lg-hide">
     ☰
   </div>
+
+
+
 </header>
+
 
 
     <!-- Start Sidebar -->
