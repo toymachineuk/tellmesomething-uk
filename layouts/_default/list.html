@@ -16,7 +16,11 @@
     <div class="base-contrast__layout">
 
       <div class="base-contrast__main">
-        <span class="base-contrast__label">ghj</span>
+        <span class="base-contrast__label">THE LAB
+
+Thoughts on AI, design, technology and building products.
+
+Long-form articles, experiments and ideas from Tell Me Something.</span>
 
         <h2 class="base-contrast__headline">
           narrow hero
@@ -47,7 +51,7 @@
       <h1 class="blog-title">The Lab</h1>
 
       <p class="blog-subtitle">
-        Center image + blurred/extended edges (most popular)
+  Thoughts on AI, design, technology and building products. Long-form articles, experiments and ideas from Tell Me Something.
       </p>
     </header>
 
@@ -57,34 +61,43 @@
 
       {{ range .RegularPages }}
 
+      {{ $page := . }}
+
       <article class="blog-card">
 
-        {{ $page := . }}
+        {{ with $page.Resources.GetMatch "images/hero.png" }}
+        <a href="{{ $page.RelPermalink }}">
+          <img
+            class="blog-card__image"
+            src="{{ .RelPermalink }}"
+            alt="{{ $page.Title }}">
+        </a>
+        {{ end }}
 
         <div class="blog-card__content">
 
-          <h2 class="blog-card__title">
-            <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
-          </h2>
-
-          <p>{{ .Summary | plainify | truncate 180 }}</p>
-
           <div class="blog-card__meta">
+
             {{ with $page.Params.categories }}
-            <span>{{ delimit . ", " }}</span>
-            <span>•</span>
+              <span>{{ delimit . ", " }}</span>
+              <span>•</span>
             {{ end }}
 
             <span>{{ $page.Date.Format "Jan 2, 2006" }}</span>
+
           </div>
 
-        </div>
+          <h2 class="blog-card__title">
+            <a href="{{ $page.RelPermalink }}">
+              {{ $page.Title }}
+            </a>
+          </h2>
 
-        {{ with .Resources.GetMatch "images/hero.png" }}
-        <a href="{{ $.RelPermalink }}">
-          <img class="blog-card__image" src="{{ .RelPermalink }}">
-        </a>
-        {{ end }}
+          <p class="blog-card__summary">
+            {{ $page.Summary | plainify | truncate 180 }}
+          </p>
+
+        </div>
 
       </article>
 
