@@ -429,11 +429,15 @@ line-height:1.5;
    HEADER — BASE LAYOUT
 =============================== */
 .ampstart-headerbar {
-  position: fixed;
-  top: 0;
-  left: 0;
+  
+      position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+
   width: 100%;
-  height: 84px;              /* increased from 64px */
+             /* increased from 64px */
   background: #fff;
   display: flex;
   flex-wrap: wrap;
@@ -446,10 +450,65 @@ line-height:1.5;
 }
 
 .current-location {
-     flex: 0 0 100%;
-    order: 99;
-    
-    font-size: 15px;
+     position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    align-items: center;
+    background: #f3eee6;
+      padding: 0 3rem;
+    line-height: 20px;
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .current-location {
+    padding: 2px 1rem;
+    font-size: 9px;
+    letter-spacing: .18em;
+  }
+}
+
+.current-location a {
+      color: #8c8c8c;
+    text-decoration: none;
+}
+
+.current-location .current {
+   color: #111;
+}
+
+.sep {
+    margin: 0 .6rem;
+    color: #b5b5b5;
+}
+
+
+@media (max-width: 980px) {
+ 
+
+  .current-location {
+    position: fixed;
+    top: 58px;
+    left: 0;
+    right: 0;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 1rem;
+    font-size: 9px;
+    letter-spacing: .18em;
+  }
+
+  body {
+    padding-top: 78px;
+  }
 }
 
 /* Logo */
@@ -802,7 +861,7 @@ line-height:1.5;
   /* Adjust header padding */
   .ampstart-headerbar {
     padding: 0 1rem;
-    height: 60px;
+    height: 58px;
   }
 }
 

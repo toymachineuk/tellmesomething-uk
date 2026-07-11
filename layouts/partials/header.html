@@ -35,19 +35,7 @@ alt="logo">
 
 
   </div>
-<div class="current-location">
 
-  <a href="/">Home</a>
-
-  {{ with .CurrentSection }}
-    <span class="crumb-sep">•••</span>
-  {{ end }}
-
-  {{ if not .IsSection }}
-    <span>{{ .Title }}</span>
-  {{ end }}
-
-</div>
 
 
 
@@ -63,7 +51,26 @@ alt="logo">
 
 </header>
 
+{{ if not .IsHome }}
+<div class="current-location">
+<a href="/" class="crumb-home" aria-label="Home">
+●
+</a>
 
+  {{ with .CurrentSection }}
+    {{ if ne .Section "articles" }}
+      <span class="sep">&gt;</span>
+      <span class="crumb-section">{{ .Title }}</span>
+    {{ end }}
+  {{ end }}
+
+  {{ if not .IsSection }}
+    <span class="sep">&gt;</span>
+    <span class="current">{{ .Title }}</span>
+  {{ end }}
+
+</div>
+{{ end }}
 
     <!-- Start Sidebar -->
 <amp-sidebar 
