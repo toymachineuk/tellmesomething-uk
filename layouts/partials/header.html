@@ -1,5 +1,6 @@
   <!-- Start Navbar -->
-<header class="ampstart-headerbar">
+
+  <header class="ampstart-headerbar{{ if not .IsHome }} has-breadcrumb{{ end }}">
   <!-- Logo left -->
 
   <a href="/" class="logo">
@@ -53,20 +54,35 @@ alt="logo">
 
 {{ if not .IsHome }}
 <div class="current-location">
-<a href="/" class="crumb-home" aria-label="Home">
-●
-</a>
 
-  {{ with .CurrentSection }}
-    {{ if ne .Section "articles" }}
-      <span class="sep">&gt;</span>
-      <span class="crumb-section">{{ .Title }}</span>
-    {{ end }}
-  {{ end }}
+  <a href="/" class="crumb-home" aria-label="Home">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 10.5L12 3l9 7.5"/>
+      <path d="M5 9.5V21h14V9.5"/>
+    </svg>
+  </a>
 
-  {{ if not .IsSection }}
+  {{ if eq .Section "post" }}
+
     <span class="sep">&gt;</span>
-    <span class="current">{{ .Title }}</span>
+    <span class="crumb-section">Lab</span>
+
+  {{ else }}
+
+    {{ with .CurrentSection }}
+      {{ if ne .Section "articles" }}
+        <span class="sep">&gt;</span>
+        <span class="crumb-section">{{ .Title }}</span>
+      {{ end }}
+    {{ end }}
+
+    {{ if not .IsSection }}
+      <span class="sep">&gt;</span>
+      <span class="current">{{ .Title }}</span>
+    {{ end }}
+
   {{ end }}
 
 </div>

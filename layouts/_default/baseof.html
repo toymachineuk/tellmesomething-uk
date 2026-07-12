@@ -3,10 +3,10 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body>
+<body class="{{ if not .IsHome }}has-breadcrumb{{ end }}">
 
   {{ partial "header.html" . }}
-
+  <main>
 <section class="hero-v2 hero-v2-front">
 
   <div class="hero-v2-top">
