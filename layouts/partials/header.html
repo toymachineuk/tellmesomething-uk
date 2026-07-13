@@ -89,106 +89,89 @@ alt="logo">
 {{ end }}
 
     <!-- Start Sidebar -->
-<amp-sidebar 
-  id="header-sidebar" 
-  class="ampstart-sidebar px3 flex flex-column md-hide lg-hide" 
+<amp-sidebar
+  id="header-sidebar"
+  class="ampstart-sidebar px3 flex flex-column md-hide lg-hide"
   layout="nodisplay">
-  <div class="sidebar-top">  
-  <span class="sidebar-logo caps-tight">TELL ME SOMETHING </span>
-  <div class="ampstart-sidebar-header">
-    <a href="#"
-       on="tap:header-sidebar.toggle"
-       class="ampstart-navbar-trigger">
-       ✕
-    </a>
+
+  <!-- Hero -->
+  <div class="sidebar-hero">
+
+    <div class="sidebar-circles">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMaxYMin slice">
+        <circle cx="1150" cy="-120" r="880" fill="#f3eee6"/>
+        <circle cx="1150" cy="60" r="700" fill="#e8e1d4"/>
+        <circle cx="1150" cy="240" r="520" fill="#ddd3c3"/>
+        <circle cx="1150" cy="420" r="360" fill="#cfc3af"/>
+      </svg>
+    </div>
+
+    <div class="sidebar-head">
+
+      <span class="sidebar-logo caps-tight">
+        TELL ME SOMETHING
+      </span>
+
+      <a href="#"
+         on="tap:header-sidebar.toggle"
+         class="sidebar-close">
+        ✕
+      </a>
+
+    </div>
+
+    <div class="sidebar-tagline">
+      Creative Studio<br>
+      for brands<br>
+      and ideas.
+    </div>
+
   </div>
-</div>
- <div class="sidebar-top">
 
-<div class="sidebar-art">
-    <a href="/">
-
-      <div class="sidebar-circles">
- <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMaxYMin slice">
-
- <circle cx="1150" cy="-120" r="880" fill="#f3eee6" />
-<circle cx="1150" cy="60" r="700" fill="#e8e1d4" />
-<circle cx="1150" cy="240" r="520" fill="#ddd3c3" />
-<circle cx="1150" cy="420" r="360" fill="#cfc3af" />
-
-</svg>
-</div>
- 
-  </a>
-  
-  
-  
-</div>
-
-
-</div>
-
-  <!-- NAVIGATION -->
+  <!-- Navigation -->
   <nav class="ampstart-sidebar-nav ampstart-nav">
 
-    {{ $currentPage := . }}
 
-    {{ range .Site.Menus.main }}
+    <a href="/" class="sidebar-home-link">
+  <span class="sidebar-home-icon">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 10.5L12 3l9 7.5"/>
+      <path d="M5 9.5V21h14V9.5"/>
+    </svg>
+  </span>
 
-      {{ if .HasChildren }}
+  <span class="sidebar-title">Home</span>
+</a>
 
-        <ul class="list-reset m0 p0">
-          <li class="ampstart-nav-item ampstart-nav-dropdown">
+{{ range $i, $item := .Site.Menus.main }}
 
-            <amp-accordion 
-              layout="container" 
-              disable-session-states 
-              class="ampstart-dropdown">
+  <a href="{{ $item.URL }}" class="sidebar-nav-link">
 
-              <section>
-                <header>{{ .Name }}</header>
+    <span class="sidebar-number">
+      {{ printf "%02d" (add $i 1) }}
+    </span>
 
-                <ul class="ampstart-dropdown-items list-reset m0 p0">
-                  {{ range .Children }}
-                    <li class="ampstart-dropdown-item">
-                      <a href="{{ .URL }}">
-                        {{ .Name }}<span>.</span>
-                      </a>
-                    </li>
+    <span class="sidebar-title">
+      {{ $item.Name }}
+    </span>
 
+  </a>
 
+{{ end }}
 
-                  {{ end }}
+    <div class="sidebar-lab">
 
-                  <li>
-  <a href="/post">the lab<span>.</span></a>
-</li>
-                </ul>
+      <div class="sidebar-lab-label">
+        Explore
+      </div>
 
-              </section>
+      <a class="sidebar-lab-link" href="/post">
+        the lab<span>.</span>
+      </a>
 
-            </amp-accordion>
-
-          </li>
-        </ul>
-
-      {{ else }}
-
-        <!-- SINGLE LINK -->
-        <a href="{{ .URL }}" 
-           class="block h5  ">
-          {{ .Name }}
-        </a>
-
-      {{ end }}
-
-    {{ end }}
-
-
-
-<div class="sidebar-lab-label">explore</div>
-<a class="sidebar-lab-link" href="/post">the lab<span>.</span></a>
-
+    </div>
 
   </nav>
 
