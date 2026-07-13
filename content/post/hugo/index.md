@@ -1,7 +1,6 @@
 ---
 title: Why Engineering Teams Choose Hugo? 🎉
-subtitle: When people talk about Hugo, they usually mention its incredible build speed. While that's certainly one of its greatest strengths, performance is far from the only reason engineering teams choose to migrate to Hugo.
-date: "2025-09-01"
+subtitle: Although Hugo is rarely the first choice for beginners, it has become a favorite among experienced developers, DevOps engineers, and infrastructure teams. 
 showthedate: true
 hero:
   - /hugo/images/hero.webp
@@ -9,7 +8,7 @@ categories:
   - Технология
 draft: false
 tags: ["design"]
-lead:  Although Hugo is rarely the first choice for beginners, it has become a favorite among experienced developers, DevOps engineers, and infrastructure teams. Organizations behind projects such as Kubernetes, Bootstrap, Git, Redis, DigitalOcean, and Grafana all use Hugo.
+lead: Organizations behind projects such as Kubernetes, Bootstrap, Git, Redis, DigitalOcean, and Grafana all use Hugo.Below are some of the reasons engineering teams choose Hugo.
 layout: single
 references: ["design", "lockup", "youtube"]
 image: "images/hero.webp"
@@ -21,12 +20,11 @@ Hugo was created in 2013 by Norwegian developer Bjørn Erik Pedersen. Later, Ste
  helping transform Hugo into one of the world's most widely used static site generators.
 
 Today, Hugo powers thousands of websites for organizations of all sizes. 
+of course, page speed s is one of the resons why a lot of sites migrate to hugo. Because is important not only for SEO but for business as well.
 
+According to skilled.co:
 
-Below are some of the reasons engineering teams choose Hugo.
-
-
-
+    If your site makes $100,000/day, 1 second improvement in page speed brings $7,000 daily.
 
 
 
@@ -39,6 +37,9 @@ Their primary reason was security. Instead of maintaining a server with a databa
 
 
 ## Small Multiples: Independent Components
+
+>For many client applications, static front-end sites provide fast, scalable solutions that can easily connect with any back-end service, API or static data. We wanted to use the same processes and infrastructure that we use to host and deploy many of our products, so we felt that building a static site was the right solution for our website.
+— Сайт: [1Password](https://1password.com/) ↩︎  
 
 The team behind Small Multiples reached a similar conclusion. They chose Hugo because of its modular architecture. Each component can be replaced or upgraded independently, without redesigning the entire system.
 
