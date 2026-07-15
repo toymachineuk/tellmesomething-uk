@@ -789,11 +789,7 @@ line-height:1.5;
    Hero
 --------------------------------- */
 
-.sidebar-hero{
-    position:relative;
-    padding-bottom:2.5rem;
-    margin-bottom:2.5rem;
-}
+
 
 .sidebar-head{
     display:flex;
@@ -827,10 +823,7 @@ line-height:1.5;
     margin:2rem 0 2.5rem;
 }
 
-.sidebar-nav-link.active{
-    border-left:4px solid #0e4d4a;
-    padding-left:1rem;
-}
+
 /* ---------------------------------
    Background circles
 --------------------------------- */
@@ -1003,7 +996,7 @@ line-height:1.5;
 .sidebar-home-icon{
     width:2rem;
     display:flex;
-    justify-content:center;
+  color: #999;
     color:#0e4d4a;
 }
 
