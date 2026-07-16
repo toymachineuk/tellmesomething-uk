@@ -48,60 +48,58 @@ Long-form articles, experiments and ideas from Tell Me Something.</span>
   <div class="container">
 
     <header class="section-header">
-      <h1 class="blog-title">The Lab</h1>
+      <div class="section-divider"></div>
 
-      <p class="blog-subtitle">
-  Thoughts on AI, design, technology and building products. Long-form articles, experiments and ideas from Tell Me Something.
-      </p>
+          <span class="section-label">
+     Latest Articles
+Archive
+    </span>
     </header>
 
     <div class="flex">
 
       <aside class="col-1 xs-hide"></aside>
 
-      {{ range .RegularPages }}
+  {{ range $i, $page := .RegularPages.ByDate.Reverse }}
 
-      {{ $page := . }}
+<article class="blog-card {{ if modBool $i 2 }}blog-card--reverse{{ end }}">
 
-      <article class="blog-card">
-
-        {{ with $page.Resources.GetMatch "images/hero.png" }}
-        <a href="{{ $page.RelPermalink }}">
-          <img
-            class="blog-card__image"
+    {{ with $page.Resources.GetMatch "images/hero.png" }}
+    <a href="{{ $page.RelPermalink }}" class="blog-card__image">
+        <img
             src="{{ .RelPermalink }}"
             alt="{{ $page.Title }}">
-        </a>
-        {{ end }}
+    </a>
+    {{ end }}
 
-        <div class="blog-card__content">
+    <div class="blog-card__content">
 
-          <div class="blog-card__meta">
-
+        <div class="blog-card__meta">
             {{ with $page.Params.categories }}
-              <span>{{ delimit . ", " }}</span>
-              <span>•</span>
+                <span>{{ delimit . ", " }}</span>
+                <span>•</span>
             {{ end }}
 
             <span>{{ $page.Date.Format "Jan 2, 2006" }}</span>
-
-          </div>
-
-          <h2 class="blog-card__title">
-            <a href="{{ $page.RelPermalink }}">
-              {{ $page.Title }}
-            </a>
-          </h2>
-
-          <p class="blog-card__summary">
-            {{ $page.Summary | plainify | truncate 180 }}
-          </p>
-
         </div>
 
-      </article>
+        <h2 class="blog-card__title">
+            <a href="{{ $page.RelPermalink }}">
+                {{ $page.Title }}
+            </a>
+        </h2>
 
-      {{ end }}
+        <p class="blog-card__summary">
+            {{ $page.Summary | plainify | truncate 180 }}
+        </p>
+
+    </div>
+
+</article>
+
+{{ end }}
+
+
 
       <aside class="col-1 xs-hide"></aside>
 
