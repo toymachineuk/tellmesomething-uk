@@ -5,18 +5,22 @@ title = 'TMS'
   [[menu.main]]
   name = "pulse frames"
   url = "/articles/pulseframes/"
+  weight = 3
 
       [[menu.main]]
   name = "studio"
   url = "/articles/studio/"
+  weight = 2
 
       [[menu.main]]
   name = "development"
   url = "/articles/development/"
+  weight = 1
 
   [[menu.main]]
   name = "case studies"
   url = "/articles/casestudies/"
+  weight = 4
 
 
 

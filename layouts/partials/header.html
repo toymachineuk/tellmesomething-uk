@@ -131,18 +131,17 @@ alt="logo">
   <!-- Navigation -->
   <nav class="ampstart-sidebar-nav ampstart-nav">
 
+<a href="/" class="sidebar-home-link">
+    <span class="sidebar-number">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 10.5L12 3l9 7.5"/>
+            <path d="M5 9.5V21h14V9.5"/>
+        </svg>
+    </span>
 
-   <a href="/" class="sidebar-home-link">
-  <span class="sidebar-home-icon">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-         stroke="currentColor" stroke-width="2"
-         stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 10.5L12 3l9 7.5"/>
-      <path d="M5 9.5V21h14V9.5"/>
-    </svg>
-  </span>
-
-  <span class="sidebar-title">Home</span>
+    <span class="sidebar-title">home</span>
 </a>
 
 {{ range $i, $item := .Site.Menus.main }}
@@ -161,22 +160,17 @@ alt="logo">
 
 {{ end }}
 
-    <div class="sidebar-lab">
+<div class="sidebar-lab">
+  <div class="sidebar-lab-label">
+    Explore
+  </div>
 
-      <div class="sidebar-lab-label">
-        Explore
-      </div>
-
-      <a class="sidebar-lab-link" href="/post">
-        the 
-        
-        
-        <span class="crumb-section">lab</span>
-        
-        <span>.</span>
-      </a>
-
-    </div>
+  <a class="sidebar-lab-link" href="/post">
+    <span class="lab-the">the</span>
+    <span class="crumb-section">lab</span>
+    <span class="lab-dot">.</span>
+  </a>
+</div>
 
   </nav>
 

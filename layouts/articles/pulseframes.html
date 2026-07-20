@@ -105,6 +105,100 @@ Rich with images, video, audio, maps, and interactive elements, PulseFrames comb
         </p>
 
     
+<!-- Orbit Button -->
+<div class="orbit orbit--cta">
+
+
+
+<a  on="tap:storyLightbox-ukg.open" class="orbit-link">
+
+<div class="story-title">
+
+
+    <span >Tell Me Something</span>
+
+
+
+</div>
+<div class="orbit-story-preview">
+
+    <div class="story-ring">
+
+        <div class="story-gap">
+
+            <!-- Animated Story -->
+            <amp-img
+                src="https://i.giphy.com/H2HMJBg7nwJGg.webp"
+                width="300"
+                height="300"
+                layout="responsive"
+                alt="Story Preview">
+            </amp-img>
+
+            <!-- Overlay -->
+            <div class="story-overlay">
+
+                <!-- Story Progress -->
+                <div class="story-progress">
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <!-- Story Header -->
+                <div class="story-header">
+
+                    <div class="story-avatar">
+                        T
+                    </div>
+
+     <div class="story-user">
+    <strong>Tell Me Something</strong>
+    <span class="story-pages">8 Story Slides</span>
+    <span class="active"></span>
+</div>
+
+                </div>
+
+    
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Play Button -->
+    <div class="story-play-button">
+
+        <div class="play-icon"></div>
+
+    </div>
+
+<!-- QR -->
+<amp-img
+    src="/img/porijazz_qr.png"
+    width="120"
+    height="120"
+    layout="intrinsic"
+    class="story-barcode2"
+    alt="barcode">
+</amp-img>
+
+</div>
+
+
+
+</a>
+
+
+</div>
+
+
+
+
+
   </div>
 
       <!-- RIGHT: EXPLANATION + ORIGIN -->
@@ -158,8 +252,62 @@ We set out to combine the best of both worlds: the permanence and discoverabilit
     </div>
 
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
+
+<!-- STORY POPUP -->
+<!-- LIGHTBOX -->
+<amp-lightbox id="storyLightbox-ukg" layout="nodisplay">
+  <div class="story-modal">
+
+    <!-- CLOSE BUTTON -->
+    <button class="story-close" on="tap:storyLightbox-ukg.close">
+      <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+
+    <path
+      d="M6 6L18 18M18 6L6 18"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"/>
+
+  </svg>
+    </button>
+
+    <!-- CENTERED IFRAME -->
+    <div class="story-frame">
+      <amp-iframe
+        layout="responsive"
+        width="360"
+        height="640"
+        sandbox="allow-scripts allow-same-origin"
+        src="https://yodeejay.co.uk/stories/ukbassscene/">
+      </amp-iframe>
+    </div>
+
+  </div>
+</amp-lightbox>
 
 
 
