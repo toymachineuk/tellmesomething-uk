@@ -4351,12 +4351,7 @@ transform: none;
 =============================== */
 
 
-.closing-cta.blue-bg {
-    position: relative;
-    overflow: hidden;
 
-    padding-block: clamp(8rem, 12vw, 14rem);
-}
 
 .closing-cta.blue-bg::before {
     content: "";
