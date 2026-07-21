@@ -5,7 +5,7 @@ showthedate: true
 hero:
   - /hugo/images/hero.png
 categories:
-  - Технология
+  - development
 draft: false
 tags: ["design"]
 lead: Organizations behind projects such as Kubernetes, Bootstrap, Git, Redis, DigitalOcean, and Grafana use Hugo to power their websites and documentation.

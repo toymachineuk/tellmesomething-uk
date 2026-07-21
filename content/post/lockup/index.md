@@ -3,7 +3,7 @@ title: Understanding Lockup Design in Modern Story Creation
 subtitle:  Converting text embedded in images into selectable HTML text is an effective way to improve both SEO and accessibility. It also makes content responsive, easier to maintain, and readable by search engines and assistive technologies.
 date: "2016-09-01"
 tags: ["design"]
-categories: ["web stories","design" ]
+categories: ["challenge","design" ]
 lead: One of the most challenging layouts to recreate with HTML and CSS is the typographic lockup—a carefully arranged title where words vary in size, weight, and position to create maximum visual impact within a limited space. Bringing this style from graphic design to the web is known as lockup design.
 image: "images/hero.png"
 references: ["design", "lockup", "youtube"]

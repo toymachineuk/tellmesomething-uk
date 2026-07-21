@@ -4547,21 +4547,40 @@ transform: none;
    STORY RING
 =============================== */
 
-.story-ring {
-  width: 100%;
-  height: 100%;
-
-  padding: 4px;
-  border-radius: 50%;
-  box-sizing: border-box;
-
-background:linear-gradient(
-    135deg,
-    #FDAB2B,
-    #F36D21
-);
+.story-ring{
+    position:relative;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    padding:8px;
 }
 
+.story-ring::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+
+    background:
+        repeating-conic-gradient(
+            #FDAB2B 0deg 2deg,
+            transparent 2deg 4deg
+        );
+
+    -webkit-mask:
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 8px),
+            #000 calc(100% - 8px)
+        );
+
+            mask:
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 8px),
+            #000 calc(100% - 8px)
+        );
+}
 .story-gap {
   width: 100%;
   height: 100%;
@@ -7100,18 +7119,18 @@ background: radial-gradient(
 
 
 
-.story-title{
-    margin-top:1.25rem;
-    text-align:center;
-    min-height:2.5rem;   /* Prevents jumping */
-    position:relative;
-        margin: .35rem 0 0;
-     font-size: 14px;
-    font-weight: 600;
-    letter-spacing: .12em;
-    fill: #222;
-    text-transform: uppercase;
-    color: #666;
+.story-intro{
+margin-top: 1.25rem;
+  text-align: center;
+  min-height: 2.5rem;
+  position: relative;
+  margin: .35rem 0 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  fill: #222;
+
+  width: 22ch;
 
 }
 
@@ -7193,4 +7212,61 @@ gap: 8px;
     color:rgba(255,255,255,.8);
     font-size:12px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
