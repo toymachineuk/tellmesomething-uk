@@ -18,20 +18,17 @@ alt="logo">
   <!-- Nav + CTA wrapper -->
   <div class="header-right xs-hide sm-hide">
     <nav class="ampstart-headerbar-nav">
-      <ul>
-        {{ range .Site.Menus.main }}
-          <li><a href="{{ .URL }}">{{ .Name }}<span>.</span></a></li>
-         
-        {{ end }}
+  <ul>
+ {{ range sort .Site.Menus.main "Weight" "desc" }}
+  <li><a href="{{ .URL }}">{{ .Name }}<span>.</span></a></li>
+{{ end }}
 
 <li class="nav-divider"></li>
 
 <li class="nav-lab">
-  <a href="/post">
-    the lab<span>.</span>
-  </a>
+  <a href="/post">the lab<span>.</span></a>
 </li>
-      </ul>
+</ul>
     </nav>
 
 
