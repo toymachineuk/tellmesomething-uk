@@ -4577,6 +4577,15 @@ transform: none;
     height:260px;
 }
 
+@media (max-width: 768px){
+
+    .orbit-story-preview-200{
+        width:160px;
+        height:160px;
+    }
+
+}
+
 
 .orbit-link:hover .orbit-story-preview {
   transform: scale(1.05);
@@ -4602,6 +4611,15 @@ transform: none;
     padding:8px;
 }
 
+
+@media (max-width: 768px){
+
+    .story-ring-200{
+        width:160px;
+        height:160px;
+    }
+
+}
 .story-ring::before{
     content:"";
     position:absolute;
@@ -4738,14 +4756,28 @@ transform: none;
 
 }
 
-@media (max-width: 480px) {
-  .story-barcode2 {
-    width: 52px;
-    right: 10px;
-    bottom: 10px;
-    padding: 4px;
-  }
+@media (max-width:768px){
+
+    .story-barcode2{
+     display:none;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ===============================
@@ -7056,8 +7088,22 @@ background: radial-gradient(
 }
 
 
+@media (max-width:768px){
+
+    .orbit-story-wrapper{
+        width:200px;
+      
+        margin:0 auto;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+}
+
 .story-profile{
- position: absolute;
+  position: absolute;
   top: -54px;
   right: -184px;
   text-align: center;
@@ -7065,13 +7111,55 @@ background: radial-gradient(
   min-width: 22ch;
 }
 
+
+
+
+@media (max-width:768px){
+
+    .story-profile{
+            position:relative;
+        top:0;
+        right:0;
+        transform:none;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+
+        min-width:auto;
+
+        width:max-content;
+        max-width:140px;
+
+        margin:0 auto 10px;
+    }
+
+}
+
+.story-logo {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 8px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+@media (max-width:768px){
 .story-logo{
-     width:58px;
-    height:58px;
-    border-radius:50%;
-    overflow:hidden;
-    margin:0 auto 8px;
-    box-shadow:0 10px 24px rgba(0,0,0,.18);
+        position:absolute;
+        top:88%;
+        right:-38%;
+
+        width:42px;
+        height:42px;
+
+        border-radius:50%;
+        overflow:hidden;
+
+        background:#fff;
+        box-shadow:0 10px 24px rgba(0,0,0,.18);
+}
 }
 
 .story-profile-title{
