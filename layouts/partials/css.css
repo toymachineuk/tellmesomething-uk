@@ -1635,6 +1635,15 @@ margin-top:80px;
 
 }
 
+.hero-v2-front{
+
+   min-height: 760px;
+    height: 92vh;
+    max-height: 980px;
+
+
+}
+
 
 .hero-inner {
   display: flex;
@@ -1692,6 +1701,11 @@ justify-content: center;
 
   background: #fd4470;
 
+}
+
+
+.hero-v2-top-front {
+    height: 67vh;
 }
 
 /* INNER LAYOUT */
@@ -1911,8 +1925,8 @@ margin-bottom: var(--space-4);
 
 .hero-v2-index {
 
-  max-width: 530px;
-  width: clamp(530px, 35vw, 420px);
+  width: clamp(700px, 50vw, 950px);
+  max-width: 950px;
 }
 
 .hero-v2-building{
@@ -2040,13 +2054,13 @@ z-index:4;
 }
 .hero-v2-circles{
   position:absolute;
-  top:0;
- right:-5vw;
+    width:28vw;
+    height:28vw;
+    max-width:420px;
+    max-height:420px;
 
-  width:35vw;
-  height:35vw;
-  transform: translateZ(0);
-  will-change: transform;
+    right:-60px;
+    top:-40px;
   z-index:1;
   pointer-events:none;
     backface-visibility: hidden;
@@ -2696,6 +2710,15 @@ margin: -10px auto 0;
   padding-bottom: var(--space-section-lg);
 
   overflow: visible;
+
+
+
+  background-image: url("/img/index-hero-image.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  color: white;
 }
 
 
@@ -6166,6 +6189,9 @@ background: radial-gradient(
 }
 
 
+
+
+
 /* ==================================================
    CARD
 ================================================== */
@@ -6226,6 +6252,16 @@ background: radial-gradient(
 
 
 .portfolio-card__media amp-img {
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+}
+
+.portfolio-card__media amp-video {
 
   width: 100%;
 
@@ -6304,11 +6340,18 @@ background: radial-gradient(
 
 @media (max-width:768px) {
 
+  .portfolio-carousel{
+    padding-left:1rem;
+}
+
   .portfolio-card {
-
-    width: 220px;
-
-    margin-right: 16px;
+      min-width:102vw;
+        max-width:102vw;
+        flex:0 0 102vw;
+        margin-right:20px;
+  
+    
+    border-radius:14px;
 
   }
 
@@ -6316,7 +6359,9 @@ background: radial-gradient(
 
       border-radius: 14px;
     max-height: none;
-    overflow: hidden;
+   width:100%;
+    border-radius:14px;
+    overflow:hidden;
 
   }
 
@@ -6329,25 +6374,25 @@ background: radial-gradient(
 
   .portfolio-card__title {
 
-    margin-top: 14px;
+    font-size:1.1rem;
+    margin:.8rem 0 .4rem;
 
-    font-size: 13px;
 
   }
 
   .portfolio-card__description {
-
-    font-size: 12px;
+   font-size:.9rem;
+    line-height:1.45;
+    max-width:28ch;
   max-width: 38ch;
     line-height: 1.45;
 
   }
 
-  .amp-scrollable-carousel-slide:first-child {
+.portfolio-carousel{
+    padding-inline-start:40px;
+}
 
-    margin-left: 16px;
-
-  }
 
 }
 
