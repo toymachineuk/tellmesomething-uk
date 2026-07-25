@@ -1625,22 +1625,36 @@ margin-top:80px;
 
 .hero-v2{
     position: relative;
-  height: 760px;
+  height: 620px;
   background: #e8e1d4;
   
  border-bottom: 1px solid rgba(0,0,0,0.05);
   overflow: visible;
-    height: 100vh;
-
+width: 1200px;
+  margin: auto;
 
 }
 
 .hero-v2-front{
 
       position: relative;
-    height: 740px;
+    height: 620px;
     overflow: hidden;
       background: #e8e1d4;
+}
+
+
+@media (max-width: 768px) {
+
+  .hero-v2-front {
+    position: relative;
+   height: 300px;
+    overflow: hidden;
+    background: #e8e1d4;
+  }
+
+  
+
 }
 
 
@@ -1653,6 +1667,8 @@ margin-top:80px;
   margin: 0 auto;
     margin-top: 40px;
 }
+
+
 
 
 /* Hide on mobile */
@@ -1704,8 +1720,19 @@ justify-content: center;
 
 
 .hero-v2-top-front {
-  height: 459px;
+  height: 340px;
     background: #f0a017;
+}
+
+@media (max-width: 768px) {
+
+
+
+  .hero-v2-top-front {
+    height: 155px;
+    background: #f0a017;
+  }
+
 }
 
 /* INNER LAYOUT */
@@ -1931,20 +1958,40 @@ margin-bottom: var(--space-4);
 
 }
 
-
 .hero-v2-index {
 
   width: clamp(760px, 52vw, 980px);
   max-width: 950px;
 }
 
+@media (max-width: 768px) {
+
+  .hero-wrap-front {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+  .hero-v2-index {
+  width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+}
+
+
+
 .hero-v2-building{
   width: min(850px, 70vw);
 }
 
 .hero-v2-sunflower{
-  width: min(700px, 60vw);  /* 🔥 bigger presence */
-  max-width: 700px;
+  width: min(460px, 60vw);  /* 🔥 bigger presence */
+  max-width: 460px;
 
   filter: drop-shadow(0 25px 50px rgba(0,0,0,0.18));
 }
@@ -1972,11 +2019,7 @@ margin-bottom: var(--space-4);
     margin-right: auto;
   }
 
-  /* Default mobile size */
-  .hero-v2-index{
-    width: 105%;
-    margin-top: -60px;
-  }
+
 
   .hero-v2-building{
     width: 120%;
@@ -2231,14 +2274,14 @@ margin: -10px auto 0;
 
 
   .hero-v2-circles{
-    position:absolute;
-    top: 0;
-    right: -10vw;   /* push slightly off screen */
+    position: absolute;
+    top: -20px;
+    right: -12vw;
 
-   width: 100vw;
-    height: 100vw;
+    width: min(240px, 55vw);
+    height: min(240px, 55vw);
 
-    opacity: 0.6;   /* optional: softer look */
+    opacity: 0.7;
   }
 
     .hero-v2-circles svg{
@@ -3424,8 +3467,32 @@ padding-top: var(--space-section-lg);
   height: 100%;
   object-fit: cover;
   z-index: -1;
+
+
+  
 }
 
+
+.video-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    rgba(9, 14, 27, 0.55) 0%,
+    rgba(9, 14, 27, 0.38) 35%,
+    rgba(9, 14, 27, 0.22) 65%,
+    rgba(9, 14, 27, 0.15) 100%
+  );
+}
+
+.video-section .container {
+  position: relative;
+  z-index: 2;
+}
 .base-intro__layout {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -7538,14 +7605,12 @@ BLOG HERO
 
     background:#f5f0e4;
 
-    min-height:720px;
+    min-height: 480px;
 }
 
 .container-lab{
-    position:relative;
-    min-height:700px;
-       width: 100%;
-
+   position: relative;
+    min-height: 480px;
 }
 
 .blog-hero__content{
@@ -7556,24 +7621,12 @@ BLOG HERO
     bottom:40px;
 
     z-index:10;
-
+bottom:0;
     max-width:760px;
 
 }
 
-.blog-hero__label{
 
-    display:block;
-
-    margin-bottom:22px;
-
-    font-size:.82rem;
-
-    font-weight:700;
-
-    letter-spacing:.22em;
-
-}
 
 .blog-hero__text{
 
@@ -7605,62 +7658,42 @@ BLOG HERO
 
 }
 
+
 .blog-hero__graphic{
-
     position:absolute;
+    right:-60px;
 
-    right:-80px;
-
-    top:25px;
-
-    width:700px;
-
-    height:560px;
-
+height: 400px;
+  bottom: 0;
 }
 
 .layer{
-
     position:absolute;
-
-    inset:0;
-
-    border-radius:70px 0 0 70px;
-
+    top:0;
+    bottom:0;
+    width:160px;
+    border-radius:80px 0 0 80px;
 }
 
 .layer-1{
-
     background:#F7A414;
-
-    left:0;
-
+    right:240px;
 }
 
 .layer-2{
-
     background:#FF6D00;
-
-    left:85px;
-
+    right:160px;
 }
 
 .layer-3{
-
     background:#FF4315;
-
-    left:170px;
-
+    right:80px;
 }
 
 .layer-4{
-
     background:#000;
-
-    left:255px;
-
+    right:0;
 }
-
 
 @media (max-width:900px){
 
