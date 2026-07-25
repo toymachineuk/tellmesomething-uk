@@ -1625,7 +1625,7 @@ margin-top:80px;
 
 .hero-v2{
     position: relative;
-  height: 620px;
+height:620px;
   background: #e8e1d4;
   
  border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -1641,6 +1641,8 @@ width: 1200px;
     height: 620px;
     overflow: hidden;
       background: #e8e1d4;
+      width: 1200px;
+  margin: auto;
 }
 
 
@@ -1651,6 +1653,7 @@ width: 1200px;
    height: 300px;
     overflow: hidden;
     background: #e8e1d4;
+    width:auto;
   }
 
   
@@ -2188,8 +2191,9 @@ z-index:4;
 @media (max-width: 768px){
 
   .hero-v2{
-    height: auto;
-    min-height: auto;
+    min-height: 62svh;
+    width:auto;
+    height:auto;
     
   }
 
@@ -4705,12 +4709,10 @@ transform: none;
     inset:0;
     border-radius:50%;
 
-    background:
-        repeating-conic-gradient(
-            #FDAB2B 0deg 2deg,
-            transparent 2deg 4deg
-        );
-
+background: repeating-conic-gradient(
+    #2563EB 0deg 2deg,
+    transparent 2deg 4deg
+);
     -webkit-mask:
         radial-gradient(
             farthest-side,
@@ -4730,12 +4732,6 @@ transform: none;
 @media (max-width:768px){
 
     .story-ring::before{
-
-       background:
-    repeating-conic-gradient(
-        #FDAB2B 0deg 1.5deg,
-        transparent 1.5deg 3deg
-    );
 
         -webkit-mask:
             radial-gradient(
@@ -4859,8 +4855,10 @@ transform: none;
 
   opacity: .85;
   z-index: 5;
-  right: -45px;
-  bottom: -25px;
+ 
+
+  right: 0px;
+  bottom: -5px;
   width: 80px;
 }
 
@@ -4876,8 +4874,8 @@ transform: none;
 
 .story-barcode2 {
   position: absolute;
-    right: -14px;
-    bottom: -14px;
+    right: 14px;
+    bottom: 0px;
 
     width: 64px;
     z-index: 20;
@@ -7190,7 +7188,10 @@ background: radial-gradient(
 
 
 
-
+.orbit.orbit--cta-200 {
+  margin: 2rem auto 1rem;
+  padding: 1rem 0 0.75rem;
+}
 
 
 .story-gap{
@@ -7219,7 +7220,7 @@ background: radial-gradient(
 .orbit-story-wrapper{
     position:relative;
     width:340px;   /* same width as your story */
-    margin:0 auto;
+   
 }
 
 
@@ -7645,125 +7646,88 @@ bottom:0;
 .blog-hero h1{
 
     margin:0;
+letter-spacing: -.08em;
+  color: #000;
+  font-size: clamp(90px, 16vw, 240px);
+  line-height: 0.85;
+  font-weight: 900;
 
-    font-size:clamp(8rem,17vw,13rem);
-
-    line-height:.82;
-
-    font-weight:900;
+  max-width: 8ch;
 
     letter-spacing:-.08em;
 
-    color:#000;
-
+ 
 }
 
 
 .blog-hero__graphic{
     position:absolute;
-    right:-60px;
+    right:60px;
 
 height: 400px;
   bottom: 0;
 }
 
-.layer{
-    position:absolute;
-    top:0;
+
+
+.layer {
+    position: absolute;
+    inset: 0;
+    border-radius: 70px 0 0 70px;
+       top:0;
     bottom:0;
     width:160px;
-    border-radius:80px 0 0 80px;
 }
 
-.layer-1{
-    background:#F7A414;
-    right:240px;
+.layer-1 {
+    background: #F7A414;
+    transform: translateX(0);
 }
 
-.layer-2{
-    background:#FF6D00;
-    right:160px;
+.layer-2 {
+    background: #FF6D00;
+    transform: translateX(60px);
 }
 
-.layer-3{
-    background:#FF4315;
-    right:80px;
+.layer-3 {
+    background: #FF4315;
+    transform: translateX(120px);
 }
 
-.layer-4{
-    background:#000;
-    right:0;
+.layer-4 {
+    background: #000;
+    transform: translateX(180px);
 }
 
-@media (max-width:900px){
 
-.blog-hero{
+@media (max-width: 768px) {
 
-    min-height:auto;
+  .blog-hero {
+    min-height: 300px;
+  }
 
-}
+  .container-lab {
+    position: relative;
+    height: 100%;
+ min-height: 300px;
+  }
 
-.blog-hero .container{
+  .blog-hero__content {
+    position: absolute;
+    left: 1.25rem;
+    bottom: 1.5rem;
+    max-width: 60%;
+  }
 
-    height:auto;
+  .blog-hero__graphic {
+    position: absolute;
+    right: -25px;
+   
 
-    padding:80px 0 50px;
+    width: 220px;
+    height: 280px;
 
-}
-
-.blog-hero__graphic{
-
-    position:relative;
-
-    right:auto;
-    top:auto;
-
-    width:280px;
-    height:220px;
-
-    margin:0 auto 50px;
-
-}
-
-.layer-2{
-
-    left:40px;
-
-}
-
-.layer-3{
-
-    left:80px;
-
-}
-
-.layer-4{
-
-    left:120px;
-
-}
-
-.blog-hero__content{
-
-    position:relative;
-
-    left:auto;
-    bottom:auto;
-
-}
-
-.blog-hero__text{
-
-    width:auto;
-
-    margin-bottom:40px;
-
-}
-
-.blog-hero h1{
-
-    font-size:5rem;
-
-}
+    transform: none;
+  }
 
 }
