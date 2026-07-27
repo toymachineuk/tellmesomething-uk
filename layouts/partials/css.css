@@ -909,6 +909,32 @@ line-height:1.5;
 }
 
 
+/* ================================
+   Individual button colors
+   ================================ */
+
+
+.sidebar-nav-link:nth-child(2) {
+    background:#e8e1d4;
+}
+
+
+.sidebar-nav-link:nth-child(3) {
+    background:#ddd3c3;
+}
+
+
+.sidebar-nav-link:nth-child(4) {
+    background:#cf6f13;
+    color:white;
+}
+
+
+.sidebar-nav-link:nth-child(5) {
+    background:#2465a3;
+    color:white;
+}
+
 /* ---------------------------------
    Lab
 --------------------------------- */
@@ -978,163 +1004,298 @@ line-height:1.5;
 .current-location a.crumb-section:hover {
   opacity: .8;
 }
+
+
+/* =================================
+   Sidebar Navigation
+================================= */
+
+.ampstart-sidebar {
+    padding-left:0 !important;
+    padding-right:0 !important;
+}
+
+.ampstart-sidebar-nav {
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    z-index:2;
+    width:100%;
+}
+
+
 /* ---------------------------------
-   Mobile
+   Navigation Links
+--------------------------------- */
+
+.sidebar-nav-link,
+.sidebar-home-link {
+
+    display:flex;
+    align-items:center;
+
+    width:100%;
+
+    padding:1rem 2rem;
+
+    box-sizing:border-box;
+
+    text-decoration:none;
+
+    border-bottom:1px solid rgba(0,0,0,.08);
+
+    transition:.25s ease;
+}
+
+
+/* Numbers */
+
+.sidebar-number {
+
+    width:3rem;
+    flex:0 0 3rem;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+
+    color:#999;
+
+    font-size:.75rem;
+    letter-spacing:.2em;
+    font-weight:600;
+}
+
+
+/* Titles */
+
+.sidebar-title {
+
+    font-size:1.35rem;
+
+    font-weight:500;
+
+    color:#111;
+}
+
+
+/* Home */
+
+.sidebar-home-icon {
+
+    width:2rem;
+
+    display:flex;
+
+    color:#999;
+}
+
+
+/* ---------------------------------
+   Button Backgrounds
+--------------------------------- */
+
+.sidebar-nav-link:nth-child(2) {
+    background:#e8e1d4;
+}
+
+.sidebar-nav-link:nth-child(3) {
+    background:#ddd3c3;
+}
+
+.sidebar-nav-link:nth-child(4) {
+    background:#cf6f13;
+}
+
+.sidebar-nav-link:nth-child(5) {
+    background:#2465a3;
+}
+
+
+/* White text on dark buttons */
+
+.sidebar-nav-link:nth-child(4) .sidebar-title,
+.sidebar-nav-link:nth-child(5) .sidebar-title {
+    color:#fff;
+}
+
+
+/* Hover */
+
+.sidebar-nav-link:hover,
+.sidebar-home-link:hover {
+
+    padding-left:3rem;
+
+    color:#0e4d4a;
+}
+
+
+/* ---------------------------------
+   Dropdown
+--------------------------------- */
+
+.ampstart-dropdown-item a {
+
+    display:block;
+
+    font-size:1rem;
+
+    color:rgba(0,0,0,.65);
+
+    padding:.75rem 0 .75rem 1.2rem;
+
+    transition:.25s ease;
+}
+
+
+.ampstart-dropdown-item a:hover {
+
+    color:#0e4d4a;
+
+    transform:translateX(6px);
+}
+
+
+/* Dropdown arrow */
+
+.ampstart-sidebar-nav .ampstart-dropdown header::after {
+
+    content:"▸";
+
+    float:right;
+
+    transition:transform .2s ease;
+}
+
+
+.ampstart-sidebar-nav 
+.i-amphtml-accordion-item-expanded > header::after {
+
+    transform:rotate(90deg);
+}
+
+
+/* ---------------------------------
+   Lab CTA
+--------------------------------- */
+
+.sidebar-cta {
+
+    margin-top:3rem;
+}
+
+
+.sidebar-cta a {
+
+    display:block;
+
+    background:#c7dedd;
+
+    color:#0e4d4a;
+
+    padding:1rem;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-weight:600;
+
+    font-size:1rem;
+
+    transition:.25s ease;
+}
+
+
+.sidebar-cta a:hover {
+
+    background:#fff;
+
+    transform:translateY(-2px);
+}
+
+
+/* ---------------------------------
+   Mobile Circle Background
 --------------------------------- */
 
 @media(max-width:768px){
 
+    .sidebar-circles {
 
+        top:-8rem;
 
-.sidebar-circles{
+        right:-14rem;
 
-    top:-8rem;
-    right:-14rem;
+        width:30rem;
 
-    width:30rem;
-    height:30rem;
+        height:30rem;
 
-    opacity:.55;
-}
+        opacity:.55;
+    }
 
-}
-
-
-.sidebar-nav-link,
-.sidebar-home-link {
-    display: flex;
-    align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(0,0,0,.08);
-    text-decoration: none;
-}
-
-.sidebar-number{
-    width: 3rem;
-    flex: 0 0 3rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    color: #999;
-    font-size: .75rem;
-    letter-spacing: .2em;
-    font-weight: 600;
-}
-
-.sidebar-title{
-    font-size:1.35rem;
-    font-weight:500;
-    color:#111;
 }
 
 
-.sidebar-home-link{
-    display:flex;
-    align-items:center;
+/* ---------------------------------
+   Header Mobile
+--------------------------------- */
 
-    padding:1rem 0;
+@media(max-width:980px){
 
-    border-bottom:1px solid rgba(0,0,0,.08);
+    .header-right {
 
-    color:#111;
-    text-decoration:none;
-}
+        display:none !important;
+    }
 
-.sidebar-home-icon{
-    width:2rem;
-    display:flex;
-  color: #999;
-  
-}
 
-.sidebar-home-link:hover{
-    color:#0e4d4a;
-    transform:translateX(8px);
-    transition:.25s;
-}
+    .ampstart-navbar-trigger {
 
-/* Dropdown items */
-.ampstart-dropdown-item a {
-  display: block;
-  font-size: 1rem;
-  color: rgba(0,0,0,0.65);
-  padding: 0.75rem 0 0.75rem 1.2rem;
-  transition: all 0.25s ease;
-}
-.ampstart-dropdown-item a:hover {
-  color: #0e4d4a;
-  transform: translateX(6px);
-}
+        display:block;
 
-/* Sidebar CTA */
-.sidebar-cta {
-  margin-top: 3rem;
-}
-.sidebar-cta a {
-  display: block;
-  background: #c7dedd;
-  color: #0e4d4a;
-  padding: 1rem;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.25s ease;
-}
-.sidebar-cta a:hover {
-  background: #ffffff;
-  transform: translateY(-2px);
+        order:1;
+    }
+
+
+    .logo {
+
+        order:2;
+
+        margin-left:auto;
+    }
+
+
+    .ampstart-headerbar {
+
+        padding:0 1rem;
+
+        height:58px;
+    }
+
 }
 
 
-@media (max-width: 980px) {
-  /* Hide desktop nav + CTA */
-  .header-right {
-    display: none !important;
-  }
+/* ---------------------------------
+   Small Mobile
+--------------------------------- */
 
-  /* Hamburger visible */
-  .ampstart-navbar-trigger {
-    display: block;
-    order: 1; /* left side */
-  }
+@media(max-width:480px){
 
-  /* Logo moves right */
-  .logo {
-    order: 2;
-    margin-left: auto;
-  }
+    .ampstart-sidebar {
 
-  /* Adjust header padding */
-  .ampstart-headerbar {
-    padding: 0 1rem;
-    height: 58px;
-  }
+        padding:2rem 0 1.5rem;
+    }
+
+
+    .sidebar-nav-link,
+    .sidebar-home-link {
+
+           padding-left:1.5rem !important;
+        padding-right:1.5rem !important;
+    }
+
 }
-
-/* Sidebar padding on very small screens */
-@media (max-width: 480px) {
-  .ampstart-sidebar {
-    padding: 2rem 1.5rem 1.5rem;
-  }
-}
-
-/* Dropdown arrow indicators */
-.ampstart-sidebar-nav .ampstart-dropdown header::after {
-  content: "▸";
-  float: right;
-  transition: transform 0.2s ease;
-}
-.ampstart-sidebar-nav .i-amphtml-accordion-item-expanded > header::after {
-  transform: rotate(90deg);
-}
-
-
-
-
-
 
 
 
@@ -1723,14 +1884,8 @@ margin-top:80px;
     height: 155px;
   }
 
-  /* Text */
 
-  .hero-v2-front .hero-v2-tag {
-    position: absolute;
 
-    margin-top: -6px;
-    margin-left: 25px;
-  }
 
   .hero-v2-front .hero-v2-title {
     margin: 0 auto 10px;
@@ -1855,17 +2010,20 @@ margin-top:80px;
 ========================================================== */
 
 .hero-v2 {
-  position: relative;
+
   overflow: visible;
 
-  width: min(1360px, calc(100vw - 80px));
-  aspect-ratio: 1360 / 700;
-  margin: 0 auto;
+  
+
 
   background: #e8e1d4;
   border-bottom: 1px solid rgba(0,0,0,.05);
     position: relative;
   bottom: 0;
+
+    width: min(1480px, calc(100vw - 120px));
+    height: 720px;
+    margin-inline: auto;
 }
 
 
@@ -1973,13 +2131,7 @@ margin-top:80px;
 
 /* ---------- Tag ---------- */
 
-.hero-v2-tag {
-   margin: 0 0 0.35rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
+
 
 .proof .hero-v2-tag {
   margin-left: 10px;
@@ -2104,6 +2256,58 @@ max-width:220px;
 
 
 /* ==========================================================
+   DECORATIVE CIRCLES
+========================================================== */
+
+.hero-v2-circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero-v2-circles {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  z-index: 1;
+
+  width: 28vw;
+  height: 28vw;
+
+  max-width: 420px;
+  max-height: 420px;
+
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+
+.hero-v2-circles svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  animation: floatHero 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.hero-v2-circles circle {
+  animation: floatHero 6s ease-in-out infinite;
+}
+
+.hero-v2-circles circle:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.hero-v2-circles circle:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.hero-v2-circles circle:nth-child(3) {
+  animation-delay: 2s;
+}
+
+
+/* ==========================================================
    INDIVIDUAL ASSETS
 ========================================================== */
 
@@ -2149,6 +2353,30 @@ max-width:220px;
 .hero-v2-tannoy img {
   object-fit: cover;
 }
+
+
+  /* --------------------------------------------------------
+     Typography
+  -------------------------------------------------------- */
+
+
+
+
+  .hero-v2-tag {
+   margin: 0 0 0.35rem;
+ font-size: 12px;
+  font-weight: 700;
+ letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+
+  .hero-v2-question {
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
 
 /* ==========================================================
    BARCODE
@@ -2285,6 +2513,22 @@ top: 18px;
   }
 
 
+  @media (max-width:768px) {
+
+  .hero-v2-circles {
+  
+   top: 0;
+    right: -10px;
+
+    width: 83vw;
+    height: 83vw;
+
+    max-width: 340px;
+    max-height: 340px;
+  }
+
+}
+
 
   /* Individual assets */
 
@@ -2335,59 +2579,12 @@ margin: -45px auto 0;
     margin: -6px 0 0;
   }
 
+    .hero-v2-tag {
+margin: 0;
+  }
+
 }
 
-
-
-/* ==========================================================
-   DECORATIVE CIRCLES
-========================================================== */
-
-.hero-v2-circle {
-  position: absolute;
-  border-radius: 50%;
-}
-
-.hero-v2-circles {
-  position: absolute;
-  top: -40px;
-  right: 0;
-  z-index: 1;
-
-  width: 28vw;
-  height: 28vw;
-  max-width: 420px;
-  max-height: 420px;
-
-  pointer-events: none;
-  backface-visibility: hidden;
-}
-
-.hero-v2-circles svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-
-  animation: floatHero 6s ease-in-out infinite;
-  transform-origin: center;
-}
-
-.hero-v2-circles circle {
-  animation: floatHero 6s ease-in-out infinite;
-}
-
-.hero-v2-circles circle:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.hero-v2-circles circle:nth-child(2) {
-  animation-delay: 1s;
-}
-
-.hero-v2-circles circle:nth-child(3) {
-  animation-delay: 2s;
-}
 
 /* ==========================================================
    LAYERING
@@ -2421,26 +2618,6 @@ margin: -45px auto 0;
 
 
 
-  /* --------------------------------------------------------
-     Typography
-  -------------------------------------------------------- */
-
-
-  .hero-v2-tag {
-    margin-left: 18%;
-
-    font-size: 12px;
-    letter-spacing: 1px;
-  }
-
-
-
-
-  .hero-v2-question {
-    font-size: 16px;
-    line-height: 1.2;
-    letter-spacing: -.01em;
-  }
 
   /* --------------------------------------------------------
      Side Content
@@ -2519,8 +2696,61 @@ margin: -45px auto 0;
     height: 26vw;
   }
 
-}
 
+/* ==========================================================
+   LARGE SCREENS / TV
+========================================================== */
+
+@media (min-width:1600px) {
+
+  .hero-v2 {
+    width: min(90vw, 2200px);
+
+  }
+
+
+  .hero-v2-top {
+    height: 60vh;
+  }
+
+
+  .hero-v2-inner {
+    width: min(1600px, 85vw);
+  }
+
+
+  .hero-v2-title {
+    font-size: clamp(160px, 14vw, 320px);
+  }
+
+
+  .hero-v2-circles {
+    top: 100px;
+    right: 0;
+
+    width: min(32vw, 700px);
+    height: min(32vw, 700px);
+
+    max-width: none;
+    max-height: none;
+  }
+
+
+  .hero-v2-sunflower {
+    width: min(1100px, 55vw);
+  }
+
+
+  .hero-v2-text {
+    padding-left: 100px;
+  }
+
+
+  .hero-v2-side {
+    right: 120px;
+  }
+
+}
 
 /* ==========================================================
    LARGE DESKTOP
@@ -2528,10 +2758,7 @@ margin: -45px auto 0;
 
 @media (min-width: 1400px) {
 
-  .hero-v2 {
-    width: min(1480px, calc(100vw - 120px));
-    height: 720px;
-  }
+ 
 
   .hero-v2-inner {
     padding-top: 120px;
