@@ -2164,8 +2164,100 @@ max-width:220px;
 }
 
 /* ==========================================================
+   TABLET
+========================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-v2 {
+    width: auto;
+    height: 560px;
+  }
+
+  .hero-wrap {
+    bottom: 0;
+  }
+
+  .hero-v2-index {
+    width: min(720px, 90vw);
+  }
+}
+
+
+
+
+
+@media (max-width:1200px) {
+
+  .hero-v2-inner {
+    padding-top: 100px;
+  }
+
+  .hero-v2-title {
+      font-size: clamp(80px, 26vw, 132px);
+  }
+
+  .hero-v2-building {
+    position: relative;
+
+    width: 120%;
+    margin-top: 48px;
+  }
+
+  .hero-v2-sunflower {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    max-width: 420px;
+
+    margin: -20px auto 0;
+  }
+
+}
+
+
+
+/* ==========================================================
    MOBILE
 ========================================================== */
+
+@media (max-width:768px) {
+
+  /* --------------------------------------------------------
+     Main Layout
+  -------------------------------------------------------- */
+
+  .hero-v2 {
+       width: auto;
+  
+    height: auto;
+  }
+
+  .hero-v2-top {
+    height: clamp(180px, 28vh, 260px);
+    max-height: 260px;
+  }
+
+  .hero-v2-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 0;
+    padding-top: 0;
+
+    text-align: center;
+  }
+
+  
+.hero-v2-text {
+top: 18px;
+  }
+}
+
+
+
 
 @media (max-width:768px) {
 
@@ -2202,12 +2294,10 @@ max-width:220px;
   }
 
   .hero-v2-sunflower {
-    display: block;
 
-    width: 120%;
-    max-width: none;
-
-    margin-top: -30px;
+margin: -45px auto 0;
+ width: min(340px, 85vw);
+    max-width: 340px;
   }
 
   .hero-v2-chess {
@@ -2236,7 +2326,18 @@ max-width:220px;
     max-width: none;
   }
 
+    .hero-v2-title {
+    font-size: clamp(68px, 24vw, 96px);
+
+  }
+
+    .hero-v2-sub {
+    margin: -6px 0 0;
+  }
+
 }
+
+
 
 /* ==========================================================
    DECORATIVE CIRCLES
@@ -2315,82 +2416,6 @@ max-width:220px;
   }
 
 }
-
-/* ==========================================================
-   TABLET
-========================================================== */
-
-@media (max-width:1200px) {
-
-  .hero-v2-inner {
-    padding-top: 100px;
-  }
-
-  .hero-v2-title {
-      font-size: clamp(80px, 26vw, 132px);
-  }
-
-  .hero-v2-building {
-    position: relative;
-
-    width: 120%;
-    margin-top: 48px;
-  }
-
-  .hero-v2-sunflower {
-    position: relative;
-
-    display: block;
-
-    width: 100%;
-    max-width: 420px;
-
-    margin: -20px auto 0;
-  }
-
-}
-
-
-
-/* ==========================================================
-   MOBILE
-========================================================== */
-
-@media (max-width:768px) {
-
-  /* --------------------------------------------------------
-     Main Layout
-  -------------------------------------------------------- */
-
-  .hero-v2 {
-    width: auto;
-    height: auto;
-    min-height: 62svh;
-  }
-
-  .hero-v2-top {
-    height: clamp(180px, 28vh, 260px);
-    max-height: 260px;
-  }
-
-  .hero-v2-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin-bottom: 0;
-    padding-top: 0;
-
-    text-align: center;
-  }
-
-  
-.hero-v2-text {
-top: 25px;
-  }
-}
-
-
 
 
 
@@ -2544,19 +2569,28 @@ top: 25px;
   }
 
   .hero-v2-text {
-    padding: 0 40px 40px;
-    margin-bottom: -50px;
+      padding: 0;
+     top: 25px;
   }
 
   .hero-v2-title {
-    font-size: clamp(72px, 11vw, 140px);
+      font-size: clamp(110px, 18vw, 200px);
+
   }
 
   .hero-v2-tag,
   .hero-v2-sub {
     font-size: 13px;
+    letter-spacing: 0.12em;
   }
 
+  .hero-v2-tag {
+    margin: 0 0 4px;
+  }
+
+  .hero-v2-sub {
+    margin: -4px 0 0;
+  }
  
 
   .hero-v2-question {
@@ -2568,7 +2602,8 @@ top: 25px;
   }
 
   .hero-v2-sunflower {
-    width: min(360px, 40vw);
+      width: min(420px, 58vw);
+    max-width: 420px;
   }
 
   .hero-v2-tannoy {
