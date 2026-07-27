@@ -2601,10 +2601,6 @@ margin: -45px auto 0;
     width: min(760px, 70vw);
   }
 
-  .hero-v2-sunflower {
-      width: min(420px, 58vw);
-    max-width: 420px;
-  }
 
   .hero-v2-tannoy {
     width: min(340px, 32vw);
