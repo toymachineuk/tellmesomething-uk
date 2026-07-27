@@ -98,12 +98,23 @@ alt="logo">
   <div class="sidebar-hero">
 
     <div class="sidebar-circles">
+
       <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMaxYMin slice">
-        <circle cx="1150" cy="-120" r="880" fill="#f3eee6"/>
-        <circle cx="1150" cy="60" r="700" fill="#e8e1d4"/>
-        <circle cx="1150" cy="240" r="520" fill="#ddd3c3"/>
-        <circle cx="1150" cy="420" r="360" fill="#cfc3af"/>
-      </svg>
+
+  
+  <circle cx="1150" cy="-120" r="880" fill="#f3eee6"></circle>
+
+  
+  <circle cx="1150" cy="60" r="700" fill="#e8e1d4"></circle>
+
+  
+  <circle cx="1150" cy="240" r="520" fill="#ddd3c3"></circle>
+
+  
+  <circle cx="1150" cy="420" r="360" fill="#cfc3af"></circle>
+
+</svg>
+      
     </div>
 
     <div class="sidebar-head">
@@ -120,11 +131,7 @@ alt="logo">
 
     </div>
 
-    <div class="sidebar-tagline">
-      Creative Studio<br>
-      for brands<br>
-      and ideas.
-    </div>
+
 
   </div>
 
@@ -144,32 +151,55 @@ alt="logo">
     <span class="sidebar-title">home</span>
 </a>
 
-{{ range $i, $item := .Site.Menus.main }}
+<a class="sidebar-nav-link nav-development" href="#">
+  <span class="sidebar-nav-number">01</span>
+  <span class="sidebar-nav-title">Development</span>
+</a>
 
-  <a href="{{ $item.URL }}" class="sidebar-nav-link">
+<a class="sidebar-nav-link nav-studio" href="#">
+  <span class="sidebar-nav-number">02</span>
+  <span class="sidebar-nav-title">Studio</span>
+</a>
 
-    <span class="sidebar-number">
-      {{ printf "%02d" (add $i 1) }}
+<a class="sidebar-nav-link nav-pulse" href="#">
+  <span class="sidebar-nav-number">03</span>
+
+  <span class="sidebar-nav-content">
+    <span class="sidebar-nav-title">Pulse Frames™</span>
+    <span class="sidebar-nav-description">
+      Stories rebuilt for the Open&nbsp;Web.
     </span>
+  </span>
+</a>
 
-    <span class="sidebar-title">
-      {{ $item.Name }}
-    </span>
-
-  </a>
-
-{{ end }}
+<a class="sidebar-nav-link nav-case" href="#">
+  <span class="sidebar-nav-number">04</span>
+  <span class="sidebar-nav-title">Case Studies</span>
+</a>
 
 <div class="sidebar-lab">
-  <div class="sidebar-lab-label">
-    Explore
-  </div>
+
+  <span class="sidebar-lab-label">Explore</span>
 
   <a class="sidebar-lab-link" href="/post">
-    <span class="lab-the">the</span>
-    <span class="crumb-section">lab</span>
-    <span class="lab-dot">.</span>
+
+    <div class="sidebar__graphic">
+      <span class="layer layer-1"></span>
+      <span class="layer layer-2"></span>
+      <span class="layer layer-3"></span>
+      <span class="layer layer-4"></span>
+    </div>
+
+    <div class="sidebar-lab-text">
+      <span class="lab-the">the</span>
+      <span class="crumb-section">lab</span><span class="lab-dot">.</span>
+    </div>
+
   </a>
+
+</div>
+
+
 </div>
 
   </nav>

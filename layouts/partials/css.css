@@ -797,16 +797,19 @@ line-height:1.5;
 
 
 .sidebar-head{
+
+
+       height:64px;
+    padding:0 2rem;
     display:flex;
+    align-items:center;
     justify-content:space-between;
-    align-items:flex-start;
 }
 
 .sidebar-logo{
-    font-size:.72rem;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-    color:rgba(0,0,0,.55);
+   font-size:.75rem;
+    letter-spacing:.35em;
+    color:#8b8173;
 }
 
 .sidebar-close{
@@ -820,33 +823,27 @@ line-height:1.5;
     transform:rotate(90deg);
 }
 
-.sidebar-tagline{
-
-  line-height: .95;
-  font-weight: 300;
-
-  margin: 3rem 0 3.5rem;
-
-    font-size: 1.5rem;
-  line-height: 1;
-  max-width: 220px;
-}
 
 
 /* ---------------------------------
    Background circles
 --------------------------------- */
 
-.sidebar-circles{
-    position:absolute;
-    top:-10rem;
-    right:-10rem;
 
-    width:34rem;
-    height:34rem;
+.sidebar-circles{
+     position:absolute;
 
     opacity:.45;
+    top:-180px;
+    right:-260px;
+
+    width:900px;
+    height:900px;
+
+    overflow:hidden;
+
     pointer-events:none;
+
     z-index:1;
 }
 
@@ -1048,35 +1045,54 @@ line-height:1.5;
 }
 
 
-/* Numbers */
+.sidebar-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 28px 32px;
+  color: #000;
+  text-decoration: none;
+}
 
-.sidebar-number {
+.sidebar-nav-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px 32px;
+  text-decoration: none;
+}
 
-    width:3rem;
-    flex:0 0 3rem;
+.sidebar-nav-number {
+  flex-shrink: 0;
+  margin-top: 4px;
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  opacity: .8;
+}
 
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
+.sidebar-nav-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 
-    color:#999;
+.sidebar-nav-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
 
-    font-size:.75rem;
-    letter-spacing:.2em;
-    font-weight:600;
+.sidebar-nav-description {
+  font-size: .85rem;
+  line-height: 1.45;
+  opacity: .8;
+  max-width: 18rem;
 }
 
 
-/* Titles */
 
-.sidebar-title {
 
-    font-size:1.35rem;
-
-    font-weight:500;
-
-    color:#111;
-}
 
 
 /* Home */
@@ -1091,26 +1107,45 @@ line-height:1.5;
 }
 
 
-/* ---------------------------------
-   Button Backgrounds
---------------------------------- */
-
-.sidebar-nav-link:nth-child(2) {
-    background:#e8e1d4;
+.nav-development .sidebar-nav-number {
+  color: #8b5cf6;
 }
 
-.sidebar-nav-link:nth-child(3) {
-    background:#ddd3c3;
+.nav-studio .sidebar-nav-number {
+  color: #ff4d7d;
 }
 
-.sidebar-nav-link:nth-child(4) {
-    background:#cf6f13;
+.nav-pulse .sidebar-nav-number {
+  color: #9b021e;
 }
 
-.sidebar-nav-link:nth-child(5) {
-    background:#2465a3;
+.nav-case .sidebar-nav-number {
+  color: #1691b2;
 }
 
+
+
+
+
+.sidebar-home-link {
+  background: #f0a017;
+}
+
+.nav-development {
+  background: #d36bd9;
+}
+
+.nav-studio {
+  background: #fd4470;
+}
+
+.nav-pulse {
+  background: #9b021e;
+}
+
+.nav-case {
+  background: #1691b2;
+}
 
 /* White text on dark buttons */
 
@@ -1119,6 +1154,64 @@ line-height:1.5;
     color:#fff;
 }
 
+.sidebar-lab {
+    padding: 2rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,.08);
+}
+
+.sidebar-lab-label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    opacity: .55;
+}
+
+.sidebar-lab-link {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.sidebar__graphic {
+    flex: 0 0 72px;
+}
+
+.sidebar-lab-text {
+    display: flex;
+    align-items: baseline;
+    gap: .1em;
+}
+
+.lab-the {
+    font-size: 1rem;
+    opacity: .7;
+}
+
+.crumb-section {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.lab-dot {
+    color: #1691b2;
+}
+
+
+
+.sidebar__graphic {
+position: absolute;
+    right: -25px;
+    width: 120px;
+    height: 120px;
+    transform: none;
+}
 
 /* Hover */
 
@@ -1216,26 +1309,7 @@ line-height:1.5;
 }
 
 
-/* ---------------------------------
-   Mobile Circle Background
---------------------------------- */
 
-@media(max-width:768px){
-
-    .sidebar-circles {
-
-        top:-8rem;
-
-        right:-14rem;
-
-        width:30rem;
-
-        height:30rem;
-
-        opacity:.55;
-    }
-
-}
 
 
 /* ---------------------------------
