@@ -1894,7 +1894,6 @@ margin-top:80px;
 ========================================================== */
 
 .hero-v2-top-front {
-  height: 340px;
   background: #f0a017;
 }
 
@@ -1930,14 +1929,6 @@ margin-top:80px;
   transform: translateX(-50%);
 }
 
-/* ==========================================================
-   INDEX ASSET
-========================================================== */
-
-.hero-v2-index {
-  width: clamp(760px, 52vw, 980px);
-  max-width: 950px;
-}
 
 /* ==========================================================
    MOBILE
@@ -1977,11 +1968,7 @@ margin-top:80px;
     width: 100%;
   }
 
-  .hero-v2-index {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-  }
+
 
 }
 
@@ -2258,12 +2245,6 @@ margin-top:80px;
    SIDE CONTENT
 ========================================================== */
 
-.hero-v2-side {
-position: absolute;
-  right: 60px;
- 
-  text-align: right;
-}
 
 
 
@@ -2384,6 +2365,13 @@ max-width:220px;
 /* ==========================================================
    INDIVIDUAL ASSETS
 ========================================================== */
+    .hero-v2-man {
+     margin: -45px auto 0;
+  width: min(460px, 34vw);
+  max-width: 460px;
+  }
+
+
 
 .hero-v2-building {
   width: min(850px, 70vw);
@@ -2457,12 +2445,12 @@ max-width:220px;
 ========================================================== */
 
 .hero-base-barcode {
-  position: relative;
-  right: 180px;
-  z-index: 4;
+   position: absolute;
+  left: clamp(24px, 3vw, 48px);
+  bottom: clamp(24px, 3vw, 48px);
 
-  flex-shrink: 0;
-  width: 130px;
+  width: clamp(110px, 8vw, 140px);
+  z-index: 4;
 }
 
 /* ==========================================================
@@ -2479,9 +2467,7 @@ max-width:220px;
     bottom: 0;
   }
 
-  .hero-v2-index {
-    width: min(720px, 90vw);
-  }
+
 }
 
 
@@ -2554,7 +2540,7 @@ max-width:220px;
 
   
 .hero-v2-text {
-top: 18px;
+top: 15px;
   }
 }
 
@@ -2605,6 +2591,8 @@ top: 18px;
 
 
   /* Individual assets */
+
+
 
   .hero-v2-building {
     width: 120%;
@@ -2698,18 +2686,12 @@ margin: 0;
   -------------------------------------------------------- */
 
   .hero-v2-side {
-    position: relative;
-    right: auto;
-    bottom: auto;
-
-    width: auto;
-
-    margin: 20px auto 0;
-    padding: 16px 0;
-
-    text-align: center;
-
-    background: none;
+ position: absolute;
+  right: 180px;
+  top: 65%;
+  transform: translateY(-50%);
+  width: 260px;
+  text-align: right;
   }
 
 
@@ -2772,58 +2754,48 @@ margin: 0;
 
 
 /* ==========================================================
-   LARGE SCREENS / TV
+   LARGE SCREENS (1600px+)
 ========================================================== */
 
-@media (min-width:1600px) {
+@media (min-width: 1600px) {
 
   .hero-v2 {
-    width: min(90vw, 2200px);
-
+    width: min(92vw, 1600px);
+    height: 780px;
+     margin-inline: auto;
   }
-
 
   .hero-v2-top {
-    height: 60vh;
+    height: 470px; /* instead of 60vh for more consistent composition */
   }
-
 
   .hero-v2-inner {
-    width: min(1600px, 85vw);
+    width: min(1500px, 88vw);
   }
-
 
   .hero-v2-title {
-    font-size: clamp(160px, 14vw, 320px);
+    font-size: clamp(180px, 15vw, 300px);
   }
-
-
-  .hero-v2-circles {
-    top: 100px;
-    right: 0;
-
-    width: min(32vw, 700px);
-    height: min(32vw, 700px);
-
-    max-width: none;
-    max-height: none;
-  }
-
-
-  .hero-v2-sunflower {
-    width: min(1100px, 55vw);
-  }
-
 
   .hero-v2-text {
-    padding-left: 100px;
+    padding-left: 80px;
   }
 
+  .hero-v2-circles {
+    top: -30px;
+    right: -60px;
+    width: 500px;
+    height: 500px;
+  }
+
+  .hero-v2-sunflower {
+    width: min(620px, 38vw);
+    max-width: 620px;
+  }
 
   .hero-v2-side {
     right: 120px;
   }
-
 }
 
 /* ==========================================================
