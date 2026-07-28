@@ -29,11 +29,13 @@
   </div>
 
 </div>
+      
+    <!-- ✅ THIS WAS MISSING -->
+    <section class="article-content">
+
       {{ with .Params.lead }}
   <p class="lead">{{ . }}</p>
 {{ end }}
-    <!-- ✅ THIS WAS MISSING -->
-    <section class="article-content">
 
       {{ .Content }}
     </section>
