@@ -2593,6 +2593,12 @@ top: 15px;
   /* Individual assets */
 
 
+  .hero-v2-man {
+    margin: -35px auto 0;
+    width: min(320px, 84vw);
+    max-width: 320px;
+  }
+
 
   .hero-v2-building {
     width: 120%;
