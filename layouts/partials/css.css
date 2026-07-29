@@ -882,38 +882,74 @@ line-height:1.5;
 .sidebar-nav-link,
 .sidebar-home-link {
 
-    align-items:flex-start;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 
-    width:100%;
+    width: 100%;
 
-    gap:16px;
+    padding: 18px 28px;
+    margin-left: auto;
 
-    padding:18px 28px;
+    box-sizing: border-box;
 
-    box-sizing:border-box;
+    text-decoration: none;
+    color: #fff;
 
-    text-decoration:none;
+    background: #e8e1d4;
 
-    border-bottom:1px solid rgba(0,0,0,.08);
-
-    transition:.25s ease;
-border-radius:0 12px 12px 0;
-color:white;
-
-    display:flex;
-    align-items:center;
-
-    gap:16px;
-
-    padding:18px 28px;
-
-    background:#e8e1d4;
-
-    border-radius:0 12px 12px 0;
-
-    transition:.25s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, .08);
+    border-radius: 0 12px 12px 0;
+color: black;
+    transition: .25s ease;
 }
 
+
+.sidebar-nav-content {
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+}
+
+.sidebar-nav-header {
+
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.sidebar-nav-title {
+
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.sidebar-nav-dot {
+
+    width: 20px;
+    height: 20px;
+
+    margin-left: auto;
+
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #651204;
+
+    flex-shrink: 0;
+}
+
+.sidebar-nav-description {
+
+    font-size: .85rem;
+    line-height: 1.4;
+
+    opacity: .8;
+
+    max-width: 26ch;
+}
 
 
 .sidebar-nav-link:hover,
@@ -935,7 +971,7 @@ color:white;
 
 .sidebar-nav-dot {
 border-radius: 50%;
-  background: #fff;
+ 
   border: 2px solid #651204;
   position: relative;
   z-index: 2;
@@ -943,6 +979,7 @@ border-radius: 50%;
   width: 24px;
   height: 24px;
   display: block;
+   margin-left: auto; 
 }
 
 /* Content */
@@ -978,27 +1015,27 @@ border-radius: 50%;
    NAV COLORS
 ===================================== */
 
-.sidebar-home-link {
+.sidebar-home-link .sidebar-nav-dot {
     background:#f0a017;
 }
 
 
-.nav-development {
+.nav-development .sidebar-nav-dot {
     background:#d36bd9;
 }
 
 
-.nav-studio {
+.nav-studio .sidebar-nav-dot {
     background:#fd4470;
 }
 
 
-.nav-pulse {
+.nav-pulse .sidebar-nav-dot {
     background:#9b021e;
 }
 
 
-.nav-case {
+.nav-case .sidebar-nav-dot {
     background:#1691b2;
 }
 
@@ -1223,8 +1260,7 @@ border-radius: 50%;
 
 
 .current-location.development .current {
-
-    background:#0e4d4a;
+background: #ea5830;
 }
 
 
@@ -1645,11 +1681,16 @@ order:0;
 padding-bottom: var(--space-grid-sm);
   padding-top: var(--space-section-lg);
 
+     padding:7rem 0 6rem;
+
+    overflow:hidden;
+
 }
 
-.section-header__inner {
-  max-width: 720px;
-}
+
+
+
+
 
 /* label */
 .section-header--editorial .text-label {
@@ -1664,10 +1705,17 @@ padding-bottom: var(--space-grid-sm);
 
 /* title */
 .section-header--editorial .section-header__title {
- font-family: 'Cormorant Garamond', serif;
-   font-size: clamp(38px, 6vw, 100px);
-  line-height: 0.95;
-  letter-spacing: -0.02em;
+font-family:'Cormorant Garamond',serif;
+
+font-size:clamp(3rem,6vw,6rem);
+
+line-height:.95;
+
+letter-spacing:-.03em;
+
+max-width:8ch;
+
+
 
   margin-bottom: var(--space-4);
 }
@@ -1703,11 +1751,10 @@ padding-bottom: var(--space-grid-sm);
 
 
 .section-header__inner {
-  max-width: 640px;
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  gap: var(--space-4); /* 16px */
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:6rem;
+    align-items:center;
 }
 .section-header__title {
 
@@ -2088,6 +2135,9 @@ margin-top:80px;
   background: #fd4470;
 }
 
+.hero-v2-top.beidge {
+    background: #ea5830;
+}
 
 
 
@@ -2300,6 +2350,17 @@ max-width:220px;
   max-width: 460px;
   }
 
+.hero-v2-hand {
+  margin: -45px auto 0;
+  width: min(380px, 28vw);
+  max-width: 380px;
+}
+
+.hero-v2-chess {
+  margin: -45px auto 0;
+  width: min(800px, 72vw);
+  max-width: 800px;
+}
 
 
 .hero-v2-building {
@@ -2312,10 +2373,7 @@ max-width:220px;
   filter: drop-shadow(0 25px 50px rgba(0,0,0,.18));
 }
 
-.hero-v2-chess {
-  width: min(1100px, 85vw);
-  max-width: 1100px;
-}
+
 
 .hero-v2-tannoy {
   width: min(440px, 38vw);
