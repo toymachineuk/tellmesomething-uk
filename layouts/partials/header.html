@@ -48,8 +48,8 @@ alt="logo">
 
 
 </header>
-{{ if not .IsHome }}
-<div class="current-location {{ .Params.crumb }}">
+
+<div class="current-location {{ .Params.crumb }}{{ if .IsHome }} home{{ end }}">
 
   <a href="/" class="crumb-home" aria-label="Home">
     <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
@@ -60,24 +60,19 @@ alt="logo">
     </svg>
   </a>
 
-  {{ if eq .Section "post" }}
+  {{ if .IsHome }}
 
-    <span class="sep">&gt;</span>
+    <span class="current">Home</span>
+
+  {{ else if eq .Section "post" }}
 
     {{ if .IsSection }}
-      <span class="crumb-section">Lab</span>
+      <span class="current">Lab</span>
     {{ else }}
-      <a href="/post/" class="crumb-section">Lab</a>
+      <a href="/post/" class="current">Lab</a>
     {{ end }}
 
   {{ else }}
-
-    {{ with .CurrentSection }}
-      {{ if ne .Section "articles" }}
-        <span class="sep">&gt;</span>
-        <span class="crumb-section">{{ .Title }}</span>
-      {{ end }}
-    {{ end }}
 
     {{ if not .IsSection }}
       <span class="sep">&gt;</span>
@@ -87,7 +82,9 @@ alt="logo">
   {{ end }}
 
 </div>
-{{ end }}
+
+
+
     <!-- Start Sidebar -->
 <amp-sidebar
   id="header-sidebar"
