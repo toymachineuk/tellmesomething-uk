@@ -4691,9 +4691,7 @@ font-size: clamp(36px, 6vw, 72px);
     border-bottom: var(--border-medium);
 }
 
-.base-table__grid > .base-table__cell:nth-child(3) {
-    background: rgba(255,255,255,.06);
-}
+
 
 
 /* ==========================================
@@ -8311,6 +8309,7 @@ letter-spacing: -.08em;
 
 height: 400px;
   bottom: 0;
+  animation: floatHero 6s ease-in-out infinite;
 }
 
 
