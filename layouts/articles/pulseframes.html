@@ -81,7 +81,7 @@ alt="barcode">
 <section class="base-intro text-columns section-lg">
   <div class="container">
 
-    <div class="base-intro__layout">
+    <div class="base-intro__layout xl-gap">
 
       <!-- LEFT: CONCEPT -->
       <div class="base-intro__main">
@@ -106,100 +106,102 @@ Rich with images, video, audio, maps, and interactive elements, PulseFrames comb
 
     
 
-<!-- Orbit Button -->
-<div class="orbit orbit--cta-200">
+<div class="orbit-story-wrapper">
 
-    <div class="orbit-story-wrapper">
+    <!-- Story Profile -->
+    <div class="story-profile">
 
-        <!-- Story Profile -->
-        <div class="story-profile">
+        <div class="story-logo">
+            <amp-img
+                src="/img/logo-square.jpg"
+                width="58"
+                height="58"
+                layout="fixed"
+                alt="Tell Me Something">
+            </amp-img>
+        </div>
 
-            <div class="story-logo">
-                <amp-img
-                    src="/img/tms-story-logo.png"
-                    width="58"
-                    height="58"
-                    layout="fixed"
-                    alt="Tell Me Something">
-                </amp-img>
-            </div>
+        <h3 class="story-profile-title">
+            Tell Me Something
+        </h3>
 
-            <h3 class="story-profile-title">
-                Tell Me Something
-            </h3>
+        <p class="story-profile-meta">
+            12 Story Pages
+        </p>
 
-            <p class="story-profile-meta">
-                12 Story Pages
-            </p>
         <div class="story-intro">
-          <p>UKG is one of the most influential genres in British electronic music.</p>
+            <p>
+                UKG is one of the most influential genres in British electronic music.
+            </p>
         </div>
-        </div>
 
-        <!-- Story Link -->
-        <a on="tap:storyLightbox-ukg.open" class="orbit-link">
+    </div>
 
-            <div class="orbit-story-preview orbit-story-preview-200 ">
+    <!-- Story Link -->
+    <a on="tap:storyLightbox-ukg.open" class="orbit-link">
 
-                <div class="story-ring story-ring-200">
+        <div class="orbit-story-preview orbit-story-preview-200">
 
-                    <div class="story-gap">
+            <div class="story-ring story-ring-200">
 
-                        <amp-img
-                            src="/img/stories/bassscene-preview.png"
-                            width="300"
-                            height="300"
-                            layout="responsive"
-                            alt="Story Preview">
-                        </amp-img>
+                <div class="story-gap">
 
-                        <div class="story-overlay">
+                    <amp-img
+                        src="/img/stories/bassscene-preview.png"
+                        width="300"
+                        height="300"
+                        layout="responsive"
+                        alt="Story Preview">
+                    </amp-img>
 
-                            <div class="story-progress">
-                                <span class="active"></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
+                    <div class="story-overlay">
 
+                        <div class="story-progress">
+                            <span class="active"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
 
                     </div>
 
                 </div>
 
-                <!-- Play Button -->
-                <div class="story-play-button">
-                    <div class="play-icon"></div>
-                </div>
-
-                <!-- QR -->
-                <amp-img
-                    src="/img/porijazz_qr.png"
-                    width="120"
-                    height="120"
-                    layout="intrinsic"
-                    class="story-barcode2"
-                    alt="barcode">
-                </amp-img>
-
             </div>
 
-        </a>
+            <!-- Play Button -->
+            <div class="story-play-button">
+                <div class="play-icon"></div>
+            </div>
 
-    </div>
+            <!-- QR -->
+            <amp-img
+                src="/img/porijazz_qr.png"
+                width="120"
+                height="120"
+                layout="intrinsic"
+                class="story-barcode2"
+                alt="barcode">
+            </amp-img>
+
+        </div>
+
+    </a>
 
     <!-- Story Description -->
-    <div class="story-intro">
+    <div class="story-caption">
 
-        <p>
+        <h4 class="story-caption-title">
+            UK Garage
+        </h4>
+
+        <p class="story-caption-text">
             In this story, we've brought together the key artists shaping the sound of UKG in 2025.
         </p>
 
     </div>
 
 </div>
-
 
 
   </div>
