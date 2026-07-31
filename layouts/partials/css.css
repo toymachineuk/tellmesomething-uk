@@ -909,11 +909,23 @@ line-height:1.5;
 
 .sidebar-close {
 
-    font-size:22px;
-    color:#0e4d4a;
-    text-decoration:none;
+   position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
 
-    transition:.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  font-size: 1.5rem;
+  line-height: 1;
+  text-decoration: none;
+  color: inherit;
+
+  z-index: 100;
 }
 
 
@@ -1208,12 +1220,11 @@ color: black;
     justify-self:end;
 
     width:72px;
-    height:72px;
+    height:172px;
 }
 
 .sidebar__graphic{
-    width:72px;
-    height:72px;
+   
     position:relative;
     justify-self:end;
     align-self:start;
@@ -1238,12 +1249,7 @@ color: black;
     color:#666;
 }
 
-.crumb-section{
-    font-size:2rem;
-    font-weight:800;
-    line-height:1;
-    color:#111;
-}
+
 
 .lab-dot{
     font-size:2rem;
@@ -1280,18 +1286,6 @@ color: black;
 
 
 
-.crumb-section {
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:2rem;
-
-    font-weight:800;
-
-    line-height:1;
-
-    color:#0e4d4a;
-}
 
 
 .lab-dot {
@@ -8238,6 +8232,11 @@ BLOG HERO
     background:#f5f0e4;
 
     min-height: 480px;
+
+
+  width: min(1480px, calc(100vw - 120px));
+
+  margin-inline: auto;
 }
 
 .container-lab{

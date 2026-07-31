@@ -1,14 +1,7 @@
 {{ partial "head.html" . }}
 {{ partial "header.html" . }}
 
-<!-- Ambient background -->
-<div class="ambient-orbs">
-  <span class="orb orb--1"></span>
-  <span class="orb orb--2"></span>
-  <span class="orb orb--3"></span>
-  <span class="orb orb--4"></span>
-  <span class="orb orb--5"></span>
-</div>
+
 
 <section class="blog-hero">
 
@@ -36,6 +29,7 @@
 </section>
 
 <section class="section-lg zigzag-section">
+  
   <div class="container">
 
     <header class="section-header">
@@ -70,6 +64,14 @@
 
       <!-- KEEP YOUR EXISTING POSTS -->
       <div class="blog-archive-posts">
+        <!-- Ambient background -->
+<div class="ambient-orbs">
+  <span class="orb orb--1"></span>
+  <span class="orb orb--2"></span>
+  <span class="orb orb--3"></span>
+  <span class="orb orb--4"></span>
+  <span class="orb orb--5"></span>
+</div>
 
         {{ range $i, $page := .RegularPages.ByDate.Reverse }}
 
