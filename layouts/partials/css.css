@@ -8402,8 +8402,12 @@ letter-spacing: -.08em;
 ===================================== */
 
 .index-intro {
-  padding: 4rem 0 9rem;
+  padding: 0;
   background: transparent;
+  background: #240712;
+  width: min(1480px, calc(100vw - 120px));
+  height: 260px;
+  margin-inline: auto;
 }
 
 
@@ -8411,20 +8415,19 @@ letter-spacing: -.08em;
 
 .index-intro__layout {
 
-  display:grid;
-
-  grid-template-columns:
-    260px minmax(480px,720px) 260px;
-
-  justify-content:center;
-
-  align-items:center;
-
-  gap:3.5rem;
+   display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 6rem;
 
 }
 
-
+.index-intro__video amp-video,
+.index-intro__video amp-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 /* =====================================
    TEXT
@@ -8500,28 +8503,13 @@ letter-spacing: -.08em;
 
 .index-intro__video {
 
-  width:100%;
-
-  position:relative;
-
-}
-
-
-/* subtle connection to hero */
-
-.index-intro__video::before {
-
-  content:"";
-
-  position:absolute;
-
-  inset:-12px;
-
-  background:#e8e1d4;
-
-  z-index:-1;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
 
 }
+
+
 
 
 
@@ -8603,7 +8591,7 @@ letter-spacing: -.08em;
 
   .index-intro {
 
-    padding:4rem 0 6rem;
+    padding:0;
 
   }
 
@@ -8708,46 +8696,6 @@ letter-spacing: -.08em;
 ===================================== */
 
 
-.hero-v2 {
-  position: relative;
-  overflow: hidden;
-  background: #e8e1d4;
-  width: min(1480px, calc(100vw - 120px));
-  height: 720px;
-  margin-inline: auto;
-}
-
-.hero-v2::after {
-  content: "";
-  position: absolute;
-  bottom: -260px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 140%;
-  height: 420px;
-
-  background: #fff;
-  border-radius: 50%;
-}
-
-
-.index-intro::after {
-  content: "";
-  position: absolute;
-
-  bottom: -260px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 140%;
-  height: 420px;
-
-  background: #e8e1d4;
-  border-radius: 0 0 50% 50%;
-
-  z-index: -1;
-}
 
 /* =====================================
    TESTING--end
