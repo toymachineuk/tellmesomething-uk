@@ -61,12 +61,13 @@ alt="logo">
   </a>
 
   {{ if .IsHome }}
-
+   <span class="sep">&gt;</span>
     <span class="current">Home</span>
 
   {{ else if eq .Section "post" }}
 
     {{ if .IsSection }}
+       <span class="sep">&gt;</span>
       <span class="current">Lab</span>
     {{ else }}
       <a href="/post/" class="current">Lab</a>
@@ -114,6 +115,12 @@ alt="logo">
       
     </div>
 
+          <a href="#"
+         on="tap:header-sidebar.toggle"
+         class="sidebar-close">
+        ✕
+      </a>
+
     <div class="sidebar-head">
 
         <a href="/" class="sidebar__logo">
@@ -126,15 +133,19 @@ alt="logo">
     </amp-img>
   </a>
 
-      <span class="sidebar-logo caps-tight">
-        TELL ME SOMETHING
-      </span>
+ <div class="sidebar-brand-text">
+    <span class="sidebar-brand-main">
+      Tell Me
+    </span>
+    <span class="sidebar-brand-main">
+      Something
+    </span>
+    <span class="sidebar-brand-tagline">
+      Stories · Design · Experiments
+    </span>
+  </div>
 
-      <a href="#"
-         on="tap:header-sidebar.toggle"
-         class="sidebar-close">
-        ✕
-      </a>
+
 
     </div>
 
