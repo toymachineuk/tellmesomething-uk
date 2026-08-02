@@ -1905,6 +1905,10 @@ margin-top:80px;
 
 .hero-v2-top-front {
   background: #f0a017;
+  background-image: url('https://hyperisland.com/hubfs/GLOBAL%20-%20Website%20Images/GLOBAL-WEBSITE%20Image%20Bank-%20General%20use/Learning%20Kits%203.jpg') !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
 
 /* ==========================================================
