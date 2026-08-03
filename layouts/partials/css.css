@@ -1905,10 +1905,7 @@ margin-top:80px;
 
 .hero-v2-top-front {
   background: #f0a017;
-  background-image: url('https://hyperisland.com/hubfs/GLOBAL%20-%20Website%20Images/GLOBAL-WEBSITE%20Image%20Bank-%20General%20use/Learning%20Kits%203.jpg') !important;
-  background-position: center top !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
+
 }
 
 /* ==========================================================
@@ -8368,6 +8365,20 @@ letter-spacing: -.08em;
 }
 
 
+.section__title-md--intro {
+    max-width: var(--container-width);
+    margin: 0 auto;
+
+    padding-left: clamp(1.5rem, 5vw, 4rem);
+
+    text-align: left;
+
+    position: relative;
+    z-index: 5;
+color: #240712;
+    margin-top: clamp(3rem, 6vw, 6rem);
+}
+
 /* MAIN COMPOSITION */
 
 .index-intro__layout {
@@ -8443,10 +8454,9 @@ letter-spacing: -.08em;
 
   margin:0;
 
-  font-size:1.05rem;
-
-  line-height:1.55;
-
+font-size: 0.95rem;
+  line-height: 1.6;
+font-weight: 500;
   color: white;
 
 }
