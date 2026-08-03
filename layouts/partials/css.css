@@ -7086,18 +7086,20 @@ background: radial-gradient(
 
 @media (max-width:768px) {
 
-  .portfolio-carousel{
-    padding-left:1rem;
-}
+
 
   .portfolio-card {
-      min-width:102vw;
-        max-width:102vw;
-        flex:0 0 102vw;
+  
+   
         margin-right:20px;
   
     
     border-radius:14px;
+
+           min-width:75vw;
+        max-width:75vw;
+      
+        margin-right:16px;
 
   }
 
@@ -7135,9 +7137,7 @@ background: radial-gradient(
 
   }
 
-.portfolio-carousel{
-    padding-inline-start:40px;
-}
+
 
 
 }
