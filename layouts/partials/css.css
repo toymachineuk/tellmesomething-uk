@@ -5713,10 +5713,7 @@ text-align:center;
   background: #f0ece7;
   border-top: 1px solid rgba(0,0,0,0.08);
 
-    padding:
-    clamp(64px, 8vw, 110px)
-    clamp(24px, 4vw, 64px)
-    64px;
+padding: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 64px) 48px;
 
   position: relative;
 }
@@ -7086,7 +7083,10 @@ background: radial-gradient(
 
 @media (max-width:768px) {
 
-
+.portfolio__header{
+width: 100%;
+  margin: 0 24px 32px;
+}
 
   .portfolio-card {
   
@@ -8366,17 +8366,14 @@ letter-spacing: -.08em;
 
 
 .section__title-md--intro {
-    max-width: var(--container-width);
-    margin: 0 auto;
-
-    padding-left: clamp(1.5rem, 5vw, 4rem);
-
-    text-align: left;
-
-    position: relative;
-    z-index: 5;
-color: #240712;
-    margin-top: clamp(3rem, 6vw, 6rem);
+  width: min(1200px, 92vw);
+  margin-inline: auto;
+   margin-top: clamp(2.5rem, 5vw, 5rem);
+  text-align: left;
+  position: relative;
+  z-index: 5;
+  color: #240712;
+  max-width: 1100px;
 }
 
 /* MAIN COMPOSITION */
