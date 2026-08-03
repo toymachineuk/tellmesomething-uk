@@ -934,7 +934,7 @@ line-height:1.5;
 }
 
 .sidebar__logo {
-  width: 82px;
+  width: 62px;
   flex-shrink: 0;
 
   border-radius: 50%;
@@ -1133,9 +1133,9 @@ line-height:1.5;
 .ampstart-sidebar::before {
   width: 380px;
   height: 380px;
-  left: -180px;
+
   top: 60px;
-  background: #8fd6c0;
+  background: #240712;
   opacity: .22;
 }
 
@@ -1192,147 +1192,83 @@ line-height:1.5;
     transform:rotate(90deg);
 }
 
-
 /* =====================================
    THE LAB
 ===================================== */
 
 .sidebar-lab{
-
+    padding:2.75rem 2rem 3rem;
     border-top:1px solid rgba(0,0,0,.08);
-       padding: 2rem;
-    min-height: auto;
+    background:#f7f3eb;
 }
 
 .sidebar-lab-label{
     display:block;
-    margin-bottom:1.25rem;
+    margin-bottom:1.75rem;
 
-    font-size:.75rem;
+    font-size:.68rem;
     font-weight:700;
-    letter-spacing:.18em;
+    letter-spacing:.28em;
     text-transform:uppercase;
-    color:#777;
+    color:#8a8a8a;
 }
 
 .sidebar-lab-link{
-       display:grid;
-    grid-template-columns: 1fr 80px;
-    gap:1.5rem;
-    align-items:start;
+    display:block;
+    color:inherit;
+    text-decoration:none;
 }
 
-
-.sidebar-lab-content{
-    grid-column:1;
-}
-
-
-
-.sidebar-lab-content{
-    display:flex;
-    flex-direction:column;
-    gap:.75rem;
-    flex:1;
+.sidebar-lab-copy{
+    max-width:19rem;
 }
 
 .sidebar-lab-heading{
-    display:flex;
-    align-items:baseline;
-    gap:.1rem;
+    margin-bottom:1rem;
 }
 
-.lab-the{
-    font-family:"Cormorant Garamond", serif;
-    font-size:1rem;
-    color:#666;
-}
+.crumb-section-sidebar{
+    display:inline-block;
 
+    font-size:2.2rem;
+    font-weight:700;
+    line-height:.95;
+    letter-spacing:-.04em;
 
-
-.lab-dot{
-    font-size:2rem;
-    font-weight:800;
-    color:#1691b2;
+    color:#111;
 }
 
 .sidebar-lab-description{
-    margin:.75rem 0 0;
-    max-width:22ch;
+    margin:0;
 
     font-size:.95rem;
-    line-height:1.55;
+    line-height:1.7;
     color:#666;
 }
 
 .sidebar-lab-arrow{
     display:inline-flex;
     align-items:center;
-    margin-top:.35rem;
+    gap:.5rem;
 
-    font-size:.8rem;
+    margin-top:1.75rem;
+
+    font-size:.78rem;
     font-weight:700;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:#1691b2;
-}
-
-.sidebar-lab-link:hover .sidebar-lab-arrow{
-    transform:translateX(4px);
-    transition:.25s ease;
-}
-
-
-
-
-
-
-.lab-dot {
-
-    font-size:2rem;
-
-    color:#1691b2;
-}
-
-
-
-.sidebar-lab-description {
-
-    margin:1rem 0 .75rem;
-
-    max-width:20ch;
-
-    font-size:.92rem;
-
-    line-height:1.55;
-
-    color:#666;
-}
-
-
-
-.sidebar-lab-arrow {
-
-    font-size:.85rem;
-
-    letter-spacing:.08em;
-
+    letter-spacing:.16em;
     text-transform:uppercase;
 
     color:#0e4d4a;
+
+    transition:
+        gap .2s ease,
+        letter-spacing .2s ease;
 }
 
-
-
-
-.sidebar-lab-link:hover .sidebar-lab-arrow {
-
-    letter-spacing:.16em;
+.sidebar-lab-link:hover .sidebar-lab-arrow{
+    gap:.8rem;
+    letter-spacing:.2em;
 }
-
-
-
-
 /* =====================================
    CURRENT LOCATION COLORS
 ===================================== */
@@ -8193,9 +8129,26 @@ BLOG HERO
   margin-inline: auto;
 }
 
+
+@media (max-width: 768px) {
+  .blog-hero {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+     min-height: 360px;
+  }
+}
+
+
 .container-lab{
    position: relative;
     min-height: 480px;
+}
+
+@media (max-width: 768px) {
+  .container-lab {
+    min-height: 360px;
+  }
 }
 
 .blog-hero__content{
@@ -8249,6 +8202,16 @@ letter-spacing: -.08em;
   bottom: 0;
 }
 
+@media (max-width: 768px) {
+  .blog-hero__graphic {
+     right: 70px;
+    width: 100px;
+    height: 360px;
+    border-radius: 70px 0 0 70px;
+  
+  }
+}
+
 
 .layer {
   position: absolute;
@@ -8260,6 +8223,7 @@ letter-spacing: -.08em;
 
   animation: layerDrift 10s ease-in-out infinite;
 }
+
 
 
 /* BASE POSITIONS */
@@ -8548,7 +8512,7 @@ font-weight: 400;
 
   .index-intro {
        width: 100%;
-    height: 340px;
+    height: 170px;
     padding: 2rem 1.25rem;
   }
 
@@ -8558,10 +8522,7 @@ font-weight: 400;
   }
 
   .index-intro__video {
-    order: -1;
-     max-width: 220px;
-    height: 180px;
-    margin: 0 auto;
+    display:none;
   }
 
   .index-intro__text--left,
