@@ -3198,20 +3198,21 @@ max-width: 460px;
 
 .services-intro {
   width: min(1200px, 92vw);
+  width: min(1200px, 92vw);
   margin-inline: auto;
 
-  padding-top: clamp(64px, 8vw, 120px);
-  margin-bottom: clamp(64px, 8vw, 120px);
+  padding-top: clamp(24px, 2.5vw, 40px);
+  margin-bottom: clamp(24px, 2.5vw, 40px);
 }
 
 @media (max-width: 768px) {
 
   .services-intro {
-    width: 92vw;
+     width: 92vw;
     margin-inline: auto;
 
-    padding-top: 24px;
-    margin-bottom: 48px;
+    padding-top: 20px;
+    margin-bottom: 32px;
   }
 
 }
@@ -4291,289 +4292,187 @@ margin-top: 0;
 
 }
 }
-
 /* ===============================
    BASE CONTRAST
-=============================== */
+================================ */
 
-
-/* layout */
+/* Layout */
 .base-contrast__layout {
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:6rem;
-  align-items: center;
+  grid-template-columns: minmax(320px, .8fr) minmax(420px, 1fr);
+  gap: clamp(80px, 10vw, 160px);
+  align-items:start;
 }
 
 
+/* ===============================
+   LEFT SIDE
+================================ */
 
-
-
-/* label */
-.base-contrast__label {
-  display: block;
-  margin-bottom: 0.5rem;
-
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-
-}
-
-
-
-
-.section-story-preview .base-contrast__label {
-
-  text-align: right;
-}
-
-
-@media (max-width: 900px) {
-
-.section-story-preview .base-contrast__label {
-
-  text-align: center;
-}
-}
-
-
-/* main */
 .base-contrast__main {
   max-width: 640px;
-  
-}
-
-.team-illustration{
-  width:min(340px,85%);
-  margin:3rem auto 0;
-  width: clamp(180px, 25vw, 260px);
-  margin: 2rem auto 0;
 }
 
 
-/* headline */
+.base-contrast__label {
+  display: block;
+  margin-bottom: .5rem;
+
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+}
+
 
 .base-contrast__headline {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
-
-  letter-spacing: -0.03em;
-
+  letter-spacing: -.03em;
 }
 
 
-
-
-
-
 h2.base-contrast__headline {
-
-
-  letter-spacing: -0.03em;
-
   font-size: clamp(56px, 8vw, 110px);
   line-height: .9;
 }
 
 
-
-@media (max-width: 768px) {
-  h2.base-contrast__headline {
-    font-size: 42px;
-  }
-}
-
-
-.section-story-preview h2.base-contrast__headline {
-
-  text-align: right;
-  
-}
-
-@media (max-width: 900px) {
-  .section-story-preview h2.base-contrast__headline {
-
-  text-align: center;
-  
-}
-}
-
-
-
-h3.base-contrast__headline  {
-font-size: clamp(36px, 6vw, 72px);
-  line-height: 0.95;
- 
-
-}
-
-/* lead */
 .base-contrast__lead {
   margin-top: 1.5rem;
-  max-width: 420px;
-  opacity: var(--text-body);
+  max-width: 55ch;
 }
 
+
+/* Section specific alignment */
+.section-story-preview .base-contrast__label,
+.section-story-preview h2.base-contrast__headline,
 .section-story-preview .base-contrast__lead {
   text-align: right;
 }
 
-@media (max-width: 900px) {
- .section-story-preview .base-contrast__lead {
-  text-align: center;
-}
+
+/* Smaller titles inside points */
+.base-contrast .section__title-xs {
+  font-size: clamp(26px, 2.5vw, 32px);
+  line-height: 1;
+  letter-spacing: -.03em;
+  font-weight: 700;
 }
 
 
-/* side */
+/* Illustration */
+.team-illustration {
+   width: clamp(200px, 22vw, 320px);
+  margin: 3rem auto 0;
+}
+
+
+
+/* ===============================
+   RIGHT SIDE
+================================ */
+
 .base-contrast__side {
   border-left: var(--border-soft);
   padding-left: 2rem;
 }
 
-/* points */
+
 .base-contrast__point {
-  margin-bottom: var(--space-grid-sm);
+  margin-bottom: 2rem;
 }
 
+
+.base-contrast__point:last-child {
+  margin-bottom: 0;
+}
+
+
 .base-contrast__index {
-  font-size: 0.75rem;
-  margin-bottom: 0.5rem;
+  display: block;
+
+  font-size: .75rem;
+  margin-bottom: .5rem;
   opacity: var(--text-muted);
 }
 
+
 .base-contrast__point h3 {
-  margin-bottom: 0.25rem;
-  flex: 0 0 140px;
+  margin: 0 0 .25rem;
 }
+
 
 .base-contrast__point p {
-      font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
-    line-height: 1.7;
-    max-width: 34ch;
-    margin: 0;
+  margin: 0;
+
+  max-width: 34ch;
+
+  font-size: clamp(1rem, .95rem + .2vw, 1.125rem);
+  line-height: 1.7;
 }
-
-
-
-
-
-
-
-
 
 
 
 /* ===============================
-   MOBILE FIX (THIS WAS YOUR ISSUE)
-=============================== */
+   MOBILE
+================================ */
+
+@media (max-width: 900px) {
 
 
-
-
-
-  @media (max-width: 900px) {
   .base-contrast__layout {
     display: flex;
     flex-direction: column;
     gap: var(--space-grid-md);
   }
 
-  
 
   .base-contrast__main {
     order: -1;
+    max-width: 100%;
   }
+
 
   .base-contrast__side {
     order: 2;
-  }
 
-
-  .base-contrast__point h3 {
-  margin-bottom: 0.25rem;
-  flex: 0;
-}
-
-.base-contrast__point p {
-
-
-   max-width: 100%;
-
-}
-
-
-}
-
-
-
-
-
-  /* reset everything */
-  .base-contrast__main,
-  .base-contrast__side {
-  max-width:420px;
     width: 100%;
-  
-    margin: 0;
-    text-align: left;
-  }
 
-  .base-contrast__lead {
-    margin: 1.5rem 0 0 0;
-    max-width: 55ch;
-  }
-
-  .base-contrast__side {
     border: none;
     border-top: var(--border-soft);
+
     padding: 2rem 0 0;
   }
 
 
-
-  /* IMPORTANT: kill reverse behavior completely on mobile */
-  .base-contrast--right .base-contrast__main,
-  .base-contrast--right .base-contrast__side {
-    order: unset;
-    text-align: left;
-    margin: 0;
-    
-  }
-
-.base-contrast__point {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-@media (max-width: 900px) {
-
- 
-
-  .base-contrast__side {
-    border: none;
-    border-top: var(--border-soft);
-    padding-top: 0;
-    padding-left: 0;
-  }
-
   .base-contrast__point {
     margin-bottom: 2rem;
-   
-      display: flex;
-  flex-direction: column;
-  gap: 0;
-  align-items: flex-start;
   }
 
-  .base-contrast__point:last-child {
-    margin-bottom: 0;
+
+  .base-contrast__point p {
+    max-width: 100%;
   }
+
+
+  .section-story-preview .base-contrast__label,
+  .section-story-preview h2.base-contrast__headline,
+  .section-story-preview .base-contrast__lead {
+    text-align: center;
+  }
+
 
 }
 
+
+/* Small mobile */
+@media (max-width:768px) {
+
+  h2.base-contrast__headline {
+    font-size: 42px;
+  }
+
+}
 
 /* ==========================================
    BASE TABLE
