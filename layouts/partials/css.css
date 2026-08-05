@@ -162,6 +162,20 @@ color:inherit;
   font-weight: 700;
 }
 
+.section__caption {
+  display: inline-block;
+  margin-bottom: .75rem;
+
+  font-size: clamp(10px, .65vw, 12px);
+  line-height: 1;
+
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  color: rgba(0,0,0,.55);
+}
+
 /* =====================================
    MOBILE
 ===================================== */
@@ -200,6 +214,12 @@ color:inherit;
     font-size: clamp(18px, 4.5vw, 22px);
     line-height: 1.25;
     letter-spacing: -.01em;
+  }
+
+    .section__caption {
+    font-size: 10px;
+    letter-spacing: .1em;
+    margin-bottom: .5rem;
   }
 
 }
@@ -5335,20 +5355,7 @@ background: repeating-conic-gradient(
   }
 }
 
-.story-caption p {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.2;
-}
 
-@media (max-width: 768px) {
-    .story-caption p {
-        font-size: 0.85rem;
-        line-height: 1.35;
-        font-weight: 500;
-    }
-}
 
 .story-caption span {
     display: block;
@@ -8274,12 +8281,6 @@ letter-spacing: -.08em;
 
 }
 
-.index-intro__video amp-video,
-.index-intro__video amp-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 /* =====================================
    TEXT
@@ -8366,17 +8367,15 @@ font-weight: 400;
   display:block;
 
   width:100%;
+ 
+  height: auto;
+  display: block;
 
 }
 
 
-/* remove card feeling */
 
-.index-intro__video video {
 
-  border-radius:0;
-
-}
 
 
 
@@ -8450,7 +8449,7 @@ font-weight: 400;
     width: 100%;
     max-width: 160px;
     margin: 0 auto;
-    height: auto;
+    height: 92px;
   }
 
  
