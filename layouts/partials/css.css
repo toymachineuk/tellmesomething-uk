@@ -621,23 +621,8 @@ line-height:1.5;
 }
 
 
-.current-location::before,
-.current-location::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 3.5rem;
-  background: #fff;
-}
 
-.current-location::before {
-  left: 0;
-}
 
-.current-location::after {
-  right: 0;
-}
 
 
 
@@ -6952,7 +6937,24 @@ background: radial-gradient(
     min-height: 2.7em;
 
 }
+.accent-square {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
 
+}
+
+.accent-square.dev{
+  background: #b9825a;
+}
+
+.accent-square.brand{
+  background: #fd4470;
+}
+
+.accent-square.frame{
+  background: #fdce2a;
+}
 
 .portfolio-card__description {
 
