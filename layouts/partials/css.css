@@ -600,6 +600,36 @@ line-height:1.5;
   color: #0e4d4a;
 
   z-index: 999;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 20px;
+  padding: 0 3.5rem;
+  background: #f3eee6;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #0e4d4a;
+  z-index: 999;
 }
 
 .current-location::before,
