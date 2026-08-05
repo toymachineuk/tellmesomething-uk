@@ -4926,17 +4926,14 @@ transform: none;
     display: grid;
     grid-template-columns: 1.45fr .55fr;
     gap: clamp(4rem, 8vw, 9rem);
-    align-items: end;
+    align-items: center;
 
-    margin-top: 4rem;
 }
 
 /* Headline */
 
 .closing-cta.blue-bg .closing-cta__headline h2 {
-    font-size: clamp(3rem, 7vw, 7rem);
-    line-height: .92;
-    letter-spacing: -.04em;
+ 
     max-width: 10ch;
 
     color: #fff;
