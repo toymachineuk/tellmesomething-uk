@@ -8434,7 +8434,7 @@ font-weight: 400;
 
   .index-intro {
        width: 100%;
-      height: clamp(80px, 22vw, 92px);
+      height: 98px;
     padding: 0 1.25rem;
   }
 
@@ -8445,11 +8445,11 @@ font-weight: 400;
 
   .index-intro__video {
   overflow: hidden;
-    border-radius: 12px;
+ 
     width: 100%;
     max-width: 160px;
     margin: 0 auto;
-    height: 88px;
+    max-height: 88px;
   }
 
  
