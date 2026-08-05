@@ -2,8 +2,6 @@
 title: Why Engineering Teams Choose Hugo? 🎉
 subtitle: Although Hugo is rarely the first choice for beginners, it has become a favorite among experienced developers, DevOps engineers, and infrastructure teams. 
 showthedate: true
-hero:
-  - /hugo/images/hero.png
 categories:
   - development
 draft: false
