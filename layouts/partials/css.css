@@ -4009,12 +4009,7 @@ padding-top: var(--space-section-lg);
 
 
 
-.base-intro__headline {
-  font-size: clamp(2.5rem, 4vw, 4rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-}
+
 
 .base-intro__lead {
   max-width: 420px;
@@ -4306,17 +4301,9 @@ margin-top: 0;
 }
 
 
-.base-contrast__headline {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  letter-spacing: -.03em;
-}
 
 
-h2.base-contrast__headline {
-  font-size: clamp(56px, 8vw, 110px);
-  line-height: .9;
-}
+
 
 
 .base-contrast__lead {
@@ -4836,12 +4823,6 @@ transform: none;
   }
 }
 
-.base-intro__headline {
-  font-weight: 600;
-  letter-spacing: -0.01em;
-    font-size: 2.6rem;
-  line-height: 1.15;
-}
 
 
 
