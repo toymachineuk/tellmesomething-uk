@@ -20,18 +20,20 @@
 
         
 
-            <h1>BLOG.</h1>
+         
 
-            <div class="hero-wrap">  
+            <div class="hero-wrap--blog">  
   <amp-img
 src="/img/pigeon.png"
-width="663"
-height="621"
+width="1920"
+height="1500"
 layout="responsive"
-class="hero-v2-hand hero-v2-asset"
-alt="Buildings">
+class="hero-v2-pigeon hero-v2-asset"
+alt="pigeon">
 </amp-img>
  </div>
+
+    <h1>BLOG.</h1>
 
         </div>
 
@@ -75,14 +77,7 @@ alt="Buildings">
 
       <!-- KEEP YOUR EXISTING POSTS -->
       <div class="blog-archive-posts">
-        <!-- Ambient background -->
-<div class="ambient-orbs">
-  <span class="orb orb--1"></span>
-  <span class="orb orb--2"></span>
-  <span class="orb orb--3"></span>
-  <span class="orb orb--4"></span>
-  <span class="orb orb--5"></span>
-</div>
+
 
         {{ range $i, $page := .RegularPages.ByDate.Reverse }}
 

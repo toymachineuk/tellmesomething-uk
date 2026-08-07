@@ -15,7 +15,7 @@
     <h1 class="article__title section__title-sm">{{ .Title }}</h1>
 
     {{ with .Params.subtitle }}
-      <p class="subtitle">{{ . }}</p>
+      <p class="article__subtitle">{{ . }}</p>
     {{ end }}
 
     
@@ -34,10 +34,18 @@
     <section class="article-content">
 
       {{ with .Params.lead }}
-  <p class="lead">{{ . }}</p>
+  <p class="article__lead">{{ . }}</p>
 {{ end }}
 
       {{ .Content }}
+              <!-- Ambient background -->
+<div class="ambient-orbs">
+  <span class="orb orb--1"></span>
+  <span class="orb orb--2"></span>
+  <span class="orb orb--3"></span>
+  <span class="orb orb--4"></span>
+  <span class="orb orb--5"></span>
+</div>
     </section>
 
   </article>
