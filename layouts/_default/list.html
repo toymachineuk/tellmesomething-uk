@@ -22,6 +22,17 @@
 
             <h1>BLOG.</h1>
 
+            <div class="hero-wrap">  
+  <amp-img
+src="/img/pigeon.png"
+width="663"
+height="621"
+layout="responsive"
+class="hero-v2-hand hero-v2-asset"
+alt="Buildings">
+</amp-img>
+ </div>
+
         </div>
 
     </div>
@@ -32,8 +43,8 @@
   
   <div class="container">
 
-    <header class="section-header">
-    <h2>
+    <header class="">
+    <h2 class="section__title-md">
        
    Latest Articles
     
@@ -93,7 +104,7 @@
               <span>{{ $page.Date.Format "Jan 2, 2006" }}</span>
             </div>
 
-            <h2 class="blog-card__title">
+            <h2 class="section__title-xxs">
               <a href="{{ $page.RelPermalink }}">
                 {{ $page.Title }}
               </a>
