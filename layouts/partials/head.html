@@ -1382,6 +1382,7 @@ transform:scale(.95);
 .hero-image--post {
   width: 100%;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .hero-image--post img {
@@ -1443,15 +1444,13 @@ transform:scale(.95);
   margin: var(--space-md) 0 0;
 }
 
-
-
 /* =========================================================
    ARTICLE BODY
 ========================================================= */
 
-/* ==========================================
+/* =========================================
    ARTICLE CONTENT
-========================================== */
+========================================= */
 
 .article-content {
   max-width: 720px;
@@ -1462,13 +1461,16 @@ transform:scale(.95);
   color: #222;
 }
 
-/* ------------------------------------------
-   LEAD
------------------------------------------- */
 
+/* =========================================
+   LEAD
+========================================= */
+
+.article__lead,
 .article .lead {
   max-width: 44ch;
   margin: 2rem 0 3rem;
+
   font-size: clamp(1.15rem, 1.3vw, 1.4rem);
   line-height: 1.6;
   letter-spacing: -0.01em;
@@ -1476,9 +1478,10 @@ transform:scale(.95);
   color: #222;
 }
 
-/* ------------------------------------------
+
+/* =========================================
    PARAGRAPHS
------------------------------------------- */
+========================================= */
 
 .article-content p {
   margin: 0 0 clamp(1.25rem, 1vw + 1rem, 1.75rem);
@@ -1488,23 +1491,30 @@ transform:scale(.95);
   margin-bottom: 0;
 }
 
-figcaption {
+
+/* =========================================
+   FIGCAPTION
+========================================= */
+
+.article-content figcaption {
   max-width: 720px;
   margin: 1rem auto 3rem;
   padding: 0;
+
   font-size: 0.9rem;
   line-height: 1.5;
   color: #6b6b6b;
   text-align: left;
 }
 
-figcaption span {
+.article-content figcaption span {
   display: block;
 }
 
-/* ------------------------------------------
+
+/* =========================================
    HEADINGS
------------------------------------------- */
+========================================= */
 
 .article-content h2 {
   margin: 5rem 0 1.25rem;
@@ -1524,13 +1534,10 @@ figcaption span {
   letter-spacing: -0.02em;
 }
 
-.article-content p {
-  margin: 0 0 1.5rem;
-}
 
-/* ------------------------------------------
+/* =========================================
    LINKS
------------------------------------------- */
+========================================= */
 
 .article-content a {
   color: inherit;
@@ -1538,16 +1545,17 @@ figcaption span {
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
 
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .article-content a:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
-/* ------------------------------------------
+
+/* =========================================
    LISTS
------------------------------------------- */
+========================================= */
 
 .article-content ul,
 .article-content ol {
@@ -1556,17 +1564,21 @@ figcaption span {
 }
 
 .article-content li {
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
   line-height: 1.8;
 }
 
-/* ------------------------------------------
+
+/* =========================================
    BLOCKQUOTE
------------------------------------------- */
+========================================= */
 
 .article-content blockquote {
+  max-width: 32ch;
+
   margin: 3.5rem 0;
   padding-left: 1.5rem;
+
   border-left: 3px solid #111;
 
   font-size: clamp(1.3rem, 1.6vw, 1.6rem);
@@ -1574,7 +1586,6 @@ figcaption span {
   font-weight: 500;
   letter-spacing: -0.015em;
   color: #111;
-  max-width: 32ch;
 }
 
 .article-content blockquote p:last-child {
@@ -1590,10 +1601,9 @@ figcaption span {
 }
 
 
-
-/* ------------------------------------------
+/* =========================================
    REFERENCES
------------------------------------------- */
+========================================= */
 
 .article-content h2:last-of-type {
   margin-top: 8rem;
@@ -1601,7 +1611,6 @@ figcaption span {
 
 .article-content h2:last-of-type + ul {
   margin-top: 2rem;
-
   padding: 0;
 
   list-style: none;
@@ -1610,16 +1619,13 @@ figcaption span {
 }
 
 .article-content h2:last-of-type + ul li {
-  padding: 1.25rem 0;
-
   margin: 0;
+  padding: 1.25rem 0;
 
   border-bottom: 1px solid #e5e5e5;
 
-  font-size: .95rem;
-
+  font-size: 0.95rem;
   line-height: 1.6;
-
   color: #666;
 }
 
@@ -1627,47 +1633,28 @@ figcaption span {
   color: #111;
   font-weight: 600;
 }
+
+
 /* =========================================================
    OPTIONAL SIDEBAR
 ========================================================= */
 
-
 .article-grid {
-
-
-  display:grid;
-
-
-  grid-template-columns:
-
-    3fr 1fr;
-
-
-  gap:5rem;
-
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 5rem;
 }
-
 
 .article-sidebar {
-
-
-  font-size:.9rem;
-
-
-  color:#777;
-
+  font-size: 0.9rem;
+  color: #777;
 }
-
 
 .tags span {
-
-
-  display:inline-block;
-
-
-  margin-right:.8rem;
-
+  display: inline-block;
+  margin-right: 0.8rem;
 }
+
 
 /* =========================================================
    TABLET
@@ -1676,45 +1663,36 @@ figcaption span {
 @media (max-width: 1024px) {
 
   .article-container {
-    padding:
-      56px
-      32px
-      100px;
+    padding: 56px 32px 100px;
   }
-
 
   .article-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
-
   .hero-text h1 {
     max-width: 16ch;
   }
 
-
   .article-content {
     max-width: 700px;
+
     font-size: 1.1rem;
     line-height: 1.8;
   }
-
 
   .article-content h2 {
     margin-top: 4.5rem;
   }
 
-
   .article-content h3 {
     margin-top: 3rem;
   }
 
-
   .article-content blockquote {
     margin: 3.5rem 0;
   }
-
 }
 
 
@@ -1722,283 +1700,158 @@ figcaption span {
    MOBILE
 ========================================================= */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-
-  /* CONTAINER */
+  /* -----------------------------------------
+     CONTAINER
+  ----------------------------------------- */
 
   .article-container {
-
-    padding:
-      28px
-      20px
-      64px;
-
+    padding: 0 1rem 64px;
   }
 
 
-
-  /* HERO */
+  /* -----------------------------------------
+     HERO
+  ----------------------------------------- */
 
   .article-hero-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
 
-    display:grid;
-
-    grid-template-columns:1fr;
-
-    gap:1.75rem;
-
-    margin-bottom:0;
-
+    margin-bottom: 0;
   }
-
-
 
   .hero-image--post {
+    order: 1;
 
-    order:1;
-
-    aspect-ratio:16 / 11;
-
-    height:auto;
-
+    aspect-ratio: 16 / 11;
+    height: auto;
   }
-
-
 
   .hero-text {
-
-    order:2;
-
+    order: 2;
   }
-
-
-
-
-
-  
-
-
 
   .meta {
-
-    margin-bottom:0;
-
+    margin-bottom: 0;
   }
 
 
-
-
-  /* ARTICLE BODY */
-
+  /* -----------------------------------------
+     ARTICLE BODY
+  ----------------------------------------- */
 
   .article-content {
+    width: 100%;
+    max-width: 700px;
 
-    font-size:1.05rem;
-
-    line-height:1.75;
-
+    font-size: 1.05rem;
+    line-height: 1.75;
   }
-
 
 
   .article-content p {
-
-    margin-bottom:1.5rem;
-
+    margin-bottom: 1.5rem;
   }
 
 
+  /* -----------------------------------------
+     LEAD
+  ----------------------------------------- */
+
+  .article__lead,
+  .article .lead {
+    max-width: 38ch;
+    margin: 1.5rem 0 2.75rem;
+
+    font-size: 1.15rem;
+    line-height: 1.55;
+  }
 
 
-  /* HEADINGS */
-
+  /* -----------------------------------------
+     HEADINGS
+  ----------------------------------------- */
 
   .article-content h2 {
+    margin: 3.5rem 0 1rem;
 
-    margin:
-
-      3.5rem
-
-      0
-
-      1rem;
-
-    font-size:2rem;
-
-    line-height:1.15;
-
+    font-size: 2rem;
+    line-height: 1.15;
   }
-
-
 
   .article-content h3 {
+    margin: 2.5rem 0 1rem;
 
-    margin:
-
-      2.5rem
-
-      0
-
-      1rem;
-
-    font-size:1.45rem;
-
+    font-size: 1.45rem;
+    line-height: 1.2;
   }
 
 
-
-
-
-  /* BLOCKQUOTE */
-
+  /* -----------------------------------------
+     BLOCKQUOTE
+  ----------------------------------------- */
 
   .article-content blockquote {
+    margin: 3rem 0;
+    padding-left: 1rem;
 
-    margin:
-
-      3rem
-
-      0;
-
-    padding-left:1rem;
-
-    font-size:
-
-      clamp(1.4rem,6vw,2rem);
-
-    line-height:1.35;
-
+    font-size: clamp(1.4rem, 6vw, 2rem);
+    line-height: 1.35;
   }
-
-
 
   .article-content blockquote p:last-child {
-
-    margin-top:1rem;
-
+    margin-top: 1rem;
   }
 
 
-
-
-
-  /* FIGURES */
-
+  /* -----------------------------------------
+     FIGURES
+  ----------------------------------------- */
 
   .article-content figure {
-
-    margin:
-
-      3rem
-
-      -20px;
-
+    margin: 3rem -20px;
   }
-
 
   .article-content figcaption {
+    padding: 0 20px;
+    margin-bottom: 2rem;
 
-    padding:
-
-      0
-
-      20px;
-
-    margin-bottom:2rem;
-
-    font-size:.85rem;
-
+    font-size: 0.85rem;
   }
 
 
-
-
-  /* LISTS */
-
+  /* -----------------------------------------
+     LISTS
+  ----------------------------------------- */
 
   .article-content ul,
   .article-content ol {
-
-    margin:
-
-      1.5rem
-
-      0;
-
-    padding-left:1.2rem;
-
+    margin: 1.5rem 0;
+    padding-left: 1.2rem;
   }
-
-
 
   .article-content li {
-
-    margin-bottom:.5rem;
-
+    margin-bottom: 0.5rem;
   }
 
 
-
-  /* REFERENCES */
-
+  /* -----------------------------------------
+     REFERENCES
+  ----------------------------------------- */
 
   .article-content h2:last-of-type {
-
-    margin-top:5rem;
-
+    margin-top: 5rem;
   }
 
-
 }
-/* =========================================
-   SINGLE POST--END
-========================================= */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* =========================================================
+   SINGLE POST — END
+========================================================= */
 
 
 
