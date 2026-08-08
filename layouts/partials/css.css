@@ -3553,6 +3553,7 @@ letter-spacing: -0.045em;
   .services-flow__main {
     order: 1;
 margin-top: 1.25rem;
+margin-top: var(--space-lg);
     align-items: flex-start;
 
     text-align: left;
@@ -4385,13 +4386,17 @@ margin-top: 0;
 
 /* Section specific alignment */
 .section-story-preview .base-contrast__label,
-.section-story-preview h2.base-contrast__headline,
-.section-story-preview .base-contrast__lead {
+
+ {
   text-align: right;
 }
 
 
+.section-story-preview .base-contrast__layout
+{
 
+  align-items: center;
+}
 
 
 /* Illustration */
@@ -4488,7 +4493,7 @@ margin-top: 0;
 
 
   .section-story-preview .base-contrast__label,
-  .section-story-preview h2.base-contrast__headline,
+  
   .section-story-preview .base-contrast__lead {
     text-align: center;
   }
@@ -6810,6 +6815,13 @@ background: radial-gradient(
   color: rgba(255,255,255,.82);
 }
 
+@media (max-width: 768px) {
+.portfolio__lead {
+  max-width: 28ch;
+ 
+}
+}
+
 /* ==================================================
    AMP CAROUSEL
 ================================================== */
@@ -6955,8 +6967,8 @@ background: radial-gradient(
 }
 .accent-square {
   display: inline-block;
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
 
 }
@@ -7006,7 +7018,8 @@ background: radial-gradient(
 
 .portfolio__header{
 width: 100%;
-  margin: 0 24px 32px;
+  margin: 0;
+  margin-bottom: var(--space-md);
 }
 
   .portfolio-card {
