@@ -3,9 +3,10 @@
 <head>
   {{ partial "head.html" . }}
 </head>
+ 
 <body class="{{ if not .IsHome }}has-breadcrumb{{ end }}">
-  
 
+ <div class="site-shell">
   {{ partial "header.html" . }}
   <main>
 
@@ -88,6 +89,6 @@ alt="barcode">
   </main>
 
   {{ partial "footer.html" . }}
-
+ </div>
 </body>
 </html>
