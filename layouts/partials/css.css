@@ -5468,9 +5468,14 @@ background: repeating-conic-gradient(
 
 @media (max-width: 768px) {
   .story-caption {
-  left: -80px;
-    bottom: -100px;
-    width: 140px;
+ left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    
+    margin-top: auto;
+    position: relative;
+    margin-top: var(--space-md);
   }
 }
 
