@@ -1260,21 +1260,32 @@ display: flex;
 }
 
 .sidebar-lab::before {
-  content: "";
-
+ content: "";
   position: absolute;
-
-width: clamp(40px, 52vw, 220px);
-  height: clamp(40px, 52vw, 220px);
-
-  right: -17%;
+  width: clamp(40px, 52vw, 320px);
+  height: clamp(40px, 52vw, 320px);
+  right: 7%;
   top: 50%;
-
   transform: translateY(-50%);
-
-  border: 1px solid rgba(36, 7, 18, .07);
+  border: 1px solid pink;
   border-radius: 50%;
+  pointer-events: none;
+}
 
+
+
+
+
+.sidebar-lab::after {
+  content: "";
+  position: absolute;
+  width: clamp(190px, 23vw, 160px);
+  height: clamp(190px, 23vw, 160px);
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: red;
+  border-radius: 50%;
   pointer-events: none;
 }
 
@@ -1316,7 +1327,19 @@ width: clamp(40px, 52vw, 220px);
     line-height:.95;
     letter-spacing:-.04em;
 
-    color:#111;
+   width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid currentColor;
+  border-radius: 50%;
+  
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .02em;
+  background: black;
+  color: white;
 }
 
 .sidebar-lab-description{
@@ -3314,16 +3337,7 @@ display:block;
 
 }
 
-.section__title-lg--intro {
 
-font-size: clamp(52px, 5vw, 72px);
-  line-height: .92;
-  letter-spacing: -.05em;
-  font-weight: 800;
-  margin: 0;
-
-
-}
 
 .section__title-sm--intro {
   width: min(1200px, 92vw);
@@ -3353,18 +3367,7 @@ font-size: clamp(52px, 5vw, 72px);
 }
 
 
-.section__title-lg--intro-subtitle {
-  max-width: 12ch;
 
-  font-size: clamp(36px, 3.4vw, 48px);
-  line-height: .98;
-  letter-spacing: -.04em;
-  font-weight: 750;
-
-  margin: 0;
-
-
-}
 
 .services-flow {
   position: relative;
@@ -8935,43 +8938,6 @@ font-weight: 400;
    AMBIENT CIRCLE
 ----------------------------------------- */
 
-.closing-cta::before {
-  content: "";
-
-  position: absolute;
-
-  width: clamp(440px, 52vw, 820px);
-  height: clamp(440px, 52vw, 820px);
-
-  right: -17%;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  border: 1px solid rgba(36, 7, 18, .07);
-  border-radius: 50%;
-
-  pointer-events: none;
-}
-
-.closing-cta::after {
-  content: "";
-
-  position: absolute;
-
-  width: clamp(180px, 22vw, 340px);
-  height: clamp(180px, 22vw, 340px);
-
-  right: 7%;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  background: rgba(155, 2, 30, .025);
-  border-radius: 50%;
-
-  pointer-events: none;
-}
 
 
 /* -----------------------------------------
@@ -9185,7 +9151,7 @@ font-weight: 400;
 
   padding: clamp(72px, 8vw, 116px) clamp(24px, 5vw, 80px);
 
-  background: #243f8f;
+  background: #0e1628;
   color: #fff;
 }
 
