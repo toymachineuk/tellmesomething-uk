@@ -6,82 +6,66 @@
  
 <body class="{{ if not .IsHome }}has-breadcrumb{{ end }}">
 
- <div class="site-shell">
+
   {{ partial "header.html" . }}
   <main>
 
 
-    
-<section class="hero-v2 frame ">
+<section class="hero-v2 frame site-shell">
 
-  <div class="hero-v2-top hero-v2-top-front">
 
-       <div class="hero-v2-text">
-      <span class="hero-v2-tag caps">   ATMOSPHERE BY DESIGN</span>
-      <h1 class="hero-v2-title">BASE.</h1>
-      <p class="hero-v2-sub"> THE SOUND OF THE BRAND</p>
+
+    <div class="hero-v2-top hero-v2-top-front">
+
+      <div class="hero-v2-text">
+        <span class="hero-v2-tag caps">ATMOSPHERE BY DESIGN</span>
+
+        <h1 class="hero-v2-title">BASE.</h1>
+
+        <p class="hero-v2-sub">THE SOUND OF THE BRAND</p>
+      </div>
+
+      <div class="hero-v2-circles">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMaxYMin slice">
+          <circle cx="1150" cy="-120" r="880" fill="#c13801"></circle>
+          <circle cx="1150" cy="60" r="700" fill="#910301"></circle>
+          <circle cx="1150" cy="240" r="520" fill="#720000"></circle>
+          <circle cx="1150" cy="420" r="360" fill="#470000"></circle>
+        </svg>
+      </div>
+
     </div>
 
-<div class="hero-v2-circles">
-<svg viewBox="0 0 1000 1000" preserveAspectRatio="xMaxYMin slice">
+    <div class="hero-v2-inner">
 
-  
-  <circle cx="1150" cy="-120" r="880" fill="#c13801"></circle>
+    </div>
 
-  
-  <circle cx="1150" cy="60" r="700" fill="#910301 "></circle>
+    <div class="hero-wrap">
+      <amp-img
+        src="/img/index-hero.png"
+        width="960"
+        height="750"
+        layout="responsive"
+        class="hero-v2-man hero-v2-asset"
+        alt="Buildings">
+      </amp-img>
+    </div>
 
-  
-  <circle cx="1150" cy="240" r="520" fill="#720000"></circle>
-
-  
-  <circle cx="1150" cy="420" r="360" fill="  #470000"></circle>
-
-</svg>
-</div>
-
-
-
-  </div>
-
-  <div class="hero-v2-inner container">
-
- 
-
-   
-
-  </div>
-<div class="hero-wrap">  
-  <amp-img
-src="/img/index-hero.png"
-width="960"
-height="750"
-layout="responsive"
-class="hero-v2-man hero-v2-asset"
-alt="Buildings">
-</amp-img>
- </div>
-
-<aside class="hero-v2-side tagline">
-  <h2 class="heading-md caps-tight hero-v2-question">
-   ATMOSPHERE BY DESIGN
-  </h2>
-
- 
-</aside>
-
-
-
-    
+    <aside class="hero-v2-side tagline">
+      <h2 class="heading-md caps-tight hero-v2-question">
+        ATMOSPHERE BY DESIGN
+      </h2>
+    </aside>
 
     <amp-img
-src="/img/barcode.png"
-width="210"
-height="113"
-layout="responsive"
-class="hero-base-barcode"
-alt="barcode">
-</amp-img>
+      src="/img/barcode.png"
+      width="210"
+      height="113"
+      layout="responsive"
+      class="hero-base-barcode"
+      alt="barcode">
+    </amp-img>
+
 
 </section>
 
@@ -89,6 +73,6 @@ alt="barcode">
   </main>
 
   {{ partial "footer.html" . }}
- </div>
+
 </body>
 </html>
