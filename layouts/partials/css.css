@@ -145,8 +145,13 @@ background:#fff;
 }
 
 .section__intro {
-  max-width: 62ch;
+   max-width: 680px;
   margin-bottom: clamp(24px, 2.5vw, 40px);
+}
+
+.section__intro h3 {
+   max-width: 12ch;
+   margin-bottom: var(--space-md);
 }
 
 
@@ -154,15 +159,7 @@ background:#fff;
    BODY TEXT
 ===================================== */
 
-/* Lead / introductory copy */
-.text__lead {
-  font-family: var(--font-sans);
-  font-size: 18px;
-  line-height: 1.5;
-  letter-spacing: -.01em;
-  font-weight: 400;
-  max-width: 40ch;
-}
+
 
 
 /* Standard body copy */
@@ -3824,7 +3821,7 @@ display:block;
 
 .text__lead {
   max-width: 42ch;
-  margin-top: var(--space-md);
+  margin-top: 0;
   font-size: clamp(1rem, 0.45vw + 0.95rem, 1.18rem);
   line-height: 1.55;
   font-weight: 400;
@@ -8047,6 +8044,37 @@ width: 100%;
 .why-tms {
   position: relative;
   overflow: hidden;
+}
+
+
+
+.why-tms::after {
+  content: "";
+  position: absolute;
+  width: clamp(190px, 23vw, 360px);
+  height: clamp(190px, 23vw, 360px);
+  right: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffd4ad;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+.why-tms::before {
+  content: "";
+  position: absolute;
+  width: clamp(460px, 55vw, 860px);
+  height: clamp(460px, 55vw, 860px);
+  right: -18%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #e3ba92;
+
+  border-radius: 50%;
+
+  pointer-events: none;
 }
 
 
