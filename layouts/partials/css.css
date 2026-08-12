@@ -144,7 +144,10 @@ background:#fff;
   margin: 0;
 }
 
-
+.section__intro {
+  max-width: 62ch;
+  margin-bottom: clamp(24px, 2.5vw, 40px);
+}
 
 
 /* =====================================
@@ -971,49 +974,90 @@ border-radius: 0 999px 999px 0;
   }
 
 }
-/* ==========================================
+
+
+
+
+
+/* =========================================================
+   TMS — MOBILE SIDEBAR
+========================================================= */
+
+
+/* =========================================================
    SIDEBAR
-   ========================================== */
+========================================================= */
 
 .ampstart-sidebar {
-   display: flex;
-  flex-direction: column;
-  height: 100vh;
-  padding: 0;
-  overflow: hidden;
+  position: relative;
 
-  background: #e8e1d4;
+  width: min(100vw, 520px);
+  height: 100dvh;
+  max-height: 100dvh;
+
+  margin: 0;
+  padding: 0 !important;
+
+  display: flex !important;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  overflow: hidden !important;
+
+  background: #f0ece3;
   color: #111;
 
-      height: 100svh !important;
-    max-height: 100svh !important;
-    
-
-    box-sizing: border-box;
+  z-index: 1000;
 }
 
 
-/* ==========================================
+/* =========================================================
    HEADER
-   ========================================== */
+========================================================= */
+
+.sidebar-hero {
+  position: relative;
+
+  flex: 0 0 110px;
+  min-height: 110px;
+
+  overflow: hidden;
+
+  background: #e8e1d4;
+}
+
 
 .sidebar-head {
   position: relative;
   z-index: 2;
 
+  width: 100%;
+  height: 110px;
+
   display: flex;
   align-items: center;
+
   gap: 1rem;
 
-  min-height: 140px;
-  padding: 1rem;
+  padding: 1rem 1.25rem;
+
+  box-sizing: border-box;
 }
+
+
+/* =========================================================
+   BRAND
+========================================================= */
 
 .sidebar__logo {
   width: 62px;
-  flex-shrink: 0;
+  height: 62px;
+
+  flex: 0 0 62px;
 
   border-radius: 50%;
+
   overflow: hidden;
 }
 
@@ -1021,53 +1065,89 @@ border-radius: 0 999px 999px 0;
   display: block;
 }
 
+
 .sidebar-brand-text {
   display: flex;
   flex-direction: column;
+
+  min-width: 0;
+
+  padding-right: 3rem;
 }
+
 
 .sidebar-brand-main {
   font-size: .75rem;
   font-weight: 600;
+
   line-height: 1;
-  letter-spacing: .22em;
+
+  letter-spacing: .20em;
+
   text-transform: uppercase;
 }
 
+
 .sidebar-brand-tagline {
-   margin-top: .35rem;
+  margin-top: .3rem;
+
+  max-width: 25ch;
+
   font-size: .58rem;
   line-height: 1.2;
-  letter-spacing: .12em;
+
+  letter-spacing: .10em;
+
   text-transform: uppercase;
+
   opacity: .5;
 }
 
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
 .sidebar-close {
   position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  z-index: 100;
+
+  top: 1rem;
+  right: 1rem;
+
+  z-index: 10;
+
+  width: 40px;
+  height: 40px;
 
   display: grid;
   place-items: center;
 
-  width: 42px;
-  height: 42px;
+  color: inherit;
 
   font-size: 1.5rem;
+  font-weight: 300;
+
   line-height: 1;
 
-  color: inherit;
   text-decoration: none;
 
   transition: transform .25s ease;
 }
 
 
-/* ==========================================
-   BACKGROUND
-   ========================================== */
+.sidebar-close:hover {
+  transform: rotate(8deg);
+}
+
+
+/* =========================================================
+   HEADER GRAPHIC
+========================================================= */
+
+/*
+   Keep the decorative circles inside the header.
+   They must never sit behind the navigation.
+*/
 
 .sidebar-circles {
   position: absolute;
@@ -1075,321 +1155,238 @@ border-radius: 0 999px 999px 0;
   top: -240px;
   right: -300px;
 
-  width: 900px;
-  height: 900px;
+  width: 700px;
+  height: 700px;
 
-  opacity: .16;
+  opacity: .08;
+
   pointer-events: none;
-  z-index: 1;
+
+  z-index: 0;
 }
+
 
 .sidebar-circles svg {
   display: block;
+
   width: 100%;
   height: 100%;
 }
 
 
-/* ==========================================
-   NAVIGATION
-   ========================================== */
-
-.sidebar-hero {
-  position: relative;
-  flex-shrink: 0;
-  min-height: 110px;
-}
-
-@media (max-height: 700px) {
-  .sidebar-hero {
-    min-height: 90px;
-  }
-}
+/* =========================================================
+   NAVIGATION CONTAINER
+========================================================= */
 
 .ampstart-sidebar-nav {
-  flex: 1;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #f0ece3;
 }
+
+
+/* =========================================================
+   HOME + NAVIGATION LINKS
+========================================================= */
 
 .sidebar-home-link,
 .sidebar-nav-link {
-display: flex;
+  flex: 0 0 auto;
+
+  display: flex;
   align-items: center;
-  gap: 1.1rem;
-  padding: 1rem 1.5rem;
+
+  gap: 1rem;
+
+  min-height: 66px;
+
+  padding: .75rem 1.5rem;
+
+  box-sizing: border-box;
+
+  color: #111;
 
   text-decoration: none;
-  color: #111;
+
   background: transparent;
 
-  border-bottom: 1px solid rgba(0,0,0,.08);
+  border-bottom: 1px solid rgba(0, 0, 0, .08);
 
   transition:
-    background .25s ease,
-    padding-left .25s ease;
+    background .2s ease,
+    padding-left .2s ease;
 }
+
 
 .sidebar-home-link:hover,
 .sidebar-nav-link:hover {
-  background: rgba(255,255,255,.35);
-  padding-left: 2rem;
+  background: rgba(255, 255, 255, .35);
+
+  padding-left: 1.75rem;
 }
 
 
-/* ==========================================
-   NUMBER
-   ========================================== */
+/* =========================================================
+   HOME
+========================================================= */
+
+.sidebar-home-link {
+  min-height: 60px;
+}
+
+
+.sidebar-home-link .sidebar-number {
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.sidebar-home-link .sidebar-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  line-height: 1.1;
+}
+
+
+/* =========================================================
+   NAVIGATION NUMBERS
+========================================================= */
 
 .sidebar-nav-number {
-  flex: 0 0 40px;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  box-sizing: border-box;
+
   border: 1.5px solid currentColor;
+
   border-radius: 50%;
 
-  font-size: .72rem;
+  font-size: .7rem;
   font-weight: 600;
+
   line-height: 1;
-  letter-spacing: .02em;
 }
 
 
-/* ==========================================
-   CONTENT
-   ========================================== */
+/* Accent colours */
+
+.nav-development .sidebar-nav-number {
+  color: #d36bd9;
+}
+
+.nav-studio .sidebar-nav-number {
+  color: #fd4470;
+}
+
+.nav-pulse .sidebar-nav-number {
+  color: #9b021e;
+}
+
+.nav-case .sidebar-nav-number {
+  color: #1691b2;
+}
+
+
+/* =========================================================
+   NAVIGATION CONTENT
+========================================================= */
 
 .sidebar-nav-content {
+  min-width: 0;
+
   display: flex;
   flex-direction: column;
-  gap: .35rem;
-  flex: 1;
+
+  gap: .25rem;
 }
 
-.sidebar-nav-header{
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.15;
+
+.sidebar-nav-title {
+  display: block;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  line-height: 1.1;
+
   letter-spacing: -.01em;
 }
 
+
 .sidebar-nav-description {
-  max-width: 24ch;
+  max-width: 28ch;
 
-  font-size: .82rem;
-  line-height: 1.45;
+  margin: 0;
 
-  opacity: .72;
+  font-size: .75rem;
+  line-height: 1.35;
+
+  color: #555;
 }
 
 
+/* PulseFrames */
 
-
-
-.ampstart-sidebar::before,
-.ampstart-sidebar::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-}
-
-.ampstart-sidebar::before {
-  width: 380px;
-  height: 380px;
-
-  top: 60px;
-  background: #240712;
-  opacity: .22;
-}
-
-.ampstart-sidebar::after {
-  width: 260px;
-  height: 260px;
-  left: -80px;
-  bottom: 80px;
-  background: #d9f5ee;
-  opacity: .18;
-}
-
-/* =====================================
-   DROPDOWN
-===================================== */
-
-.ampstart-dropdown-item a {
-
-    display:block;
-
-    padding:.75rem 0 .75rem 1.2rem;
-
-    font-size:1rem;
-
-    color:rgba(0,0,0,.65);
-
-    transition:.25s ease;
+.nav-pulse {
+  min-height: 78px;
 }
 
 
-.ampstart-dropdown-item a:hover {
-
-    color:#0e4d4a;
-
-    transform:translateX(6px);
-}
-
-
-
-.ampstart-sidebar-nav 
-.ampstart-dropdown header::after {
-
-    content:"▸";
-
-    float:right;
-
-    transition:.2s ease;
-}
-
-
-.ampstart-sidebar-nav 
-.i-amphtml-accordion-item-expanded > header::after {
-    gap:8px;
-    transform:rotate(90deg);
-}
-
-
-
-
-
-
-
-/* =====================================
+/* =========================================================
    THE LAB
-===================================== */
+========================================================= */
 
 .sidebar-lab {
   position: relative;
+
+  flex: 0 0 auto;
+
+  padding: 1.25rem 1.5rem 1.5rem;
+
+  box-sizing: border-box;
+
   overflow: hidden;
 
-  padding: 2.75rem 2rem 3rem;
+  background: #f7f3eb;
 
   border-top: 1px solid rgba(0, 0, 0, .08);
-  background: #f7f3eb;
 }
 
 
-.sidebar-lab-main {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  align-items: center;
-  gap: 1rem;
-}
-
-.sidebar-lab-heading {
-  margin: 0;
-}
-
-.sidebar-lab-copy {
-  max-width: 19rem;
-}
-
-.sidebar-lab-description {
-  margin: 0;
-
-  font-size: .95rem;
-  line-height: 1.65;
-  color: #666;
-}
-
-/* =====================================
-   LAB ORBIT — LARGE CIRCLE
-===================================== */
-
-.sidebar-lab::before {
-  content: "";
-
-  position: absolute;
-
-  width: 320px;
-  height: 320px;
-
-  right: -70px;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  border: 1px solid rgba(36, 7, 18, .08);
-  border-radius: 50%;
-
-  pointer-events: none;
-}
-
-
-/* =====================================
-   LAB ORBIT — INNER CIRCLE
-===================================== */
-
-.sidebar-lab::after {
-  content: "";
-
-  position: absolute;
-
-  width: 160px;
-  height: 160px;
-
-  right: 5px;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  background: rgba(232, 225, 212, .65);
-
-  border-radius: 50%;
-
-  pointer-events: none;
-}
-
-
-/* =====================================
-   LAB CONTENT
-===================================== */
-
-.sidebar-lab > * {
-  position: relative;
-  z-index: 1;
-}
-
-
-/* =====================================
-   LAB LINK
-===================================== */
-
-.sidebar-lab-link {
-  display: block;
-
-  color: inherit;
-  text-decoration: none;
-}
-
-
-/* =====================================
-   LABEL
-===================================== */
+/* =========================================================
+   LAB LABEL
+========================================================= */
 
 .sidebar-lab-label {
   display: block;
 
-  margin-bottom: .65rem;
+  margin-bottom: .75rem;
 
   font-size: .65rem;
   font-weight: 700;
+
   letter-spacing: .18em;
-  line-height: 1;
 
   text-transform: uppercase;
 
@@ -1397,78 +1394,115 @@ display: flex;
 }
 
 
-/* =====================================
-   LAB HEADING / CIRCLE
-===================================== */
+/* =========================================================
+   LAB LAYOUT
+========================================================= */
 
-.sidebar-lab-heading {
-  margin: 0 0 1rem;
+.sidebar-lab-main {
+  display: grid;
+
+  grid-template-columns: 86px 1fr;
+
+  align-items: center;
+
+  gap: 1rem;
 }
 
 
-/* LAB CIRCLE */
+/* =========================================================
+   LAB LINK
+========================================================= */
+
+.sidebar-lab-link {
+  display: block;
+
+  color: inherit;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   LAB HEADING
+========================================================= */
+
+.sidebar-lab-heading {
+  margin: 0;
+}
+
+
+/* =========================================================
+   LAB CIRCLE
+========================================================= */
 
 .crumb-section-sidebar {
-  width: 110px;
-  height: 110px;
+  width: 86px;
+  height: 86px;
+
+  flex: 0 0 86px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  flex-shrink: 0;
+  box-sizing: border-box;
 
   border: 1.5px solid #240712;
+
   border-radius: 50%;
 
-  background: #e8e1d4;
-  color: #240712;
+  background: #b9825a;
 
-  font-size: 2.2rem;
+  color: #fff;
+
+  font-size: 1.9rem;
   font-weight: 700;
+
   line-height: .95;
+
   letter-spacing: -.04em;
 }
 
 
-/* =====================================
+/* =========================================================
    LAB COPY
-===================================== */
+========================================================= */
 
 .sidebar-lab-copy {
-  max-width: 19rem;
+  min-width: 0;
+
+  max-width: 25ch;
 }
 
-
-/* =====================================
-   DESCRIPTION
-===================================== */
 
 .sidebar-lab-description {
   margin: 0;
 
-  font-size: .95rem;
-  line-height: 1.7;
+  font-size: .82rem;
+
+  line-height: 1.45;
 
   color: #666;
 }
 
 
-/* =====================================
+/* =========================================================
    LAB ARROW
-===================================== */
+========================================================= */
 
 .sidebar-lab-arrow {
   display: inline-flex;
   align-items: center;
 
-  gap: .5rem;
+  gap: .4rem;
 
-  margin-top: 1.75rem;
+  margin-top: .75rem;
 
-  font-size: .78rem;
+  font-size: .7rem;
   font-weight: 700;
-  letter-spacing: .16em;
+
+  letter-spacing: .12em;
+
   line-height: 1;
 
   text-transform: uppercase;
@@ -1481,65 +1515,354 @@ display: flex;
 }
 
 
-/* =====================================
-   HOVER
-===================================== */
-
 .sidebar-lab-link:hover .sidebar-lab-arrow {
-  gap: .8rem;
-  letter-spacing: .2em;
+  gap: .7rem;
+
+  letter-spacing: .16em;
 }
 
 
-/* =====================================
-   MOBILE
-===================================== */
-@media (max-width: 767px) {
+/* =========================================================
+   LAB DECORATION
+========================================================= */
+
+.sidebar-lab::before {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  right: -155px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border: 1px solid rgba(36, 7, 18, .08);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.sidebar-lab::after {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  right: -40px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: rgba(232, 225, 212, .7);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.sidebar-lab > * {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.ampstart-dropdown-item a {
+  display: block;
+
+  padding: .65rem 0 .65rem 1rem;
+
+  font-size: .9rem;
+
+  color: rgba(0, 0, 0, .65);
+
+  transition:
+    color .2s ease,
+    transform .2s ease;
+}
+
+
+.ampstart-dropdown-item a:hover {
+  color: #0e4d4a;
+
+  transform: translateX(5px);
+}
+
+
+.ampstart-sidebar-nav
+.ampstart-dropdown header::after {
+  content: "▸";
+
+  float: right;
+
+  transition: transform .2s ease;
+}
+
+
+.ampstart-sidebar-nav
+.i-amphtml-accordion-item-expanded > header::after {
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   REMOVE OLD BLUR EFFECTS
+========================================================= */
+
+.ampstart-sidebar::before,
+.ampstart-sidebar::after {
+  display: none;
+}
+
+
+/* =========================================================
+   REMOVE OLD LAB GRAPHIC
+========================================================= */
+
+.sidebar__graphic {
+  display: none;
+}
+
+
+/* =========================================================
+   SHORT SCREENS
+========================================================= */
+
+@media (max-height: 700px) {
+
+  /* Header */
+
+  .sidebar-hero {
+    flex-basis: 90px;
+
+    min-height: 90px;
+  }
+
+
+  .sidebar-head {
+    height: 90px;
+
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+  }
+
+
+  .sidebar__logo {
+    width: 52px;
+    height: 52px;
+
+    flex-basis: 52px;
+  }
+
+
+  /* Navigation */
+
+  .sidebar-home-link,
+  .sidebar-nav-link {
+    min-height: 58px;
+
+    padding-top: .55rem;
+    padding-bottom: .55rem;
+  }
+
+
+  .sidebar-nav-number {
+    width: 34px;
+    height: 34px;
+
+    flex-basis: 34px;
+  }
+
+
+  .sidebar-home-link .sidebar-number {
+    width: 34px;
+  }
+
+
+  .sidebar-nav-title {
+    font-size: 1.1rem;
+  }
+
+
+  .sidebar-nav-description {
+    font-size: .7rem;
+  }
+
+
+  .nav-pulse {
+    min-height: 68px;
+  }
+
+
+  /* Lab */
 
   .sidebar-lab {
-    padding: 2.5rem 1.5rem 2.75rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
-  .sidebar-lab::before {
-    width: 280px;
-    height: 280px;
-    right: -100px;
+
+  .sidebar-lab-label {
+    margin-bottom: .5rem;
   }
 
-  .sidebar-lab::after {
-    width: 140px;
-    height: 140px;
-    right: -10px;
+
+  .sidebar-lab-main {
+    grid-template-columns: 72px 1fr;
+
+    gap: .8rem;
   }
+
 
   .crumb-section-sidebar {
-    width: 100px;
-    height: 100px;
+    width: 72px;
+    height: 72px;
 
-    margin-left: -2rem;
+    flex-basis: 72px;
 
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
+
 
   .sidebar-lab-description {
-    font-size: .9rem;
-    line-height: 1.65;
+    font-size: .75rem;
+
+    line-height: 1.35;
   }
 
+
   .sidebar-lab-arrow {
-    margin-top: 1.5rem;
-    font-size: .72rem;
+    margin-top: .5rem;
+
+    font-size: .65rem;
   }
 }
 
 
+/* =========================================================
+   VERY SHORT PHONES
+========================================================= */
+
+@media (max-height: 620px) {
+
+  .sidebar-hero {
+    flex-basis: 78px;
+
+    min-height: 78px;
+  }
 
 
+  .sidebar-head {
+    height: 78px;
+  }
 
 
+  .sidebar__logo {
+    width: 46px;
+    height: 46px;
+
+    flex-basis: 46px;
+  }
 
 
+  .sidebar-brand-main {
+    font-size: .68rem;
+  }
 
+
+  .sidebar-brand-tagline {
+    display: none;
+  }
+
+
+  .sidebar-home-link,
+  .sidebar-nav-link {
+    min-height: 52px;
+
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+  }
+
+
+  .sidebar-nav-number {
+    width: 30px;
+    height: 30px;
+
+    flex-basis: 30px;
+
+    font-size: .62rem;
+  }
+
+
+  .sidebar-home-link .sidebar-number {
+    width: 30px;
+  }
+
+
+  .sidebar-nav-title {
+    font-size: 1rem;
+  }
+
+
+  .sidebar-nav-description {
+    font-size: .66rem;
+  }
+
+
+  .nav-pulse {
+    min-height: 62px;
+  }
+
+
+  .sidebar-lab {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+  }
+
+
+  .sidebar-lab-main {
+    grid-template-columns: 60px 1fr;
+
+    gap: .7rem;
+  }
+
+
+  .crumb-section-sidebar {
+    width: 60px;
+    height: 60px;
+
+    flex-basis: 60px;
+
+    font-size: 1.35rem;
+  }
+
+
+  .sidebar-lab-description {
+    font-size: .68rem;
+  }
+
+
+  .sidebar-lab-arrow {
+    font-size: .6rem;
+  }
+}
+
+.i-amphtml-sidebar-mask {
+  background: none !important;
+  background-image: none !important;
+}
 
 
 
@@ -8492,10 +8815,14 @@ letter-spacing: -.08em;
  
 }
 .blog-hero__graphic {
+bottom: 0;
   position: absolute;
-  right: 60px;
+  right: -450px;
+  width: 560px;
   height: 400px;
-  bottom: 0;
+  overflow: visible;
+
+    overflow: visible;
 }
 
 @media (max-width: 768px) {
@@ -8510,12 +8837,15 @@ letter-spacing: -.08em;
 
 
 .layer {
-  position: absolute;
-  inset: 0;
-  width:160px;
-  border-radius:70px 0 0 70px;
+   position: absolute;
 
-  transform:translateX(var(--x));
+    width: 320px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    transform: translateX(var(--x));
+
 
   animation: layerDrift 10s ease-in-out infinite;
 }

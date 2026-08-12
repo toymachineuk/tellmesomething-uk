@@ -93,13 +93,13 @@ alt="pigeon">
 
           <div class="blog-card__content">
 
-            <div class="blog-card__meta">
-            
+           <div class="blog-card__meta">
+  {{ with $page.Params.categories }}
+    {{ delimit . ", " }}
+  {{ end }}
+</div>
 
-              <span>{{ $page.Date.Format "Jan 2, 2006" }}</span>
-            </div>
-
-            <h2 class="section__title-xxs">
+            <h2 class="section__title-xxs mb-xs">
               <a href="{{ $page.RelPermalink }}">
                 {{ $page.Title }}
               </a>
