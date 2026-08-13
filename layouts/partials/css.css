@@ -9087,7 +9087,40 @@ letter-spacing: -.08em;
 }
 
 
+@media (max-width: 480px) {
+  .blog-hero__graphic {
+    width: 360px;
+    height: 360px;
+    right: -225px;
+    top: -70px;
+  }
 
+  .blog-hero__graphic .layer {
+    width: 360px;
+    height: 360px;
+  }
+
+  .blog-hero__graphic .layer-2 {
+    width: 285px;
+    height: 285px;
+    top: 37px;
+    left: 37px;
+  }
+
+  .blog-hero__graphic .layer-3 {
+    width: 215px;
+    height: 215px;
+    top: 72px;
+    left: 72px;
+  }
+
+  .blog-hero__graphic .layer-4 {
+    width: 145px;
+    height: 145px;
+    top: 108px;
+    left: 108px;
+  }
+}
 
 
 
