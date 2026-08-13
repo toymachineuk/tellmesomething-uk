@@ -8941,15 +8941,7 @@ letter-spacing: -.08em;
   pointer-events: none;
 }
 
-@media (max-width: 768px) {
-  .blog-hero__graphic {
-     right: 70px;
-    width: 100px;
-    height: 360px;
-    border-radius: 70px 0 0 70px;
-  
-  }
-}
+
 
 
 .layer {
@@ -9033,7 +9025,66 @@ letter-spacing: -.08em;
 
 
 
+/* =====================================
+   PIGEON HERO — MOBILE CIRCLES
+===================================== */
 
+@media (max-width: 700px) {
+
+  .blog-hero__graphic {
+    width: 430px;
+    height: 430px;
+
+    right: -250px;
+    top: -80px;
+
+    bottom: auto;
+
+    pointer-events: none;
+  }
+
+ .layer {
+    width: 430px;
+    height: 430px;
+
+    transform: none;
+  
+  }
+
+  .blog-hero__graphic .layer-1 {
+    background: #d4d39a;
+  }
+
+  .blog-hero__graphic .layer-2 {
+    width: 340px;
+    height: 340px;
+
+    top: 45px;
+    left: 45px;
+
+    background: #a7a676;
+  }
+
+  .blog-hero__graphic .layer-3 {
+    width: 255px;
+    height: 255px;
+
+    top: 87px;
+    left: 87px;
+
+    background: #66662f;
+  }
+
+  .blog-hero__graphic .layer-4 {
+    width: 175px;
+    height: 175px;
+
+    top: 127px;
+    left: 127px;
+
+    background: #363600;
+  }
+}
 
 
 
