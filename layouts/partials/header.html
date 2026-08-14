@@ -63,7 +63,7 @@ alt="logo">
  
 
   {{ if .IsHome }}
-   <span class="sep">&gt;</span>
+   <span class="sep">→</span>
     <span class="current-home">
    <span class="blob b1"></span>
     <span class="blob b2"></span>
@@ -76,7 +76,7 @@ alt="logo">
   {{ else if eq .Section "post" }}
 
     {{ if .IsSection }}
-       <span class="sep">&gt;</span>
+       <span class="sep">→</span>
       <span class="current">Lab</span>
     {{ else }}
       <a href="/post/" class="current">Lab</a>
@@ -85,7 +85,7 @@ alt="logo">
   {{ else }}
 
     {{ if not .IsSection }}
-      <span class="sep">&gt;</span>
+      <span class="sep">→</span>
       <span class="current">{{ .Title }}</span>
     {{ end }}
 
