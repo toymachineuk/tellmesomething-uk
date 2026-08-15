@@ -166,28 +166,30 @@ alt="logo">
 
   </div>
 
-  <!-- Navigation -->
-<nav class="ampstart-sidebar-nav ampstart-nav mt-md">
+<!-- Navigation -->
+<nav class="ampstart-sidebar-nav ampstart-nav">
 
   <!-- HOME -->
-  <a href="/" class="sidebar-home-link">
+  <a href="/" class="sidebar-nav-link sidebar-nav-home">
 
-    <span class="sidebar-number">
+    <span class="sidebar-nav-number sidebar-nav-home-icon">
       <svg width="16" height="16" viewBox="0 0 24 24"
            fill="none"
            stroke="currentColor"
            stroke-width="2"
            stroke-linecap="round"
-           stroke-linejoin="round">
+           stroke-linejoin="round"
+           aria-hidden="true">
         <path d="M3 10.5L12 3l9 7.5"/>
         <path d="M5 9.5V21h14V9.5"/>
       </svg>
     </span>
 
     <span class="sidebar-nav-content">
-      <span class="sidebar-title">home</span>
+      <span class="sidebar-nav-title">home</span>
+
       <span class="sidebar-nav-description">
-        Core overview and highlighted work.
+        Core overview and selected work.
       </span>
     </span>
 
@@ -196,19 +198,21 @@ alt="logo">
 
   <!-- DEVELOPMENT -->
   <a
-    class="sidebar-nav-link nav-development"
-    href="/articles/development/">
+    href="/articles/development/"
+    class="sidebar-nav-link nav-development">
 
     <span class="sidebar-nav-number">01</span>
 
     <span class="sidebar-nav-content">
+
       <span class="sidebar-nav-title">
         development
       </span>
 
       <span class="sidebar-nav-description">
-        Web builds, clean code, and targeted SEO.
+        Web builds, clean code, targeted SEO.
       </span>
+
     </span>
 
   </a>
@@ -216,39 +220,43 @@ alt="logo">
 
   <!-- STUDIO -->
   <a
-    class="sidebar-nav-link nav-studio"
-    href="/articles/studio/">
+    href="/articles/studio/"
+    class="sidebar-nav-link nav-studio">
 
     <span class="sidebar-nav-number">02</span>
 
     <span class="sidebar-nav-content">
+
       <span class="sidebar-nav-title">
         studio
       </span>
 
       <span class="sidebar-nav-description">
-        Branding, graphics, video, audio, and creative vision.
+        Branding, graphics, video and audio.
       </span>
+
     </span>
 
   </a>
 
 
-  <!-- PULSE FRAMES -->
+  <!-- PULSEFRAMES -->
   <a
-    class="sidebar-nav-link nav-pulse"
-    href="/articles/pulseframes/">
+    href="/articles/pulseframes/"
+    class="sidebar-nav-link nav-pulse">
 
     <span class="sidebar-nav-number">03</span>
 
     <span class="sidebar-nav-content">
+
       <span class="sidebar-nav-title">
         pulseframes<sup>™</sup>
       </span>
 
       <span class="sidebar-nav-description">
-        New story telling format for business revolution.
+        A new storytelling format for business.
       </span>
+
     </span>
 
   </a>
@@ -256,59 +264,61 @@ alt="logo">
 
   <!-- CASE STUDIES -->
   <a
-    class="sidebar-nav-link nav-case"
-    href="/articles/casestudies/">
+    href="/articles/casestudies/"
+    class="sidebar-nav-link nav-case">
 
-    <span class="sidebar-nav-number">04 </span>
+    <span class="sidebar-nav-number">04</span>
 
     <span class="sidebar-nav-content">
+
       <span class="sidebar-nav-title">
-        case studies <span class="accent-square brand"></span>
+        case studies
+        <span class="accent-square brand"></span>
       </span>
 
       <span class="sidebar-nav-description">
-        Client projects, solutions, and proven results.
+        Client projects, solutions and results.
       </span>
+
     </span>
 
   </a>
 
 
   <!-- THE LAB -->
-  <div class="sidebar-lab">
+<div class="sidebar-lab">
 
-    <span class="sidebar-lab-label">
-      Explore
-    </span>
+  <a class="sidebar-lab-link" href="/post/">
 
-    <a
-      class="sidebar-lab-link"
-      href="/post/">
+    <div class="sidebar-lab-main">
 
-      <div class="sidebar-lab-main">
+      <span class="sidebar-lab-label">
+        THE LAB
+      </span>
 
-        <div class="crumb-section-sidebar">
-          lab
-        </div>
+      <div class="crumb-section-sidebar">
+        lab
+      </div>
 
-        <div class="sidebar-lab-copy">
+      <div class="sidebar-lab-copy">
 
-          <p class="sidebar-lab-description">
-            Stories, experiments, design notes and
-            behind-the-scenes thinking.
-          </p>
+        <p class="sidebar-lab-description">
+          Stories, experiments, design notes and
+          behind-the-scenes thinking.
+        </p>
 
-          <span class="sidebar-lab-arrow">
-            Browse articles →
-          </span>
-
-        </div>
+        <span class="sidebar-lab-arrow">
+          Browse articles
+          <span aria-hidden="true">→</span>
+        </span>
 
       </div>
 
-    </a>
+    </div>
 
-  </div>
+  </a>
+
+</div>
 
 </nav>
 
