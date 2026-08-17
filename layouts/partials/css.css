@@ -1020,7 +1020,7 @@ border-radius: 0 999px 999px 0;
 
 
 /* =========================================================
-   SIDEBAR
+   1. SIDEBAR SHELL
 ========================================================= */
 
 .ampstart-sidebar {
@@ -1037,7 +1037,6 @@ border-radius: 0 999px 999px 0;
   flex-direction: column;
 
   box-sizing: border-box;
-
   overflow: hidden !important;
 
   background: #f0ece3;
@@ -1048,7 +1047,7 @@ border-radius: 0 999px 999px 0;
 
 
 /* =========================================================
-   HEADER
+   2. SIDEBAR HEADER
 ========================================================= */
 
 .sidebar-hero {
@@ -1058,11 +1057,8 @@ border-radius: 0 999px 999px 0;
   min-height: 110px;
 
   overflow: hidden;
-
-  
-  background: #4f0a00;
+background: #35251f;
 }
-
 
 .sidebar-head {
   position: relative;
@@ -1073,17 +1069,15 @@ border-radius: 0 999px 999px 0;
 
   display: flex;
   align-items: center;
-
   gap: 1rem;
 
   padding: 1rem 1.25rem;
-
   box-sizing: border-box;
 }
 
 
 /* =========================================================
-   BRAND
+   3. BRAND
 ========================================================= */
 
 .sidebar__logo {
@@ -1093,7 +1087,6 @@ border-radius: 0 999px 999px 0;
   flex: 0 0 62px;
 
   border-radius: 50%;
-
   overflow: hidden;
 }
 
@@ -1102,51 +1095,16 @@ border-radius: 0 999px 999px 0;
 }
 
 
-.sidebar-brand-text {
-  display: flex;
-  flex-direction: column;
-
-  min-width: 0;
-color: #e8e1d4;
-  padding-right: 3rem;
-}
 
 
-.sidebar-brand-main {
-  font-size: .75rem;
-  font-weight: 600;
-
-  line-height: 1;
-
-  letter-spacing: .20em;
-
-  text-transform: uppercase;
-}
-
-
-.sidebar-brand-tagline {
-  margin-top: var(--space-xs);
-
-  max-width: 25ch;
-
-  font-size: .58rem;
-  line-height: 1.2;
-
-  letter-spacing: .10em;
-
-  text-transform: uppercase;
-
-  opacity: .5;
-}
 
 
 /* =========================================================
-   CLOSE BUTTON
+   4. CLOSE BUTTON
 ========================================================= */
 
 .sidebar-close {
   position: absolute;
-
   top: 1rem;
   right: 1rem;
 
@@ -1162,7 +1120,6 @@ color: #e8e1d4;
 
   font-size: 1.5rem;
   font-weight: 300;
-
   line-height: 1;
 
   text-decoration: none;
@@ -1170,20 +1127,14 @@ color: #e8e1d4;
   transition: transform .25s ease;
 }
 
-
 .sidebar-close:hover {
   transform: rotate(8deg);
 }
 
 
 /* =========================================================
-   HEADER GRAPHIC
+   5. HEADER CIRCLES
 ========================================================= */
-
-/*
-   Keep the decorative circles inside the header.
-   They must never sit behind the navigation.
-*/
 
 .sidebar-circles {
   position: absolute;
@@ -1197,27 +1148,27 @@ color: #e8e1d4;
   opacity: .08;
 
   pointer-events: none;
-
   z-index: 0;
 }
 
-
 .sidebar-circles svg {
   display: block;
-
   width: 100%;
   height: 100%;
 }
 
 
 /* =========================================================
-   NAVIGATION CONTAINER
+   6. NAVIGATION CONTAINER
 ========================================================= */
 
 .ampstart-sidebar-nav {
   flex: 1 1 auto;
-
   min-height: 0;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
 
   display: flex;
   flex-direction: column;
@@ -1229,54 +1180,47 @@ color: #e8e1d4;
 
 
 /* =========================================================
-   HOME + NAVIGATION LINKS
+   7. HOME + NAVIGATION LINKS
 ========================================================= */
 
 .sidebar-home-link,
 .sidebar-nav-link {
   flex: 0 0 auto;
 
-  display: flex;
-  align-items: center;
-
-  gap: 1rem;
-
-  min-height: 66px;
-
-  padding: .75rem 1.5rem;
-
+  width: 100%;
   box-sizing: border-box;
 
   color: #111;
-
   text-decoration: none;
 
   background: transparent;
-
   border-bottom: 1px solid rgba(0, 0, 0, .08);
 
   transition:
-    background .2s ease,
-    padding-left .2s ease;
+    background-color .25s ease,
+    padding-left .25s ease;
 }
-
 
 .sidebar-home-link:hover,
 .sidebar-nav-link:hover {
-  background: rgba(255, 255, 255, .35);
-
+  background: rgba(255, 255, 255, .45);
   padding-left: 1.75rem;
 }
 
 
 /* =========================================================
-   HOME
+   8. HOME
 ========================================================= */
 
 .sidebar-home-link {
   min-height: 60px;
-}
 
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: .75rem 1.5rem;
+}
 
 .sidebar-home-link .sidebar-number {
   width: 38px;
@@ -1289,118 +1233,92 @@ color: #e8e1d4;
   justify-content: center;
 }
 
-
 .sidebar-home-link .sidebar-title {
   font-size: 1.2rem;
   font-weight: 600;
-
   line-height: 1.1;
 }
 
-
 /* =========================================================
-   NAVIGATION NUMBERS
+   9. NAVIGATION ITEM
 ========================================================= */
 
-.sidebar-nav-number {
-  width: 38px;
-  height: 38px;
-
-  flex: 0 0 38px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-sizing: border-box;
-
-  border: 1.5px solid currentColor;
-
-  border-radius: 50%;
-
-  font-size: .7rem;
-  font-weight: 600;
-
-  line-height: 1;
-}
-
-
-/* Accent colours */
-
-.nav-development .sidebar-nav-number {
-  color: #d36bd9;
-}
-
-.nav-studio .sidebar-nav-number {
-  color: #fd4470;
-}
-
-.nav-pulse .sidebar-nav-number {
-  color: #9b021e;
-}
-
-.nav-case .sidebar-nav-number {
-  color: #1691b2;
-}
-
-
-/* =========================================================
-   SIDEBAR NAVIGATION
-   ========================================================= */
-
-.ampstart-sidebar-nav {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  flex-direction: column;
-}
-
-
-/* =========================================================
-   NAV ITEM
-   ========================================================= */
-
 .sidebar-nav-link {
   position: relative;
 
   display: grid;
   grid-template-columns: 48px minmax(0, 1fr);
-  gap: 18px;
+  column-gap: 18px;
 
   align-items: start;
-
-  width: 100%;
 
   padding: 22px 28px 21px;
 
   color: #161616;
-  text-decoration: none;
 
   border-bottom: 1px solid rgba(0, 0, 0, .10);
 
+  text-decoration: none;
+
   transition:
     background-color .25s ease,
-    color .25s ease;
+    padding-left .25s ease;
+}
+
+/* =========================================================
+   10. NAVIGATION INDEX
+========================================================= */
+
+.sidebar-nav-index {
+  width: 48px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  flex-shrink: 0;
+
 }
 
 
-/* =========================================================
-   NUMBER / HOME ICON
-   ========================================================= */
+/* EMPTY CIRCLE */
 
-.sidebar-nav-number {
-  width: 48px;
-  height: 48px;
+.sidebar-nav-circle {
+  width: 8px;
+  height: 8px;
 
-  display: grid;
-  place-items: center;
+  flex: 0 0 8px;
 
-  border: 1px solid rgba(0, 0, 0, .45);
+  margin-left: 16px;
+  margin-bottom: 4px;
+
   border-radius: 50%;
 
-  flex-shrink: 0;
+}
+
+
+.nav-development .sidebar-nav-circle {
+  background: #d36bd9;
+}
+
+.nav-studio .sidebar-nav-circle {
+  background: #fd4470;
+}
+
+.nav-pulse .sidebar-nav-circle {
+  background: #9b021e;
+}
+
+.nav-case .sidebar-nav-circle {
+  background: #1691b2;
+}
+
+/* NUMBER BELOW CIRCLE */
+
+.sidebar-nav-number {
+  display: block;
+
+  margin-top: 7px;
 
   font-size: .72rem;
   line-height: 1;
@@ -1410,8 +1328,9 @@ color: #e8e1d4;
   color: #555;
 }
 
-
-/* HOME ICON */
+/* =========================================================
+   11. HOME ICON
+========================================================= */
 
 .sidebar-nav-home-icon {
   color: #222;
@@ -1424,8 +1343,8 @@ color: #e8e1d4;
 
 
 /* =========================================================
-   CONTENT
-   ========================================================= */
+   12. NAVIGATION CONTENT
+========================================================= */
 
 .sidebar-nav-content {
   min-width: 0;
@@ -1436,11 +1355,6 @@ color: #e8e1d4;
   padding-top: 1px;
 }
 
-
-/* =========================================================
-   TITLE
-   ========================================================= */
-
 .sidebar-nav-title {
   display: flex;
   align-items: baseline;
@@ -1450,15 +1364,11 @@ color: #e8e1d4;
 
   font-size: 1.35rem;
   line-height: 1.05;
-
   font-weight: 750;
   letter-spacing: -.035em;
 
   color: #171717;
 }
-
-
-/* TM */
 
 .sidebar-nav-title sup {
   position: relative;
@@ -1466,50 +1376,25 @@ color: #e8e1d4;
 
   font-size: .42em;
   line-height: 0;
-
   letter-spacing: 0;
 }
-
-
-/* =========================================================
-   DESCRIPTION
-   ========================================================= */
 
 .sidebar-nav-description {
   display: block;
 
   margin-top: 6px;
-
   max-width: 30ch;
 
   font-size: .86rem;
   line-height: 1.35;
-
   font-weight: 400;
 
   color: #5e5e5e;
 }
 
-
 /* =========================================================
-   HOVER
-   ========================================================= */
-
-.sidebar-nav-link:hover {
-  background: rgba(255, 255, 255, .45);
-}
-
-
-/* =========================================================
-   ACTIVE STATES
-   ========================================================= */
-
-/*
-   Keep these subtle.
-
-   The sidebar should not become a collection
-   of brightly coloured rows.
-*/
+   13. NAVIGATION HOVER ACCENTS
+========================================================= */
 
 .nav-development:hover .sidebar-nav-number {
   border-color: #d85ee6;
@@ -1533,415 +1418,24 @@ color: #e8e1d4;
 
 
 /* =========================================================
-   CASE STUDY MARK
-   ========================================================= */
+   14. CASE STUDY MARK
+========================================================= */
 
 .accent-square.brand {
   width: 10px;
   height: 10px;
 
   display: inline-block;
-
   margin-left: 2px;
 
   border-radius: 50%;
-
   background: #ff4770;
 }
 
 
 /* =========================================================
-   LAB
-   ========================================================= */
-
-.sidebar-lab {
-  width: 100%;
-}
-
-
-/* The Lab is intentionally different from
-   the four navigation rows */
-
-.sidebar-lab-link {
-  position: relative;
-
-  display: block;
-
-  width: 100%;
-  min-height: 265px;
-
-  padding: 28px;
-
-  overflow: hidden;
-
-  background: #4f0902;
-  color: #f3eee4;
-
-  text-decoration: none;
-}
-
-
-/* =========================================================
-   LAB DECORATIVE CIRCLES
-   ========================================================= */
-
-.sidebar-lab-link::before {
-  content: "";
-
-  position: absolute;
-
-  width: 300px;
-  height: 300px;
-
-  right: -175px;
-  bottom: -175px;
-
-  border: 1px solid rgba(243, 238, 228, .18);
-
-  border-radius: 50%;
-}
-
-
-.sidebar-lab-link::after {
-  content: "";
-
-  position: absolute;
-
-  width: 190px;
-  height: 190px;
-
-  right: -105px;
-  bottom: -105px;
-
-  background: rgba(243, 238, 228, .06);
-
-  border-radius: 50%;
-}
-
-
-/* =========================================================
-   LAB CONTENT
-   ========================================================= */
-
-.sidebar-lab-main {
-  position: relative;
-  z-index: 2;
-
-  min-height: 209px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-
-/* LABEL */
-
-.sidebar-lab-label {
-  display: block;
-
-  margin-bottom: 20px;
-
-  font-size: .68rem;
-  line-height: 1;
-
-  font-weight: 700;
-
-  letter-spacing: .16em;
-  text-transform: uppercase;
-
-  color: rgba(243, 238, 228, .55);
-}
-
-
-/* =========================================================
-   LAB WORD
-   ========================================================= */
-
-.crumb-section-sidebar {
-  margin: 0;
-
-  font-size: 4.2rem;
-  line-height: .78;
-
-  font-weight: 800;
-  letter-spacing: -.075em;
-
-  color: #f3eee4;
-}
-
-/* =========================================================
-   LAB COPY
-   ========================================================= */
-
-.sidebar-lab-copy {
-  margin-top: 22px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
-
-  max-width: 310px;
-}
-
-
-.sidebar-lab-description {
-  margin: 0;
-
-  max-width: 28ch;
-
-  font-size: .88rem;
-  line-height: 1.45;
-
-  color: rgba(243, 238, 228, .72);
-}
-
-
-/* =========================================================
-   LAB CTA
-   ========================================================= */
-
-.sidebar-lab-arrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-
-  width: fit-content;
-
-  font-size: .7rem;
-  line-height: 1;
-
-  font-weight: 700;
-
-  letter-spacing: .12em;
-  text-transform: uppercase;
-
-  color: #f3eee4;
-}
-
-
-.sidebar-lab-arrow span {
-  display: inline-block;
-
-  font-size: 1rem;
-  line-height: 0;
-
-  transition: transform .25s ease;
-}
-
-
-.sidebar-lab-link:hover .sidebar-lab-arrow span {
-  transform: translateX(5px);
-}
-
-
-/* =========================================================
-   SIDEBAR NAVIGATION
-   ========================================================= */
-
-.ampstart-sidebar-nav {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  flex-direction: column;
-}
-
-
-/* =========================================================
-   NAV ITEM
-   ========================================================= */
-
-.sidebar-nav-link {
-  position: relative;
-
-  display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
-  gap: 18px;
-
-  align-items: start;
-
-  width: 100%;
-
-  padding: 22px 28px 21px;
-
-  color: #161616;
-  text-decoration: none;
-
-  border-bottom: 1px solid rgba(0, 0, 0, .10);
-
-  transition:
-    background-color .25s ease,
-    color .25s ease;
-}
-
-
-/* =========================================================
-   NUMBER / HOME ICON
-   ========================================================= */
-
-.sidebar-nav-number {
-  width: 48px;
-  height: 48px;
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid rgba(0, 0, 0, .45);
-  border-radius: 50%;
-
-  flex-shrink: 0;
-
-  font-size: .72rem;
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: .02em;
-
-  color: #555;
-}
-
-
-/* HOME ICON */
-
-.sidebar-nav-home-icon {
-  color: #222;
-}
-
-.sidebar-nav-home-icon svg {
-  width: 17px;
-  height: 17px;
-}
-
-
-/* =========================================================
-   CONTENT
-   ========================================================= */
-
-.sidebar-nav-content {
-  min-width: 0;
-
-  display: flex;
-  flex-direction: column;
-
-  padding-top: 1px;
-}
-
-
-/* =========================================================
-   TITLE
-   ========================================================= */
-
-.sidebar-nav-title {
-  display: flex;
-  align-items: baseline;
-  gap: 5px;
-
-  margin: 0;
-
-  font-size: 1.35rem;
-  line-height: 1.05;
-
-  font-weight: 750;
-  letter-spacing: -.035em;
-
-  color: #171717;
-}
-
-
-/* TM */
-
-.sidebar-nav-title sup {
-  position: relative;
-  top: -.35em;
-
-  font-size: .42em;
-  line-height: 0;
-
-  letter-spacing: 0;
-}
-
-
-/* =========================================================
-   DESCRIPTION
-   ========================================================= */
-
-.sidebar-nav-description {
-  display: block;
-
-  margin-top: 6px;
-
-  max-width: 30ch;
-
-  font-size: .86rem;
-  line-height: 1.35;
-
-  font-weight: 400;
-
-  color: #5e5e5e;
-}
-
-
-/* =========================================================
-   HOVER
-   ========================================================= */
-
-.sidebar-nav-link:hover {
-  background: rgba(255, 255, 255, .45);
-}
-
-
-/* =========================================================
-   ACTIVE STATES
-   ========================================================= */
-
-/*
-   Keep these subtle.
-
-   The sidebar should not become a collection
-   of brightly coloured rows.
-*/
-
-.nav-development:hover .sidebar-nav-number {
-  border-color: #d85ee6;
-  color: #d85ee6;
-}
-
-.nav-studio:hover .sidebar-nav-number {
-  border-color: #ff4963;
-  color: #ff4963;
-}
-
-.nav-pulse:hover .sidebar-nav-number {
-  border-color: #9a0d18;
-  color: #9a0d18;
-}
-
-.nav-case:hover .sidebar-nav-number {
-  border-color: #149cc2;
-  color: #149cc2;
-}
-
-
-/* =========================================================
-   CASE STUDY MARK
-   ========================================================= */
-
-.accent-square.brand {
-  width: 10px;
-  height: 10px;
-
-  display: inline-block;
-
-  margin-left: 2px;
-
-  border-radius: 50%;
-
-  background: #ff4770;
-}
-
-/* =========================================================
-   THE LAB — SIDEBAR CARD
-   ========================================================= */
+   15. THE LAB
+========================================================= */
 
 .sidebar-lab {
   width: 100%;
@@ -1952,9 +1446,10 @@ color: #e8e1d4;
   position: relative;
 
   display: block;
-  width: 100%;
 
+  width: 100%;
   min-height: 245px;
+
   padding: 28px 32px 26px;
 
   overflow: hidden;
@@ -1966,15 +1461,21 @@ color: #e8e1d4;
 }
 
 
-/* -----------------------------------------
-   DECORATIVE CIRCLES
-   ----------------------------------------- */
+/* =========================================================
+   16. LAB DECORATIVE CIRCLES
+========================================================= */
 
-.sidebar-lab-link::before {
+.sidebar-lab-link::before,
+.sidebar-lab-link::after {
   content: "";
 
   position: absolute;
+  border-radius: 50%;
 
+  pointer-events: none;
+}
+
+.sidebar-lab-link::before {
   width: 250px;
   height: 250px;
 
@@ -1982,16 +1483,9 @@ color: #e8e1d4;
   bottom: -145px;
 
   border: 1px solid rgba(243, 238, 228, .18);
-  border-radius: 50%;
-
-  pointer-events: none;
 }
 
 .sidebar-lab-link::after {
-  content: "";
-
-  position: absolute;
-
   width: 150px;
   height: 150px;
 
@@ -1999,15 +1493,12 @@ color: #e8e1d4;
   bottom: -85px;
 
   background: rgba(243, 238, 228, .055);
-  border-radius: 50%;
-
-  pointer-events: none;
 }
 
 
-/* -----------------------------------------
-   CONTENT
-   ----------------------------------------- */
+/* =========================================================
+   17. LAB CONTENT
+========================================================= */
 
 .sidebar-lab-main {
   position: relative;
@@ -2019,11 +1510,6 @@ color: #e8e1d4;
   min-height: 191px;
 }
 
-
-/* -----------------------------------------
-   LABEL
-   ----------------------------------------- */
-
 .sidebar-lab-label {
   display: block;
 
@@ -2031,7 +1517,6 @@ color: #e8e1d4;
 
   font-size: .68rem;
   line-height: 1;
-
   font-weight: 700;
   letter-spacing: .15em;
   text-transform: uppercase;
@@ -2039,34 +1524,22 @@ color: #e8e1d4;
   color: rgba(243, 238, 228, .58);
 }
 
-
-/* -----------------------------------------
-   LAB WORD
-   ----------------------------------------- */
-
 .crumb-section-sidebar {
   margin: 0;
 
   font-size: clamp(4rem, 8vw, 5rem);
   line-height: .78;
-
   font-weight: 800;
   letter-spacing: -.075em;
 
   color: #f3eee4;
 }
 
-
-/* -----------------------------------------
-   COPY
-   ----------------------------------------- */
-
 .sidebar-lab-copy {
   margin-top: 24px;
 
   display: flex;
   flex-direction: column;
-
   gap: 13px;
 
   max-width: 310px;
@@ -2084,9 +1557,9 @@ color: #e8e1d4;
 }
 
 
-/* -----------------------------------------
-   CTA
-   ----------------------------------------- */
+/* =========================================================
+   18. LAB CTA
+========================================================= */
 
 .sidebar-lab-arrow {
   display: inline-flex;
@@ -2097,7 +1570,6 @@ color: #e8e1d4;
 
   font-size: .68rem;
   line-height: 1;
-
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -2115,8 +1587,9 @@ color: #e8e1d4;
   transform: translateX(4px);
 }
 
+
 /* =========================================================
-   DROPDOWN
+   19. DROPDOWN
 ========================================================= */
 
 .ampstart-dropdown-item a {
@@ -2125,7 +1598,6 @@ color: #e8e1d4;
   padding: .65rem 0 .65rem 1rem;
 
   font-size: .9rem;
-
   color: rgba(0, 0, 0, .65);
 
   transition:
@@ -2133,13 +1605,10 @@ color: #e8e1d4;
     transform .2s ease;
 }
 
-
 .ampstart-dropdown-item a:hover {
   color: #0e4d4a;
-
   transform: translateX(5px);
 }
-
 
 .ampstart-sidebar-nav
 .ampstart-dropdown header::after {
@@ -2150,7 +1619,6 @@ color: #e8e1d4;
   transition: transform .2s ease;
 }
 
-
 .ampstart-sidebar-nav
 .i-amphtml-accordion-item-expanded > header::after {
   transform: rotate(90deg);
@@ -2158,38 +1626,26 @@ color: #e8e1d4;
 
 
 /* =========================================================
-   REMOVE OLD BLUR EFFECTS
+   20. REMOVE OLD SIDEBAR EFFECTS
 ========================================================= */
 
 .ampstart-sidebar::before,
-.ampstart-sidebar::after {
-  display: none;
-}
-
-
-/* =========================================================
-   REMOVE OLD LAB GRAPHIC
-========================================================= */
-
+.ampstart-sidebar::after,
 .sidebar__graphic {
   display: none;
 }
 
 
 /* =========================================================
-   SHORT SCREENS
+   21. SHORT SCREENS
 ========================================================= */
 
 @media (max-height: 700px) {
 
-  /* Header */
-
   .sidebar-hero {
     flex-basis: 90px;
-
     min-height: 90px;
   }
-
 
   .sidebar-head {
     height: 90px;
@@ -2198,16 +1654,12 @@ color: #e8e1d4;
     padding-bottom: .75rem;
   }
 
-
   .sidebar__logo {
     width: 52px;
     height: 52px;
 
     flex-basis: 52px;
   }
-
-
-  /* Navigation */
 
   .sidebar-home-link,
   .sidebar-nav-link {
@@ -2217,7 +1669,6 @@ color: #e8e1d4;
     padding-bottom: .55rem;
   }
 
-
   .sidebar-nav-number {
     width: 34px;
     height: 34px;
@@ -2225,89 +1676,63 @@ color: #e8e1d4;
     flex-basis: 34px;
   }
 
-
   .sidebar-home-link .sidebar-number {
     width: 34px;
   }
-
 
   .sidebar-nav-title {
     font-size: 1.1rem;
   }
 
-
   .sidebar-nav-description {
     font-size: .7rem;
   }
-
 
   .nav-pulse {
     min-height: 68px;
   }
 
+  .sidebar-lab-link {
+    min-height: 220px;
 
-  /* Lab */
-
-  .sidebar-lab {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
-
 
   .sidebar-lab-label {
     margin-bottom: .5rem;
   }
 
-
-  .sidebar-lab-main {
-    grid-template-columns: 72px 1fr;
-
-    gap: .8rem;
-  }
-
-
   .crumb-section-sidebar {
-    width: 72px;
-    height: 72px;
-
-    flex-basis: 72px;
-
-    font-size: 1.6rem;
+    font-size: 3.5rem;
   }
-
 
   .sidebar-lab-description {
     font-size: .75rem;
-
     line-height: 1.35;
   }
 
-
   .sidebar-lab-arrow {
     margin-top: .5rem;
-
     font-size: .65rem;
   }
 }
 
 
 /* =========================================================
-   VERY SHORT PHONES
+   22. VERY SHORT PHONES
 ========================================================= */
 
 @media (max-height: 620px) {
 
   .sidebar-hero {
     flex-basis: 78px;
-
     min-height: 78px;
   }
-
 
   .sidebar-head {
     height: 78px;
   }
-
 
   .sidebar__logo {
     width: 46px;
@@ -2316,16 +1741,13 @@ color: #e8e1d4;
     flex-basis: 46px;
   }
 
-
   .sidebar-brand-main {
     font-size: .68rem;
   }
 
-
   .sidebar-brand-tagline {
     display: none;
   }
-
 
   .sidebar-home-link,
   .sidebar-nav-link {
@@ -2334,7 +1756,6 @@ color: #e8e1d4;
     padding-top: .4rem;
     padding-bottom: .4rem;
   }
-
 
   .sidebar-nav-number {
     width: 30px;
@@ -2345,59 +1766,45 @@ color: #e8e1d4;
     font-size: .62rem;
   }
 
-
   .sidebar-home-link .sidebar-number {
     width: 30px;
   }
-
 
   .sidebar-nav-title {
     font-size: 1rem;
   }
 
-
   .sidebar-nav-description {
     font-size: .66rem;
   }
-
 
   .nav-pulse {
     min-height: 62px;
   }
 
+  .sidebar-lab-link {
+    min-height: 190px;
 
-  .sidebar-lab {
-    padding-top: .75rem;
-    padding-bottom: .75rem;
+    padding: 16px 24px;
   }
-
-
-  .sidebar-lab-main {
-    grid-template-columns: 60px 1fr;
-
-    gap: .7rem;
-  }
-
 
   .crumb-section-sidebar {
-    width: 60px;
-    height: 60px;
-
-    flex-basis: 60px;
-
-    font-size: 1.35rem;
+    font-size: 3rem;
   }
-
 
   .sidebar-lab-description {
     font-size: .68rem;
   }
 
-
   .sidebar-lab-arrow {
     font-size: .6rem;
   }
 }
+
+
+/* =========================================================
+   23. AMP SIDEBAR MASK
+========================================================= */
 
 .i-amphtml-sidebar-mask {
   background: none !important;
@@ -2405,8 +1812,26 @@ color: #e8e1d4;
 }
 
 
+/* =========================================================
+   24. DESKTOP — HIDE MOBILE SIDEBAR
+========================================================= */
 
+/*
+   IMPORTANT:
+   This prevents the AMP mobile sidebar from flashing
+   briefly during desktop page load.
+*/
 
+@media (min-width: 769px) {
+
+  .ampstart-sidebar {
+    display: none !important;
+  }
+
+  .i-amphtml-sidebar-mask {
+    display: none !important;
+  }
+}
 
 
 /* =====================================
@@ -9633,8 +9058,8 @@ gap: 8px;
   }
 
   .blog-hero h1 {
-    font-size: clamp(72px, 23vw, 100px);
-    line-height: .78;
+      font-size: clamp(145px, 30vw, 210px);
+    line-height: .72;
     letter-spacing: -.075em;
   }
 }
@@ -10666,7 +10091,3 @@ font-weight: 400;
     max-width: 38ch;
   }
 }
-
-
-
-
