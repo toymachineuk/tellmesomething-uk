@@ -6,89 +6,198 @@
 
 <body>
 
-
   {{ partial "header.html" . }}
-<section class="about-editorial section">
 
-    <div class="container">
+
+  <main>
+
+    <section class="about-editorial">
+
+      <div class="container">
 
         <div class="about-editorial__grid">
 
-<div class="about-editorial__image square">
 
-    <amp-img
-        src="/img/dan2.png"
-        width="1024"
-        height="1086"
-        layout="responsive"
-        class="square">
-    </amp-img>
+          <!-- =========================================
+               LEFT — PORTRAIT + BIO
+          ========================================== -->
 
+          <div class="about-editorial__media">
 
+            <div class="about-editorial__image">
 
-  
-
-    <!-- Development -->
-  
-
-</div>
-
-            <div class="about-editorial__content">
-
-                <h2 class="about-editorial__title">
-
-                    Hi, I'm <span>Dan</span> and I am a creative lead of TMS company.
-
-                </h2>
-
-                <div class="about-editorial__text">
-
-                    <p>
-
-                        I have  an extensive background in art and design and
-                         hold a First-Class Honours Degree in Fine Art from  <a href="#">University</a>. 
-                        I get by as a  product designer, 
-                        digital publisher, boat art consultant, and music producer
-                        living between the UK and Geogia.  
-                    </p>
-
-                    <p>
-                     
-
-                        <a href="#">
-                            Drop me a line
-                        </a>
-
-                        about your project if you're interested in working with me.
-                    </p>
-
-                </div>
+              <amp-img
+                src="/img/dan2.png"
+                width="1024"
+                height="1086"
+                layout="responsive"
+                alt="Dan Holmes — Director & Creative Lead">
+              </amp-img>
 
             </div>
 
+
+            <div class="about-editorial__caption">
+
+              <span>
+                Director & Creative Lead
+              </span>
+
+              <span>
+                TMS — Tell Me Something
+              </span>
+
+            </div>
+
+
+            <div class="about-editorial__bio">
+
+              <p class="about-editorial__bio-lead">
+                I'm the creative lead and founder of TMS.
+              </p>
+
+              <p class="text__body">
+                I’ve spent over 25 years helping brands figure out what
+                they want to say and how to say it. As the founder of TMS,
+                my favourite part of the job is stepping in when a project
+                feels a bit stuck — helping shape loose ideas, finding a
+                clear creative direction, and pulling all the visual, web,
+                and sound elements together in a collaborative,
+                straightforward way.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- =========================================
+               RIGHT — INTRO + EXPERTISE
+          ========================================== -->
+
+          <div class="about-editorial__content">
+
+            <span class="text-label">
+              About TMS
+            </span>
+
+
+            <h1 class="section__title-xl about-editorial__title">
+              Hi, I'm <span>Dan.</span>
+            </h1>
+
+
+            <!-- =======================================
+                 EXPERTISE
+            ======================================== -->
+
+            <div class="about-editorial__expertise">
+
+              <span class="section__caption">
+                Core Expertise & Capabilities
+              </span>
+
+
+              <div class="about-editorial__item">
+
+                <h2 class="section__title-xxs">
+                  Creative Direction & Strategy
+                </h2>
+
+                <p class="text__sm">
+                  Shaping initial concepts, defining brand voice,
+                  and giving clear guidance when a project needs direction.
+                </p>
+
+              </div>
+
+
+              <div class="about-editorial__item">
+
+                <h2 class="section__title-xxs">
+                  Visual & Fine Art
+                </h2>
+
+                <p class="text__sm">
+                  Grounded in a First-Class Fine Art foundation,
+                  bringing strong aesthetics, colour theory and
+                  visual storytelling to digital media.
+                </p>
+
+              </div>
+
+
+              <div class="about-editorial__item">
+
+                <h2 class="section__title-xxs">
+                  Cross-Disciplinary Execution
+                </h2>
+
+                <p class="text__sm">
+                  Integrating custom web development, expert-level
+                  audio engineering and digital asset production
+                  under a single unified workflow.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <!-- =======================================
+                 CONTACT
+            ======================================== -->
+
+            <div class="about-editorial__contact">
+
+              <p class="text__body">
+                Have a project in mind?
+                <a href="#">
+                  Drop me a line
+                </a>
+                and let's talk.
+              </p>
+
+            </div>
+
+          </div>
+
         </div>
 
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer class="footer-minimal">
+
+    <div class="cta-bottom">
+
+      <p>
+        ©2026 — Site in progress
+      </p>
+
+      <p>
+        Powered by Hugo · Designed by
+
+        <a
+          href='{{ "/articles/ceo" | relURL }}'
+          target="_blank"
+          rel="noopener noreferrer">
+          D. Holmes
+        </a>
+      </p>
+
     </div>
 
-</section>
-
-<footer class="footer-minimal ">
+  </footer>
 
 
-
-         <div class="cta-bottom">
-      <p>©2026 — Site in progress</p>
-
-   <p>
-  Powered by Hugo · Designed by
-
-   
-  <a href='{{ "/articles/ceo" | relURL }}' target="_blank" rel="noopener noreferrer">
-    D. Holmes
-  </a>
-</p>
-    </div>
-
-
-
-</footer>
+</body>
+</html>
