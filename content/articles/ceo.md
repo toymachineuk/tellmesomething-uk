@@ -1,4 +1,5 @@
 ---
-title: "Daniel Holmes"
+title: "Team (CEO)"
 layout: "ceo"
+crumb: none
 ---

@@ -7018,544 +7018,6 @@ background: radial-gradient(
 }
 
 
-/* =========================================================
-   ABOUT EDITORIAL
-   TMS — FOUNDER / CREATIVE LEAD
-   ========================================================= */
-
-
-/* =========================================================
-   SECTION
-   ========================================================= */
-
-.about-editorial {
-  position: relative;
-
-  min-height: calc(100svh - 84px);
-
-  display: flex;
-  align-items: center;
-
-  overflow: hidden;
-
-  background: #f5f3f1;
-}
-
-
-/* =========================================================
-   GRID
-   ========================================================= */
-
-.about-editorial__grid {
-  display: grid;
-
-  grid-template-columns:
-    minmax(300px, 420px)
-    minmax(0, 760px);
-
-  gap: clamp(48px, 7vw, 96px);
-
-  align-items: start;
-}
-
-
-/* =========================================================
-   LEFT COLUMN
-   ========================================================= */
-
-.about-editorial__media {
-  position: relative;
-}
-
-
-/* =========================================================
-   PROFILE IMAGE
-   ========================================================= */
-
-.about-editorial__image {
-  position: relative;
-
-  width: 100%;
-  height: auto;
-
-  overflow: visible;
-}
-
-
-/* ---------------------------------------------------------
-   Decorative segmented ring
-   --------------------------------------------------------- */
-
-.about-editorial__image::before {
-  content: "";
-
-  position: absolute;
-
-  inset: -8px;
-
-  border-radius: 50%;
-
-  background: conic-gradient(
-    #c78a35 0deg 72deg,
-    #2f6d5f 72deg 144deg,
-    #bf4f35 144deg 216deg,
-    #6d4ba8 216deg 288deg,
-    #234d91 288deg 360deg
-  );
-
-  -webkit-mask:
-    radial-gradient(
-      circle,
-      transparent 90%,
-      #000 91%
-    );
-
-  mask:
-    radial-gradient(
-      circle,
-      transparent 90%,
-      #000 91%
-    );
-
-  z-index: 0;
-}
-
-
-/* ---------------------------------------------------------
-   Portrait
-   --------------------------------------------------------- */
-
-.about-editorial__image amp-img {
-  position: relative;
-
-  z-index: 1;
-
-  display: block;
-
-  width: 100%;
-}
-
-.about-editorial__image img {
-  display: block;
-
-  width: 100%;
-  height: auto;
-
-  border-radius: 50%;
-}
-
-
-/* ---------------------------------------------------------
-   Optional square modifier
-   --------------------------------------------------------- */
-
-.about-editorial__image.square amp-img,
-.about-editorial__image.square img {
-  border-radius: 0;
-}
-
-
-/* =========================================================
-   IMAGE CAPTION
-   ========================================================= */
-
-.about-editorial__caption {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: flex-start;
-
-  gap: var(--space-md);
-
-  margin-top: var(--space-sm);
-
-  font-size: 10px;
-  line-height: 1.4;
-
-  letter-spacing: .1em;
-  text-transform: uppercase;
-
-  color: rgba(0, 0, 0, .55);
-}
-
-.about-editorial__caption span:last-child {
-  text-align: right;
-}
-
-
-/* =========================================================
-   BIO UNDER IMAGE
-   ========================================================= */
-
-.about-editorial__bio {
-  max-width: 420px;
-
-  margin-top: var(--space-lg);
-}
-
-
-/* ---------------------------------------------------------
-   Bio lead
-   --------------------------------------------------------- */
-
-.about-editorial__bio-lead {
-  max-width: 24ch;
-
-  margin: 0 0 var(--space-md);
-
-  font-family: var(--font-sans);
-
-  font-size: clamp(20px, 1.8vw, 26px);
-  line-height: 1.2;
-
-  letter-spacing: -.025em;
-
-  font-weight: 500;
-
-  color: #292925;
-}
-
-
-/* ---------------------------------------------------------
-   Bio body
-   --------------------------------------------------------- */
-
-.about-editorial__bio .text__body {
-  max-width: 48ch;
-
-  margin: 0;
-
-  color: rgba(0, 0, 0, .68);
-}
-
-
-/* =========================================================
-   RIGHT COLUMN
-   ========================================================= */
-
-.about-editorial__content {
-  max-width: 760px;
-
-  padding-top: var(--space-sm);
-}
-
-
-/* =========================================================
-   TITLE
-   ========================================================= */
-
-.about-editorial__title {
-  max-width: 9ch;
-}
-
-.about-editorial__title span {
-  color: #6f6f3e;
-}
-
-
-/* =========================================================
-   EXPERTISE
-   ========================================================= */
-
-.about-editorial__expertise {
-  margin-top: var(--space-xl);
-
-  border-top: 1px solid rgba(0, 0, 0, .16);
-}
-
-
-/* ---------------------------------------------------------
-   Expertise label
-   --------------------------------------------------------- */
-
-.about-editorial__expertise > .section__caption {
-  margin-top: var(--space-sm);
-}
-
-
-/* =========================================================
-   EXPERTISE ITEMS
-   ========================================================= */
-
-.about-editorial__item {
-  display: grid;
-
-  grid-template-columns:
-    minmax(190px, .8fr)
-    minmax(0, 1fr);
-
-  gap: var(--space-lg);
-
-  padding-block: var(--space-md);
-
-  border-top: 1px solid rgba(0, 0, 0, .1);
-}
-
-
-/* First item */
-
-.about-editorial__item:first-of-type {
-  margin-top: var(--space-sm);
-}
-
-
-/* Heading */
-
-.about-editorial__item h2 {
-  max-width: 18ch;
-}
-
-
-/* Description */
-
-.about-editorial__item p {
-  max-width: 42ch;
-
-  margin: 0;
-
-  color: rgba(0, 0, 0, .65);
-}
-
-
-/* =========================================================
-   CONTACT
-   ========================================================= */
-
-.about-editorial__contact {
-  margin-top: var(--space-lg);
-
-  padding-top: var(--space-md);
-
-  border-top: 1px solid rgba(0, 0, 0, .16);
-}
-
-.about-editorial__contact p {
-  max-width: 32ch;
-
-  margin: 0;
-}
-
-.about-editorial__contact a {
-  color: #6f6f3e;
-
-  border-bottom: 1px solid currentColor;
-
-  transition:
-    color .2s ease,
-    border-color .2s ease;
-}
-
-.about-editorial__contact a:hover {
-  color: #7a1f2b;
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 1024px) {
-
-  .about-editorial {
-    min-height: calc(100svh - 84px);
-  }
-
-
-  .about-editorial__grid {
-    grid-template-columns:
-      minmax(240px, .8fr)
-      minmax(0, 1.2fr);
-
-    gap: clamp(40px, 6vw, 64px);
-  }
-
-
-  .about-editorial__content {
-    padding-top: 0;
-  }
-
-
-  .about-editorial__bio {
-    margin-top: var(--space-md);
-  }
-
-
-  .about-editorial__item {
-    grid-template-columns: 1fr;
-
-    gap: var(--space-sm);
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-  .about-editorial {
-    min-height: auto;
-
-    display: block;
-
-    padding-block: var(--space-lg);
-  }
-
-
-  /* -------------------------------------------------------
-     Grid
-     ------------------------------------------------------- */
-
-  .about-editorial__grid {
-    display: block;
-  }
-
-
-  /* -------------------------------------------------------
-     Image
-     ------------------------------------------------------- */
-
-  .about-editorial__media {
-    margin-bottom: var(--space-xl);
-  }
-
-
-  .about-editorial__image {
-    width: min(100%, 420px);
-
-    margin-inline: auto;
-  }
-
-
-  /* -------------------------------------------------------
-     Caption
-     ------------------------------------------------------- */
-
-  .about-editorial__caption {
-    font-size: 9px;
-  }
-
-
-  /* -------------------------------------------------------
-     Bio
-     ------------------------------------------------------- */
-
-  .about-editorial__bio {
-    max-width: 100%;
-
-    margin-top: var(--space-lg);
-  }
-
-
-  .about-editorial__bio-lead {
-    max-width: 28ch;
-
-    font-size: 20px;
-  }
-
-
-  /* -------------------------------------------------------
-     Content
-     ------------------------------------------------------- */
-
-  .about-editorial__content {
-    max-width: 100%;
-
-    padding-top: 0;
-  }
-
-
-  /* -------------------------------------------------------
-     Title
-     ------------------------------------------------------- */
-
-  .about-editorial__title {
-    max-width: 9ch;
-  }
-
-
-  /* -------------------------------------------------------
-     Expertise
-     ------------------------------------------------------- */
-
-  .about-editorial__expertise {
-    margin-top: var(--space-xl);
-  }
-
-
-  .about-editorial__item {
-    display: block;
-
-    padding-block: var(--space-md);
-  }
-
-
-  .about-editorial__item h2 {
-    margin-bottom: var(--space-sm);
-  }
-
-
-  .about-editorial__item p {
-    max-width: 48ch;
-  }
-
-
-  /* -------------------------------------------------------
-     Contact
-     ------------------------------------------------------- */
-
-  .about-editorial__contact {
-    margin-top: var(--space-xl);
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-  .about-editorial {
-    padding-block: var(--space-md);
-  }
-
-
-  .about-editorial__image {
-    width: min(100%, 340px);
-  }
-
-
-  .about-editorial__caption {
-    gap: var(--space-sm);
-
-    font-size: 8px;
-  }
-
-
-  .about-editorial__bio {
-    margin-top: var(--space-md);
-  }
-
-
-  .about-editorial__bio-lead {
-    font-size: 19px;
-  }
-
-
-  .about-editorial__expertise {
-    margin-top: var(--space-lg);
-  }
-
-
-  .about-editorial__item {
-    padding-block: var(--space-sm);
-  }
-
-}
 
 /* ==========================================
    PROFILE POINTS
@@ -10565,4 +10027,638 @@ font-weight: 400;
   .closing-cta--blue .closing-cta__content p {
     max-width: 38ch;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   ABOUT / CEO
+   TMS — FOUNDER / CREATIVE LEAD
+   ========================================================= */
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.about-editorial {
+  padding-block:
+    clamp(48px, 7vw, 96px)
+    clamp(80px, 10vw, 140px);
+
+  background: #f5f3f1;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.about-editorial__hero {
+  margin-bottom: clamp(56px, 8vw, 100px);
+}
+
+
+/* ---------------------------------------------------------
+   Hero meta
+   --------------------------------------------------------- */
+
+.about-editorial__hero-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 16px;
+
+  border-bottom: 1px solid rgba(0, 0, 0, .14);
+}
+
+.about-editorial__hero-index {
+  font-size: .72rem;
+  line-height: 1;
+
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  color: #8a8f98;
+}
+
+
+/* ---------------------------------------------------------
+   Hero main
+   --------------------------------------------------------- */
+
+.about-editorial__hero-main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(220px, 280px);
+
+  gap: clamp(40px, 8vw, 120px);
+
+  align-items: end;
+
+  padding-top: clamp(48px, 7vw, 90px);
+}
+
+
+/* ---------------------------------------------------------
+   Main title
+   --------------------------------------------------------- */
+
+.about-editorial__hero-main h1 {
+  margin: 0;
+
+  font-family: var(--font-sans);
+
+  font-size: clamp(80px, 11vw, 160px);
+  line-height: .78;
+
+  letter-spacing: -.075em;
+  font-weight: 900;
+
+  color: #292925;
+}
+
+.about-editorial__hero-main h1 span {
+  color: #6f6f3e;
+}
+
+
+/* ---------------------------------------------------------
+   Hero aside
+   --------------------------------------------------------- */
+
+.about-editorial__hero-aside {
+  padding-bottom: 6px;
+}
+
+.about-editorial__hero-aside p {
+  max-width: 24ch;
+
+  margin: 0;
+
+  font-size: clamp(1rem, 1.1vw, 1.15rem);
+  line-height: 1.45;
+
+  color: rgba(0, 0, 0, .62);
+}
+
+.about-editorial__hero-aside p + p {
+  margin-top: 14px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT BLOCK
+   ========================================================= */
+
+.about-editorial__grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(320px, .8fr);
+
+  gap: clamp(56px, 8vw, 120px);
+
+  align-items: start;
+
+  padding: clamp(40px, 6vw, 80px);
+
+  background: #252b29;
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   LEFT — CONTENT
+   ========================================================= */
+
+.about-editorial__content {
+  width: 100%;
+  max-width: none;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.about-editorial__intro {
+  width: 100%;
+}
+
+.about-editorial__intro .section__caption {
+  display: block;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, .55);
+}
+
+.about-editorial__intro-text {
+  max-width: 46ch;
+
+  margin: 18px 0 0;
+
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  line-height: 1.5;
+
+  letter-spacing: -.015em;
+
+  color: rgba(255, 255, 255, .78);
+}
+
+
+/* =========================================================
+   EXPERTISE
+   ========================================================= */
+
+.about-editorial__expertise {
+  width: 100%;
+
+  margin-top: clamp(48px, 6vw, 80px);
+}
+
+
+/* ---------------------------------------------------------
+   Expertise item
+   --------------------------------------------------------- */
+
+.about-editorial__item {
+  display: grid;
+
+  grid-template-columns:
+    minmax(200px, .75fr)
+    minmax(0, 1fr);
+
+  gap: clamp(24px, 5vw, 80px);
+
+  padding-block: 26px;
+
+  border-top: 1px solid rgba(255, 255, 255, .16);
+}
+
+
+/* ---------------------------------------------------------
+   Expertise heading
+   --------------------------------------------------------- */
+
+.about-editorial__item h2 {
+  max-width: 22ch;
+
+  margin: 0;
+
+  font-family: var(--font-sans);
+
+  font-size: clamp(18px, 1.3vw, 21px);
+  line-height: 1.25;
+
+  letter-spacing: -.02em;
+  font-weight: 600;
+
+  color: #fff;
+}
+
+
+/* ---------------------------------------------------------
+   Expertise description
+   --------------------------------------------------------- */
+
+.about-editorial__item p {
+  max-width: 44ch;
+
+  margin: 0;
+
+  font-size: .95rem;
+  line-height: 1.55;
+
+  color: rgba(255, 255, 255, .64);
+}
+
+
+/* =========================================================
+   RIGHT — PORTRAIT
+   ========================================================= */
+
+.about-editorial__media {
+  width: min(100%, 460px);
+
+  margin-left: auto;
+}
+
+
+/* ---------------------------------------------------------
+   Image
+   --------------------------------------------------------- */
+
+.about-editorial__image {
+  width: 100%;
+}
+
+.about-editorial__image amp-img {
+  display: block;
+
+  width: 100%;
+}
+
+.about-editorial__image img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  border-radius: 2px;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.about-editorial__contact {
+  margin-top: 32px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, .16);
+}
+
+.about-editorial__contact p {
+  max-width: 30ch;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, .7);
+}
+
+.about-editorial__contact a {
+  color: #a7a676;
+
+  border-bottom: 1px solid currentColor;
+
+  transition:
+    color .2s ease,
+    border-color .2s ease;
+}
+
+.about-editorial__contact a:hover {
+  color: #d4d39a;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .about-editorial__hero-main {
+    grid-template-columns:
+      minmax(0, 1fr)
+      220px;
+
+    gap: 48px;
+  }
+
+
+  .about-editorial__hero-main h1 {
+    font-size: clamp(72px, 10vw, 120px);
+  }
+
+
+  .about-editorial__grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(260px, .75fr);
+
+    gap: 48px;
+
+    padding: clamp(32px, 5vw, 56px);
+  }
+
+
+  .about-editorial__item {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .about-editorial {
+    padding-block:
+      var(--space-lg)
+      var(--space-xl);
+  }
+
+
+  /* -------------------------------------------------------
+     Hero
+     ------------------------------------------------------- */
+
+  .about-editorial__hero {
+    margin-bottom: 56px;
+  }
+
+
+  .about-editorial__hero-meta {
+    padding-bottom: 14px;
+  }
+
+
+  .about-editorial__hero-main {
+    display: block;
+
+    padding-top: 40px;
+  }
+
+
+  .about-editorial__hero-main h1 {
+    font-size: clamp(64px, 17vw, 100px);
+    line-height: .8;
+  }
+
+
+  .about-editorial__hero-aside {
+    padding-top: 28px;
+  }
+
+
+  .about-editorial__hero-aside p {
+    max-width: 32ch;
+
+    font-size: 1rem;
+  }
+
+
+  /* -------------------------------------------------------
+     Main block
+     ------------------------------------------------------- */
+
+  .about-editorial__grid {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 56px;
+
+    padding: 32px 24px;
+  }
+
+
+  /* -------------------------------------------------------
+     Content
+     ------------------------------------------------------- */
+
+  .about-editorial__content {
+    order: 1;
+  }
+
+
+  .about-editorial__intro-text {
+    max-width: 42ch;
+
+    font-size: 1.05rem;
+  }
+
+
+  .about-editorial__expertise {
+    margin-top: 48px;
+  }
+
+
+  .about-editorial__item {
+    display: block;
+
+    padding-block: 22px;
+  }
+
+
+  .about-editorial__item h2 {
+    margin-bottom: 10px;
+  }
+
+
+  .about-editorial__item p {
+    max-width: 48ch;
+  }
+
+
+  /* -------------------------------------------------------
+     Portrait
+     ------------------------------------------------------- */
+
+  .about-editorial__media {
+    order: 2;
+
+    width: min(100%, 520px);
+
+    margin-inline: auto;
+  }
+
+
+  .about-editorial__contact {
+    margin-top: 28px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .about-editorial {
+    padding-block:
+      var(--space-md)
+      var(--space-xl);
+  }
+
+
+  /* Hero */
+
+  .about-editorial__hero-main {
+    padding-top: 34px;
+  }
+
+
+  .about-editorial__hero-main h1 {
+    font-size: clamp(58px, 18vw, 82px);
+  }
+
+
+  .about-editorial__hero-aside {
+    padding-top: 24px;
+  }
+
+
+  .about-editorial__hero-aside p {
+    font-size: .95rem;
+  }
+
+
+  /* Dark block */
+
+  .about-editorial__grid {
+    gap: 44px;
+
+    padding: 28px 20px;
+  }
+
+
+  /* Intro */
+
+  .about-editorial__intro-text {
+    font-size: 1rem;
+  }
+
+
+  /* Expertise */
+
+  .about-editorial__expertise {
+    margin-top: 40px;
+  }
+
+
+  .about-editorial__item {
+    padding-block: 20px;
+  }
+
+
+  .about-editorial__item h2 {
+    font-size: 18px;
+  }
+
+
+  .about-editorial__item p {
+    font-size: .9rem;
+  }
+
+
+  /* Contact */
+
+  .about-editorial__contact {
+    margin-top: 24px;
+  }
+
 }
