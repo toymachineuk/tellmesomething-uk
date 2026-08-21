@@ -531,8 +531,8 @@ background:#fff;
 
 
 .section__circles--development {
-  --circle-fill: #d8b4ff;
-  --circle-border: #b98cdb;
+  --circle-fill: #e8c8aa;
+  --circle-border: #c99f7b;
 }
 
 .section__circles--studio {
@@ -541,13 +541,13 @@ background:#fff;
 }
 
 .section__circles--pulseframes {
---circle-fill: #fdce2a;
-  --circle-border: #fdab2b;
+  --circle-fill: #f4d98a;
+  --circle-border: #d9aa4a;
 }
 
 .section__circles--casestudies {
-  --circle-fill: #60dcf6;
-  --circle-border: #49cbe5;
+ --circle-fill: #9dd9e6;
+  --circle-border: #55b8cc;
 }
 
 
