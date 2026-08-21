@@ -10197,7 +10197,9 @@ font-weight: 400;
    ========================================================= */
 
 .about-editorial__hero {
-  margin-bottom: clamp(56px, 8vw, 100px);
+ margin-bottom: clamp(-24px, -2vw, -10px);
+   z-index: 2;
+     position: relative;
 }
 
 
@@ -10312,6 +10314,8 @@ font-weight: 400;
   background: #252b29;
 
   color: #fff;
+    position: relative;
+  z-index: 1;
 }
 
 
@@ -10549,7 +10553,7 @@ font-weight: 400;
      ------------------------------------------------------- */
 
   .about-editorial__hero {
-    margin-bottom: 56px;
+     margin-bottom: -16px;
   }
 
   .about-editorial__hero-meta {
