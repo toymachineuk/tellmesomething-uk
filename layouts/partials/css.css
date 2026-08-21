@@ -178,41 +178,71 @@ background:#fff;
   max-width: 46ch;
 }
 
+/* Medium body copy */
 
-/* Small body copy */
+.text__md {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: -.01em;
+  font-weight: 400;
+  max-width: 46ch;
+}
+
+
+/* Large body copy */
+:root {
+  --text__lg: 18px;
+  --text__md: 16px;
+  --text__sm: 14px;
+  --text__xs: 13px;
+  --text__xxs: 12px;
+}
+
+.text__lg {
+  font-family: var(--font-sans);
+  font-size: var(--text__lg);
+  line-height: 1.65;
+  letter-spacing: -.01em;
+  font-weight: 400;
+  max-width: 44ch;
+}
+
+.text__md {
+  font-family: var(--font-sans);
+  font-size: var(--text__md);
+  line-height: 1.65;
+  letter-spacing: -.01em;
+  font-weight: 400;
+  max-width: 46ch;
+}
+
 .text__sm {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: var(--text__sm);
   line-height: 1.55;
   letter-spacing: -.005em;
   font-weight: 400;
   max-width: 48ch;
 }
 
-
-/* Extra-small supporting copy */
 .text__xs {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: var(--text__xs);
   line-height: 1.5;
   letter-spacing: 0;
   font-weight: 400;
   max-width: 48ch;
 }
 
-
-/* Micro copy */
 .text__xxs {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: var(--text__xxs);
   line-height: 1.45;
   letter-spacing: .005em;
   font-weight: 400;
   max-width: 50ch;
-
 }
-
-
 
 /* =====================================
    DESCRIPTION / SECONDARY COPY
