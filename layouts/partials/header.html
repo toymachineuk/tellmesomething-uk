@@ -51,7 +51,17 @@ alt="logo">
 
 </header>
 {{ if ne .Params.crumb "none" }}
-<div class="current-location site-shell {{ .Params.crumb }}{{ if .IsHome }} home{{ end }}">
+<div class="current-location site-shell {{ .Params.crumb }}{{ if .IsHome }} home{{ end }}{{ if eq .RelPermalink "/post/" }} post{{ end }}">
+
+  {{ if eq .RelPermalink "/post/" }}
+
+    <span class="current">Lab</span>
+
+  
+{{ else }}
+  <!-- your existing breadcrumb code here -->
+{{ end }}
+  
    <a href="/" class="crumb-home" aria-label="Home">
     <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
          stroke="currentColor" stroke-width="2"
