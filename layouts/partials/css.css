@@ -36,6 +36,7 @@ background:#fff;
 @media (max-width: 1024px) {
   .site-shell {
     width: 100%;
+
   }
 }
 
@@ -7323,6 +7324,7 @@ background: radial-gradient(
     flex-direction: column;
     gap: 56px;
     padding: 32px 24px;
+    
     }
 
       .about-editorial__media {
@@ -7331,11 +7333,7 @@ background: radial-gradient(
     margin-inline: auto;
   }
 
-    .about-editorial__image {
-      width: 320px;
-    height: auto;
-        margin: 2rem auto;
-    }
+
 
     /* Smaller icons */
 
@@ -7425,6 +7423,7 @@ background: radial-gradient(
   .about-editorial__grid {
     gap: 44px;
     padding: 28px 20px;
+    margin: 0 var(--space-sm);
   }
 
   .about-editorial__media {
@@ -10312,7 +10311,7 @@ font-weight: 400;
     minmax(0, 1fr)
     minmax(220px, 280px);
 
-  gap: clamp(40px, 8vw, 120px);
+ 
 
   align-items: end;
 
@@ -10335,6 +10334,10 @@ font-weight: 400;
   letter-spacing: -.075em;
   font-weight: 900;
  color: #e8c9a8;
+ font-size: clamp(90px,16vw,240px);
+  font-weight: 900;
+  margin: 0;
+  line-height: 0.72;
 }
 
 
@@ -10380,8 +10383,7 @@ font-weight: 400;
   align-items: start;
 
   padding: clamp(40px, 6vw, 80px);
- background: #651f2b;
-  color: #f5f3f1;
+ 
     position: relative;
   z-index: 1;
 }
@@ -10405,18 +10407,13 @@ font-weight: 400;
   width: 100%;
 }
 
-.about-editorial__intro .text-label {
-color: #e8c9a8;
-}
+
 
 .about-editorial__intro-text {
   max-width: 46ch;
 
 
 
-  color: rgba(255, 255, 255, .78);
-
-    color: #e8c9a8;
 }
 
 
@@ -10456,18 +10453,11 @@ color: #e8c9a8;
 
 .about-editorial__item h3 {
   max-width: 22ch;
-color: #e8c9a8;
+
 
 }
 
 
-/* ---------------------------------------------------------
-   Expertise description
-   --------------------------------------------------------- */
-
-.about-editorial__item p {
-color: #e8c9a8;
-}
 
 
 /* =========================================================
@@ -10525,15 +10515,7 @@ color: #e8c9a8;
   color: rgba(255, 255, 255, .7);
 }
 
-.about-editorial__contact a {
-  color: #a7a676;
 
-  border-bottom: 1px solid currentColor;
-
-  transition:
-    color .2s ease,
-    border-color .2s ease;
-}
 
 .about-editorial__contact a:hover {
   color: #d4d39a;
@@ -10592,6 +10574,10 @@ color: #e8c9a8;
       var(--space-xl);
   }
 
+  .about-editorial__intro .text-label {
+display:none;
+}
+
   /* -------------------------------------------------------
      Hero
      ------------------------------------------------------- */
@@ -10607,8 +10593,8 @@ color: #e8c9a8;
   }
 
   .about-editorial__hero-main h1 {
-   font-size: clamp(72px, 14vw, 110px);
-    line-height: .8;
+  font-size: clamp(68px, 24vw, 96px);
+    line-height: 0.76;
     letter-spacing: -.08em;
   }
 
@@ -10633,7 +10619,7 @@ color: #e8c9a8;
     order: 1;
 
 
-        width: min(100%, 340px);
+        width: 100%;
     margin-inline: auto;
   }
 
