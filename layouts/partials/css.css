@@ -607,7 +607,12 @@ font-weight:inherit;
   opacity: 0.65;
 }
 a{
-text-decoration:none;
+    text-decoration-style: solid;
+    text-decoration-thickness: auto;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color .2s ease, opacity .2s ease;
 color:inherit;
 }
 
@@ -680,7 +685,9 @@ color:inherit;
 
   z-index: 1000;
 }
-
+.ampstart-headerbar  a {
+  text-decoration:none;
+}
 
 /* ==========================================
    BREADCRUMB
@@ -1011,6 +1018,67 @@ border-radius: 0 999px 999px 0;
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ampstart-sidebar {
+  height: 100vh;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #eeeae1;
+}
+
 /* ==========================================
    HAMBURGER
 ========================================== */
@@ -1065,35 +1133,46 @@ border-radius: 0 999px 999px 0;
 
 
 /* =========================================================
-   TMS SIDEBAR
-   Quiet editorial
-   ========================================================= */
-
-
-/* =========================================================
-   SIDEBAR
-   ========================================================= */
-
-.ampstart-sidebar {
-  background: #eeeae1;
-  color: #242321;
-}
-
-/* =========================================================
    SIDEBAR HERO
    ========================================================= */
 
 .ampstart-sidebar .sidebar-hero {
   position: relative;
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   width: 100%;
   height: 90px;
   min-height: 90px;
 
+  padding: 0 20px;
+
   box-sizing: border-box;
-  overflow: hidden;
 
   background: #3d2924;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   LOGO WRAPPER
+   ========================================================= */
+
+.ampstart-sidebar .sidebar-head {
+  position: static;
+
+  display: flex;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  transform: none;
+
+  z-index: 2;
 }
 
 
@@ -1101,49 +1180,30 @@ border-radius: 0 999px 999px 0;
    LOGO
    ========================================================= */
 
-.ampstart-sidebar .sidebar-head {
-  position: absolute;
-
-  left: 18px;
-  top: 50%;
-
-  z-index: 10;
-
-  transform: translateY(-50%);
-}
-
 .ampstart-sidebar .sidebar__logo {
   display: block;
 
   width: 54px;
   height: 54px;
 
-  overflow: hidden;
+  margin: 0;
+  padding: 0;
+
+  flex: 0 0 54px;
 
   border-radius: 50%;
+  overflow: hidden;
 
   background: #000;
 }
 
-.ampstart-sidebar .sidebar__logo amp-img {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-}
-
 
 /* =========================================================
-   CLOSE BUTTON
+   CLOSE
    ========================================================= */
 
 .ampstart-sidebar .sidebar-close {
-  position: absolute;
-
-  top: 50%;
-  right: 18px;
-
-  z-index: 10;
+  position: static;
 
   display: grid;
   place-items: center;
@@ -1151,9 +1211,14 @@ border-radius: 0 999px 999px 0;
   width: 32px;
   height: 32px;
 
+  margin: 0;
   padding: 0;
 
-  transform: translateY(-50%);
+  flex: 0 0 32px;
+
+  transform: none;
+
+  z-index: 2;
 
   color: #f3eee5;
 
@@ -1162,8 +1227,29 @@ border-radius: 0 999px 999px 0;
   line-height: 1;
 
   text-decoration: none;
+}
 
-  cursor: pointer;
+
+/* =========================================================
+   HERO DECORATION
+   ========================================================= */
+
+.ampstart-sidebar .sidebar-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  right: -115px;
+  top: -105px;
+
+  background: rgba(255,255,255,.045);
+
+  transform: rotate(-32deg);
+
+  pointer-events: none;
 }
 
 
@@ -1174,24 +1260,10 @@ border-radius: 0 999px 999px 0;
 @media (min-width: 481px) {
 
   .ampstart-sidebar .sidebar-hero {
-    height: 90px;
-    min-height: 90px;
+    padding-inline: 22px;
   }
 
-  .ampstart-sidebar .sidebar-head {
-    left: 22px;
-  }
-
-  .ampstart-sidebar .sidebar__logo {
-    width: 54px;
-    height: 54px;
-  }
-
-  .ampstart-sidebar .sidebar-close {
-    right: 20px;
-  }
 }
-
 
 /* =========================================================
    NAVIGATION
@@ -1209,6 +1281,9 @@ border-radius: 0 999px 999px 0;
   overflow: hidden;
 
   background: #eeeae1;
+    min-height: calc(100vh - 90px);
+
+  box-sizing: border-box;
 }
 
 
@@ -1450,7 +1525,7 @@ border-radius: 0 999px 999px 0;
 
 .ampstart-sidebar .sidebar-lab {
   width: 100%;
-
+ flex: 0 0 auto;
   margin: 0;
   padding: 0;
 }
@@ -1650,10 +1725,7 @@ border-radius: 0 999px 999px 0;
 
 @media (max-height: 700px) {
 
-  .ampstart-sidebar .sidebar-hero {
-    height: 105px;
-    min-height: 105px;
-  }
+
 
   .ampstart-sidebar .sidebar-home-link,
   .ampstart-sidebar .sidebar-nav-link {
@@ -1706,10 +1778,6 @@ border-radius: 0 999px 999px 0;
     min-height: 78px;
   }
 
-  .ampstart-sidebar .sidebar-head {
-    left: 18px;
-    bottom: 14px;
-  }
 
   .ampstart-sidebar .sidebar__logo {
     width: 46px;
@@ -1777,8 +1845,7 @@ border-radius: 0 999px 999px 0;
 
 
   .ampstart-sidebar .sidebar-close {
-    top: 10px;
-    right: 12px;
+ 
 
     width: 30px;
     height: 30px;
@@ -1786,10 +1853,7 @@ border-radius: 0 999px 999px 0;
     font-size: 23px;
   }
 
-  .ampstart-sidebar .sidebar-head {
-    left: 18px;
-    bottom: 14px;
-  }
+
 
   .ampstart-sidebar .sidebar__logo {
     width: 54px;
@@ -4753,15 +4817,7 @@ overflow:hidden;
 }
 
 
-@media (max-width: 768px) {
 
-.left-title .base-intro__block {
-
-padding:1.5rem;
-
-
-}
-}
 
 .ethics-video{
 
@@ -7348,7 +7404,7 @@ background: radial-gradient(
     }
 
     .about-editorial__content {
-        text-align: center;
+      
         margin: auto;
          order: 2;
     }
@@ -8210,9 +8266,7 @@ width: 100%;
     margin-bottom: 0;
   }
 
-  .principles__intro-left {
-    gap: 1.5rem;
-  }
+
 
 
   /* Cards stack vertically */
@@ -8437,7 +8491,7 @@ width: 100%;
 @media (max-width:768px){
 
     .origin-card{
-        padding:2rem;
+        padding:0;
     }
 
     .origin-card::after{
@@ -10206,7 +10260,7 @@ font-weight: 400;
     clamp(48px, 7vw, 96px)
     clamp(80px, 10vw, 140px);
 
-  background: #f5f3f1;
+  background: #e8e1d4;
   overflow: hidden;
 }
 
@@ -10280,13 +10334,10 @@ font-weight: 400;
 
   letter-spacing: -.075em;
   font-weight: 900;
-
-  color: #292925;
+ color: #e8c9a8;
 }
 
-.about-editorial__hero-main h1 span {
-  color: #6f6f3e;
-}
+
 
 
 /* ---------------------------------------------------------
@@ -10329,10 +10380,8 @@ font-weight: 400;
   align-items: start;
 
   padding: clamp(40px, 6vw, 80px);
-
-  background: #252b29;
-
-  color: #fff;
+ background: #651f2b;
+  color: #f5f3f1;
     position: relative;
   z-index: 1;
 }
@@ -10356,25 +10405,18 @@ font-weight: 400;
   width: 100%;
 }
 
-.about-editorial__intro .section__caption {
-  display: block;
-
-  margin: 0;
-
-  color: rgba(255, 255, 255, .55);
+.about-editorial__intro .text-label {
+color: #e8c9a8;
 }
 
 .about-editorial__intro-text {
   max-width: 46ch;
 
-  margin: 18px 0 0;
 
-  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
-  line-height: 1.5;
-
-  letter-spacing: -.015em;
 
   color: rgba(255, 255, 255, .78);
+
+    color: #e8c9a8;
 }
 
 
@@ -10412,20 +10454,10 @@ font-weight: 400;
    Expertise heading
    --------------------------------------------------------- */
 
-.about-editorial__item h2 {
+.about-editorial__item h3 {
   max-width: 22ch;
+color: #e8c9a8;
 
-  margin: 0;
-
-  font-family: var(--font-sans);
-
-  font-size: clamp(18px, 1.3vw, 21px);
-  line-height: 1.25;
-
-  letter-spacing: -.02em;
-  font-weight: 600;
-
-  color: #fff;
 }
 
 
@@ -10434,14 +10466,7 @@ font-weight: 400;
    --------------------------------------------------------- */
 
 .about-editorial__item p {
-  max-width: 44ch;
-
-  margin: 0;
-
-  font-size: .95rem;
-  line-height: 1.55;
-
-  color: rgba(255, 255, 255, .64);
+color: #e8c9a8;
 }
 
 
@@ -10571,9 +10596,6 @@ font-weight: 400;
      Hero
      ------------------------------------------------------- */
 
-  .about-editorial__hero {
-     margin-bottom: -16px;
-  }
 
   .about-editorial__hero-meta {
     padding-bottom: 14px;
@@ -10585,8 +10607,8 @@ font-weight: 400;
   }
 
   .about-editorial__hero-main h1 {
-    font-size: clamp(82px, 21vw, 120px);
-    line-height: .72;
+   font-size: clamp(72px, 14vw, 110px);
+    line-height: .8;
     letter-spacing: -.08em;
   }
 
@@ -10679,12 +10701,13 @@ font-weight: 400;
   /* Hero */
 
   .about-editorial__hero-main {
-    padding-top: 34px;
+   padding-top: var(--space-md);
   }
 
 
   .about-editorial__hero-main h1 {
-    font-size: clamp(58px, 18vw, 82px);
+    font-size: clamp(88px, 22vw, 102px);
+    line-height: .78;
   }
 
 
