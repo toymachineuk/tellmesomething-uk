@@ -120,7 +120,7 @@ background:#fff;
   line-height: 1.1;
   letter-spacing: -.01em;
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 var(--space-md);
 }
 
 
@@ -264,10 +264,17 @@ background:#fff;
     width:60px;
     height:2px;
     background:rgba(36, 7, 18, 0.82);
-    margin:2rem 0 1.5rem;
+    margin: var(--space-sm) 0 var(--space-md);
 }
 
+.text-divider--white {
+      width:60px;
+    height:2px;
 
+    margin: var(--space-sm) 0 var(--space-md);
+
+   background: white;
+}
 
 
 
@@ -3919,6 +3926,7 @@ display:block;
   font-weight: 400;
   letter-spacing: -0.01em;
   color: rgba(36, 7, 18, 0.82);
+  margin-bottom:var(--space-md);
 }
 
 @media (max-width: 768px) {
@@ -10279,15 +10287,7 @@ font-weight: 400;
    Hero meta
    --------------------------------------------------------- */
 
-.about-editorial__hero-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  padding-bottom: 16px;
-
-  border-bottom: 1px solid rgba(0, 0, 0, .14);
-}
 
 .about-editorial__hero-index {
   font-size: .72rem;
@@ -10333,12 +10333,14 @@ font-weight: 400;
 
   letter-spacing: -.075em;
   font-weight: 900;
- color: #e8c9a8;
+ color: #60dcf6;
  font-size: clamp(90px,16vw,240px);
   font-weight: 900;
   margin: 0;
   line-height: 0.72;
 }
+
+
 
 
 
@@ -10372,19 +10374,14 @@ font-weight: 400;
    ========================================================= */
 
 .about-editorial__grid {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.2fr)
-    minmax(320px, .8fr);
-
-  gap: clamp(56px, 8vw, 120px);
-
+ display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr);
+  column-gap: clamp(56px, 8vw, 120px);
+  row-gap: 0;
   align-items: start;
 
   padding: clamp(40px, 6vw, 80px);
- 
-    position: relative;
+  position: relative;
   z-index: 1;
 }
 
@@ -10522,6 +10519,32 @@ font-weight: 400;
 }
 
 
+
+@media (min-width: 769px) {
+  .about-editorial__content {
+ 
+      grid-column: 1;
+  grid-row: 1 / span 2;
+  }
+
+  .about-editorial__media {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .about-editorial__contact {
+    grid-column: 2;
+    grid-row: 2;
+
+    width: 100%;
+    margin-top: 0;
+    padding-top: var(--space-xs);
+  }
+}
+
+
+
+
 /* =========================================================
    TABLET
    ========================================================= */
@@ -10573,6 +10596,12 @@ font-weight: 400;
       var(--space-lg)
       var(--space-xl);
   }
+
+  .about-editorial__hero {
+  margin-bottom: -16px;
+  z-index: 2;
+  position: relative;
+}
 
   .about-editorial__intro .text-label {
 display:none;
