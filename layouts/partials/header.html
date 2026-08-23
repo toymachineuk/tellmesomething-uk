@@ -1,314 +1,415 @@
-  <!-- Start Navbar -->
+<!-- Start Navbar -->
 
-  <header class="site-shell ampstart-headerbar{{ if not .IsHome }} has-breadcrumb{{ end }}">
+<header class="site-shell ampstart-headerbar{{ if not .IsHome }} has-breadcrumb{{ end }}">
+
   <!-- Logo left -->
-
   <a href="/" class="logo">
-  
     <amp-img
-src="/img/logo-tms.png"
-width="120"
-height="40"
-layout="intrinsic"
-class=""
-alt="logo">
-</amp-img>
+      src="/img/logo-tms.png"
+      width="120"
+      height="40"
+      layout="intrinsic"
+      alt="logo">
+    </amp-img>
   </a>
 
   <!-- Nav + CTA wrapper -->
   <div class="header-right xs-hide sm-hide">
+
     <nav class="ampstart-headerbar-nav">
-  <ul>
- {{ range sort .Site.Menus.main "Weight" "desc" }}
-  <li><a href="{{ .URL }}">{{ .Name }}<span>.</span></a></li>
-{{ end }}
+      <ul>
 
-<li class="nav-divider"></li>
+        {{ range sort .Site.Menus.main "Weight" "desc" }}
+          <li>
+            <a href="{{ .URL }}">{{ .Name }}<span>.</span></a>
+          </li>
+        {{ end }}
 
-<li class="nav-lab">
+        <li class="nav-divider"></li>
 
-  
-  <a href="/post">the lab<span>.</span></a>
-</li>
-</ul>
+        <li class="nav-lab">
+          <a href="/post/">the lab<span>.</span></a>
+        </li>
+
+      </ul>
     </nav>
-
 
   </div>
 
-
-
-
   <!-- Mobile hamburger -->
-  <div role="button"
-       on="tap:header-sidebar.toggle"
-       tabindex="0"
-       class="ampstart-navbar-trigger md-hide lg-hide">
+  <div
+    role="button"
+    on="tap:header-sidebar.toggle"
+    tabindex="0"
+    class="ampstart-navbar-trigger md-hide lg-hide">
     ☰
   </div>
 
-
-
 </header>
+
+
+<!-- ==========================================
+     BREADCRUMB
+========================================== -->
+
 {{ if ne .Params.crumb "none" }}
+
 <div class="current-location site-shell {{ .Params.crumb }}{{ if .IsHome }} home{{ end }}{{ if eq .RelPermalink "/post/" }} post{{ end }}">
 
   {{ if eq .RelPermalink "/post/" }}
 
+    <!-- THE LAB: only one word -->
     <span class="current">Lab</span>
-
-  
-{{ else }}
-  <!-- your existing breadcrumb code here -->
-{{ end }}
-  
-   <a href="/" class="crumb-home" aria-label="Home">
-    <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
-         stroke="currentColor" stroke-width="2"
-         stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 10.5L12 3l9 7.5"/>
-      <path d="M5 9.5V21h14V9.5"/>
-    </svg>
-  </a>
- 
-
-  {{ if .IsHome }}
-   <span class="sep">→</span>
-    <span class="current-home">
-   <span class="blob b1"></span>
-    <span class="blob b2"></span>
-    <span class="blob b3"></span>
-    <span class="blob b4"></span>
-
-   Home
-    </span>
-
-  {{ else if eq .Section "post" }}
-
-    {{ if .IsSection }}
-       <span class="sep">→</span>
-      <span class="current">Lab</span>
-    {{ else }}
-      <a href="/post/" class="current">Lab</a>
-    {{ end }}
 
   {{ else }}
 
-    {{ if not .IsSection }}
-      <span class="sep">→</span>
-      <span class="current">{{ .Title }}</span>
+ 
+
+
+    {{ if .IsHome }}
+
+      <!-- HOME -->
+
+   
+
+      <span class="current-home">
+
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+        <span class="blob b4"></span>
+
+        Home
+
+      </span>
+
+
+    {{ else if eq .Section "post" }}
+
+
+
+      <!-- LAB / POST -->
+
+      {{ if .IsSection }}
+
+        <span class="sep">→</span>
+        <span class="current">Lab</span>
+
+      {{ else }}
+
+        <a href="/post/" class="current">Lab</a>
+
+      {{ end }}
+
+
+    {{ else }}
+
+      <!-- OTHER SECTIONS -->
+
+      {{ if not .IsSection }}
+
+             <!-- Home icon -->
+    <a href="/" class="crumb-home" aria-label="Home">
+      <svg
+        width="11"
+        height="11"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+
+        <path d="M3 10.5L12 3l9 7.5"/>
+        <path d="M5 9.5V21h14V9.5"/>
+
+      </svg>
+    </a>
+
+        <span class="sep">→</span>
+        <span class="current">{{ .Title }}</span>
+
+      {{ end }}
+
     {{ end }}
 
   {{ end }}
 
-
-
-
 </div>
+
 {{ end }}
 
 
-    <!-- Start Sidebar -->
+<!-- ==========================================
+     START SIDEBAR
+========================================== -->
+
 <amp-sidebar
   id="header-sidebar"
-  class="ampstart-sidebar px3 flex flex-column md-hide lg-hide"
+  class="ampstart-sidebar"
   layout="nodisplay">
 
-  <!-- Hero -->
+
+  <!-- Sidebar Hero -->
+
   <div class="sidebar-hero">
 
+    <div class="sidebar-head">
 
+      <a href="/" class="sidebar__logo">
 
-        <div class="sidebar-head">
+        <amp-img
+          src="/img/logo-square1.png"
+          width="120"
+          height="120"
+          layout="responsive"
+          alt="TMS">
+        </amp-img>
 
-        <a href="/" class="sidebar__logo">
-    <amp-img
-      src="/img/logo-square1.png"
-      width="120"
-      height="120"
-      layout="responsive"
-      alt="TMS">
-    </amp-img>
-  </a>
-
-
-
-
-    </div>
-<a
-  class="sidebar-close"
-  role="button"
-  tabindex="0"
-  on="tap:header-sidebar.close">
-  ✕
-</a>
-
-
-
-
-
-  </div>
-
-<!-- Navigation -->
-<nav class="ampstart-sidebar-nav ampstart-nav">
-
-  <!-- HOME -->
-  <a href="/" class="sidebar-nav-link sidebar-nav-home">
-
-    <span class="sidebar-nav-number sidebar-nav-home-icon">
-      <svg width="16" height="16" viewBox="0 0 24 24"
-           fill="none"
-           stroke="currentColor"
-           stroke-width="2"
-           stroke-linecap="round"
-           stroke-linejoin="round"
-           aria-hidden="true">
-        <path d="M3 10.5L12 3l9 7.5"/>
-        <path d="M5 9.5V21h14V9.5"/>
-      </svg>
-    </span>
-
-    <span class="sidebar-nav-content">
-      <span class="sidebar-nav-title">home</span>
-
-      <span class="sidebar-nav-description">
-        Core overview and selected work.
-      </span>
-    </span>
-
-  </a>
-
-
-  <!-- DEVELOPMENT -->
-  <a
-    href="/articles/development/"
-    class="sidebar-nav-link   nav-development">
-  <div class="sidebar-nav-index">
-    <span class="sidebar-nav-circle"></span>
-    <span class="sidebar-nav-number">01</span>
-  </div>
-
-  <div class="sidebar-nav-content">
-    <h2 class="sidebar-nav-title">
-      development
-    </h2>
-
-    <span class="sidebar-nav-description">
-      Web builds...
-    </span>
-  </div>
-
-  </a>
-
-
-  <!-- STUDIO -->
-  <a
-    href="/articles/studio/"
-    class="sidebar-nav-link nav-studio">
-
-     <div class="sidebar-nav-index">
-    <span class="sidebar-nav-circle"></span>
-    <span class="sidebar-nav-number">02</span>
-  </div>
-<div class="sidebar-nav-content"> 
-      <span class="sidebar-nav-title">
-        studio
-      </span>
-
-      <span class="sidebar-nav-description">
-        Branding, graphics, video and audio.
-      </span>
-
- </div>
-
-  </a>
-
-
-  <!-- PULSEFRAMES -->
-  <a
-    href="/articles/pulseframes/"
-    class="sidebar-nav-link nav-pulse">
-
-     <div class="sidebar-nav-index">
-    <span class="sidebar-nav-circle"></span>
-    <span class="sidebar-nav-number">03</span>
-  </div>
-<div class="sidebar-nav-content">
-      <span class="sidebar-nav-title">
-        pulseframes<sup>™</sup>
-      </span>
-
-      <span class="sidebar-nav-description">
-        A new storytelling format for business.
-      </span>
+      </a>
 
     </div>
 
-  </a>
 
+    <!-- Close button -->
 
-  <!-- CASE STUDIES -->
-  <a
-    href="/articles/casestudies/"
-    class="sidebar-nav-link nav-case">
+    <a
+      class="sidebar-close"
+      role="button"
+      tabindex="0"
+      on="tap:header-sidebar.close">
+      ✕
+    </a>
 
-    <div class="sidebar-nav-index">
-    <span class="sidebar-nav-circle"></span>
-    <span class="sidebar-nav-number">04</span>
   </div>
-<div class="sidebar-nav-content">
 
-      <span class="sidebar-nav-title">
-        case studies
-       
+
+  <!-- Navigation -->
+
+  <nav class="ampstart-sidebar-nav ampstart-nav">
+
+
+    <!-- HOME -->
+
+    <a
+      href="/"
+      class="sidebar-nav-link sidebar-nav-home">
+
+      <span class="sidebar-nav-number sidebar-nav-home-icon">
+
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true">
+
+          <path d="M3 10.5L12 3l9 7.5"/>
+          <path d="M5 9.5V21h14V9.5"/>
+
+        </svg>
+
       </span>
 
-      <span class="sidebar-nav-description">
-        Client projects, solutions and results.
+
+      <span class="sidebar-nav-content">
+
+        <span class="sidebar-nav-title">
+          home
+        </span>
+
+        <span class="sidebar-nav-description">
+          Core overview and selected work.
+        </span>
+
       </span>
 
-    </div>
-
-  </a>
+    </a>
 
 
-  <!-- THE LAB -->
-<div class="sidebar-lab">
+    <!-- DEVELOPMENT -->
 
-  <a class="sidebar-lab-link" href="/post/">
+    <a
+      href="/articles/development/"
+      class="sidebar-nav-link nav-development">
 
-    <div class="sidebar-lab-main">
+      <div class="sidebar-nav-index">
 
-      <span class="sidebar-lab-label">
-        THE LAB
-      </span>
+        <span class="sidebar-nav-circle"></span>
 
-      <div class="crumb-section-sidebar">
-        lab
-      </div>
-
-      <div class="sidebar-lab-copy">
-
-        <p class="sidebar-lab-description">
-          Stories, experiments, design notes and
-          behind-the-scenes thinking.
-        </p>
-
-        <span class="sidebar-lab-arrow">
-          Browse articles
-          <span aria-hidden="true">→</span>
+        <span class="sidebar-nav-number">
+          01
         </span>
 
       </div>
 
+
+      <div class="sidebar-nav-content">
+
+        <h2 class="sidebar-nav-title">
+          development
+        </h2>
+
+        <span class="sidebar-nav-description">
+          Web builds...
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <!-- STUDIO -->
+
+    <a
+      href="/articles/studio/"
+      class="sidebar-nav-link nav-studio">
+
+      <div class="sidebar-nav-index">
+
+        <span class="sidebar-nav-circle"></span>
+
+        <span class="sidebar-nav-number">
+          02
+        </span>
+
+      </div>
+
+
+      <div class="sidebar-nav-content">
+
+        <span class="sidebar-nav-title">
+          studio
+        </span>
+
+        <span class="sidebar-nav-description">
+          Branding, graphics, video and audio.
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <!-- PULSEFRAMES -->
+
+    <a
+      href="/articles/pulseframes/"
+      class="sidebar-nav-link nav-pulse">
+
+      <div class="sidebar-nav-index">
+
+        <span class="sidebar-nav-circle"></span>
+
+        <span class="sidebar-nav-number">
+          03
+        </span>
+
+      </div>
+
+
+      <div class="sidebar-nav-content">
+
+        <span class="sidebar-nav-title">
+          pulseframes<sup>™</sup>
+        </span>
+
+        <span class="sidebar-nav-description">
+          A new storytelling format for business.
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <!-- CASE STUDIES -->
+
+    <a
+      href="/articles/casestudies/"
+      class="sidebar-nav-link nav-case">
+
+      <div class="sidebar-nav-index">
+
+        <span class="sidebar-nav-circle"></span>
+
+        <span class="sidebar-nav-number">
+          04
+        </span>
+
+      </div>
+
+
+      <div class="sidebar-nav-content">
+
+        <span class="sidebar-nav-title">
+          case studies
+        </span>
+
+        <span class="sidebar-nav-description">
+          Client projects, solutions and results.
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <!-- THE LAB -->
+
+    <div class="sidebar-lab">
+
+      <a
+        class="sidebar-lab-link"
+        href="/post/">
+
+        <div class="sidebar-lab-main">
+
+          <span class="sidebar-lab-label">
+            THE LAB
+          </span>
+
+
+          <div class="crumb-section-sidebar">
+            lab
+          </div>
+
+
+          <div class="sidebar-lab-copy">
+
+            <p class="sidebar-lab-description">
+              Stories, experiments, design notes and
+              behind-the-scenes thinking.
+            </p>
+
+
+            <span class="sidebar-lab-arrow">
+
+              Browse articles
+
+              <span aria-hidden="true">
+                →
+              </span>
+
+            </span>
+
+          </div>
+
+        </div>
+
+      </a>
+
     </div>
 
-  </a>
 
-</div>
-
-</nav>
+  </nav>
 
 </amp-sidebar>
-    <!-- End Sidebar -->
-    <!-- End Navbar -->
+
+
+<!-- End Sidebar -->
+<!-- End Navbar -->
