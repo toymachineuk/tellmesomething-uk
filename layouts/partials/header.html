@@ -42,7 +42,7 @@
     on="tap:header-sidebar.toggle"
     tabindex="0"
     class="ampstart-navbar-trigger md-hide lg-hide">
-    ☰
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#111"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
   </div>
 
 </header>
@@ -54,7 +54,9 @@
 
 {{ if ne .Params.crumb "none" }}
 
-<div class="current-location site-shell {{ .Params.crumb }}{{ if .IsHome }} home{{ end }}{{ if eq .RelPermalink "/post/" }} post{{ end }}">
+<div class="current-location  {{ .Params.crumb }}{{ if .IsHome }} home{{ end }}{{ if eq .RelPermalink "/post/" }} post{{ end }}">
+
+  <div class="site-shell">  
 
   {{ if eq .RelPermalink "/post/" }}
 
@@ -135,6 +137,7 @@
 
   {{ end }}
 
+</div>
 </div>
 
 {{ end }}

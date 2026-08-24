@@ -17,6 +17,13 @@ body {
   line-height: var(--leading-normal);
   color: #111;
   background: #fff;
+  padding-top: 64px;
+}
+
+@media (max-width: 980px) {
+  body {
+    padding-top: 58px;
+  }
 }
 :root {
   --site-gutter: clamp(24px, 4vw, 60px);
@@ -44,7 +51,7 @@ body.has-breadcrumb .ampstart-headerbar {
 }
 body.has-breadcrumb .current-location {
   position: fixed;
-  top: 64px;
+  top: 58px;
   left: 0;
   right: 0;
   height: 20px;
@@ -534,28 +541,176 @@ DESIGN TOKENS
   line-height: 1.1;
   margin-bottom: 32px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ==========================================
-HEADER
+HEADBAR
 ========================================== */
 .ampstart-headerbar {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(1480px, calc(100% - 2 * clamp(24px, 4vw, 60px)));
+
   height: 64px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 3.5rem;
-  box-sizing: border-box;
-  background: #fff;
   z-index: 1000;
+  background: white;
+
+  
 }
-.ampstart-headerbar a {
-  text-decoration: none;
+
+
+
+
+
+@media (min-width: 981px) {
+
+  .ampstart-headerbar {
+    height: 64px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo amp-img {
+    width: 120px;
+  }
+
+  .header-right {
+    display: flex !important;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .ampstart-headerbar-nav {
+    display: block;
+  }
+
+  .ampstart-headerbar-nav ul {
+    display: flex;
+    align-items: center;
+
+    gap: clamp(32px, 5vw, 72px);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .ampstart-navbar-trigger {
+    display: none !important;
+  }
+
 }
+
+
+/* =========================================================
+   DESKTOP NAV
+   ========================================================= */
+
+@media (min-width: 981px) {
+
+  .ampstart-headerbar-nav a {
+    position: relative;
+
+    font-family: var(--font-sans);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    letter-spacing: .08em;
+
+    text-transform: lowercase;
+
+    color: rgba(0,0,0,.75);
+
+    padding-bottom: 6px;
+  }
+
+  .ampstart-headerbar-nav span {
+    margin-left: 2px;
+
+    color: #0e4d4a;
+  }
+
+  .ampstart-headerbar-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: #0e4d4a;
+
+    transition: width .3s ease;
+  }
+
+  .ampstart-headerbar-nav a:hover::after {
+    width: 100%;
+  }
+
+  .nav-divider {
+    width: 1px;
+    height: 22px;
+
+    margin: 0 -12px 0 4px;
+
+    background: rgba(0,0,0,.22);
+
+    list-style: none;
+
+    flex-shrink: 0;
+  }
+
+  .nav-lab {
+    margin-left: -.25rem;
+  }
+
+  .nav-lab a {
+    color: rgba(0,0,0,.45);
+    letter-spacing: .12em;
+  }
+
+  .nav-lab a:hover {
+    color: #0e4d4a;
+  }
+
+}
+
+
+
+
+
 /* ==========================================
 BREADCRUMB
 ========================================== */
@@ -564,7 +719,7 @@ BREADCRUMB
   top: 64px;
   left: 0;
   right: 0;
-  background: #f3eee6;
+
   font-weight: 600;
   color: #0e4d4a;
   z-index: 999;
@@ -578,6 +733,14 @@ BREADCRUMB
   letter-spacing: .12em;
   text-transform: uppercase;
 }
+
+.current-location .site-shell {
+  padding: 0 16px;
+background: #f3eee6;
+
+}
+
+
 .current-location::before, .current-location::after {
   content: "";
   position: absolute;
@@ -676,6 +839,9 @@ BREADCRUMB
 @media (max-width: 980px) {
   .current-location::before, .current-location::after {
     width: 0;
+  }
+    .current-location {
+    top: 58px;
   }
 }
 /* Mobile */
@@ -840,6 +1006,62 @@ CTA
 .header-cta a:hover {
   opacity: .9;
 }
+
+
+
+/* =========================================================
+   MOBILE HEADER
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+  .header-right {
+    display: none !important;
+  }
+
+  .ampstart-navbar-trigger {
+        display: block !important;
+    order: 1;
+
+    margin: 0;
+  }
+
+  .logo {
+       display: flex;
+    align-items: center;
+
+    order: 2;
+
+    margin-left: auto;
+  }
+
+   .logo amp-img {
+    width: 60px;
+  }
+
+  .ampstart-headerbar {
+      height: 58px;
+    padding: 0 16px;
+width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  
+}
+
+}
+.ampstart-headerbar a {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
 /* =========================================================
 TMS MOBILE SIDEBAR
 ========================================================= */
@@ -1219,6 +1441,83 @@ SMALL PHONES
     margin-top: 14px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===============================
 PULSEFRAME
 =============================== */
@@ -1520,6 +1819,15 @@ SECTION WITH CIRCLES--end
   text-transform: uppercase;
   color: #999;
 }
+
+
+
+
+
+
+
+
+
 /* ==========================================================
 HERO V2 FRONT
 Homepage-specific overrides
@@ -1626,13 +1934,16 @@ TOP COLOUR BLOCK
   display: flex;
   justify-content: center;
   align-items: flex-end;
+
   width: 100%;
-  height: 55vh;
+  height: 47vh;
+
   top: 0;
   left: 0;
+
   overflow: visible;
   z-index: 1;
-  background: #f0a017;
+ 
 }
 .hero-v2-top.burgundy {
   background: #9b021e;
@@ -1741,44 +2052,93 @@ WRAPPERS
   z-index: 3;
   transform: translateX(-50%);
 }
+
+
+
+
 /* ==========================================================
-DECORATIVE CIRCLES
+   DECORATIVE CIRCLES
 ========================================================== */
-.hero-v2-circle {
-  position: absolute;
-  border-radius: 50%;
-}
+
 .hero-v2-circles {
   position: absolute;
-  top: 70px;
+  top: 20px;
   right: 0;
+
   z-index: 1;
-  width: 28vw;
-  height: 28vw;
-  max-width: 420px;
-  max-height: 420px;
+
+  width: clamp(300px, 28vw, 420px);
+  height: clamp(300px, 28vw, 420px);
+
   pointer-events: none;
   backface-visibility: hidden;
 }
+
 .hero-v2-circles svg {
   display: block;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+
   animation: floatHero 6s ease-in-out infinite;
   transform-origin: center;
 }
+
 .hero-v2-circles circle {
   animation: floatHero 6s ease-in-out infinite;
 }
+
 .hero-v2-circles circle:nth-child(1) {
   animation-delay: 0s;
 }
+
 .hero-v2-circles circle:nth-child(2) {
   animation-delay: 1s;
 }
+
 .hero-v2-circles circle:nth-child(3) {
   animation-delay: 2s;
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (min-width: 1600px) {
+  .hero-v2-circles {
+    top: 20px;
+    right: -60px;
+    width: 500px;
+    height: 500px;
+  }
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .hero-v2-circles {
+    top: 20px;
+    right: -40px;
+    width: 320px;
+    height: 320px;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+  .hero-v2-circles {
+    top: 20px;
+    right: -5px;
+    width: min(60vw, 240px);
+    height: min(60vw, 240px);
+  }
 }
 /* ==========================================================
 INDIVIDUAL ASSETS
