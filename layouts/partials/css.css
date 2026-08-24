@@ -735,8 +735,23 @@ BREADCRUMB
 }
 
 .current-location .site-shell {
-  padding: 0 16px;
+
 background: #f3eee6;
+display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0 auto;
+
+}
+
+@media (max-width: 768px) {
+
+.current-location .site-shell {
+
+padding:0 16px;
+
+}
+
 
 }
 
@@ -827,13 +842,16 @@ background: #f3eee6;
   color: #e8e1d4;
 }
 .current-location.development .current {
-  background: #ffd4ad;
+background: linear-gradient( to right, #4f0a00 0 25%, #b9825a 25% 50%, #e3ba92 50% 75%, #ffd4ad 75% 100% );
+ color: #e8e1d4;
 }
 .current-location.case-studies .current {
-  background: #60dcf6;
+background: linear-gradient( to right, #016a87 0 25%, #2daccc 25% 50%, #49cbe5 50% 75%, #60dcf6 75% 100% );
+ color: #e8e1d4;
 }
 .current-location.studio .current {
-  background: #f0c6b8;
+ background: linear-gradient( to right, #c62254 0 25%, #dd5d78 25% 50%, #e79192 50% 75%, #f0c6b8 75% 100% );
+ color: #e8e1d4;
 }
 /* Tablet */
 @media (max-width: 980px) {
@@ -1069,13 +1087,17 @@ TMS MOBILE SIDEBAR
 SIDEBAR
 --------------------------------------------------------- */
 .ampstart-sidebar {
-  width: min(88vw, 360px);
-  max-width: 360px;
+
   height: 100vh;
-  padding: 0 !important;
+  max-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
   box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-y: auto;
+
   background: #eeeae1;
 }
 /* ---------------------------------------------------------
@@ -1087,11 +1109,19 @@ HERO
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 72px;
-  min-height: 72px;
+ 
   padding: 0 20px;
   box-sizing: border-box;
   background: #3d2924;
+  overflow: hidden;
+
+
+
+    flex: 0 0 90px;
+
+  height: 90px;
+  min-height: 90px;
+
   overflow: hidden;
 }
 /* subtle circle */
@@ -1151,12 +1181,25 @@ CLOSE
 NAVIGATION
 --------------------------------------------------------- */
 .ampstart-sidebar .ampstart-sidebar-nav {
+ 
+ flex: 1 1 auto;
+
+  min-height: 0;
+
+  width: 100%;
+
+  margin: 18px 0 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+
 }
 /* ---------------------------------------------------------
 NAV LINK
@@ -1274,6 +1317,11 @@ THE LAB
   width: 100%;
   margin: 0;
   padding: 0;
+    background: #e4ded2;
+     width: 100%;
+
+  margin-top: auto;
+  padding: 0;
 }
 .ampstart-sidebar .sidebar-lab-link {
   position: relative;
@@ -1283,7 +1331,7 @@ THE LAB
   padding: 21px 23px;
   box-sizing: border-box;
   overflow: hidden;
-  background: #e4ded2;
+
   color: #242321;
   text-decoration: none;
 }
@@ -5553,7 +5601,7 @@ GRID
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(2.5rem, 5vw, 5rem);
-  margin-top: 5rem;
+  margin-top: var(--space-md)
 }
 /* =========================================================
 CARDS
@@ -5599,9 +5647,7 @@ TABLET
   .principles__intro {
     column-gap: 3rem;
   }
-  .why-tms__grid {
-    gap: 3rem;
-  }
+ 
   .why-tms__card .bg-number {
     font-size: 14rem;
   }
@@ -5620,7 +5666,7 @@ MOBILE
   .why-tms__grid {
     grid-template-columns: 1fr;
     gap: 0;
-    margin-top: 3.5rem;
+  
   }
   /* Each card gets clear separation */
   .why-tms__card {
@@ -5645,9 +5691,7 @@ MOBILE
 SMALL MOBILE
 ========================================================= */
 @media (max-width: 600px) {
-  .why-tms__grid {
-    margin-top: 2.5rem;
-  }
+
   .why-tms__card {
     padding: 1rem 0;
   }
@@ -5719,7 +5763,7 @@ Mobile
 .origin-card {
   background: #0c2340;
   color: #f6f3ee;
-  padding: 2.75rem;
+  padding: var(--space-md);
   position: relative;
   height: fit-content;
 }
@@ -5739,16 +5783,15 @@ Mobile
   text-transform: uppercase;
   color: #fdce2a;
 }
-.origin-divider {
-  width: 60px;
-  height: 2px;
-  background: #fdce2a;
-  margin: 2rem 0 1.5rem;
-}
+
 @media (max-width:768px) {
+
   .origin-card {
-    padding: 0;
-  }
+ 
+  padding: var(--space-lg) var(--space-sm) var(--space-xl);
+  
+}
+
   .origin-card::after {
     inset: 10px;
   }
