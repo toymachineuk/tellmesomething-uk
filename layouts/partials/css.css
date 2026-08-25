@@ -251,6 +251,24 @@ LABELS / META
   text-transform: uppercase;
   color: #777;
 }
+
+
+.text-label.dev-tag {
+  background: linear-gradient( to right, #4f0a00 0 25%, #b9825a 25% 50%, #e3ba92 50% 75%, #ffd4ad 75% 100% );
+  color: #e8e1d4;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(14, 77, 74, .08);
+  border-radius: 0 999px 999px 0;
+  height: 20px;
+  padding: 0 .75rem;
+ 
+}
+
+
+
+
 .section__caption {
   display: inline-block;
   margin-bottom: .75rem;
@@ -1082,6 +1100,10 @@ width: 100%;
 /* =========================================================
    TMS MOBILE SIDEBAR
    ========================================================= */
+/* =========================================================
+   TMS MOBILE SIDEBAR
+   CONTENT MUST NEVER BE CROPPED
+   ========================================================= */
 
 
 /* ---------------------------------------------------------
@@ -1117,7 +1139,7 @@ width: 100%;
    --------------------------------------------------------- */
 
 .ampstart-sidebar .sidebar-hero {
- position: relative;
+  position: relative;
 
   display: flex;
   align-items: center;
@@ -1170,8 +1192,6 @@ width: 100%;
 
   display: flex;
   align-items: center;
-
-  flex: 0 0 auto;
 }
 
 
@@ -1198,7 +1218,7 @@ width: 100%;
 
 
 /* ---------------------------------------------------------
-   CLOSE
+   CLOSE BUTTON
    --------------------------------------------------------- */
 
 .ampstart-sidebar .sidebar-close {
@@ -1209,10 +1229,10 @@ width: 100%;
   display: grid;
   place-items: center;
 
-  flex: 0 0 32px;
-
   width: 32px;
   height: 32px;
+
+  flex: 0 0 32px;
 
   margin: 0;
   padding: 0;
@@ -1234,9 +1254,8 @@ width: 100%;
    --------------------------------------------------------- */
 
 .ampstart-sidebar .ampstart-sidebar-nav {
-  flex: 1 1 auto;
-
-  min-height: 0;
+  display: flex;
+  flex-direction: column;
 
   width: 100%;
 
@@ -1245,18 +1264,16 @@ width: 100%;
 
   box-sizing: border-box;
 
-  display: flex;
-  flex-direction: column;
-
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  -webkit-overflow-scrolling: touch;
+  /*
+   * IMPORTANT:
+   * Do NOT make the nav a separate scroll container.
+   */
+  overflow: visible;
 }
 
 
 /* ---------------------------------------------------------
-   HOME + NAV ITEMS
+   NAV ITEMS
    --------------------------------------------------------- */
 
 .ampstart-sidebar .sidebar-home-link,
@@ -1266,9 +1283,10 @@ width: 100%;
   display: grid;
 
   grid-template-columns: 42px minmax(0, 1fr);
-  gap: 14px;
 
   align-items: start;
+
+  gap: 14px;
 
   width: 100%;
 
@@ -1279,33 +1297,18 @@ width: 100%;
   box-sizing: border-box;
 
   color: #242321;
-  background: transparent;
 
   text-decoration: none;
 
   border: 0;
   border-bottom: 1px solid rgba(36, 35, 33, .13);
 
-  transition:
-    background-color .25s ease,
-    padding-left .25s ease;
+  background: transparent;
 }
 
 
 /* ---------------------------------------------------------
-   HOVER
-   --------------------------------------------------------- */
-
-.ampstart-sidebar .sidebar-home-link:hover,
-.ampstart-sidebar .sidebar-nav-link:hover {
-  background: rgba(255, 255, 255, .32);
-
-  padding-left: 25px;
-}
-
-
-/* ---------------------------------------------------------
-   NUMBER CIRCLES
+   NAV NUMBER
    --------------------------------------------------------- */
 
 .ampstart-sidebar .sidebar-number,
@@ -1319,23 +1322,402 @@ width: 100%;
   box-sizing: border-box;
 
   border: 1px solid rgba(36, 35, 33, .36);
-  border-radius: 50%;
 
-  background: transparent;
+  border-radius: 50%;
 
   color: #67635d;
 
   font-size: .68rem;
   line-height: 1;
+
   font-weight: 600;
-
-  letter-spacing: .02em;
-
-  transition:
-    border-color .25s ease,
-    color .25s ease;
 }
 
+
+/* ---------------------------------------------------------
+   NAV CONTENT
+   --------------------------------------------------------- */
+
+.ampstart-sidebar .sidebar-nav-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.ampstart-sidebar .sidebar-title,
+.ampstart-sidebar .sidebar-nav-title {
+  margin: 0;
+
+  color: #242321;
+
+  font-size: 1.18rem;
+  line-height: 1;
+
+  font-weight: 750;
+
+  letter-spacing: -.04em;
+}
+
+
+.ampstart-sidebar .sidebar-nav-title {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+
+.ampstart-sidebar .sidebar-nav-title sup {
+  position: relative;
+
+  top: -.35em;
+
+  font-size: .4em;
+  line-height: 0;
+}
+
+
+/* ---------------------------------------------------------
+   NAV DESCRIPTION
+   --------------------------------------------------------- */
+
+.ampstart-sidebar .sidebar-nav-description {
+  display: block;
+
+  max-width: 29ch;
+
+  margin-top: 5px;
+
+  color: #68645e;
+
+  font-size: .78rem;
+  line-height: 1.35;
+
+  font-weight: 400;
+}
+
+
+/* ---------------------------------------------------------
+   THE LAB
+   --------------------------------------------------------- */
+
+.ampstart-sidebar .sidebar-lab {
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   LAB LINK
+   --------------------------------------------------------- */
+
+.ampstart-sidebar .sidebar-lab-link {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  min-height: 220px;
+
+  padding: 26px 24px 24px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background: #e4ded2;
+
+  color: #242321;
+
+  text-decoration: none;
+
+  border-top: 1px solid rgba(36, 35, 33, .08);
+}
+
+
+/* ---------------------------------------------------------
+   LAB DECORATION
+   --------------------------------------------------------- */
+
+.ampstart-sidebar .sidebar-lab-link::before {
+  content: "";
+
+  position: absolute;
+
+  width: 270px;
+  height: 270px;
+
+  right: -165px;
+  bottom: -160px;
+
+  border: 1px solid rgba(36, 35, 33, .12);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.ampstart-sidebar .sidebar-lab-link::after {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  right: -90px;
+  bottom: -95px;
+
+  background: rgba(255, 255, 255, .22);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   LAB CONTENT
+   --------------------------------------------------------- */
+
+.ampstart-sidebar .sidebar-lab-main {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.ampstart-sidebar .sidebar-lab-label {
+  display: block;
+
+  margin: 0 0 14px;
+
+  color: #77726a;
+
+  font-size: .68rem;
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: .16em;
+
+  text-transform: uppercase;
+}
+
+
+.ampstart-sidebar .crumb-section-sidebar {
+  display: block;
+
+  margin: 0;
+
+  color: #242321;
+
+  font-size: 3.8rem;
+  line-height: .78;
+
+  font-weight: 800;
+
+  letter-spacing: -.075em;
+}
+
+
+.ampstart-sidebar .sidebar-lab-copy {
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+
+  max-width: 300px;
+
+  margin-top: 20px;
+}
+
+
+.ampstart-sidebar .sidebar-lab-description {
+  max-width: 29ch;
+
+  margin: 0;
+
+  color: #625e57;
+
+  font-size: .8rem;
+  line-height: 1.4;
+}
+
+
+.ampstart-sidebar .sidebar-lab-arrow {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  width: fit-content;
+
+  color: #373430;
+
+  font-size: .68rem;
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SHORT MOBILE SCREENS
+   ========================================================= */
+
+@media (max-height: 700px) {
+
+  .ampstart-sidebar .sidebar-hero {
+    height: 78px;
+    min-height: 78px;
+  }
+
+  .ampstart-sidebar .sidebar__logo {
+    width: 44px;
+    height: 44px;
+
+    flex-basis: 44px;
+  }
+
+  .ampstart-sidebar .sidebar-close {
+    width: 30px;
+    height: 30px;
+
+    font-size: 21px;
+  }
+
+  .ampstart-sidebar .ampstart-sidebar-nav {
+    margin-top: 12px;
+  }
+
+  .ampstart-sidebar .sidebar-home-link,
+  .ampstart-sidebar .sidebar-nav-link {
+    min-height: 72px;
+
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .ampstart-sidebar .sidebar-number,
+  .ampstart-sidebar .sidebar-nav-number {
+    width: 38px;
+    height: 38px;
+  }
+
+  .ampstart-sidebar .sidebar-title,
+  .ampstart-sidebar .sidebar-nav-title {
+    font-size: 1.1rem;
+  }
+
+  .ampstart-sidebar .sidebar-nav-description {
+    font-size: .72rem;
+  }
+
+  .ampstart-sidebar .sidebar-lab-link {
+    min-height: 190px;
+
+    padding-top: 21px;
+    padding-bottom: 20px;
+  }
+
+  .ampstart-sidebar .crumb-section-sidebar {
+    font-size: 3.25rem;
+  }
+
+  .ampstart-sidebar .sidebar-lab-copy {
+    margin-top: 15px;
+
+    gap: 8px;
+  }
+}
+
+
+/* =========================================================
+   VERY SHORT MOBILE
+   ========================================================= */
+
+@media (max-height: 600px) {
+
+  .ampstart-sidebar .sidebar-hero {
+    height: 70px;
+    min-height: 70px;
+  }
+
+  .ampstart-sidebar .sidebar__logo {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+  }
+
+  .ampstart-sidebar .ampstart-sidebar-nav {
+    margin-top: 8px;
+  }
+
+  .ampstart-sidebar .sidebar-home-link,
+  .ampstart-sidebar .sidebar-nav-link {
+    min-height: 66px;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .ampstart-sidebar .sidebar-number,
+  .ampstart-sidebar .sidebar-nav-number {
+    width: 34px;
+    height: 34px;
+  }
+
+  .ampstart-sidebar .sidebar-title,
+  .ampstart-sidebar .sidebar-nav-title {
+    font-size: 1.04rem;
+  }
+
+  .ampstart-sidebar .sidebar-nav-description {
+    font-size: .68rem;
+  }
+
+  .ampstart-sidebar .sidebar-lab-link {
+    min-height: 175px;
+
+    padding: 18px 21px;
+  }
+
+  .ampstart-sidebar .crumb-section-sidebar {
+    font-size: 3rem;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+  .ampstart-sidebar {
+    display: none !important;
+  }
+
+  .i-amphtml-sidebar-mask {
+    display: none !important;
+  }
+}
 
 /* ---------------------------------------------------------
    HOME ICON
@@ -4000,11 +4382,8 @@ LEFT SIDE
 .section-story-preview .base-contrast__layout {
   align-items: center;
 }
-/* Illustration */
-.team-illustration {
-  width: clamp(200px, 22vw, 320px);
-  margin: 0;
-}
+
+
 /* ===============================
 RIGHT SIDE
 ================================ */
@@ -4086,23 +4465,28 @@ HEADING
   font-weight: 700;
 }
 
+.team-illustration {  
 
+ width: clamp(140px, 16vw, 240px);
+  margin: 0 auto;
+ }
 
-
-
+ .base-contrast__intro {
+  max-width: 42ch;
+}
 
 @media (max-width: 768px) {
 
   .base-contrast__intro {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 180px;
+    grid-template-columns: minmax(0, 1fr) 130px;
     gap: 12px;
     align-items: center;
   }
 
   .base-contrast__intro .team-illustration {
-    width: 180px;
-    max-width: 180px;
+    width: 130px;
+    max-width: 130px;
   }
   .base-contrast__intro .text__lead {
     margin: 0;
@@ -6140,7 +6524,7 @@ INTRO
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
   column-gap: clamp(4rem, 9vw, 10rem);
-  align-items: start;
+  align-items: center;
   margin-bottom: var(--space-xs);
 }
 .principles__intro-left {
