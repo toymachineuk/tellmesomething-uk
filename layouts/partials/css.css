@@ -3963,21 +3963,22 @@ BASE CONTRAST
 /* Layout */
 .base-contrast__layout {
   display: grid;
-  grid-template-columns: minmax(320px, .8fr) minmax(420px, 1fr);
-  gap: clamp(80px, 10vw, 160px);
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+  gap: clamp(48px, 8vw, 120px);
+
   align-items: start;
 }
 /* ===============================
 LEFT SIDE
 ================================ */
 .base-contrast__main {
-  max-width: 640px;
+  max-width: 680px;
 }
 .video-section .text-label {
   color: #fff;
 }
 .base-contrast__lead {
-  max-width: 55ch;
+  max-width: 60ch;
   margin: 24px 0 var(--space-lg);
 }
 @media (max-width: 900px) {
@@ -4077,6 +4078,36 @@ HEADING
   letter-spacing: -.035em;
   font-weight: 700;
 }
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+  .base-contrast__intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .base-contrast__intro .team-illustration {
+    width: 180px;
+    max-width: 180px;
+  }
+  .base-contrast__intro .text__lead {
+    margin: 0;
+  }
+
+
+
+}
+
+
+
+
 /* ==========================================
 TABLE
 ========================================== */
@@ -5692,7 +5723,7 @@ HEADER
 .portfolio__lead {
   max-width: 60ch;
   margin: var(--space-sm) auto 0;
-  font-size: clamp(1rem, .45vw + .95rem, 1.15rem);
+  font-size: clamp(.9rem, .3vw + .85rem, 1rem);
   line-height: 1.6;
   color: rgba(255,255,255,.82);
 }
@@ -5700,8 +5731,8 @@ HEADER
   .portfolio__lead {
     max-width: 32ch;
     margin-top: var(--space-sm);
-    font-size: 1rem;
-    line-height: 1.55;
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 }
 /* ==================================================
