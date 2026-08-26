@@ -215,3 +215,54 @@ Why Are PulseFrame Stories More Beneficial Than Instagram or Facebook Stories?
   </div>
 
 </section>
+
+
+
+
+
+<section class="closing-cta section section-lg site-shell">
+
+      <!-- Ambient background -->
+<div class="ambient-orbs inside-container">
+  <span class="orb orb--1"></span>
+  <span class="orb orb--2"></span>
+  <span class="orb orb--3"></span>
+  <span class="orb orb--4"></span>
+  <span class="orb orb--5"></span>
+</div>
+  <div class="container">
+
+
+
+
+    <div class="closing-cta__frame">
+      <span class="text-label caps-tight">
+        Next Move
+      </span>
+
+      <div class="closing-cta__layout">
+        <div class="closing-cta__headline">
+     <h2 class="section__title-sm">
+READY TO BUILD YOUR FIRST PULSEFRAME?
+
+
+</h2>
+        </div>
+
+        <div class="closing-cta__content">
+        <p class="text-body">
+          PulseFrames is currently in development. We're inviting a small group of early users to try the format, create stories with us, and help shape where it goes next.
+
+</p>
+
+<a href="/articles/casestudies/#case-study-story" class="closing-cta__button">
+       JOIN THE BETA 
+        </a>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
