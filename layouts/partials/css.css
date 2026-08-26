@@ -8505,3 +8505,51 @@ SMALL MOBILE
   }
 
 }
+/* ==========================================
+   BETA SUCCESS STATE
+   ========================================== */
+
+.beta-form__success {
+  display: none;
+}
+
+#beta-success:target {
+  display: block;
+}
+
+#beta-success:target + .beta-form {
+  display: none;
+}
+
+
+.beta-form__success-label {
+  display: inline-block;
+
+  margin-bottom: var(--space-sm);
+
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+
+.beta-form__success h3 {
+  margin: 0 0 var(--space-sm);
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+
+
+.beta-form__success p {
+  max-width: 36ch;
+
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.55;
+}

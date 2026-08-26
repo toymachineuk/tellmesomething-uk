@@ -778,7 +778,6 @@ READY TO BUILD YOUR FIRST PULSEFRAME?
 
 
 
-
 <section id="beta" class="beta-section section-lg site-shell">
 
   <div class="container">
@@ -807,11 +806,11 @@ READY TO BUILD YOUR FIRST PULSEFRAME?
       <div class="beta-card__form">
 
         <!-- SUCCESS MESSAGE -->
-        <div
-          class="beta-form__success"
-          data-fs-success>
+
+        <div id="beta-success" class="beta-form__success">
+
           <span class="beta-form__success-label">
-            THANK YOU
+            THANK YOU.
           </span>
 
           <h3>
@@ -819,98 +818,40 @@ READY TO BUILD YOUR FIRST PULSEFRAME?
           </h3>
 
           <p>
-            Your beta request has been received. We'll be in touch soon.
+            Your beta request has been received.
+            We'll be in touch soon.
           </p>
+
         </div>
 
 
-        <!-- GENERAL ERROR -->
-        <div
-          class="beta-form__error"
-          data-fs-error>
-          Something went wrong. Please try again.
-        </div>
+        <!-- FORM -->
 
+  <form
+  action="https://formspree.io/f/mbgrnnoz"
+  method="POST">
 
-        <form
-          id="pulseframes-beta-form"
-          class="beta-form"
-          data-formspree
-          novalidate>
+  <input
+    type="text"
+    name="name"
+    placeholder="Your name"
+    required>
 
-          <div class="beta-form__field">
+  <input
+    type="email"
+    name="email"
+    placeholder="Email address"
+    required>
 
-            <label for="beta-name">
-              Your name
-            </label>
+  <textarea
+    name="idea"
+    placeholder="Tell us about your idea"></textarea>
 
-            <input
-              type="text"
-              id="beta-name"
-              name="name"
-              autocomplete="name"
-              required
-              data-fs-field>
+  <button type="submit">
+    REQUEST BETA ACCESS →
+  </button>
 
-            <span
-              class="beta-form__field-error"
-              data-fs-error="name">
-            </span>
-
-          </div>
-
-
-          <div class="beta-form__field">
-
-            <label for="beta-email">
-              Email address
-            </label>
-
-            <input
-              type="email"
-              id="beta-email"
-              name="email"
-              autocomplete="email"
-              required
-              data-fs-field>
-
-            <span
-              class="beta-form__field-error"
-              data-fs-error="email">
-            </span>
-
-          </div>
-
-
-          <div class="beta-form__field">
-
-            <label for="beta-idea">
-              Tell us about your idea
-            </label>
-
-            <textarea
-              id="beta-idea"
-              name="idea"
-              rows="5"
-              placeholder="What would you like to create with PulseFrames?"
-              data-fs-field></textarea>
-
-            <span
-              class="beta-form__field-error"
-              data-fs-error="idea">
-            </span>
-
-          </div>
-
-
-          <button
-            type="submit"
-            class="closing-cta__button"
-            data-fs-submit-btn>
-            REQUEST BETA ACCESS →
-          </button>
-
-        </form>
+</form>
 
       </div>
 
@@ -921,23 +862,6 @@ READY TO BUILD YOUR FIRST PULSEFRAME?
 </section>
 
 
-<script>
-  window.formspree =
-    window.formspree ||
-    function () {
-      (formspree.q = formspree.q || []).push(arguments);
-    };
-
-  formspree('initForm', {
-    formElement: '#pulseframes-beta-form',
-    formId: 'YOUR_FORM_ID'
-  });
-</script>
-
-<script
-  src="https://unpkg.com/@formspree/ajax@1"
-  defer>
-</script>
 
 
 
