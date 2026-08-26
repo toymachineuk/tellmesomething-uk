@@ -1,0 +1,217 @@
+
+<section class="base-table section-lg section-dark site-shell">
+
+  <!-- ==========================================
+       HEADING
+  =========================================== -->
+
+  <div class="base-table__head">
+
+    <h2 class="base-table__headline">
+      Comparison of PulseFrames and Social Media Stories
+    </h2>
+Why Are PulseFrame Stories More Beneficial Than Instagram or Facebook Stories?
+  </div>
+
+
+  <!-- ==========================================
+       COMPARISON TABLE
+  =========================================== -->
+
+  <div class="base-table__grid">
+
+
+    <!-- ========================================
+         TABLE HEADER
+    ========================================= -->
+
+    <div class="base-table__row base-table__row--head">
+
+      <div class="base-table__cell base-table__cell--label">
+        Feature
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Instagram / Facebook Stories
+      </div>
+
+      <div class="base-table__cell base-table__cell--strong">
+        PulseFrames
+      </div>
+
+    </div>
+
+
+    <!-- ========================================
+         LIFESPAN
+    ========================================= -->
+
+    <div class="base-table__row">
+
+      <div class="base-table__cell base-table__cell--label">
+        Lifespan
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Disappear after 24 hours
+        (unless manually archived or highlighted).
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Designed as lasting, referenceable content
+        that remains accessible.
+      </div>
+
+    </div>
+
+
+    <!-- ========================================
+         FORMAT
+    ========================================= -->
+
+    <div class="base-table__row">
+
+      <div class="base-table__cell base-table__cell--label">
+        Format
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Short-form vertical story slides.
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Editorial, swipeable visual narratives.
+      </div>
+
+    </div>
+
+
+    <!-- ========================================
+         DISCOVERY
+    ========================================= -->
+
+    <div class="base-table__row">
+
+      <div class="base-table__cell base-table__cell--label">
+        Discovery
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Primarily discovered through social feeds.
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Discoverable through the open web and search.
+      </div>
+
+    </div>
+
+
+    <!-- ========================================
+         OWNERSHIP
+    ========================================= -->
+
+    <div class="base-table__row">
+
+      <div class="base-table__cell base-table__cell--label">
+        Ownership
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Lives within a platform ecosystem.
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Lives on your own website and domain.
+      </div>
+
+    </div>
+
+
+    <!-- ========================================
+         BRANDING
+    ========================================= -->
+
+    <div class="base-table__row">
+
+      <div class="base-table__cell base-table__cell--label">
+        Branding
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Follows the visual language of the social platform.
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Fully branded and designed around your identity.
+      </div>
+
+    </div>
+
+
+    <!-- ========================================
+         CONTEXT
+    ========================================= -->
+
+    <div class="base-table__row">
+
+      <div class="base-table__cell base-table__cell--label">
+        Context
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Optimised for quick, fragmented consumption.
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Built for richer editorial context and storytelling.
+      </div>
+
+    </div>
+
+
+    <!-- ========================================
+         LINKING
+    ======================================== -->
+
+    <div class="base-table__row">
+
+      <div class="base-table__cell base-table__cell--label">
+        Linking
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Limited by the platform's link and navigation system.
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Can connect directly to pages, projects, products and resources.
+      </div>
+
+    </div>
+
+
+    <!-- ========================================
+         LONGEVITY
+    ======================================== -->
+
+    <div class="base-table__row">
+
+      <div class="base-table__cell base-table__cell--label">
+        Longevity
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Designed around short-term attention.
+      </div>
+
+      <div class="base-table__cell base-table__cell--weak">
+        Designed to become part of a lasting digital archive.
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>

@@ -254,19 +254,62 @@ LABELS / META
 
 
 .text-label.dev-tag {
-  background: linear-gradient( to right, #4f0a00 0 25%, #b9825a 25% 50%, #e3ba92 50% 75%, #ffd4ad 75% 100% );
-  color: #e8e1d4;
-  display: flex;
-  width: fit-content;
+  display: inline-flex;
   align-items: center;
-  box-shadow: 0 2px 8px rgba(14, 77, 74, .08);
+  width: fit-content;
+  height: 22px;
+
+  padding: 0 .9rem;
+
+  background: linear-gradient(
+    to right,
+    #d8c7b8 0 25%,
+    #c4b09f 25% 50%,
+    #a88f7c 50% 75%,
+    #c4471c 75% 100%
+  );
+
+color: #111;
+
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  line-height: 1;
+  text-transform: uppercase;
+
   border-radius: 0 999px 999px 0;
-  height: 20px;
-  padding: 0 .75rem;
+
+box-shadow: none;
  
 }
 
+.text-label.frame-tag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  height: 22px;
 
+  padding: 0 .9rem;
+background: linear-gradient(
+  to right,
+  #fdce2a 0 25%,
+  #fdab2b 25% 50%,
+  #e97626 50% 75%,
+   #c4471c 75% 100%
+);
+color: #111;
+
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  line-height: 1;
+  text-transform: uppercase;
+
+  border-radius: 0 999px 999px 0;
+
+box-shadow: none;
+ 
+}
 
 
 .section__caption {
@@ -3669,7 +3712,7 @@ SERVICES FLOW SECTION
 }
 .text__lead {
   max-width: 42ch;
-  margin-top: 0;
+    margin-top: var(--space-sm);
   font-size: clamp(1rem, .45vw + .95rem, 1.18rem);
   line-height: 1.55;
   font-weight: 400;
@@ -4204,6 +4247,13 @@ RESPONSIVE
   color: rgba(0, 0, 0, .03);
   font-weight: 500;
 }
+
+
+
+
+
+
+
 /* ===============================
 BASE INTRO SECTION
 =============================== */
@@ -4357,6 +4407,13 @@ BASE CONTRAST
 
   align-items: start;
 }
+
+
+.two-columns .base-contrast__layout {
+
+  align-items: center;
+}
+
 /* ===============================
 LEFT SIDE
 ================================ */
@@ -4408,6 +4465,88 @@ RIGHT SIDE
   max-width: 34ch;
   font-size: clamp(1rem, .95rem + .2vw, 1.125rem);
   line-height: 1.7;
+}
+
+
+
+/* ==========================================
+   PULSEFRAMES STATUS + BETA
+   ========================================== */
+
+.pulseframes-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 14px;
+  margin-bottom: clamp(18px, 2vw, 28px);
+
+  padding: 7px 12px;
+
+  border: 1px solid rgba(0, 0, 0, .25);
+  border-radius: 999px;
+
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  color: #111;
+  background: transparent;
+}
+
+.pulseframes-status__dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+  background: #d88b32;
+
+  flex: 0 0 auto;
+}
+
+
+/* ==========================================
+   BETA BUTTON
+   ========================================== */
+
+.pulseframes-beta {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-top: 24px;
+
+  padding: 13px 17px 13px 19px;
+
+ background: #0c2340;
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+margin-bottom: var(--space-md);
+  transition:
+    background .25s ease,
+    transform .25s ease;
+}
+
+.pulseframes-beta__arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform .25s ease;
+}
+
+.pulseframes-beta:hover {
+  background: #735b44;
+  transform: translateY(-2px);
+}
+
+.pulseframes-beta:hover .pulseframes-beta__arrow {
+  transform: translateX(4px);
 }
 /* ===============================
 MOBILE
@@ -6396,6 +6535,17 @@ Benefits Timeline
   gap: 4rem;
   padding-left: 0;
 }
+
+.pulse-step__title {
+  display: block;
+  margin-bottom: var(--space-xs);
+
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
 .pulse-timeline__list::before {
   content: "";
   position: absolute;
@@ -6701,6 +6851,7 @@ Mobile
   background: #0c2340;
   color: #f6f3ee;
   padding: var(--space-md);
+  padding: var(--space-lg) var(--space-md) var(--space-xl) var(--space-md);
   position: relative;
   height: fit-content;
 }
@@ -6721,6 +6872,21 @@ Mobile
   color: #fdce2a;
 }
 
+
+.origin-card .closing-cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  margin-top: 2rem;
+  padding: .9rem 1.25rem;
+  color: #243f8f;
+  background: #fff;
+  font-size: var(--text__sm);
+  font-weight: 600;
+  letter-spacing: .01em;
+  text-decoration: none;
+  transition: transform .25s ease, background .25s ease;
+}
 @media (max-width:768px) {
 
   .origin-card {

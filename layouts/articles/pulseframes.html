@@ -88,16 +88,23 @@ alt="barcode">
         <span class="base-intro__label text-label">
           PulseFrames™
         </span>
+<div class="pulseframes-status">
+  <span class="pulseframes-status__dot"></span>
+  <span>IN DEVELOPMENT</span>
+</div>
 
         <h2 class="section__title-md mb-md">
           Stories,<br>
           Rebuilt for the Open Web.
         </h2>
-
+<a href="#beta" class="pulseframes-beta">
+  <span>JOIN THE BETA</span>
+  <span class="pulseframes-beta__arrow">→</span>
+</a>
         <p class="text__lead">
-PulseFrames are a swipable story format built for the open web. They can be discovered through search engines, shared across platforms, and continue driving visitors to your brand over time.Instead of publishing content that quickly disappears in social feeds, create interactive stories that continue delivering value long after they're published.
+Instead of publishing content that quickly disappears in social feeds, create interactive stories that continue delivering value long after they're published.
 
-<br> 
+<br> <br>
 
 Rich with images, video, audio, maps, and interactive elements, PulseFrames combine the immersive feel of social stories with the lasting value of a web page.
 
@@ -106,100 +113,7 @@ Rich with images, video, audio, maps, and interactive elements, PulseFrames comb
 
     
 
-<div class="orbit-story-wrapper">
 
-    <!-- Story Profile -->
-    <div class="story-profile">
-
-        <div class="story-logo">
-            <amp-img
-                src="/img/logo-square1.png"
-                width="58"
-                height="58"
-                layout="responsive"
-                alt="Tell Me Something">
-            </amp-img>
-        </div>
-
-        <h3 class="story-profile-title">
-            Tell Me Something
-        </h3>
-
-        <p class="story-profile-meta">
-            12 Story Pages
-        </p>
-
-        <div class="story-intro">
-            <p>
-                UKG is one of the most influential genres in British electronic music.
-            </p>
-        </div>
-
-    </div>
-
-    <!-- Story Link -->
-    <a on="tap:storyLightbox-ukg.open" class="orbit-link">
-
-        <div class="orbit-story-preview orbit-story-preview-200">
-
-            <div class="story-ring story-ring-200">
-
-                <div class="story-gap">
-
-                    <amp-img
-                        src="/img/stories/bassscene-preview.png"
-                        width="300"
-                        height="300"
-                        layout="responsive"
-                        alt="Story Preview">
-                    </amp-img>
-
-                    <div class="story-overlay">
-
-                        <div class="story-progress">
-                            <span class="active"></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Play Button -->
-            <div class="story-play-button">
-                <div class="play-icon"></div>
-            </div>
-
-            <!-- QR -->
-            <amp-img
-                src="/img/porijazz_qr.png"
-                width="120"
-                height="120"
-                layout="intrinsic"
-                class="story-barcode2"
-                alt="barcode">
-            </amp-img>
-
-        </div>
-
-    </a>
-
-    <!-- Story Description -->
-    <div class="story-caption">
-
-   
-
-        <p class="section__caption ">
-            In this story, we've brought together the key artists shaping the sound of UKG in 2025.
-        </p>
-
-    </div>
-
-</div>
 
 
   </div>
@@ -215,30 +129,38 @@ Rich with images, video, audio, maps, and interactive elements, PulseFrames comb
 
 <aside class="origin-card">
 
-    <span class="origin-label">The Narrative Revolution</span>
+    <span class="origin-label">Alternative to Social Stories</span>
 
     <h2 class="section__title-xs mb-md">How We Came Up with the Idea</h2>
 
     <p class="text__lead mb-md white ">
-     PulseFrames didn't begin as a product—it began with a simple question.
 
-Why should great stories disappear after 24 hours, while traditional websites often struggle to capture attention?
+
+      PulseFrames didn't begin as a product. It began with a simple question: <br><br>
+<strong> Why should great stories disappear after 24 hours, while traditional websites often struggle to capture attention?</strong>
+<br> <br>
+We wanted to create something that combined the immediacy and immersion of social stories with the permanence, searchability, and ownership of the open web.
+<br>
+</p>
+    <div class="origin-divider white"></div>
+
+        <p class="text__lead mb-md white ">  
+Born from our R&D phase in Finland and refined through work with Pori Jazz and Prizz Tech, PulseFrames bring together Nordic technical precision and British creative thinking.<br>
+
+       
 
 
 </p>
 
-    <p>
-      The permanent, searchable alternative to social storytelling. Hand-coded stories that live on your domain, rank on Google, and engage users like an app. 
-      </p>
+    <a href="/articles/development/#how-to-start" class="closing-cta__button">
+        CHECK OUR CASE STUDY
+        </a>
 
    
 
-    <div class="origin-divider"></div>
 
-    <small class="text__xxs">
-       Born from our R&D phase in Finland and refined through work with Pori Jazz and Prizz Tech, PulseFrames are the result of merging Nordic technical precision with British creative soul.
-    
-      </small>
+
+  
 
 </aside>
 
@@ -270,360 +192,6 @@ Why should great stories disappear after 24 hours, while traditional websites of
 
 
 
-
-</section>
-
-
-<!-- STORY POPUP -->
-<!-- LIGHTBOX -->
-<amp-lightbox id="storyLightbox-ukg" layout="nodisplay">
-  <div class="story-modal">
-
-    <!-- CLOSE BUTTON -->
-    <button class="story-close" on="tap:storyLightbox-ukg.close">
-      <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-
-    <path
-      d="M6 6L18 18M18 6L6 18"
-      stroke="white"
-      stroke-width="2"
-      stroke-linecap="round"/>
-
-  </svg>
-    </button>
-
-    <!-- CENTERED IFRAME -->
-    <div class="story-frame">
-      <amp-iframe
-        layout="responsive"
-        width="360"
-        height="640"
-        sandbox="allow-scripts allow-same-origin"
-        src="https://yodeejay.co.uk/stories/ukbassscene/">
-      </amp-iframe>
-    </div>
-
-  </div>
-</amp-lightbox>
-
-
-
-
-<section class="section-lg section-alt space-section two-columns section-with-circles">
-  <div class="container">
-
-    <div class="base-contrast__layout">
-
-      <!-- LEFT: MAIN STATEMENT -->
-      <div class="base-contrast__main">
-    
-    <span class=" text-label">
-      Three key differences
-    </span>
-        <h3 class="section__title-xs">
- 
-Why Are PulseFrame Stories More Beneficial Than Instagram or Facebook Stories?
-        </h3>
-
-        <p class="base-contrast__lead text__lead">
-     Every Story takes time to create, yet on most social platforms it disappears after just 24 hours. Once it's gone, so is its ability to attract new visitors or generate long-term value.
-  <br>  <br>
-PulseFrame Stories are built differently. They remain online for as long as you want, can be discovered through search engines, and belong to you—not the platform.
-  <br>  <br>
-Here's how PulseFrame compares with Instagram and Facebook Stories.
-    
-
-             
-No platform lock-in. Your story. Your rules.
-      </p>
-      </div>
-
-      <!-- RIGHT: CONTRAST POINTS -->
-      <div class="base-contrast__side">
-
-
-        <div class="pulse-timeline__list">
-
-        <div class="pulse-step only-dots">
-       
-          <div class="pulse-step__dot"></div>
-
-          <div class="pulse-step__content">
-     
-            <p>
- Once published, a PulseFrame Story becomes a searchable asset that continues attracting visitors and supporting your marketing.
-            </p>
-          </div>
-        </div>
-
-        <div class="pulse-step only-dots">
-    
-
-          <div class="pulse-step__dot"></div>
-
-          <div class="pulse-step__content">
-         
-            <p>
-      With PulseFrame, the story creator is the sole owner of the story. Keep a copy on your own computer or publish it anywhere on the open web—it's entirely your choice.
-            </p>
-          </div>
-        </div>
-
-        <div class="pulse-step only-dots">
-
-
-          <div class="pulse-step__dot"></div>
-
-          <div class="pulse-step__content">
-            
-            <p>
-            There's no need to reach follower milestones before social networks allow you to include links in your Stories. Every PulseFrame Story can include links from day one, along with many other features that simply aren't available in social media Stories.
-            </p>
-          </div>
-        </div>
-
-    
-
-      
-
-      </div>
-
-      
-
-  
-
-
-      </div>
-
-    </div>
-
-  </div>
-
-     <div class="section-decor">
-    <span class="circle circle--top-right"></span>
-  </div>
-</section>
-
-
-
-
-<section class="base-table section-lg section-dark site-shell">
-
-  <!-- ==========================================
-       HEADING
-  =========================================== -->
-
-  <div class="base-table__head">
-
-    <h2 class="base-table__headline">
-      Comparison of PulseFrames and Social Media Stories
-    </h2>
-
-  </div>
-
-
-  <!-- ==========================================
-       COMPARISON TABLE
-  =========================================== -->
-
-  <div class="base-table__grid">
-
-
-    <!-- ========================================
-         TABLE HEADER
-    ========================================= -->
-
-    <div class="base-table__row base-table__row--head">
-
-      <div class="base-table__cell base-table__cell--label">
-        Feature
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Instagram / Facebook Stories
-      </div>
-
-      <div class="base-table__cell base-table__cell--strong">
-        PulseFrames
-      </div>
-
-    </div>
-
-
-    <!-- ========================================
-         LIFESPAN
-    ========================================= -->
-
-    <div class="base-table__row">
-
-      <div class="base-table__cell base-table__cell--label">
-        Lifespan
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Disappear after 24 hours
-        (unless manually archived or highlighted).
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Designed as lasting, referenceable content
-        that remains accessible.
-      </div>
-
-    </div>
-
-
-    <!-- ========================================
-         FORMAT
-    ========================================= -->
-
-    <div class="base-table__row">
-
-      <div class="base-table__cell base-table__cell--label">
-        Format
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Short-form vertical story slides.
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Editorial, swipeable visual narratives.
-      </div>
-
-    </div>
-
-
-    <!-- ========================================
-         DISCOVERY
-    ========================================= -->
-
-    <div class="base-table__row">
-
-      <div class="base-table__cell base-table__cell--label">
-        Discovery
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Primarily discovered through social feeds.
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Discoverable through the open web and search.
-      </div>
-
-    </div>
-
-
-    <!-- ========================================
-         OWNERSHIP
-    ========================================= -->
-
-    <div class="base-table__row">
-
-      <div class="base-table__cell base-table__cell--label">
-        Ownership
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Lives within a platform ecosystem.
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Lives on your own website and domain.
-      </div>
-
-    </div>
-
-
-    <!-- ========================================
-         BRANDING
-    ========================================= -->
-
-    <div class="base-table__row">
-
-      <div class="base-table__cell base-table__cell--label">
-        Branding
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Follows the visual language of the social platform.
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Fully branded and designed around your identity.
-      </div>
-
-    </div>
-
-
-    <!-- ========================================
-         CONTEXT
-    ========================================= -->
-
-    <div class="base-table__row">
-
-      <div class="base-table__cell base-table__cell--label">
-        Context
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Optimised for quick, fragmented consumption.
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Built for richer editorial context and storytelling.
-      </div>
-
-    </div>
-
-
-    <!-- ========================================
-         LINKING
-    ======================================== -->
-
-    <div class="base-table__row">
-
-      <div class="base-table__cell base-table__cell--label">
-        Linking
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Limited by the platform's link and navigation system.
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Can connect directly to pages, projects, products and resources.
-      </div>
-
-    </div>
-
-
-    <!-- ========================================
-         LONGEVITY
-    ======================================== -->
-
-    <div class="base-table__row">
-
-      <div class="base-table__cell base-table__cell--label">
-        Longevity
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Designed around short-term attention.
-      </div>
-
-      <div class="base-table__cell base-table__cell--weak">
-        Designed to become part of a lasting digital archive.
-      </div>
-
-    </div>
-
-
-  </div>
 
 </section>
 
@@ -730,6 +298,296 @@ Discover six ways interactive storytelling delivers more engaging, memorable, an
 
 
 </section>
+
+
+<section  id="case-study-story" class="site-shell section-dark-blue section-story-preview section-lg">
+  <div class="container">
+
+    <div class="base-contrast__layout">
+
+      <!-- LEFT -->
+
+
+            <div class="base-contrast__side">
+
+        <!-- POINT 1 -->
+  
+
+        <!-- POINT 2 (CTA) -->
+        <div class="base-contrast__point base-contrast__point--cta">
+<div class="orbit-story-wrapper">
+
+    <!-- Story Profile -->
+    <div class="story-profile">
+
+        <div class="story-logo">
+            <amp-img
+                src="/img/logo-square1.png"
+                width="58"
+                height="58"
+                layout="responsive"
+                alt="Tell Me Something">
+            </amp-img>
+        </div>
+
+        <h3 class="story-profile-title">
+            Britich UKG Artists for 2025
+        </h3>
+
+        <p class="story-profile-meta">
+            12 Story Pages
+        </p>
+
+        <div class="story-intro">
+            <p>
+                UKG is one of the most influential genres in British electronic music.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Story Link -->
+    <a on="tap:storyLightbox-ukg.open" class="orbit-link">
+
+        <div class="orbit-story-preview orbit-story-preview-200">
+
+            <div class="story-ring story-ring-200">
+
+                <div class="story-gap">
+
+                    <amp-img
+                        src="/img/stories/bassscene-preview.png"
+                        width="300"
+                        height="300"
+                        layout="responsive"
+                        alt="Story Preview">
+                    </amp-img>
+
+                    <div class="story-overlay">
+
+                        <div class="story-progress">
+                            <span class="active"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Play Button -->
+            <div class="story-play-button">
+                <div class="play-icon"></div>
+            </div>
+
+            <!-- QR -->
+            <amp-img
+                src="/img/porijazz_qr.png"
+                width="120"
+                height="120"
+                layout="intrinsic"
+                class="story-barcode2"
+                alt="barcode">
+            </amp-img>
+
+        </div>
+
+    </a>
+
+    <!-- Story Description -->
+    <div class="story-caption">
+
+   
+
+        <p class="section__caption ">
+            In this story, we've brought together the key artists shaping the sound of UKG in 2025.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+        </div>
+
+      </div>
+      <!-- RIGHT -->
+      <div class="base-contrast__main">
+        <span class="base-contrast__label mb-md">
+        The Story Lives On™
+
+        </span>
+
+        
+        <h2 class="section__title-md ">
+          Watch the<br> Story
+        </h2>
+        
+<div class="text-divider--white"></div>
+
+
+        <p class="base-contrast__lead ">
+     
+  <strong>Pori Jazz Festival</strong>  — Legends, Rhythm & Nordic Nights
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+     <div class="section-decor">
+    <span class="circle-blue circle--top-right"></span>
+  </div>
+</section>
+
+<!-- STORY POPUP -->
+<!-- LIGHTBOX -->
+<amp-lightbox id="storyLightbox-ukg" layout="nodisplay">
+  <div class="story-modal">
+
+    <!-- CLOSE BUTTON -->
+    <button class="story-close" on="tap:storyLightbox-ukg.close">
+      <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+
+    <path
+      d="M6 6L18 18M18 6L6 18"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"/>
+
+  </svg>
+    </button>
+
+    <!-- CENTERED IFRAME -->
+    <div class="story-frame">
+      <amp-iframe
+        layout="responsive"
+        width="360"
+        height="640"
+        sandbox="allow-scripts allow-same-origin"
+        src="https://yodeejay.co.uk/stories/ukbassscene/">
+      </amp-iframe>
+    </div>
+
+  </div>
+</amp-lightbox>
+
+<section class="section-lg section-alt space-section two-columns section-with-circles">
+  <div class="container">
+
+    <div class="base-contrast__layout">
+
+      <!-- LEFT: MAIN STATEMENT -->
+      <div class="base-contrast__main">
+    
+    <span class=" text-label frame-tag">
+   WHY PULSEFRAMES
+    </span>
+        <h3 class="section__title-sm">
+
+          Your story. Your rules. No platform lock-in.
+ 
+
+        </h3>
+
+        <p class="base-contrast__lead text__lead">
+<strong>  Social Stories are built for attention in the moment. PulseFrames are built to keep working afterwards.</strong>  
+  
+     <br>  <br>
+     A PulseFrame lives on your own domain, remains searchable, and can continue bringing people to your site long after it is published
+
+<br>  <br> 
+You own the story, the content and where it lives. No follower thresholds. No platform lock-in. No disappearing links.     
+  <br>  <br>
+<strong>The format may feel like social. The ownership is yours.</strong>
+</p>
+      </div>
+
+      <!-- RIGHT: CONTRAST POINTS -->
+      <div class="base-contrast__side">
+
+
+        <div class="pulse-timeline__list">
+
+        <div class="pulse-step only-dots">
+       
+          <div class="pulse-step__dot"></div>
+
+          <div class="pulse-step__content">
+
+       <span class="pulse-step__title">LONGEVITY</span>
+            <p>
+
+Stays online and searchable, continuing to deliver value.   </p>
+          </div>
+        </div>
+
+        <div class="pulse-step only-dots">
+    
+
+          <div class="pulse-step__dot"></div>
+
+          <div class="pulse-step__content">
+          
+               <span class="pulse-step__title">OWNERSHIP</span>
+            <p>
+
+Keep the story, keep the files, keep control of where they are published.      
+  
+  </p>
+          </div>
+        </div>
+
+        <div class="pulse-step only-dots">
+
+
+          <div class="pulse-step__dot"></div>
+
+          <div class="pulse-step__content">
+               <span class="pulse-step__title">       FREEDOM</span>
+            <p>
+ 
+Link wherever you want, from day one, without platform restrictions.
+          
+          </p>
+          </div>
+        </div>
+
+    
+
+      
+
+      </div>
+
+      
+
+  
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+     <div class="section-decor">
+    <span class="circle circle--top-right"></span>
+  </div>
+</section>
+
+
+
+
+
 
 
 
