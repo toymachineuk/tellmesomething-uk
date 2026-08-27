@@ -7470,8 +7470,8 @@ TESTING--end
 CASE FEEDBACK SECTION
 ========================================================= */
 .case-feedback {
-  background: #0d1529;
-  color: #f7f7f5;
+    background: #f3eee6;
+  color: #000;
   overflow: hidden;
 }
 /* =========================================================
@@ -7493,7 +7493,7 @@ LEFT
 }
 .case-feedback__label {
   margin-bottom: var(--space-sm);
-  color: #60dcf6;
+ font-weight: 700;
 }
 .case-feedback__title {
   max-width: 10ch;
@@ -7508,7 +7508,7 @@ LEFT
 }
 .case-feedback__lead {
   margin-top: var(--space-md);
-  color: rgba(255,255,255,.78);
+  color: black;
 }
 /* =========================================================
 RIGHT
@@ -7522,20 +7522,20 @@ RIGHT
   max-width: 46ch;
 }
 .case-feedback__point + .case-feedback__point {
-  margin-top: var(--space-md);
-  padding-top: var(--space-md);
-  border-top: 1px solid rgba(255,255,255,.11);
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, .14);
+
 }
 .case-feedback__point p {
-  color: rgba(255,255,255,.82);
+  color: black;
 }
-.case-feedback__point strong {
-  color: #fff;
-  font-weight: 700;
-}
+
 .case-feedback__point a {
-  color: #60dcf6;
+  color: #111;
   font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 /* =========================================================
 CLOSING REFLECTION
@@ -7543,8 +7543,8 @@ CLOSING REFLECTION
 .case-feedback__reflection {
   width: min(900px, calc(100% - (var(--space-md) * 2)));
   margin-inline: auto;
-  padding: var(--space-lg) 0 var(--space-md);
-  border-top: 1px solid rgba(255,255,255,.16);
+  padding: 20px 0 24px;
+  border-top: 1px solid rgba(0, 0, 0, .14);
 }
 .case-feedback__quote {
   max-width: 720px;
@@ -7556,16 +7556,13 @@ CLOSING REFLECTION
   line-height: 1.65;
   letter-spacing: -.01em;
   font-weight: 400;
-  color: rgba(255,255,255,.68);
+  color: black;
 }
 /* remove decorative quotation mark */
 .case-feedback__quote::before {
   display: none;
 }
-.case-feedback__quote em {
-  color: #60dcf6;
-  font-style: normal;
-}
+
 /* =========================================================
 AUTHOR
 ========================================================= */
@@ -7579,12 +7576,10 @@ AUTHOR
   font-style: normal;
 }
 .case-feedback__author strong {
-  color: rgba(255,255,255,.9);
+ 
   font-weight: 600;
 }
-.case-feedback__author span {
-  color: rgba(255,255,255,.45);
-}
+
 /* =========================================================
 AUTHOR
 ========================================================= */
@@ -7596,15 +7591,13 @@ AUTHOR
   font-size: var(--text-sm);
   line-height: 1.4;
   font-style: normal;
-  color: rgba(255,255,255,.55);
+ 
 }
 .case-feedback__author strong {
-  color: #fff;
+ 
   font-weight: 700;
 }
-.case-feedback__author span {
-  color: rgba(255,255,255,.55);
-}
+
 /* =========================================================
 TABLET
 ========================================================= */
