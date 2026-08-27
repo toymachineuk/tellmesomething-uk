@@ -427,25 +427,32 @@ SECTION SPACING
   padding-block: calc(var(--space-xxl) + var(--space-lg));
   /* 192px */
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
+
   .section-xxs {
     padding-block: 16px;
   }
+
   .section-xs {
     padding-block: 24px;
   }
+
   .section-sm {
-    padding-block: 40px;
+    padding-block: 32px;
   }
+
   .section-md {
+    padding-block: 48px;
+  }
+
+  .section-lg {
     padding-block: 56px;
   }
-  .section-lg {
+
+  .section-xl {
     padding-block: 72px;
   }
-  .section-xl {
-    padding-block: 96px;
-  }
+
 }
 :root {
   --space-xs: 8px;
@@ -3714,8 +3721,8 @@ SERVICES FLOW SECTION
   color: #71808a;
 }
 .text__lead {
-  max-width: 42ch;
-    margin-top: var(--space-sm);
+ max-width: 42ch;
+  margin-top: 0;
   font-size: clamp(1rem, .45vw + .95rem, 1.18rem);
   line-height: 1.55;
   font-weight: 400;
@@ -3725,10 +3732,9 @@ SERVICES FLOW SECTION
 }
 @media (max-width: 768px) {
   .text__lead {
-    margin-top: 12px;
+       max-width: 100%;
     font-size: 1rem;
     line-height: 1.5;
-    max-width: 100%;
   }
 }
 .section__title-sm--intro {
@@ -4182,9 +4188,7 @@ ITEMS
   color: rgba(0,0,0,.74);
   max-width: 56ch;
 }
-.base-contrast__main > .section__title-md {
-  margin-bottom: 24px;
-}
+
 .format-item > .section__title-2xxs {
   margin-bottom: var(--space-sm);
 }
@@ -4223,7 +4227,7 @@ RESPONSIVE
   }
   .formats-content {
     max-width: 100%;
-    gap: 28px;
+    gap: 20px;
     border-left: 0;
     padding-left: 0;
   }
@@ -4491,6 +4495,18 @@ RIGHT SIDE
 
   color: #111;
   background: transparent;
+}
+
+
+@media (max-width: 768px) {
+  .pulseframes-status {
+    gap: 7px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 6px 10px;
+    font-size: .62rem;
+    letter-spacing: .1em;
+  }
 }
 
 .pulseframes-status__dot {
@@ -5022,6 +5038,8 @@ STORY PREVIEW
 .orbit-link:hover .orbit-story-preview {
   transform: scale(1.05);
 }
+
+
 /* ===============================
 STORY RING
 =============================== */
@@ -5056,11 +5074,11 @@ STORY RING
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background:
-    repeating-conic-gradient(
-      #f3eee6 0 2deg,
-      transparent 2deg 4deg
-    );
+  background: repeating-conic-gradient(
+    from 0deg,
+    #f6f3ee 0deg 3deg,
+    transparent 3deg 7deg
+  );
   -webkit-mask:
     radial-gradient(
       farthest-side,
@@ -5227,10 +5245,12 @@ CTA WRAPPER
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
+  position:relative;
 }
 @media (max-width: 768px) {
   .base-contrast__point--cta {
     align-items: center;
+     gap: 0;
   }
 }
 .base-contrast__point--cta .orbit-story-preview {
@@ -6446,13 +6466,13 @@ Process Timeline
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #0c2340;
+ background: linear-gradient( to right, #fdce2a 0 25%, #fdab2b 25% 50%, #e97626 50% 75%, #c4471c 75% 100% );
   border: 0;
   margin-top: .2rem;
   transition: .3s ease;
 }
 .process-timeline__step:hover .process-timeline__dot {
-  background: #fdce2a;
+ background: linear-gradient( to left, #fdce2a 0 25%, #fdab2b 25% 50%, #e97626 50% 75%, #c4471c 75% 100% );
   transform: scale(1.15);
 }
 .process-timeline__content h3 {
@@ -6863,15 +6883,27 @@ Mobile
   pointer-events: none;
 }
 .origin-label {
-  display: inline-block;
-  margin-bottom: 1rem;
-  font-size: .72rem;
-  font-weight: 600;
-  letter-spacing: .3em;
+   display: inline-block;
+  margin-bottom: var(--space-md);
+
+  color: #fdab2b;
+
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  line-height: 1;
   text-transform: uppercase;
-  color: #fdce2a;
 }
 
+
+.origin-divider {
+  
+
+width: 60px;
+  height: 2px;
+  margin: var(--space-sm) 0 var(--space-md);
+  background: rgba(253, 171, 43, .45);
+}
 
 .origin-card .closing-cta__button {
   display: inline-flex;
@@ -6950,8 +6982,7 @@ Mobile
 .orbit-story-wrapper {
   position: relative;
   width: 340px;
-  /* same width as your story */
-  margin-top: 0;
+  margin: 0 auto;
   overflow: visible;
 }
 @media (max-width:768px) {
@@ -6964,29 +6995,11 @@ Mobile
   }
 }
 .story-profile {
-  position: absolute;
-  top: -54px;
-  right: -184px;
+    width: 190px;
+  margin: 0 auto 0;
   text-align: center;
-  z-index: 20;
-  min-width: 22ch;
 }
-@media (max-width:768px) {
-  .story-profile {
-    position: relative;
-    top: 0;
-    right: 0;
-    transform: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-width: auto;
-    width: max-content;
-    max-width: 140px;
-    margin: 0 auto 10px;
-  }
-}
+
 .story-logo {
   width: 58px;
   height: 58px;
@@ -6994,40 +7007,33 @@ Mobile
   overflow: hidden;
   margin: 0 auto 8px;
   box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  border: 2px solid white;
+    margin-inline: auto;
 }
-@media (max-width:768px) {
-  .story-logo {
-    position: absolute;
-    top: 88%;
-    right: -38%;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 10px 24px rgba(0,0,0,.18);
-  }
-}
+
 .story-logo img, .story-logo amp-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .story-profile-title {
-  max-width: 160px;
-  margin: 8px auto 2px;
-  font-size: 1rem;
+  max-width: 170px;
+  margin: 10px auto 5px;
+  font-size: .92rem;
   font-weight: 600;
   line-height: 1.2;
+  letter-spacing: -.01em;
   text-align: center;
 }
 .story-profile-meta {
-  margin: 2px auto 0;
-  font-size: .8rem;
-  opacity: .7;
+  width: auto;
+  margin: 0 auto;
+  font-size: .72rem;
+  font-weight: 400;
+  opacity: .65;
+  letter-spacing: .02em;
+  line-height: 1.3;
   text-align: center;
-  white-space: nowrap;
-  width: 95px;
 }
 .story-progress {
   display: flex;
@@ -7166,6 +7172,34 @@ Mobile
   color: rgba(255,255,255,.8);
   font-size: 12px;
 }
+
+.section-story-preview .section__title-md {
+  line-height: .92;
+  letter-spacing: -.035em;
+  max-width: 520px;
+}
+
+
+.section-story-preview .text-label {
+  font-size: .68rem;
+  letter-spacing: .12em;
+  line-height: 1;
+  margin-bottom: 1.15rem;
+}
+
+.section-story-preview .text-divider--white {
+  width: 70px;
+  height: 2px;
+  margin: 1.5rem 0 1.8rem;
+}
+
+.section-story-preview .base-contrast__lead {
+  max-width: 39ch;
+  font-size: 1.12rem;
+  line-height: 1.55;
+  letter-spacing: -.01em;
+}
+
 /* ==================================
 BLOG HERO
 ================================== */
@@ -8498,9 +8532,7 @@ padding: .9rem 1.25rem;
 
     gap: var(--space-xl);
 
-    padding:
-      var(--space-xl)
-      var(--space-md);
+
   }
 
   .beta-card__form {
