@@ -75,7 +75,7 @@ TYPOGRAPHY
   line-height: .92;
   letter-spacing: -.05em;
   font-weight: 900;
-  margin: 0;
+ margin: 0 ;
 }
 /* Secondary section title */
 .section__title-md {
@@ -121,6 +121,12 @@ TYPOGRAPHY
   letter-spacing: -.01em;
   font-weight: 700;
   margin: 0 0 var(--space-sm);
+}
+
+.section__title--compact {
+  line-height: .92;
+  letter-spacing: -.035em;
+  max-width: 520px;
 }
 .section__intro {
   max-width: 680px;
@@ -3722,7 +3728,7 @@ SERVICES FLOW SECTION
 }
 .text__lead {
  max-width: 42ch;
-  margin-top: 0;
+  margin: 20px 0 var(--space-md);
   font-size: clamp(1rem, .45vw + .95rem, 1.18rem);
   line-height: 1.55;
   font-weight: 400;
@@ -4432,13 +4438,10 @@ LEFT SIDE
 }
 .base-contrast__lead {
   max-width: 60ch;
-  margin: 24px 0 var(--space-lg);
+  margin: var(--space-md) 0;
 }
-@media (max-width: 900px) {
-  .base-contrast__lead {
-    margin: 24px 0 var(--space-md);
-  }
-}
+
+
 /* Section specific alignment */
 .section-story-preview .base-contrast__label {
   display: block;
@@ -4452,8 +4455,7 @@ LEFT SIDE
 RIGHT SIDE
 ================================ */
 .base-contrast__side {
-  border-left: var(--border-soft);
-  padding-left: 2rem;
+   padding-left: 2rem;
 }
 .base-contrast__point {
   margin-bottom: 2rem;
@@ -4468,7 +4470,18 @@ RIGHT SIDE
   opacity: var(--text-muted);
 }
 
+.case-story-intro {
+  max-width: 680px;
+}
 
+.case-story-intro .text__lead {
+  margin: 0;
+  max-width: 42ch;
+}
+
+.case-story-intro strong {
+  font-weight: 700;
+}
 
 
 /* ==========================================
@@ -4569,7 +4582,7 @@ MOBILE
   .base-contrast__layout {
     display: flex;
     flex-direction: column;
-    gap: var(--space-grid-md);
+    gap: 0;
   }
   .base-contrast__main {
     order: -1;
@@ -4580,7 +4593,7 @@ MOBILE
     width: 100%;
     border: 0;
     border-top: var(--border-soft);
-    padding: 2rem 0 0;
+    padding: 0;
   }
   .base-contrast__point {
     margin-bottom: 2rem;
@@ -5069,29 +5082,65 @@ STORY RING
     height: 160px;
   }
 }
+
+@property --ring-a {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f6f3ee;
+}
+
+.story-ring {
+  --ring-a: #f6f3ee;
+  --ring-b: #2d3ed9;
+}
+
 .story-ring::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 50%;
+
   background: repeating-conic-gradient(
     from 0deg,
-    #f6f3ee 0deg 3deg,
+    var(--ring-a) 0deg 3deg,
     transparent 3deg 7deg
   );
-  -webkit-mask:
-    radial-gradient(
-      farthest-side,
-      transparent calc(100% - 8px),
-      #000 calc(100% - 8px)
-    );
-  mask:
-    radial-gradient(
-      farthest-side,
-      transparent calc(100% - 8px),
-      #000 calc(100% - 8px)
-    );
+
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 8px),
+    #000 calc(100% - 8px)
+  );
+
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 8px),
+    #000 calc(100% - 8px)
+  );
+
+  animation:
+    story-ring-spin 18s linear infinite,
+    story-ring-colour 6s ease-in-out infinite alternate;
 }
+
+@keyframes story-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes story-ring-colour {
+  from {
+    --ring-a: #f6f3ee;
+  }
+
+  to {
+    --ring-a: #fdab2b;
+  }
+}
+
+
+
 @media (max-width:768px) {
   .story-ring::before {
     -webkit-mask:
@@ -6530,10 +6579,7 @@ Process Timeline - Mobile
   .process-timeline__dot {
     width: 16px;
     height: 16px;
-    margin-top: .35rem;
-    background: #0c2340;
-    border: 3px solid rgba(12,35,64,.15);
-    box-sizing: content-box;
+    
   }
   .process-timeline__content h3 {
     margin: 0 0 .5rem;
@@ -6633,59 +6679,210 @@ WHY TMS
 .section__circles .principles__intro {
   align-items: start;
 }
+
 /* ==========================================
-SECTION CIRCLE THEMES
+   SECTION CIRCLE THEMES
 ========================================== */
+
+.section__circles {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* ------------------------------------------
+   INNER CIRCLE
+------------------------------------------ */
+
 .section__circles::after {
   content: "";
   position: absolute;
+
   width: clamp(190px, 23vw, 360px);
   height: clamp(190px, 23vw, 360px);
+
   right: 7%;
   top: 50%;
+
   transform: translateY(-50%);
+
   background: var(--circle-fill);
   border-radius: 50%;
+
   pointer-events: none;
+
+  animation:
+    circle-core 11s cubic-bezier(.45, 0, .25, 1) infinite;
 }
+
+
+/* ------------------------------------------
+   OUTER RING
+------------------------------------------ */
+
 .section__circles::before {
   content: "";
   position: absolute;
+
   width: clamp(460px, 55vw, 860px);
   height: clamp(460px, 55vw, 860px);
+
   right: -18%;
   top: 50%;
+
   transform: translateY(-50%);
+
   border: 1px solid var(--circle-border);
   border-radius: 50%;
+
   pointer-events: none;
+
+  animation:
+    circle-orbit 20s cubic-bezier(.45, 0, .25, 1) infinite;
 }
+
+
+/* ==========================================
+   INNER CIRCLE — SOFT DRIFT
+========================================== */
+
+@keyframes circle-core {
+
+  0%,
+  100% {
+    transform:
+      translateY(-50%)
+      translateX(0)
+      scale(1);
+  }
+
+  30% {
+    transform:
+      translateY(-50%)
+      translateX(-8px)
+      scale(1.025);
+  }
+
+  60% {
+    transform:
+      translateY(-50%)
+      translateX(5px)
+      scale(1.045);
+  }
+
+  80% {
+    transform:
+      translateY(-50%)
+      translateX(2px)
+      scale(1.015);
+  }
+
+}
+
+
+/* ==========================================
+   OUTER RING — SLOW BREATH
+========================================== */
+
+@keyframes circle-orbit {
+
+  0%,
+  100% {
+    transform:
+      translateY(-50%)
+      translateX(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-50%)
+      translateX(-18px)
+      scale(1.025);
+  }
+
+}
+
+
+/* ==========================================
+   LEFT VARIANT
+========================================== */
+
 .section__circles--left::after {
   right: auto;
   left: 7%;
 }
+
 .section__circles--left::before {
   right: auto;
   left: -18%;
 }
-@media (max-width: 768px) {
-  .section__circles::before {
-    width: 420px;
-    height: 420px;
-    right: -250px;
-    top: 45%;
-    transform: translateY(-50%);
-  }
-  .section__circles::after {
-    width: 190px;
-    height: 190px;
-    right: -80px;
-    top: 45%;
-    transform: translateY(-50%);
-  }
-}
+
+
 /* ==========================================
-SECTION CIRCLE--end
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+  /* Outer ring becomes a partial arc,
+     rather than enclosing the content */
+
+  .section__circles::before {
+    width: 620px;
+    height: 620px;
+
+    right: -54%;
+    top: 46%;
+
+    animation-duration: 24s;
+  }
+
+
+  /* Smaller floating colour disc */
+
+  .section__circles::after {
+    width: 170px;
+    height: 170px;
+
+    right: 24%;
+    top: 57%;
+
+    animation-duration: 12s;
+  }
+
+
+  /* LEFT VERSION */
+
+  .section__circles--left::before {
+    right: auto;
+    left: -54%;
+  }
+
+  .section__circles--left::after {
+    right: auto;
+    left: 24%;
+  }
+
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .section__circles::before,
+  .section__circles::after {
+    animation: none;
+  }
+
+}
+
+
+/* ==========================================
+   SECTION CIRCLE — END
 ========================================== */
 /* =========================================================
 INTRO
@@ -6708,7 +6905,7 @@ GRID
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(2.5rem, 5vw, 5rem);
-  margin-top: var(--space-md)
+  margin-top: var(--space-lg);
 }
 /* =========================================================
 CARDS
@@ -6751,9 +6948,7 @@ BACKGROUND NUMBERS
 TABLET
 ========================================================= */
 @media (max-width: 1100px) {
-  .principles__intro {
-    column-gap: 3rem;
-  }
+  
  
   .why-tms__card .bg-number {
     font-size: 14rem;
@@ -6766,9 +6961,14 @@ MOBILE
   /* Intro becomes a normal vertical stack */
   .principles__intro {
     grid-template-columns: 1fr;
-    row-gap: 2rem;
+    row-gap: 0;
     margin-bottom: 0;
   }
+
+  .why-tms__grid {
+
+  margin-top: 0;
+}
   /* Cards stack vertically */
   .why-tms__grid {
     grid-template-columns: 1fr;
@@ -8527,7 +8727,7 @@ padding: .9rem 1.25rem;
   .beta-card {
     grid-template-columns: 1fr;
 
-    gap: var(--space-xl);
+    gap: var(--space-md);
 
 
   }
