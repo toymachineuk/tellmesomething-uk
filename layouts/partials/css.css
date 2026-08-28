@@ -1153,7 +1153,9 @@ width: 100%;
 }
 
 
-
+.blog-card__content a {
+    text-decoration: none;
+}
 
 
 /* =========================================================
@@ -7543,6 +7545,7 @@ MOBILE
     font-size: clamp(125px, 26vw, 180px);
     line-height: .72;
     letter-spacing: -.075em;
+color: rgba(0, 0, 0, .68);
   }
 }
 /* =====================================
