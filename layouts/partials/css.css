@@ -2589,8 +2589,8 @@ PULSEFRAME
     margin-bottom: var(--space-8);
   }
   .pulseframe-text {
-    order: 1;
-    margin-top: var(--space-lg);
+   
+    margin-top: var(--space-md);
     margin-bottom: var(--space-md);
   }
   .pulseframe-media {
@@ -2610,7 +2610,7 @@ PULSEFRAME
   /* increase from ~270 */
   aspect-ratio: 9/16;
   position: relative;
-  margin-top: var(--space-5);
+  margin-top: var(--space-xs);
   z-index: 2;
 }
 .pulseframe-media amp-video {
@@ -2642,8 +2642,8 @@ PULSEFRAME
   }
   .pulseframe-block {
     flex-direction: column;
-    gap: var(--space-6);
-    margin-bottom: var(--space-8);
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
     align-items: flex-start;
   }
   .pulseframe-text {
@@ -2652,8 +2652,8 @@ PULSEFRAME
   }
   .pulseframe-media {
     order: 2;
-    width: 100%;
-    max-width: 100%;
+    margin-inline: auto;
+    width: min(100%, 270px);
     aspect-ratio: 9/16;
   }
   .case-steps {
@@ -2727,12 +2727,7 @@ SECTION WITH CIRCLES
   overflow: hidden;
   /* prevents overlap into other sections */
 }
-.section-decor {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
+
 .section-with-circles .container {
   position: relative;
   z-index: 1;
@@ -2755,14 +2750,7 @@ SECTION WITH CIRCLES
   opacity: .08;
   border-radius: 50%;
 }
-.circle--top-right {
-  top: -100px;
-  right: -100px;
-}
-.circle--bottom-right {
-  bottom: var(--offset);
-  right: var(--offset);
-}
+
 /* ===============================
 SECTION WITH CIRCLES--end
 =============================== */
@@ -4522,6 +4510,13 @@ RIGHT SIDE
     font-size: .62rem;
     letter-spacing: .1em;
   }
+
+.case-story-intro .text__lead {
+  margin:  var(--space-lg) 0;
+  max-width: 100%;
+}
+
+
 }
 
 .pulseframes-status__dot {
@@ -4600,9 +4595,7 @@ MOBILE
   .base-contrast__point {
     margin-bottom: 2rem;
   }
-  .base-contrast__point p {
-    max-width: 100%;
-  }
+ 
 }
 /* Small mobile */
 @media (max-width:768px) {
@@ -7710,8 +7703,8 @@ LEFT
   background: rgba(255,255,255,.25);
 }
 .case-feedback__lead {
-  margin-top: var(--space-md);
-  color: black;
+  margin-top: var(--space-xs);
+ 
 }
 /* =========================================================
 RIGHT
@@ -7805,10 +7798,7 @@ AUTHOR
 TABLET
 ========================================================= */
 @media (max-width: 900px) {
-  .case-feedback__layout {
-    gap: var(--space-lg);
-  }
-  .case-feedback__side {
+   .case-feedback__side {
     padding-left: var(--space-md);
   }
 }
@@ -7820,16 +7810,16 @@ MOBILE
     padding-block: var(--space-lg);
   }
   .case-feedback__layout {
-    width: calc(100% - (var(--space-md) * 2));
+    
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    gap: 0;
     padding-bottom: var(--space-md);
   }
   .case-feedback__main {
     max-width: none;
   }
   .case-feedback__side {
-    padding: var(--space-md) 0 0;
+    padding: var(--space-xs) 0 0;
     border-left: 0;
     border-top: 1px solid rgba(255,255,255,.16);
   }

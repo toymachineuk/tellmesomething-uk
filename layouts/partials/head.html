@@ -1421,12 +1421,24 @@ transform:scale(.95);
 
 
 .article__title {
-  
-  max-width: 14ch;
+    width: min(100%, 14ch);
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(48px, 6vw, 82px);
+  line-height: .92;
+  letter-spacing: -.055em;
+  font-weight: 800;
+
 }
 
 .article__subtitle {
-  margin: var(--space-sm) 0 0;
+ width: min(100%, 680px);
+  margin: var(--space-md) 0 0;
+  font-family: var(--font-sans);
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  font-weight: 500;
 }
 
 .article__lead {
@@ -1507,21 +1519,21 @@ transform:scale(.95);
 ========================================= */
 
 .article-content h2 {
-  margin: 5rem 0 1.25rem;
-
-  font-size: var(--text-h2);
-  line-height: var(--leading-h2);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-family: var(--font-sans);
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: .98;
+  letter-spacing: -.04em;
+  font-weight: 800;
+  margin: 4rem 0 1.25rem;
 }
 
 .article-content h3 {
+  font-family: var(--font-sans);
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.1;
+  letter-spacing: -.025em;
+  font-weight: 700;
   margin: 3rem 0 1rem;
-
-  font-size: clamp(1.5rem, 2vw, 2rem);
-  line-height: 1.2;
-  font-weight: 600;
-  letter-spacing: -0.02em;
 }
 
 
@@ -1566,7 +1578,7 @@ transform:scale(.95);
 .article-content blockquote {
   max-width: 32ch;
 
-  margin: 3.5rem 0;
+  margin: var(--space-md) 0 var(--space-lg);
   padding-left: 1.5rem;
 
   border-left: 3px solid #111;
@@ -1700,6 +1712,38 @@ transform:scale(.95);
     padding: 0 1rem 64px;
   }
 
+  @media (max-width: 600px) {
+  .article__title {
+    width: 100%;
+    max-width: 14ch;
+    font-size: clamp(44px, 12vw, 64px);
+    line-height: .9;
+  }
+
+  .article__subtitle {
+    width: 100%;
+    margin-top: var(--space-sm);
+    font-size: clamp(19px, 5vw, 24px);
+  }
+}
+
+.article-content h2 {
+  font-family: var(--font-sans);
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: .98;
+  letter-spacing: -.04em;
+  font-weight: 800;
+  margin: var(--space-xl) 0 var(--space-sm);
+}
+
+.article-content h2#references {
+  font-size: clamp(26px, 3vw, 40px);
+  line-height: 1;
+  letter-spacing: -.035em;
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
 
   /* -----------------------------------------
      HERO
@@ -1765,19 +1809,9 @@ transform:scale(.95);
      HEADINGS
   ----------------------------------------- */
 
-  .article-content h2 {
-    margin: 3.5rem 0 1rem;
+ 
 
-    font-size: 2rem;
-    line-height: 1.15;
-  }
-
-  .article-content h3 {
-    margin: 2.5rem 0 1rem;
-
-    font-size: 1.45rem;
-    line-height: 1.2;
-  }
+ 
 
 
   /* -----------------------------------------
