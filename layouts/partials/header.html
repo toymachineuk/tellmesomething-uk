@@ -1,4 +1,5 @@
 <!-- Start Navbar -->
+ <div class="header-wrapper">  
 
 <header class="site-shell ampstart-headerbar{{ if not .IsHome }} has-breadcrumb{{ end }}">
 
@@ -47,6 +48,8 @@
 
 </header>
 
+</div>
+
 
 <!-- ==========================================
      BREADCRUMB
@@ -54,8 +57,7 @@
 
 {{ if ne .Params.crumb "none" }}
 
-<div class="current-location  {{ .Params.crumb }}{{ if .IsHome }} home{{ end }}{{ if eq .RelPermalink "/post/" }} post{{ end }}">
-
+<div class="current-location {{ .Params.crumb }}{{ if .IsHome }} home{{ end }}{{ if eq .RelPermalink "/post/" }} post{{ end }}{{ with .Params.crumbclass }} {{ . }}{{ end }}">
   <div class="site-shell">  
 
   {{ if eq .RelPermalink "/post/" }}
