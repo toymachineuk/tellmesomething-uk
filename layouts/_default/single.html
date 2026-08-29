@@ -1,15 +1,15 @@
 {{ partial "head.html" . }}
 {{ partial "header.html" . }}
 
-<main class="article">
+<main class="article site-shell">
 
 
   <article class="article-container">
 
-  <div class="article-hero-split">
+  <div class="article-hero-split container">
 
   <div class="hero-text">
-       <p class="meta text-label caps-tight">
+       <p class="meta  caps-tight">
     {{ .Date.Format "January 2006" }}
     </p>
     <h1 class="article__title ">{{ .Title }}</h1>
@@ -29,6 +29,9 @@
   </div>
 
 </div>
+
+
+
       
     <!-- ✅ THIS WAS MISSING -->
     <section class="article-content">
@@ -37,18 +40,50 @@
   <p class="article__lead">{{ . }}</p>
 {{ end }}
 
+
       {{ .Content }}
-              <!-- Ambient background -->
-<div class="ambient-orbs">
-  <span class="orb orb--1"></span>
-  <span class="orb orb--2"></span>
-  <span class="orb orb--3"></span>
-  <span class="orb orb--4"></span>
-  <span class="orb orb--5"></span>
-</div>
+
+
+          <section class="article-meta">
+
+  <!-- Hyper Island -->
+  <div class="article-meta__brand">
+    <div class="article-meta__logo" aria-label="tms">
+         <amp-img
+      src="/img/logo-square1.png"
+      width="720"
+      height="720"
+      layout="responsive"
+      alt="Web development">
+    </amp-img>
+    </div>
+
+    <div class="article-meta__brand-text">
+      <strong>TMS</strong>
+      <span>Shape Your Future</span>
+    </div>
+  </div>
+
+
+
+  <!-- Updated date -->
+  <div class="article-meta__updated">
+    <strong>Article updated on:</strong>
+    <time datetime="2026-05-18">       
+    {{ .Date.Format "January 2006" }}
+    </time>
+  </div>
+
+</section>
+
     </section>
 
+
+
   </article>
+
+
+  
 
 </main>
 
