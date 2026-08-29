@@ -857,6 +857,11 @@ padding:0 16px;
 .current-location::after {
   right: 0;
 }
+
+
+
+
+
 .current-home {
   position: relative;
   display: inline-flex;
@@ -874,6 +879,7 @@ padding:0 16px;
   line-height: 1;
   letter-spacing: .12em;
   text-transform: uppercase;
+  gap:7px;
 }
 .current-home::before {
   content: "";
@@ -1006,8 +1012,15 @@ background: linear-gradient( to right, #016a87 0 25%, #2daccc 25% 50%, #49cbe5 5
   border-radius: 0 999px 999px 0;
   height: 20px;
   padding: 0 .75rem;
-  background: transparent;
-  color: #000;
+  background:
+    linear-gradient(
+      to right,
+      #363600 0 25%,
+      #66662f 25% 50%,
+      #a7a676 50% 75%,
+      #d4d39a 75% 100%
+    );
+    color:white;
   font-weight: 700;
 }
 .sep {
