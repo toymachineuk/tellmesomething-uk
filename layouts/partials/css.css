@@ -1157,47 +1157,26 @@ width: 100%;
     text-decoration: none;
 }
 
-
 /* =========================================================
    TMS MOBILE SIDEBAR
    ========================================================= */
-/* =========================================================
-   TMS MOBILE SIDEBAR
-   CONTENT MUST NEVER BE CROPPED
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   SIDEBAR
-   --------------------------------------------------------- */
 
 .ampstart-sidebar {
-  display: block;
-
   width: 100%;
-
   box-sizing: border-box;
-
-  /*
-   * Let AMP determine the available height.
-   * The sidebar itself is the scrolling surface.
-   */
-  height: auto;
-  min-height: 100%;
-
-  overflow-x: hidden;
-  overflow-y: auto;
-
-  -webkit-overflow-scrolling: touch;
 
   background: #eeeae1;
   color: #242321;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 
-/* ---------------------------------------------------------
-   HERO
-   --------------------------------------------------------- */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 .ampstart-sidebar .sidebar-hero {
   position: relative;
@@ -1206,28 +1185,18 @@ width: 100%;
   align-items: center;
   justify-content: space-between;
 
-  width: 100%;
-
-  height: 90px;
-  min-height: 90px;
-
-  padding: 0 20px;
+  height: 68px;
+  padding: 0 18px;
 
   box-sizing: border-box;
-
-  background: #3d2924;
-
   overflow: hidden;
+background: #e8e1d4;
 }
-
-
-/* subtle circle */
 
 .ampstart-sidebar .sidebar-hero::after {
   content: "";
 
   position: absolute;
-
   width: 180px;
   height: 180px;
 
@@ -1235,169 +1204,157 @@ width: 100%;
   right: -90px;
 
   border-radius: 50%;
-
-  background: rgba(255, 255, 255, .05);
-
-  pointer-events: none;
+  background: rgba(255,255,255,.05);
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    LOGO
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .ampstart-sidebar .sidebar-head {
   position: relative;
-
   z-index: 2;
 
   display: flex;
   align-items: center;
 }
 
-
 .ampstart-sidebar .sidebar__logo {
   display: block;
 
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
 
-  flex: 0 0 48px;
+  flex: 0 0 44px;
 
   overflow: hidden;
-
   border-radius: 50%;
 }
 
-
 .ampstart-sidebar .sidebar__logo amp-img {
-  display: block;
-
   width: 100%;
   height: 100%;
 }
 
 
-/* ---------------------------------------------------------
-   CLOSE BUTTON
-   --------------------------------------------------------- */
+/* =========================================================
+   CLOSE
+   ========================================================= */
 
 .ampstart-sidebar .sidebar-close {
   position: relative;
-
   z-index: 2;
 
   display: grid;
   place-items: center;
 
-  width: 32px;
-  height: 32px;
-
-  flex: 0 0 32px;
+  width: 30px;
+  height: 30px;
 
   margin: 0;
   padding: 0;
 
   color: #f3eee5;
 
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 300;
   line-height: 1;
 
   text-decoration: none;
-
-  cursor: pointer;
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    NAVIGATION
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .ampstart-sidebar .ampstart-sidebar-nav {
   display: flex;
   flex-direction: column;
 
-  width: 100%;
-
-  margin: 18px 0 0;
+  margin: 10px 0 0;
   padding: 0;
-
-  box-sizing: border-box;
-
-  /*
-   * IMPORTANT:
-   * Do NOT make the nav a separate scroll container.
-   */
-  overflow: visible;
 }
 
 
-/* ---------------------------------------------------------
-   NAV ITEMS
-   --------------------------------------------------------- */
+/* =========================================================
+   NAV LINK
+   ========================================================= */
 
-.ampstart-sidebar .sidebar-home-link,
-.ampstart-sidebar .sidebar-nav-link {
-  position: relative;
-
+.ampstart-sidebar .sidebar-nav-link,
+.ampstart-sidebar .sidebar-home-link {
   display: grid;
 
-  grid-template-columns: 42px minmax(0, 1fr);
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: center;
 
-  align-items: start;
-
-  gap: 14px;
+  gap: 12px;
 
   width: 100%;
+  min-height: 62px;
 
-  min-height: 82px;
-
-  padding: 17px 21px;
+  padding: 10px 18px;
 
   box-sizing: border-box;
 
   color: #242321;
-
   text-decoration: none;
 
   border: 0;
-  border-bottom: 1px solid rgba(36, 35, 33, .13);
+  border-bottom: 1px solid rgba(36,35,33,.10);
 
   background: transparent;
+
+  transition:
+    background-color .2s ease,
+    padding-left .2s ease;
+}
+
+.ampstart-sidebar .sidebar-nav-link:hover {
+  background: rgba(255,255,255,.3);
+  padding-left: 21px;
 }
 
 
-/* ---------------------------------------------------------
-   NAV NUMBER
-   --------------------------------------------------------- */
+/* =========================================================
+   NUMBER / HOME ICON
+   ========================================================= */
 
-.ampstart-sidebar .sidebar-number,
-.ampstart-sidebar .sidebar-nav-number {
+.ampstart-sidebar .sidebar-nav-number,
+.ampstart-sidebar .sidebar-number {
   display: grid;
   place-items: center;
 
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
 
   box-sizing: border-box;
-
-  border: 1px solid rgba(36, 35, 33, .36);
 
   border-radius: 50%;
 
   color: #67635d;
 
-  font-size: .68rem;
-  line-height: 1;
-
+  font-size: .67rem;
   font-weight: 600;
+  line-height: 1;
+color: #fff;
+  transition:
+    transform .2s ease,
+    border-color .2s ease;
+     transform: scale(1.06);
+}
+
+.ampstart-sidebar .sidebar-nav-number svg,
+.ampstart-sidebar .sidebar-number svg {
+  width: 16px;
+  height: 16px;
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    NAV CONTENT
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .ampstart-sidebar .sidebar-nav-content {
   min-width: 0;
@@ -1406,32 +1363,30 @@ width: 100%;
   flex-direction: column;
 }
 
+
+/* =========================================================
+   NAV TITLE
+   ========================================================= */
 
 .ampstart-sidebar .sidebar-title,
 .ampstart-sidebar .sidebar-nav-title {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+
   margin: 0;
 
   color: #242321;
 
-  font-size: 1.18rem;
+  font-size: 1.08rem;
   line-height: 1;
 
   font-weight: 750;
-
   letter-spacing: -.04em;
 }
 
-
-.ampstart-sidebar .sidebar-nav-title {
-  display: flex;
-  align-items: baseline;
-  gap: 5px;
-}
-
-
 .ampstart-sidebar .sidebar-nav-title sup {
   position: relative;
-
   top: -.35em;
 
   font-size: .4em;
@@ -1439,456 +1394,27 @@ width: 100%;
 }
 
 
-/* ---------------------------------------------------------
-   NAV DESCRIPTION
-   --------------------------------------------------------- */
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
 
 .ampstart-sidebar .sidebar-nav-description {
   display: block;
 
-  max-width: 29ch;
+  max-width: 30ch;
 
-  margin-top: 5px;
+  margin: 4px 0 0;
 
   color: #68645e;
 
-  font-size: .78rem;
-  line-height: 1.35;
-
-  font-weight: 400;
-}
-
-
-/* ---------------------------------------------------------
-   THE LAB
-   --------------------------------------------------------- */
-
-.ampstart-sidebar .sidebar-lab {
-  display: block;
-
-  width: 100%;
-
-  margin: 0;
-  padding: 0;
-}
-
-
-/* ---------------------------------------------------------
-   LAB LINK
-   --------------------------------------------------------- */
-
-.ampstart-sidebar .sidebar-lab-link {
-  position: relative;
-
-  display: block;
-
-  width: 100%;
-
-  min-height: 220px;
-
-  padding: 26px 24px 24px;
-
-  box-sizing: border-box;
-
-  overflow: hidden;
-
-  background: #e4ded2;
-
-  color: #242321;
-
-  text-decoration: none;
-
-  border-top: 1px solid rgba(36, 35, 33, .08);
-}
-
-
-/* ---------------------------------------------------------
-   LAB DECORATION
-   --------------------------------------------------------- */
-
-.ampstart-sidebar .sidebar-lab-link::before {
-  content: "";
-
-  position: absolute;
-
-  width: 270px;
-  height: 270px;
-
-  right: -165px;
-  bottom: -160px;
-
-  border: 1px solid rgba(36, 35, 33, .12);
-
-  border-radius: 50%;
-
-  pointer-events: none;
-}
-
-
-.ampstart-sidebar .sidebar-lab-link::after {
-  content: "";
-
-  position: absolute;
-
-  width: 170px;
-  height: 170px;
-
-  right: -90px;
-  bottom: -95px;
-
-  background: rgba(255, 255, 255, .22);
-
-  border-radius: 50%;
-
-  pointer-events: none;
-}
-
-
-/* ---------------------------------------------------------
-   LAB CONTENT
-   --------------------------------------------------------- */
-
-.ampstart-sidebar .sidebar-lab-main {
-  position: relative;
-
-  z-index: 2;
-
-  display: flex;
-  flex-direction: column;
-}
-
-
-.ampstart-sidebar .sidebar-lab-label {
-  display: block;
-
-  margin: 0 0 14px;
-
-  color: #77726a;
-
-  font-size: .68rem;
-  line-height: 1;
-
-  font-weight: 700;
-
-  letter-spacing: .16em;
-
-  text-transform: uppercase;
-}
-
-
-.ampstart-sidebar .crumb-section-sidebar {
-  display: block;
-
-  margin: 0;
-
-  color: #242321;
-
-  font-size: 3.8rem;
-  line-height: .78;
-
-  font-weight: 800;
-
-  letter-spacing: -.075em;
-}
-
-
-.ampstart-sidebar .sidebar-lab-copy {
-  display: flex;
-  flex-direction: column;
-
-  gap: 11px;
-
-  max-width: 300px;
-
-  margin-top: 20px;
-}
-
-
-.ampstart-sidebar .sidebar-lab-description {
-  max-width: 29ch;
-
-  margin: 0;
-
-  color: #625e57;
-
-  font-size: .8rem;
-  line-height: 1.4;
-}
-
-
-.ampstart-sidebar .sidebar-lab-arrow {
-  display: inline-flex;
-  align-items: center;
-
-  gap: 7px;
-
-  width: fit-content;
-
-  color: #373430;
-
-  font-size: .68rem;
-  line-height: 1;
-
-  font-weight: 700;
-
-  letter-spacing: .12em;
-
-  text-transform: uppercase;
+  font-size: .71rem;
+  line-height: 1.3;
 }
 
 
 /* =========================================================
-   SHORT MOBILE SCREENS
-   ========================================================= */
-
-@media (max-height: 700px) {
-
-  .ampstart-sidebar .sidebar-hero {
-    height: 78px;
-    min-height: 78px;
-  }
-
-  .ampstart-sidebar .sidebar__logo {
-    width: 44px;
-    height: 44px;
-
-    flex-basis: 44px;
-  }
-
-  .ampstart-sidebar .sidebar-close {
-    width: 30px;
-    height: 30px;
-
-    font-size: 21px;
-  }
-
-  .ampstart-sidebar .ampstart-sidebar-nav {
-    margin-top: 12px;
-  }
-
-  .ampstart-sidebar .sidebar-home-link,
-  .ampstart-sidebar .sidebar-nav-link {
-    min-height: 72px;
-
-    padding-top: 14px;
-    padding-bottom: 14px;
-  }
-
-  .ampstart-sidebar .sidebar-number,
-  .ampstart-sidebar .sidebar-nav-number {
-    width: 38px;
-    height: 38px;
-  }
-
-  .ampstart-sidebar .sidebar-title,
-  .ampstart-sidebar .sidebar-nav-title {
-    font-size: 1.1rem;
-  }
-
-  .ampstart-sidebar .sidebar-nav-description {
-    font-size: .72rem;
-  }
-
-  .ampstart-sidebar .sidebar-lab-link {
-    min-height: 190px;
-
-    padding-top: 21px;
-    padding-bottom: 20px;
-  }
-
-  .ampstart-sidebar .crumb-section-sidebar {
-    font-size: 3.25rem;
-  }
-
-  .ampstart-sidebar .sidebar-lab-copy {
-    margin-top: 15px;
-
-    gap: 8px;
-  }
-}
-
-
-/* =========================================================
-   VERY SHORT MOBILE
-   ========================================================= */
-
-@media (max-height: 600px) {
-
-  .ampstart-sidebar .sidebar-hero {
-    height: 70px;
-    min-height: 70px;
-  }
-
-  .ampstart-sidebar .sidebar__logo {
-    width: 40px;
-    height: 40px;
-
-    flex-basis: 40px;
-  }
-
-  .ampstart-sidebar .ampstart-sidebar-nav {
-    margin-top: 8px;
-  }
-
-  .ampstart-sidebar .sidebar-home-link,
-  .ampstart-sidebar .sidebar-nav-link {
-    min-height: 66px;
-
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-
-  .ampstart-sidebar .sidebar-number,
-  .ampstart-sidebar .sidebar-nav-number {
-    width: 34px;
-    height: 34px;
-  }
-
-  .ampstart-sidebar .sidebar-title,
-  .ampstart-sidebar .sidebar-nav-title {
-    font-size: 1.04rem;
-  }
-
-  .ampstart-sidebar .sidebar-nav-description {
-    font-size: .68rem;
-  }
-
-  .ampstart-sidebar .sidebar-lab-link {
-    min-height: 175px;
-
-    padding: 18px 21px;
-  }
-
-  .ampstart-sidebar .crumb-section-sidebar {
-    font-size: 3rem;
-  }
-}
-
-
-/* =========================================================
-   DESKTOP
-   ========================================================= */
-
-@media (min-width: 769px) {
-
-  .ampstart-sidebar {
-    display: none !important;
-  }
-
-  .i-amphtml-sidebar-mask {
-    display: none !important;
-  }
-}
-
-/* ---------------------------------------------------------
-   HOME ICON
-   --------------------------------------------------------- */
-
-.ampstart-sidebar .sidebar-home-link .sidebar-number {
-  color: #45423e;
-}
-
-.ampstart-sidebar .sidebar-home-link .sidebar-number svg {
-  width: 17px;
-  height: 17px;
-}
-
-
-/* ---------------------------------------------------------
-   NAV CONTENT
-   --------------------------------------------------------- */
-
-.ampstart-sidebar .sidebar-nav-content {
-  min-width: 0;
-
-  display: flex;
-  flex-direction: column;
-
-  padding-top: 1px;
-}
-
-
-/* ---------------------------------------------------------
-   HOME TITLE
-   --------------------------------------------------------- */
-
-.ampstart-sidebar .sidebar-title {
-  display: block;
-
-  margin: 0;
-
-  color: #242321;
-
-  font-size: 1.18rem;
-  line-height: 1;
-
-  font-weight: 750;
-  letter-spacing: -.04em;
-}
-
-
-/* ---------------------------------------------------------
-   NAV TITLES
-   --------------------------------------------------------- */
-
-.ampstart-sidebar .sidebar-nav-title {
-  display: flex;
-
-  align-items: baseline;
-
-  gap: 5px;
-
-  margin: 0;
-
-  color: #242321;
-
-  font-size: 1.18rem;
-  line-height: 1;
-
-  font-weight: 750;
-  letter-spacing: -.04em;
-}
-
-
-/* ---------------------------------------------------------
-   TRADEMARK
-   --------------------------------------------------------- */
-
-.ampstart-sidebar .sidebar-nav-title sup {
-  position: relative;
-
-  top: -.35em;
-
-  font-size: .4em;
-  line-height: 0;
-
-  letter-spacing: 0;
-}
-
-
-/* ---------------------------------------------------------
-   DESCRIPTIONS
-   --------------------------------------------------------- */
-
-.ampstart-sidebar .sidebar-nav-description {
-  display: block;
-
-  max-width: 29ch;
-
-  margin-top: 5px;
-
-  color: #68645e;
-
-  font-size: .78rem;
-  line-height: 1.35;
-
-  font-weight: 400;
-}
-
-
-/* ---------------------------------------------------------
    NAV ACCENTS
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .ampstart-sidebar .nav-development:hover .sidebar-nav-number {
   border-color: #a8789f;
@@ -1911,9 +1437,9 @@ width: 100%;
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    CASE STUDIES DOT
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .ampstart-sidebar .accent-square.brand {
   display: inline-block;
@@ -1926,168 +1452,121 @@ width: 100%;
   border-radius: 50%;
 
   background: #cf727d;
-
   opacity: .85;
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    THE LAB
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .ampstart-sidebar .sidebar-lab {
-  flex: 0 0 auto;
-
   width: 100%;
-
   margin: 0;
   padding: 0;
+
+  background: #e4ded2;
 }
-
-
-/* ---------------------------------------------------------
-   LAB CARD
-   --------------------------------------------------------- */
 
 .ampstart-sidebar .sidebar-lab-link {
   position: relative;
 
   display: block;
 
-  width: 100%;
+  min-height: 165px;
 
-  min-height: 220px;
-
-  padding: 26px 24px 24px;
+  padding: 19px 20px;
 
   box-sizing: border-box;
-
   overflow: hidden;
 
-  background: #e4ded2;
   color: #242321;
-
   text-decoration: none;
-
-  border-top: 1px solid rgba(36, 35, 33, .08);
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    LAB DECORATION
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .ampstart-sidebar .sidebar-lab-link::before {
   content: "";
 
   position: absolute;
 
-  width: 270px;
-  height: 270px;
+  width: 220px;
+  height: 220px;
 
-  right: -165px;
-  bottom: -160px;
+  right: -135px;
+  bottom: -135px;
 
-  border: 1px solid rgba(36, 35, 33, .12);
-
+  border: 1px solid rgba(36,35,33,.12);
   border-radius: 50%;
-
-  pointer-events: none;
 }
-
 
 .ampstart-sidebar .sidebar-lab-link::after {
   content: "";
 
   position: absolute;
 
-  width: 170px;
-  height: 170px;
+  width: 130px;
+  height: 130px;
 
-  right: -90px;
-  bottom: -95px;
-
-  background: rgba(255, 255, 255, .22);
+  right: -70px;
+  bottom: -70px;
 
   border-radius: 50%;
 
-  pointer-events: none;
+  background: rgba(255,255,255,.22);
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    LAB CONTENT
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .ampstart-sidebar .sidebar-lab-main {
   position: relative;
-
   z-index: 2;
 
   display: flex;
   flex-direction: column;
 }
 
-
-/* ---------------------------------------------------------
-   LAB LABEL
-   --------------------------------------------------------- */
-
 .ampstart-sidebar .sidebar-lab-label {
-  display: block;
-
-  margin: 0 0 14px;
+  margin: 0 0 8px;
 
   color: #77726a;
 
-  font-size: .68rem;
+  font-size: .61rem;
   line-height: 1;
 
   font-weight: 700;
-  letter-spacing: .16em;
+  letter-spacing: .15em;
 
   text-transform: uppercase;
 }
 
-
-/* ---------------------------------------------------------
-   LAB WORD
-   --------------------------------------------------------- */
-
 .ampstart-sidebar .crumb-section-sidebar {
-  display: block;
-
   margin: 0;
 
   color: #242321;
 
-  font-size: 3.8rem;
-  line-height: .78;
+  font-size: clamp(3rem, 10vw, 3.5rem);
+  line-height: .82;
 
   font-weight: 800;
   letter-spacing: -.075em;
 }
 
-
-/* ---------------------------------------------------------
-   LAB COPY
-   --------------------------------------------------------- */
-
 .ampstart-sidebar .sidebar-lab-copy {
-  position: relative;
-
-  z-index: 2;
-
   display: flex;
   flex-direction: column;
 
-  gap: 11px;
+  gap: 9px;
 
-  max-width: 300px;
-
-  margin-top: 20px;
+  margin-top: 14px;
 }
-
 
 .ampstart-sidebar .sidebar-lab-description {
   max-width: 29ch;
@@ -2096,27 +1575,21 @@ width: 100%;
 
   color: #625e57;
 
-  font-size: .8rem;
-  line-height: 1.4;
+  font-size: .74rem;
+  line-height: 1.35;
 }
-
-
-/* ---------------------------------------------------------
-   LAB CTA
-   --------------------------------------------------------- */
 
 .ampstart-sidebar .sidebar-lab-arrow {
   display: inline-flex;
-
   align-items: center;
 
-  gap: 7px;
+  gap: 6px;
 
   width: fit-content;
 
   color: #373430;
 
-  font-size: .68rem;
+  font-size: .61rem;
   line-height: 1;
 
   font-weight: 700;
@@ -2125,16 +1598,9 @@ width: 100%;
   text-transform: uppercase;
 }
 
-
 .ampstart-sidebar .sidebar-lab-arrow span {
-  display: inline-block;
-
-  font-size: .95rem;
-  line-height: 1;
-
-  transition: transform .25s ease;
+  transition: transform .2s ease;
 }
-
 
 .ampstart-sidebar .sidebar-lab-link:hover
 .sidebar-lab-arrow span {
@@ -2143,7 +1609,7 @@ width: 100%;
 
 
 /* =========================================================
-   AMP SIDEBAR MASK
+   AMP MASK
    ========================================================= */
 
 .i-amphtml-sidebar-mask {
@@ -2153,306 +1619,144 @@ width: 100%;
 
 
 /* =========================================================
-   DESKTOP — HIDE MOBILE SIDEBAR
+   DESKTOP
    ========================================================= */
 
-@media (min-width: 769px) {
-
-  .ampstart-sidebar {
-    display: none !important;
-  }
-
+@media (min-width: 981px) {
+  .ampstart-sidebar,
   .i-amphtml-sidebar-mask {
     display: none !important;
   }
 }
-/* ---------------------------------------------------------
-NAV LINK
---------------------------------------------------------- */
-.ampstart-sidebar .sidebar-nav-link {
-  display: grid;
-  grid-template-columns: 40px minmax(0, 1fr);
-  gap: 14px;
-  align-items: center;
-  width: 100%;
-  min-height: 66px;
-  padding: 11px 20px;
-  box-sizing: border-box;
-  color: #242321;
-  text-decoration: none;
-  border: 0;
-  border-bottom: 1px solid rgba(36,35,33,.10);
-  background: transparent;
-  transition: background-color .2s ease, padding-left .2s ease;
+
+
+/* =========================================================
+   SHORT SCREENS
+   ========================================================= */
+
+@media (max-height: 600px) {
+
+  .ampstart-sidebar .sidebar-hero {
+    height: 60px;
+  }
+
+  .ampstart-sidebar .sidebar__logo {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .ampstart-sidebar .sidebar-nav-link,
+  .ampstart-sidebar .sidebar-home-link {
+    min-height: 58px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .ampstart-sidebar .sidebar-nav-number,
+  .ampstart-sidebar .sidebar-number {
+    width: 34px;
+    height: 34px;
+  }
+
+  .ampstart-sidebar .sidebar-nav-title,
+  .ampstart-sidebar .sidebar-title {
+    font-size: 1rem;
+  }
+
+  .ampstart-sidebar .sidebar-nav-description {
+    font-size: .68rem;
+  }
+
+  .ampstart-sidebar .sidebar-lab-link {
+    min-height: 145px;
+  }
+
+  .ampstart-sidebar .crumb-section-sidebar {
+    font-size: 2.8rem;
+  }
 }
-/* hover */
-.ampstart-sidebar .sidebar-nav-link:hover {
-  background: rgba(255,255,255,.3);
-  padding-left: 23px;
+
+
+
+/* DEVELOPMENT */
+.ampstart-sidebar .nav-development .sidebar-nav-number{
+background: linear-gradient( to right, #4f0a00 0 25%, #b9825a 25% 50%, #e3ba92 50% 75%, #ffd4ad 75% 100% );
+  color: #fff;
+  border-color: transparent;
 }
-/* ---------------------------------------------------------
-NUMBER / HOME CIRCLE
---------------------------------------------------------- */
-.ampstart-sidebar .sidebar-nav-number {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  box-sizing: border-box;
-  border: 1px solid rgba(36,35,33,.30);
-  border-radius: 50%;
-  color: #67635d;
-  font-size: .67rem;
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: .02em;
-  transition: border-color .2s ease, color .2s ease;
+
+
+
+
+/* STUDIO */
+.ampstart-sidebar .nav-studio .sidebar-nav-number {
+  background: linear-gradient( to right, #c62254 0 25%, #dd5d78 25% 50%, #e79192 50% 75%, #f0c6b8 75% 100% );
+   color: #fff;
+  border-color: transparent;
 }
-/* home icon */
-.ampstart-sidebar .sidebar-nav-home-icon svg {
-  display: block;
-  width: 16px;
-  height: 16px;
+
+
+
+
+/* PULSEFRAMES */
+.ampstart-sidebar .nav-pulse .sidebar-nav-number{
+background: linear-gradient( to right, #651204 0 25%, #e97626 25% 50%, #fdab2b 50% 75%, #fdce2a 75% 100% );
+   color: #fff;
+  border-color: transparent;
 }
-/* ---------------------------------------------------------
-NAV CONTENT
---------------------------------------------------------- */
-.ampstart-sidebar .sidebar-nav-content {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  padding-top: 1px;
+
+.ampstart-sidebar .nav-pulse .sidebar-nav-circle {
+  background: var(--sidebar-accent);
 }
-/* ---------------------------------------------------------
-NAV TITLE
---------------------------------------------------------- */
-.ampstart-sidebar .sidebar-nav-title {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-  margin: 0;
-  color: #242321;
-  font-size: 1.16rem;
-  line-height: 1;
-  font-weight: 750;
-  letter-spacing: -.04em;
+
+
+/* CASE STUDIES */
+.ampstart-sidebar .nav-case .sidebar-nav-number {
+ background: linear-gradient( to right, #016a87 0 25%, #2daccc 25% 50%, #49cbe5 50% 75%, #60dcf6 75% 100% );
+   color: #fff;
+  border-color: transparent;
 }
-/* trademark */
-.ampstart-sidebar .sidebar-nav-title sup {
-  position: relative;
-  top: -.35em;
-  font-size: .4em;
-  line-height: 0;
+
+.ampstart-sidebar .sidebar-nav-home .sidebar-nav-number {
+ background: linear-gradient( to right, #470000 0 25%, #720000 25% 50%, #910301 50% 75%, #c13801 75% 100% );
+   color: #fff;
+  border-color: transparent;
 }
-/* ---------------------------------------------------------
-NAV DESCRIPTION
---------------------------------------------------------- */
-.ampstart-sidebar .sidebar-nav-description {
-  display: block;
-  max-width: 30ch;
-  margin: 5px 0 0;
-  color: #68645e;
-  font-size: .74rem;
-  line-height: 1.3;
-  font-weight: 400;
-}
-/* ---------------------------------------------------------
-NAV ACCENTS
---------------------------------------------------------- */
+
+
+/* =========================================================
+   NUMBER HOVER
+   ========================================================= */
+
 .ampstart-sidebar .nav-development:hover .sidebar-nav-number {
   border-color: #a8789f;
   color: #a8789f;
 }
+
 .ampstart-sidebar .nav-studio:hover .sidebar-nav-number {
   border-color: #b86f6d;
   color: #b86f6d;
 }
+
 .ampstart-sidebar .nav-pulse:hover .sidebar-nav-number {
   border-color: #8f4946;
   color: #8f4946;
 }
+
 .ampstart-sidebar .nav-case:hover .sidebar-nav-number {
   border-color: #67919b;
   color: #67919b;
 }
-/* ---------------------------------------------------------
-THE LAB
---------------------------------------------------------- */
-.ampstart-sidebar .sidebar-lab {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-    background: #e4ded2;
-     width: 100%;
 
-  margin-top: auto;
-  padding: 0;
-}
-.ampstart-sidebar .sidebar-lab-link {
+.sidebar-nav-index {
   position: relative;
-  display: block;
-  width: 100%;
-  min-height: 180px;
-  padding: 21px 23px;
-  box-sizing: border-box;
-  overflow: hidden;
 
-  color: #242321;
-  text-decoration: none;
-}
-/* LAB decorative circles */
-.ampstart-sidebar .sidebar-lab-link::before {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  right: -135px;
-  bottom: -135px;
-  border: 1px solid rgba(36,35,33,.12);
-  border-radius: 50%;
-  pointer-events: none;
-}
-.ampstart-sidebar .sidebar-lab-link::after {
-  content: "";
-  position: absolute;
-  width: 130px;
-  height: 130px;
-  right: -70px;
-  bottom: -70px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.22);
-  pointer-events: none;
-}
-/* ---------------------------------------------------------
-LAB CONTENT
---------------------------------------------------------- */
-.ampstart-sidebar .sidebar-lab-main {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-}
-.ampstart-sidebar .sidebar-lab-label {
-  display: block;
-  margin: 0 0 8px;
-  color: #77726a;
-  font-size: .61rem;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-}
-/* LAB title */
-.ampstart-sidebar .crumb-section-sidebar {
-  display: block;
-  margin: 0;
-  color: #242321;
-  font-size: clamp(3rem, 10vw, 3.5rem);
-  line-height: .82;
-  font-weight: 800;
-  letter-spacing: -.075em;
-}
-/* LAB copy */
-.ampstart-sidebar .sidebar-lab-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  max-width: 29ch;
-  margin-top: 16px;
-}
-.ampstart-sidebar .sidebar-lab-description {
-  margin: 0;
-  color: #625e57;
-  font-size: .74rem;
-  line-height: 1.35;
-  font-weight: 400;
-}
-.ampstart-sidebar .sidebar-lab-arrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  width: fit-content;
-  color: #373430;
-  font-size: .61rem;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-.ampstart-sidebar .sidebar-lab-arrow span {
-  transition: transform .2s ease;
-}
-.ampstart-sidebar .sidebar-lab-link:hover .sidebar-lab-arrow span {
-  transform: translateX(4px);
-}
-/* ---------------------------------------------------------
-AMP SIDEBAR MASK
---------------------------------------------------------- */
-.i-amphtml-sidebar-mask {
-  background: none !important;
-  background-image: none !important;
-}
-/* ---------------------------------------------------------
-DESKTOP
---------------------------------------------------------- */
-@media (min-width: 981px) {
-  .ampstart-sidebar {
-    display: none !important;
-  }
-  .i-amphtml-sidebar-mask {
-    display: none !important;
-  }
-}
-/* ---------------------------------------------------------
-SMALL PHONES
---------------------------------------------------------- */
-@media (max-width: 480px) {
-  .ampstart-sidebar {
-    width: 90vw;
-    max-width: 350px;
-  }
-  .ampstart-sidebar .sidebar-hero {
-    height: 68px;
-    min-height: 68px;
-    padding-inline: 18px;
-  }
-  .ampstart-sidebar .sidebar__logo {
-    width: 44px;
-    height: 44px;
-    flex-basis: 44px;
-  }
-  .ampstart-sidebar .sidebar-close {
-    width: 30px;
-    height: 30px;
-    font-size: 21px;
-  }
-  .ampstart-sidebar .sidebar-nav-link {
-    grid-template-columns: 38px minmax(0, 1fr);
-    gap: 12px;
-    min-height: 62px;
-    padding: 10px 18px;
-  }
-  .ampstart-sidebar .sidebar-nav-number {
-    width: 38px;
-    height: 38px;
-  }
-  .ampstart-sidebar .sidebar-nav-title {
-    font-size: 1.08rem;
-  }
-  .ampstart-sidebar .sidebar-nav-description {
-    margin-top: 4px;
-    font-size: .71rem;
-  }
-  .ampstart-sidebar .sidebar-lab-link {
-    min-height: 165px;
-    padding: 19px 20px;
-  }
-  .ampstart-sidebar .crumb-section-sidebar {
-    font-size: 3rem;
-  }
-  .ampstart-sidebar .sidebar-lab-copy {
-    margin-top: 14px;
-  }
+  display: grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
 }
 
 
