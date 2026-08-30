@@ -1460,7 +1460,7 @@ background: #e8e1d4;
   height: clamp(160px, 24vh, 220px);
   min-height: 0;
 
-  padding: 0 20px;
+  padding: 34px 20px;
 
   box-sizing: border-box;
   overflow: hidden;
