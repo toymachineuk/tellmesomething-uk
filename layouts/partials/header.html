@@ -61,87 +61,33 @@
   {{ .Params.crumb }}
   {{ if .IsHome }}home{{ end }}
   {{ if eq .Section "post" }}lab{{ end }}
-  {{ with .Params.crumbclass }} {{ . }}{{ end }}">
-  
+  {{ with .Params.crumbclass }}{{ . }}{{ end }}">
+
   <div class="site-shell">
 
-    {{ if .IsHome }}
+    <span class="current
+      {{ if .IsHome }}home{{ end }}
+      {{ if eq .Section "post" }}lab{{ end }}
+      {{ with .Params.crumbclass }}{{ . }}{{ end }}">
 
-      <!-- HOME -->
+   <a href="/" class="crumb-home" aria-label="Home"> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M3 10.5L12 3l9 7.5"/> <path d="M5 9.5V21h14V9.5"/> </svg> </a>
 
-      <span class="current-home">
-
-        <svg
-          width="11"
-          height="11"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true">
-
-          <path d="M3 10.5L12 3l9 7.5"/>
-          <path d="M5 9.5V21h14V9.5"/>
-
-        </svg>
-
+      {{ if .IsHome }}
         Home
-
-      </span>
-
-
-    {{ else }}
-
-      <!-- HOME -->
-
-      <a href="/" class="crumb-home" aria-label="Home">
-
-        <svg
-          width="11"
-          height="11"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true">
-
-          <path d="M3 10.5L12 3l9 7.5"/>
-          <path d="M5 9.5V21h14V9.5"/>
-
-        </svg>
-
-      </a>
-
-
-      <span class="sep">→</span>
-
-
-      {{ if eq .Section "post" }}
-
-        <!-- THE LAB -->
-
-        <span class="current">Lab</span>
-
-
+      {{ else if eq .Section "post" }}
+        Lab
       {{ else }}
-
-        <!-- OTHER SECTIONS -->
-
-        <span class="current">{{ .Title }}</span>
-
+        {{ .Title }}
       {{ end }}
 
-    {{ end }}
+    </span>
 
   </div>
 
 </div>
 
 {{ end }}
+
 
 
 <!-- ==========================================

@@ -832,16 +832,7 @@ BREADCRUMB
 
 }
 
-@media (max-width: 768px) {
 
-.current-location .site-shell {
-
-padding:0 16px;
-
-}
-
-
-}
 
 
 .current-location::before, .current-location::after {
@@ -862,41 +853,8 @@ padding:0 16px;
 
 
 
-.current-home {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  letter-spacing: .25em;
-  z-index: 1;
-  height: 20px;
-  padding: 0 .75rem;
-  background: transparent;
-  color: #e8e1d4;
-  font-weight: 700;
-  font-size: 10px;
-  line-height: 1;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  gap:7px;
-}
-.current-home::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(
-      to right,
-      #470000 0 25%,
-      #720000 25% 50%,
-      #910301 50% 75%,
-      #c13801 75% 100%
-    );
-  border-radius: 0 999px 999px 0;
-  opacity: .85;
-}
+
+
 .current-location.post .current {
   z-index: 1;
   height: 20px;
@@ -952,6 +910,18 @@ padding:0 16px;
   font-weight: 700;
   z-index: 1;
 }
+
+.current-location.home .current {
+   background:
+    linear-gradient(
+      to right,
+      #470000 0 25%,
+      #720000 25% 50%,
+      #910301 50% 75%,
+      #c13801 75% 100%
+    );
+  color: #e8e1d4;
+}
 .current-location.pulse-frames .current {
   background:
     linear-gradient(
@@ -991,13 +961,8 @@ background: linear-gradient( to right, #016a87 0 25%, #2daccc 25% 50%, #49cbe5 5
     display: none;
   }
 }
-.current-location.home .current {
-  color: #111;
-  background: #f0a017;
-}
-.current-location a, .current-location .sep, .current-location .current {
-  color: inherit;
-}
+
+
 .current-location a {
   text-decoration: none;
   font-weight: 700;
@@ -1012,6 +977,10 @@ background: linear-gradient( to right, #016a87 0 25%, #2daccc 25% 50%, #49cbe5 5
   border-radius: 0 999px 999px 0;
   height: 20px;
   padding: 0 .75rem;
+
+    display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background:
     linear-gradient(
       to right,
@@ -1041,10 +1010,8 @@ background: linear-gradient( to right, #016a87 0 25%, #2daccc 25% 50%, #49cbe5 5
 .crumb-home {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 18px;
-  transition: all .2s ease;
+  color: inherit;
+  text-decoration: none;
 }
 .crumb-home svg {
   display: block;
