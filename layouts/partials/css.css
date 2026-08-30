@@ -1189,6 +1189,7 @@ width: 100%;
 .ampstart-sidebar {
   width: 100%;
   height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
 
   display: flex;
@@ -1197,7 +1198,9 @@ width: 100%;
   background: #eeeae1;
   color: #242321;
 
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 
@@ -1289,7 +1292,7 @@ background: #e8e1d4;
 .ampstart-sidebar .ampstart-sidebar-nav {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1 auto;
   margin: 10px 0 0;
   padding: 0;
 }
@@ -1457,7 +1460,7 @@ background: #e8e1d4;
 
   min-height: 165px;
 
-  padding: 19px 20px;
+  padding: 0 20px;
 
   box-sizing: border-box;
   overflow: hidden;
