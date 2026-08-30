@@ -1458,7 +1458,7 @@ background: #e8e1d4;
 
   display: block;
   height: clamp(160px, 24vh, 220px);
-  min-height: 0;
+    margin-bottom: 24px;
 
   padding: 34px 20px;
 
