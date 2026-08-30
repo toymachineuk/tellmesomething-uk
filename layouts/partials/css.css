@@ -1457,8 +1457,7 @@ background: #e8e1d4;
   position: relative;
 
   display: block;
-
-  min-height: 165px;
+height: clamp(140px, 25vh, 220px);
 
   padding: 0 20px;
 
@@ -1653,9 +1652,7 @@ background: #e8e1d4;
     font-size: .68rem;
   }
 
-  .ampstart-sidebar .sidebar-lab-link {
-    min-height: 145px;
-  }
+ 
 
   .ampstart-sidebar .crumb-section-sidebar {
     font-size: 2.8rem;
