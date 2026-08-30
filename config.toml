@@ -1,6 +1,7 @@
 baseURL = 'https://tellmesomething.uk/'
 languageCode = 'en-us'
 title = 'TMS'
+description = "Creative agency — websites, stories, film & brand identity."
 
   [[menu.main]]
   name = "pulse frames™"
