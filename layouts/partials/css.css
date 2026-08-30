@@ -1217,18 +1217,15 @@ width: 100%;
 
   box-sizing: border-box;
   overflow: hidden;
-background: #e8e1d4;
+
 }
 
 .ampstart-sidebar .sidebar-hero::after {
   content: "";
 
   position: absolute;
-  width: 180px;
-  height: 180px;
-
-  top: -100px;
-  right: -90px;
+  width: 80px;
+  height: 80px;
 
   border-radius: 50%;
   background: rgba(255,255,255,.05);
@@ -1293,7 +1290,7 @@ background: #e8e1d4;
   width: 100%;
   flex: 0 0 auto;
 
-  padding: 0;
+padding-top: var(--space-md);
   margin: 0;
 
   background: #e4ded2;
