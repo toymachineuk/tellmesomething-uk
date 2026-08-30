@@ -1290,11 +1290,13 @@ background: #e8e1d4;
 
 
 .ampstart-sidebar .ampstart-sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  margin: 10px 0 0;
+  width: 100%;
+  flex: 0 0 auto;
+
   padding: 0;
+  margin: 0;
+
+  background: #e4ded2;
 }
 
 .sidebar-nav-main {
@@ -1447,10 +1449,10 @@ background: #e8e1d4;
 
 .ampstart-sidebar .sidebar-lab {
  width: 100%;
-  margin-top: auto;
+margin-top: var(--space-xl);
   padding: 0;
   background: #e4ded2;
-  flex: 0 0 auto;
+ 
 }
 
 .ampstart-sidebar .sidebar-lab-link {
