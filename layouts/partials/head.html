@@ -35,7 +35,12 @@ src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
 
     <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 
-
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="Tell Me Something">
+<meta property="og:image" content="https://tellmesomething.uk/images/preview.png">
 
 
 
