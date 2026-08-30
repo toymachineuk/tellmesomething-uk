@@ -57,7 +57,7 @@ According to the team, this approach made their website more portable, maintaina
 Hugo was created in 2013 by Norwegian developer Bjørn Erik Pedersen. Later, Steve Francia became the project's lead maintainer,
  helping transform Hugo into one of the world's most widely used static site generators.
 
-Today, Hugo powers thousands of websites for organizations of all sizes including this site as well. By the way, the website you're reading right now is also powered by Hugo. 🚀
+Today, Hugo powers thousands of websites for organizations of all sizes including this site as well. 
 
 
 ## References
