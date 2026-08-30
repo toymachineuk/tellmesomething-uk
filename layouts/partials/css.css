@@ -55,6 +55,7 @@ body.has-breadcrumb .current-location {
   left: 0;
   right: 0;
   height: 20px;
+ 
 }
 /* =====================================
 TYPOGRAPHY
@@ -952,6 +953,7 @@ background: linear-gradient( to right, #016a87 0 25%, #2daccc 25% 50%, #49cbe5 5
   }
     .current-location {
     top: 58px;
+   
   }
 }
 /* Mobile */
@@ -1130,6 +1132,10 @@ CTA
 
 @media (max-width: 980px) {
 
+  .current-location .current {
+margin: 0 0 0 16px;
+}
+
   .header-right {
     display: none !important;
   }
@@ -1286,12 +1292,19 @@ background: #e8e1d4;
 .ampstart-sidebar .ampstart-sidebar-nav {
   display: flex;
   flex-direction: column;
- flex: 0 0 auto;
+  flex: 1;
   margin: 10px 0 0;
   padding: 0;
 }
 
+.sidebar-nav-main {
+  display: flex;
+  flex-direction: column;
+}
 
+.sidebar-nav-lab {
+  margin-top: auto;
+}
 
 
 .ampstart-sidebar .sidebar-nav-link,
