@@ -1292,6 +1292,7 @@ width: 100%;
 
 padding-top: var(--space-md);
   margin: 0;
+  padding-bottom: 28px;
 
   background: #e4ded2;
 }
@@ -1440,24 +1441,112 @@ padding-top: var(--space-md);
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   SECTION LINKS
+   ========================================================= */
+
+.section-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  background: #240712;
+
+
+  border-top: 1px solid rgba(255, 255, 255, .15);
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+
+.section-link {
+  display: flex;
+  align-items: center;
+
+  padding: 14px 20px;
+
+  color: #fff;
+  text-decoration: none;
+
+  font-size: .61rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.section-link + .section-link {
+  border-left: 1px solid rgba(255, 255, 255, .2);
+}
+
+.section-link + .section-link {
+  border-left: 1px solid rgb(238, 234, 225);
+}
+
+
+
+.section-link:hover {
+  opacity: .7;
+}
+
+
 /* =========================================================
    THE LAB
    ========================================================= */
 
 .ampstart-sidebar .sidebar-lab {
- width: 100%;
-margin-top: var(--space-xl);
+  width: 100%;
   padding: 0;
+  margin-top: 0;
+
   background: #e4ded2;
- 
 }
 
 .ampstart-sidebar .sidebar-lab-link {
   position: relative;
-
   display: block;
- 
 
+  width: 100%;
   padding: 34px 20px;
 
   box-sizing: border-box;
@@ -1466,8 +1555,6 @@ margin-top: var(--space-xl);
   color: #242321;
   text-decoration: none;
 }
-
-
 /* =========================================================
    LAB DECORATION
    ========================================================= */
