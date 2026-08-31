@@ -1764,8 +1764,8 @@ background: linear-gradient( to right, #4f0a00 0 25%, #b9825a 25% 50%, #e3ba92 5
   border-color: transparent;
 }
 
-.nav-lab {
-  background: linear-gradient( to right, #c62254 0 25%, #dd5d78 25% 50%, #e79192 50% 75%, #f0c6b8 75% 100% );
+.nav-lab--sidebar {
+ background: linear-gradient( to right, #363600 0 25%, #66662f 25% 50%, #a7a676 50% 75%, #d4d39a 75% 100% );
    color: #fff;
   border-color: transparent;
   box-shadow: 0 2px 8px rgba(14, 77, 74, .08);
