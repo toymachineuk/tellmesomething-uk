@@ -7,6 +7,21 @@
 <body class="{{ if not .IsHome }}has-breadcrumb{{ end }}">
 
 
+    <amp-analytics type="gtag" data-credentials="include">
+    <script type="application/json">
+    {
+      "vars": {
+        "gtag_id": "G-9DJ915YSF3",
+        "config": {
+          "G-9DJ915YSF3": {
+            "groups": "default"
+          }
+        }
+      }
+    }
+    </script>
+  </amp-analytics>
+
   {{ partial "header.html" . }}
   <main>
 
