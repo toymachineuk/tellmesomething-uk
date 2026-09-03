@@ -11,12 +11,10 @@ lead: >
   seen not by customers, but by Google.
   It contains the restaurant’s rating, the number and history of reviews, photos, information about the business, and many other signals that the Google profile sends to the search engine.
 layout: single
-references: ["design", "lockup", "youtube"]
 image: "images/hero.png"
-date: 2026-07-15
+date: 2026-08-15
 crumb: "lab"
 crumbclass: "lab-post"
-unlisted: true
 ---
 
 Google doesn’t taste the food or evaluate the service. It analyses information about the business and its relevance to a search query.

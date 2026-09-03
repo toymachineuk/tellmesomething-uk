@@ -3,7 +3,7 @@ title: Why Attention Spans Aren't Shrinking—They're Just Demanding Better Stor
 subtitle: We’ve all heard the myth Human attention spans are now shorter than a goldfish's.It’s a convenient line for marketers making excuses for low engagement. But it’s fundamentally wrong.
 showthedate: true
 categories:
-  - development
+  - stories
 draft: false
 tags: ["design"]
 lead: People will binge an eight-hour series in a weekend or sink into a two-hour podcast on a Tuesday morning. The attention is there. What’s changed is the filter.Audiences haven't lost the ability to focus—they’ve just developed an elite radar for fluff. 
