@@ -90,9 +90,11 @@ alt="pigeon">
         <ul class="blog-sidebar__list">
           {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
           <li>
-            <a href="{{ $taxonomy.Page.RelPermalink }}">
-              {{ $name }}
-            </a>
+           <a
+  href="{{ $taxonomy.Page.RelPermalink }}"
+  class="{{ if eq $name "development" }}category-development{{ end }}">
+  {{ $name }}
+</a>
           </li>
           {{ end }}
         </ul>
@@ -123,15 +125,22 @@ alt="pigeon">
   {{ end }}
 </div>
 
-            <h2 class="ard__title mb-sm">
-              <a href="{{ $page.RelPermalink }}">
+            <h2 class="blog-card__title mb-sm">
+             
                 {{ $page.Title }}
-              </a>
+           
             </h2>
 
-            <p class="blog-card__summary">
-              {{ $page.Summary | plainify | truncate 180 }}
-            </p>
+         
+<p class="blog-card__summary">
+  {{ $page.Summary | plainify | truncate 180 }}
+</p>
+
+<a href="{{ $page.RelPermalink }}" class="blog-card__read-more">
+  Read more →
+</a>
+
+
 
           </div>
 
