@@ -1037,6 +1037,20 @@ background: linear-gradient( to right, #4f0a00 0 25%, #b9825a 25% 50%, #e3ba92 5
   font-weight: 800;
   margin: 0;
 }
+
+
+.blog-archive-bg {
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .blog-archive-bg {
+    background: #E4E5E1;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+}
 @media (max-width: 768px) {
 
   .blog-sidebar__list a {
@@ -1062,9 +1076,7 @@ background: linear-gradient( to right, #4f0a00 0 25%, #b9825a 25% 50%, #e3ba92 5
   color: var(--accent);
 }
 
-.blog-archive-posts {
-    min-width: 0;
-}
+
 
 
 @media (max-width: 991px) {
@@ -1072,15 +1084,21 @@ background: linear-gradient( to right, #4f0a00 0 25%, #b9825a 25% 50%, #e3ba92 5
     .blog-archive-layout {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    gap: var(--space-md);
     align-items: start;
     margin-top: var(--space-md);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+
   }
 
   .blog-sidebar {
     position: static;
     width: 100%;
     margin-bottom: var(--space-sm);
+     margin-top: var(--space-md);
   }
 
   .blog-sidebar__title {
@@ -1394,7 +1412,7 @@ background: linear-gradient( to right, #4f0a00 0 25%, #b9825a 25% 50%, #e3ba92 5
 
  .blog-card__meta {
     order: 1;
-    margin-bottom: 8px;
+    margin-bottom: 0;
     font-size: .65rem;
     line-height: 1;
     letter-spacing: .1em;
