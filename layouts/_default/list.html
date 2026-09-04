@@ -90,9 +90,9 @@ alt="pigeon">
         <ul class="blog-sidebar__list">
           {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
           <li>
-           <a
+         <a
   href="{{ $taxonomy.Page.RelPermalink }}"
-  class="{{ if eq $name "development" }}category-development{{ end }}">
+  class="category-{{ $name | urlize }}">
   {{ $name }}
 </a>
           </li>
@@ -119,7 +119,8 @@ alt="pigeon">
 
           <div class="blog-card__content">
 
-           <div class="blog-card__meta">
+   
+<div class="blog-card__meta category-{{ index $page.Params.categories 0 | urlize }}">
   {{ with $page.Params.categories }}
     {{ delimit . ", " }}
   {{ end }}

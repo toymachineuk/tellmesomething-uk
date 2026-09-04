@@ -1002,14 +1002,32 @@ transform:scale(.95);
 
   border-radius: 50%;
 
-  background: linear-gradient(
-    to right,
-    #fdce2a 0 25%,
-    #fdab2b 25% 50%,
-    #e97626 50% 75%,
-    #c4471c 75% 100%
-  );
+
 }
+
+
+
+
+.category-stories::before {
+  background: linear-gradient( to right, #651204 0 25%, #e97626 25% 50%, #fdab2b 50% 75%, #fdce2a 75% 100% );
+}
+
+.category-design::before {
+ background: linear-gradient( to right, #c62254 0 25%, #dd5d78 25% 50%, #e79192 50% 75%, #f0c6b8 75% 100% );
+}
+
+.category-development::before {
+background: linear-gradient( to right, #4f0a00 0 25%, #b9825a 25% 50%, #e3ba92 50% 75%, #ffd4ad 75% 100% );
+}
+
+.category-case-study::before {
+  background: linear-gradient( to right, #016a87 0 25%, #2daccc 25% 50%, #49cbe5 50% 75%, #60dcf6 75% 100% );
+}
+
+.category-technology::before {
+  background: #66662f;
+}
+
 
 .card__title {
   font-family: var(--font-sans);
@@ -1241,13 +1259,31 @@ transform:scale(.95);
 }
 
 .blog-card__meta {
-    margin-bottom: var(--space-md);
-  font-size: .75rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+
+  margin-bottom: var(--space-md);
+
+  font-size: .68rem;
+  line-height: 1;
   font-weight: 600;
   color: #8A8F98;
+
   text-align: right;
   text-transform: uppercase;
   letter-spacing: .08em;
+}
+
+.blog-card__meta::before {
+  content: "";
+
+  width: 5px;
+  height: 5px;
+  flex: 0 0 5px;
+
+  border-radius: 50%;
 }
 
 .blog-card__meta .dot{
