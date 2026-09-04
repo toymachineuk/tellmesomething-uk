@@ -2,103 +2,212 @@
 {{ partial "header.html" . }}
 
 
+<!-- ==========================================
+     HERO
+========================================== -->
+
 <section class="hero-v2 frame site-shell">
 
   <div class="hero-v2-top pink">
 
-       <div class="hero-v2-text">
+    <div class="hero-v2-text">
       <span class="hero-v2-tag caps">AUDIO INFRASTRUCTURE</span>
-      <h1 class="hero-v2-title">SIGNAL.</h1>
-      <p class="hero-v2-sub">ACOUSTIC LOGIC</p>
+
+      <h1 class="hero-v2-title">
+        SIGNAL.
+      </h1>
+
+      <p class="hero-v2-sub">
+        ACOUSTIC LOGIC
+      </p>
     </div>
 
-<div class="hero-v2-circles">
- <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMaxYMin slice">
+    <div class="hero-v2-circles">
 
-  <!-- outer -->
-  <circle cx="1150" cy="-120" r="880" fill="#f0c6b8" />
+      <svg
+        viewBox="0 0 1000 1000"
+        preserveAspectRatio="xMaxYMin slice">
 
-  <!-- big -->
-  <circle cx="1150" cy="60" r="700" fill="#e79192" />
+        <circle
+          cx="1150"
+          cy="-120"
+          r="880"
+          fill="#f0c6b8" />
 
-  <!-- mid -->
-  <circle cx="1150" cy="240" r="520" fill="#dd5d78" />
+        <circle
+          cx="1150"
+          cy="60"
+          r="700"
+          fill="#e79192" />
 
-  <!-- inner -->
-  <circle cx="1150" cy="420" r="360" fill="#c62254" />
+        <circle
+          cx="1150"
+          cy="240"
+          r="520"
+          fill="#dd5d78" />
 
-</svg>
-</div>
+        <circle
+          cx="1150"
+          cy="420"
+          r="360"
+          fill="#c62254" />
 
+      </svg>
 
+    </div>
 
   </div>
+
 
   <div class="hero-v2-inner container">
-
- 
-
-   
-
+    <!-- Reserved for future hero content -->
   </div>
-<div class="hero-wrap">  
-  <amp-img
-src="/img/tannoy1.webp"
-width="709"
-height="619"
-layout="responsive"
-class="hero-v2-tannoy hero-v2-asset"
-alt="image">
-</amp-img>
-
-  </div>
-<aside class="hero-v2-side tagline">
-  <h2 class="heading-md caps-tight hero-v2-question">
-   THE VIBRATION OF THE FRAME
-  </h2>
-
- 
-</aside>
 
 
-
-    
+  <div class="hero-wrap">
 
     <amp-img
-src="/img/barcode.png"
-width="210"
-height="113"
-layout="responsive"
-class="hero-base-barcode"
-alt="barcode">
-</amp-img>
+      src="/img/tannoy1.webp"
+      width="709"
+      height="619"
+      layout="responsive"
+      class="hero-v2-tannoy hero-v2-asset"
+      alt="image">
+    </amp-img>
 
-</section>
-
-
-
-
-
-
-
-<section class=" section-lg ">
-  <div class="container">
-
-
-<h1 class="section__title-md mb-md">
-The Page is coming
-</h1>
-
-<hr class="hr">
-    <p class="text__lead" >We promise there's a more enjoyable way forward.</p>
-  
   </div>
 
 
+  <aside class="hero-v2-side tagline">
+
+    <h2 class="heading-md caps-tight hero-v2-question">
+      THE VIBRATION OF THE FRAME
+    </h2>
+
+  </aside>
+
+
+  <amp-img
+    src="/img/barcode.png"
+    width="210"
+    height="113"
+    layout="responsive"
+    class="hero-base-barcode"
+    alt="barcode">
+  </amp-img>
+
 </section>
 
 
+<!-- ==========================================
+     INTRO / COMING SOON
+========================================== -->
 
+<section class="section-lg">
+
+  <div class="container">
+
+    <header class="page-intro">
+
+      <h1 class="section__title-md mb-md">
+        The Page is coming
+      </h1>
+
+      <hr class="hr">
+
+      <p class="text__lead">
+        We promise there's a more enjoyable way forward.
+      </p>
+
+    </header>
+
+
+    <!-- ========================================
+         RELATED BLOG POSTS
+    ========================================= -->
+
+    {{ with .Params.related }}
+
+      <section class="article-related">
+
+        <h2 class="article-related__title">
+          More from the blog.
+        </h2>
+
+
+        <div class="article-related__posts">
+
+          {{ range . }}
+
+            {{ with $.Site.GetPage . }}
+
+              <article class="blog-card">
+
+                                  <div class="blog-card__meta category-{{ index .Params.categories 0 | urlize }}">
+
+                    {{ with .Params.categories }}
+                      {{ delimit . ", " }}
+                    {{ end }}
+
+                  </div>
+
+                       
+
+
+
+
+                  <h3 class="blog-card__title">
+                    {{ .Title }}
+                  </h3>
+
+
+
+                {{ with .Resources.GetMatch "images/hero.png" }}
+
+                  <a
+                    href="{{ $.RelPermalink }}"
+                    class="blog-card__image">
+
+                    <img
+                      src="{{ .RelPermalink }}"
+                      alt="{{ $.Title }}">
+
+                  </a>
+
+                {{ end }}
+
+                
+                  <p class="blog-card__summary">
+                    {{ .Summary | plainify | truncate 180 }}
+                  </p>
+
+
+                  <a
+                    href="{{ .RelPermalink }}"
+                    class="blog-card__read-more">
+
+                    Read more →
+
+                  </a>
+
+
+  
+
+              </article>
+
+            {{ end }}
+
+          {{ end }}
+
+        </div>
+
+      </section>
+
+    {{ end }}
+
+  </div>
+
+</section>
 
 
 {{ partial "footer-cta.html" . }}

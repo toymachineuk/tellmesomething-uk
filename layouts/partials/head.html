@@ -1221,8 +1221,7 @@ background: linear-gradient( to right, #4f0a00 0 25%, #b9825a 25% 50%, #e3ba92 5
         display: block;
     }
 
-    .blog-card__image,
-    .blog-card__content {
+    .blog-card__image {
         order: initial;
     }
 
@@ -1270,11 +1269,6 @@ background: linear-gradient( to right, #4f0a00 0 25%, #b9825a 25% 50%, #e3ba92 5
 /* =========================================
    CONTENT
 ========================================= */
-.blog-card__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 .blog-card__meta {
   display: flex;
@@ -1405,10 +1399,7 @@ background: linear-gradient( to right, #4f0a00 0 25%, #b9825a 25% 50%, #e3ba92 5
     padding: 2rem 0;
   }
 
-  /* Let the card control the individual elements */
-  .blog-card__content {
-    display: contents;
-  }
+ 
 
  .blog-card__meta {
     order: 1;
@@ -2487,6 +2478,100 @@ grid-template-columns:1fr;
 }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.article-related {
+
+  padding-top: var(--space-lg);
+  border-top: 1px solid #242321;
+    margin-top: clamp(72px, 10vw, 140px);
+}
+
+.article-related__title {
+  margin: 0 0 20px;
+
+  font-size: .75rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.article-related__title::after {
+  content: "";
+  display: block;
+  margin-top: 20px;
+  border-top: 1px solid #242321;
+}
+
+.article-related__posts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 64px);
+}
+
+
+
+.article-related .blog-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: 0;
+}
+
+.article-related .blog-card__image {
+  display: block;
+  overflow: hidden;
+  border-radius: 0;
+  margin-bottom: 14px;
+}
+
+
+.article-related__posts .blog-card__meta {
+
+  margin-bottom: 0;
+
+}
+
+.article-related .blog-card__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.article-related__posts .blog-card:first-child {
+   padding-top: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .article-related__posts {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+
+
+
+
+
+
+
     </style>
 </head>
 
