@@ -103,7 +103,7 @@
      INTRO / COMING SOON
 ========================================== -->
 
-<section class="section-lg">
+<section class="section-md">
 
   <div class="container">
 
@@ -121,93 +121,31 @@
 
     </header>
 
+    </div>
 
+</section>
     <!-- ========================================
          RELATED BLOG POSTS
     ========================================= -->
 
-    {{ with .Params.related }}
+{{ with .Params.related }}
 
-      <section class="article-related">
+<section class="section-sm">
 
-        <h2 class="article-related__title">
-          More from the blog.
-        </h2>
+  <div class="container">
 
+  {{ partial "related-posts.html" (dict
+    "page" $
+    "posts" .
+    "title" "More from the blog."
+    "size" "md"
+  ) }}
+</div>
 
-        <div class="article-related__posts">
-
-          {{ range . }}
-
-            {{ with $.Site.GetPage . }}
-
-              <article class="blog-card">
-
-                                  <div class="blog-card__meta category-{{ index .Params.categories 0 | urlize }}">
-
-                    {{ with .Params.categories }}
-                      {{ delimit . ", " }}
-                    {{ end }}
-
-                  </div>
-
-                       
+  </section>
+{{ end }}
 
 
-
-
-                  <h3 class="blog-card__title">
-                    {{ .Title }}
-                  </h3>
-
-
-
-                {{ with .Resources.GetMatch "images/hero.png" }}
-
-                  <a
-                    href="{{ $.RelPermalink }}"
-                    class="blog-card__image">
-
-                    <img
-                      src="{{ .RelPermalink }}"
-                      alt="{{ $.Title }}">
-
-                  </a>
-
-                {{ end }}
-
-                
-                  <p class="blog-card__summary">
-                    {{ .Summary | plainify | truncate 180 }}
-                  </p>
-
-
-                  <a
-                    href="{{ .RelPermalink }}"
-                    class="blog-card__read-more">
-
-                    Read more →
-
-                  </a>
-
-
-  
-
-              </article>
-
-            {{ end }}
-
-          {{ end }}
-
-        </div>
-
-      </section>
-
-    {{ end }}
-
-  </div>
-
-</section>
 
 
 {{ partial "footer-cta.html" . }}
